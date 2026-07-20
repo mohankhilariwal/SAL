@@ -1,0 +1,37 @@
+# ============================================================
+# CONTROL-PLANE ARTIFACT: runtime policy (thresholds, flags, kill switches)
+# Routing POLICY lives here as data; routing EXECUTION is code.
+# ============================================================
+version: policy-v1
+input:
+  max_chars: 10000
+  min_chars: 8
+  reject_url_only: true
+escalation:
+  confidence_tau: 0.60          # per-item; below -> Tier 2
+  max_disagreements: 2          # lexicon vs LLM
+  max_json_repairs: 1
+  max_claims_tier1: 8
+  max_chars_tier1: 6000
+abstention:
+  extraction_tau: 0.40
+  min_analyzable_fraction: 0.50 # injection-excluded text share
+confidence:
+  buckets: [low, medium, high]
+  implied_penalty_buckets: 1    # implied claims: -1 bucket
+  satire_cap: medium
+  disagreement_cap: low
+  calibration_map: config/calibration_map.json   # fitted offline; identity if absent
+rhetoric:
+  require_evidence_span: true   # label without verbatim span -> dropped
+  assertive_labels: [loaded_language, fear_appeal, outrage_framing,
+    certainty_amplification, urgency_framing, absolutist_language,
+    unnamed_authority, appeal_to_popularity, anecdotal_generalization,
+    presupposition, catastrophizing, decontextualized_number]
+flags:
+  kill_switch_safe_mode: false  # true -> global abstain
+  force_tier2_always: false
+  disabled_rhetoric_labels: []  # e.g. [outrage_framing]
+limits:
+  daily_budget_usd: 25.0
+  per_request_cost_ceiling_usd: 0.10

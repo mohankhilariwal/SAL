@@ -1,0 +1,24 @@
+# SpinCheck POC — pinned, mutually compatible set (Python 3.11–3.12).
+# Verified as a set via `pip install -r requirements.txt` on python:3.12-slim.
+# Core service
+fastapi==0.115.8
+uvicorn[standard]==0.34.0
+pydantic==2.10.6
+pydantic-settings==2.7.1
+# Config / schema / HTTP
+PyYAML==6.0.2
+jsonschema==4.23.0
+httpx==0.28.1
+tenacity==9.0.0
+# Deterministic NLP (spaCy optional at runtime — regex fallback ships in-code)
+spacy==3.8.4
+# en_core_web_sm: python -m spacy download en_core_web_sm
+langdetect==1.0.9
+# Hosted model SDKs (each optional; enabled per config/models.yaml)
+anthropic==0.45.2
+openai==1.61.1
+# Calibration & metrics
+numpy==2.2.2
+scikit-learn==1.6.1
+# Telemetry (optional)
+prometheus-client==0.21.1

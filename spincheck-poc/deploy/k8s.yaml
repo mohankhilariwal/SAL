@@ -1,0 +1,46 @@
+# Minimal production-shape manifest: Deployment + Service + HPA.
+# Control-plane artifacts arrive as a versioned ConfigMap (or baked image tag);
+# promotion of a new ConfigMap version REQUIRES a passing regression run in CI.
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: spincheck, labels: {app: spincheck}}
+spec:
+  replicas: 2
+  selector: {matchLabels: {app: spincheck}}
+  template:
+    metadata: {labels: {app: spincheck}}
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/yourorg/spincheck-poc:v0.1.0   # immutable tag = model+prompt pin set
+          ports: [{containerPort: 8000}]
+          envFrom:
+            - secretRef: {name: spincheck-keys}          # ANTHROPIC_API_KEY etc.
+          resources:
+            requests: {cpu: "250m", memory: "512Mi"}
+            limits: {cpu: "1", memory: "1Gi"}
+          readinessProbe: {httpGet: {path: /healthz, port: 8000}, initialDelaySeconds: 5}
+          livenessProbe: {httpGet: {path: /healthz, port: 8000}, periodSeconds: 15}
+          volumeMounts:
+            - {name: control-plane, mountPath: /app/config, readOnly: true}
+      volumes:
+        - name: control-plane
+          configMap: {name: spincheck-control-plane-v1}  # versioned; never "latest"
+---
+apiVersion: v1
+kind: Service
+metadata: {name: spincheck}
+spec:
+  selector: {app: spincheck}
+  ports: [{port: 80, targetPort: 8000}]
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata: {name: spincheck}
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: spincheck}
+  minReplicas: 2
+  maxReplicas: 20
+  metrics:
+    - type: Resource
+      resource: {name: cpu, target: {type: Utilization, averageUtilization: 65}}

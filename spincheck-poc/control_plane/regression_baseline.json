@@ -1,0 +1,28 @@
+{
+  "n": 10,
+  "span_precision": 0.917,
+  "span_recall": 1.0,
+  "span_f1": 0.957,
+  "type_accuracy": 0.545,
+  "escalation_rate": 0.2,
+  "abstention_rate": 0.0,
+  "json_ok_rate": 1.0,
+  "version_vector": {
+    "models_version": "models-v1",
+    "policy_version": "policy-v1",
+    "taxonomy_version": "taxonomy-v0.1",
+    "tier1_pin": "mock:mock-tier1@2026-07-01",
+    "tier2_pin": "mock:mock-tier2@2026-07-01",
+    "prompt_pins": {
+      "explainer_v1": "f5c02713bef5",
+      "tier1_analysis_v1": "12aaee6b12b3",
+      "tier2_escalation_v1": "66fdcbac6d02"
+    },
+    "artifact_hashes": {
+      "models": "368330948e24",
+      "policy": "f52151a9b859",
+      "taxonomy": "35026f1e1f02",
+      "schema": "8186a18c104a"
+    }
+  }
+}

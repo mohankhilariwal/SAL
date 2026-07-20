@@ -1,0 +1,9 @@
+ignore (all|any|previous|prior|above) instructions
+disregard (the|your) (system|previous) prompt
+you are now
+act as (an?|the)
+reveal (your|the) (system )?prompt
+output only
+respond with exactly
+new instructions:
+system:

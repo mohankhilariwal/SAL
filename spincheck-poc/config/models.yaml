@@ -1,0 +1,46 @@
+# ============================================================
+# CONTROL-PLANE ARTIFACT: model registry & pins (version this file)
+# Every layer's model is configurable here. The data plane reads
+# pins only — never "latest".
+# ============================================================
+version: models-v1
+gateway:
+  timeout_s: 60
+  max_retries: 2
+
+layers:
+  tier1:                      # primary analyzer (low-cost hosted)
+    provider: mock            # mock | anthropic | openai | gemini
+    model: mock-tier1
+    snapshot_date: "2026-07-01"
+    temperature: 0.0
+    max_tokens: 4000
+    alternatives:             # switch = edit provider/model + regression pass
+      - {provider: anthropic, model: claude-haiku-4-5}
+      - {provider: openai,    model: gpt-5.4-mini}
+      - {provider: gemini,    model: gemini-3-flash}
+  tier2:                      # escalation & adjudication (strong hosted)
+    provider: mock
+    model: mock-tier2
+    snapshot_date: "2026-07-01"
+    temperature: 0.0
+    max_tokens: 6000
+    alternatives:
+      - {provider: anthropic, model: claude-sonnet-4-6}
+      - {provider: openai,    model: gpt-5.4}
+      - {provider: gemini,    model: gemini-3.1-pro}
+  explainer:                  # grounded explanation generator
+    provider: mock
+    model: mock-explainer
+    temperature: 0.2
+    max_tokens: 2000
+    alternatives:
+      - {provider: anthropic, model: claude-haiku-4-5}
+  encoder:                    # POC-gated bounded classifiers (off by default)
+    enabled: false
+    model: MoritzLaurer/deberta-v3-base-zeroshot-v2.0
+    tasks: [evidence_presence, hedging]
+  slm_local:                  # POC benchmark only (never in V1 request path)
+    enabled: false
+    runtime: ollama
+    model: qwen3:8b

@@ -1,0 +1,58 @@
+{
+  "$id": "spincheck/analysis/v1",
+  "type": "object",
+  "required": ["claims", "rhetoric", "overall"],
+  "additionalProperties": false,
+  "properties": {
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["span", "start", "end", "claim_type", "explicit", "attribution",
+                     "certainty", "evidence_type", "confidence", "normalized",
+                     "verification_questions"],
+        "additionalProperties": false,
+        "properties": {
+          "span": {"type": "string", "minLength": 1},
+          "start": {"type": "integer", "minimum": 0},
+          "end": {"type": "integer", "minimum": 1},
+          "claim_type": {"enum": ["direct_factual","implied_factual","causal","correlational","predictive","statistical","comparative","attribution","personal_experience","opinion","value_judgment","recommendation","speculation","rhetorical_question_claim","mixed_unclear"]},
+          "domain_tags": {"type": "array", "items": {"enum": ["historical","scientific_medical","legal_regulatory","political"]}},
+          "explicit": {"type": "boolean"},
+          "attribution": {"enum": ["named","unnamed","author","unclear"]},
+          "certainty": {"enum": ["hedged","neutral","factual_certainty"]},
+          "evidence_type": {"enum": ["no_evidence","anecdote","example","named_source","unnamed_source","link_uninspected","quotation","numerical_support","methodological_detail","counter_evidence","unverifiable_attribution"]},
+          "confidence": {"enum": ["low","medium","high"]},
+          "normalized": {"type": "string"},
+          "context_flags": {"type": "array", "items": {"enum": ["missing_denominator","missing_baseline","missing_source","missing_date"]}},
+          "verification_questions": {"type": "array", "maxItems": 5, "items": {"type": "string"}}
+        }
+      }
+    },
+    "rhetoric": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "span", "start", "end", "confidence"],
+        "additionalProperties": false,
+        "properties": {
+          "label": {"enum": ["loaded_language","fear_appeal","outrage_framing","certainty_amplification","urgency_framing","absolutist_language","unnamed_authority","appeal_to_popularity","anecdotal_generalization","presupposition","catastrophizing","decontextualized_number"]},
+          "span": {"type": "string", "minLength": 1},
+          "start": {"type": "integer", "minimum": 0},
+          "end": {"type": "integer", "minimum": 1},
+          "confidence": {"enum": ["low","medium","high"]}
+        }
+      }
+    },
+    "overall": {
+      "type": "object",
+      "required": ["satire_possible", "injection_suspected", "extraction_confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "satire_possible": {"type": "boolean"},
+        "injection_suspected": {"type": "boolean"},
+        "extraction_confidence": {"enum": ["low","medium","high"]}
+      }
+    }
+  }
+}

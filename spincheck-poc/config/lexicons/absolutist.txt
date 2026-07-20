@@ -1,0 +1,11 @@
+always
+never
+all
+none
+every single
+everyone
+no one
+nothing
+everything
+completely
+totally

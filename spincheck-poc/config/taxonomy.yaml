@@ -1,0 +1,10 @@
+version: taxonomy-v0.1
+claim_types: [direct_factual, implied_factual, causal, correlational, predictive,
+  statistical, comparative, attribution, personal_experience, opinion,
+  value_judgment, recommendation, speculation, rhetorical_question_claim,
+  mixed_unclear]
+domain_tags: [historical, scientific_medical, legal_regulatory, political]
+evidence_types: [no_evidence, anecdote, example, named_source, unnamed_source,
+  link_uninspected, quotation, numerical_support, methodological_detail,
+  counter_evidence, unverifiable_attribution]
+certainty_levels: [hedged, neutral, factual_certainty]
