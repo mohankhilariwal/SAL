@@ -1,2 +1,2 @@
-# sal-
+# sal
 Sovereign Agentic Labs
