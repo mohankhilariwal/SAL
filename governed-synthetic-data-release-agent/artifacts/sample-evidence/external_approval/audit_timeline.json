@@ -1,0 +1,629 @@
+[
+  {
+    "created_at": "2026-08-04T23:20:59.630453",
+    "event_hash": "1802f26da791d984e0c44bde54c91207368a02be131c964fca1c7d3a1fdb1536",
+    "event_type": "request.received",
+    "id": "evt_f11c83b9b9fa4bc0ad418048f88b43fe",
+    "payload": {
+      "request": {
+        "agent": {
+          "created_at": "2026-08-04T23:20:59.629589Z",
+          "id": "agt_d450128442c9460f94f2765bc51868f8",
+          "updated_at": "2026-08-04T23:20:59.629589Z",
+          "version": "0.1.0",
+          "workload": "synthetic-data-release-agent"
+        },
+        "created_at": "2026-08-04T23:20:59.629583Z",
+        "dataset_name": "maplebridge_transactions",
+        "destination": "named_external_partner",
+        "id": "req_4e7616da00564293acaf1664a36319d4",
+        "intended_use": "External model-development validation under named partner boundary",
+        "malicious_content": null,
+        "purpose": "fraud_model_development",
+        "recipient": "northlake_analytics_partner",
+        "release_duration_days": 7,
+        "request_version": 1,
+        "requested_rows": 5000,
+        "requester": {
+          "active": true,
+          "created_at": "2026-08-04T23:20:59.629567Z",
+          "display_name": "Avery Chen",
+          "id": "usr_analyst_001",
+          "role": "fraud_analyst",
+          "updated_at": "2026-08-04T23:20:59.629569Z"
+        },
+        "scenario": "external_approval",
+        "updated_at": "2026-08-04T23:20:59.629584Z"
+      },
+      "scenario": "external_approval"
+    },
+    "previous_hash": "99a55c247a7ef6ef5e3a762200ae319e2a7b2469f99ffaff229d8c15d9018611",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:20:59.630453",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:20:59.631058",
+    "event_hash": "262f2499e3d83308376e7cc6a13b2bcc62aba2fcc07c282081461939c8b28d0c",
+    "event_type": "model.interpretation",
+    "id": "evt_c3e6b77fd73f4fcbbefeaef74633932d",
+    "payload": {
+      "adapter": "deterministic-stub",
+      "detected_authority_boundary_signals": [],
+      "suggested_sensitive_topics": [
+        "financial behaviour",
+        "identifiers"
+      ],
+      "summary": "External model-development validation under named partner boundary",
+      "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa"
+    },
+    "previous_hash": "1802f26da791d984e0c44bde54c91207368a02be131c964fca1c7d3a1fdb1536",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:20:59.631058",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:20:59.632139",
+    "event_hash": "4ea300e35c865e43e57e0b0f40db4c679f2fe42f918b02a6227b30fc8773a1c4",
+    "event_type": "identity.validated",
+    "id": "evt_7ab22571f89d4b23bfec0f0a2aab93b9",
+    "payload": {
+      "active": true,
+      "requester_id": "usr_analyst_001",
+      "role": "fraud_analyst"
+    },
+    "previous_hash": "262f2499e3d83308376e7cc6a13b2bcc62aba2fcc07c282081461939c8b28d0c",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:20:59.632139",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:20:59.633138",
+    "event_hash": "a9cc125a9c57bfca44c43d2e3708d5cdf4f7c4276c48aac4298f43d1e0d62a35",
+    "event_type": "authority.validated",
+    "id": "evt_a3e6d88bfb0c4223837b2b922107589b",
+    "payload": {
+      "created_at": "2026-08-04T23:20:59.632556Z",
+      "dataset_id": "maplebridge_transactions",
+      "expiry_days": 7,
+      "id": "auth_ca3a754762454b4ab307adaa7ab189c3",
+      "max_rows": 5000,
+      "purpose": "fraud_model_development",
+      "recipient": "northlake_analytics_partner",
+      "requester_id": "usr_analyst_001",
+      "updated_at": "2026-08-04T23:20:59.632557Z",
+      "valid": true
+    },
+    "previous_hash": "4ea300e35c865e43e57e0b0f40db4c679f2fe42f918b02a6227b30fc8773a1c4",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:20:59.633138",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:20:59.638899",
+    "event_hash": "8c18b3226d511d99226f4c7a46bf8da2d5e2786436dd58db0addfc2a40529ce3",
+    "event_type": "dataset.profiled",
+    "id": "evt_7b593578c5234deabd769266ed5c55aa",
+    "payload": {
+      "columns": [
+        "transaction_id",
+        "[REDACTED_CUSTOMER]",
+        "account_number",
+        "transaction_amount",
+        "merchant_category",
+        "city",
+        "province",
+        "transaction_timestamp",
+        "is_fraud",
+        "account_tenure_months",
+        "transactions_last_24h",
+        "average_transaction_amount_30d"
+      ],
+      "fraud_rate": 0.014,
+      "row_count": 2000
+    },
+    "previous_hash": "a9cc125a9c57bfca44c43d2e3708d5cdf4f7c4276c48aac4298f43d1e0d62a35",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:20:59.638899",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:20:59.640355",
+    "event_hash": "ec87375a6ce5e98ac8fdcf5297b67239791b0200dee92cd6b20608562e937c2a",
+    "event_type": "dataset.classified",
+    "id": "evt_b13f9e954580468495a202f0308beaec",
+    "payload": {
+      "classifications": [
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639444Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PROHIBITED",
+          "field_class": "OPERATIONAL_ATTRIBUTE",
+          "field_name": "transaction_id",
+          "human_override": false,
+          "id": "ent_a3b6a1bc31a047b481a73311eea8c93c",
+          "reason": "Source transaction key is not needed in the released dataset.",
+          "rule_id": "COL-OPS-001",
+          "updated_at": "2026-08-04T23:20:59.639445Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639455Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PROHIBITED",
+          "field_class": "DIRECT_IDENTIFIER",
+          "field_name": "[REDACTED_CUSTOMER]",
+          "human_override": false,
+          "id": "ent_6a33f130c6b140c7bf7465a039f7eb29",
+          "reason": "Internal [REDACTED_CUSTOMER] identifier.",
+          "rule_id": "COL-PII-001",
+          "updated_at": "2026-08-04T23:20:59.639456Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639460Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PROHIBITED",
+          "field_class": "DIRECT_IDENTIFIER",
+          "field_name": "account_number",
+          "human_override": false,
+          "id": "ent_46eda41fcde3449388ab74b59b50ddf7",
+          "reason": "Fictional account number treated as restricted identifier.",
+          "rule_id": "COL-PII-002",
+          "updated_at": "2026-08-04T23:20:59.639460Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639463Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "SENSITIVE_ATTRIBUTE",
+          "field_name": "transaction_amount",
+          "human_override": false,
+          "id": "ent_325738d32b744f44867c297a250257a7",
+          "reason": "Transaction amount is sensitive financial behaviour.",
+          "rule_id": "COL-SEN-002",
+          "updated_at": "2026-08-04T23:20:59.639464Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639467Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "OPERATIONAL_ATTRIBUTE",
+          "field_name": "merchant_category",
+          "human_override": false,
+          "id": "ent_629e3fb380ac4181b9a219add6083218",
+          "reason": "Operational merchant grouping.",
+          "rule_id": "COL-OPS-002",
+          "updated_at": "2026-08-04T23:20:59.639467Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639471Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "QUASI_IDENTIFIER",
+          "field_name": "city",
+          "human_override": false,
+          "id": "ent_834ef802302f4f8d8640e71c6306ff1d",
+          "reason": "City can contribute to re-identification risk.",
+          "rule_id": "COL-QID-002",
+          "updated_at": "2026-08-04T23:20:59.639471Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639474Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "QUASI_IDENTIFIER",
+          "field_name": "province",
+          "human_override": false,
+          "id": "ent_de9c387634a247a18a93edde5e4c87fb",
+          "reason": "Province is a coarse quasi-identifier.",
+          "rule_id": "COL-QID-003",
+          "updated_at": "2026-08-04T23:20:59.639474Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639477Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "QUASI_IDENTIFIER",
+          "field_name": "transaction_timestamp",
+          "human_override": false,
+          "id": "ent_5eff0da58801492d81b4711aff51cd0a",
+          "reason": "Timestamp is a quasi-identifier and is generated, not copied.",
+          "rule_id": "COL-QID-001",
+          "updated_at": "2026-08-04T23:20:59.639477Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639480Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "SENSITIVE_ATTRIBUTE",
+          "field_name": "is_fraud",
+          "human_override": false,
+          "id": "ent_1ca3a0f4dfa0442a997810431631e69c",
+          "reason": "Fraud label is sensitive analytical data.",
+          "rule_id": "COL-SEN-001",
+          "updated_at": "2026-08-04T23:20:59.639481Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639484Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "DERIVED_FEATURE",
+          "field_name": "account_tenure_months",
+          "human_override": false,
+          "id": "ent_d8a690b287b24853bd9edb70a697865d",
+          "reason": "Derived account feature.",
+          "rule_id": "COL-DER-001",
+          "updated_at": "2026-08-04T23:20:59.639484Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639487Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "DERIVED_FEATURE",
+          "field_name": "transactions_last_24h",
+          "human_override": false,
+          "id": "ent_ed6a2327db5a4e908e7c0ad875674e8f",
+          "reason": "Derived velocity feature.",
+          "rule_id": "COL-DER-002",
+          "updated_at": "2026-08-04T23:20:59.639487Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:20:59.639490Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "DERIVED_FEATURE",
+          "field_name": "average_transaction_amount_30d",
+          "human_override": false,
+          "id": "ent_be03b5328d704b9aab14e5c595e199de",
+          "reason": "Derived behavioural aggregate.",
+          "rule_id": "COL-DER-003",
+          "updated_at": "2026-08-04T23:20:59.639491Z"
+        }
+      ]
+    },
+    "previous_hash": "8c18b3226d511d99226f4c7a46bf8da2d5e2786436dd58db0addfc2a40529ce3",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:20:59.640355",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:20:59.642177",
+    "event_hash": "cfd856743bb488954a01b077b2c21ecbc2e459fd2ab932cbac8153fc1538fc2d",
+    "event_type": "generation.plan_authorized",
+    "id": "evt_344098e7ec8c43a0ad7bf8cafa7944c8",
+    "payload": {
+      "configuration": {
+        "max_retries": 2,
+        "max_runtime_seconds": 300
+      },
+      "created_at": "2026-08-04T23:20:59.641173Z",
+      "generator": "auto",
+      "id": "plan_5d7855c60383441fac76dd732d47924c",
+      "included_fields": [
+        "transaction_amount",
+        "merchant_category",
+        "city",
+        "province",
+        "transaction_timestamp",
+        "is_fraud",
+        "account_tenure_months",
+        "transactions_last_24h",
+        "average_transaction_amount_30d"
+      ],
+      "removed_fields": [
+        "transaction_id",
+        "[REDACTED_CUSTOMER]",
+        "account_number"
+      ],
+      "requested_rows": 5000,
+      "seed": 20260804,
+      "unsafe_mode": false,
+      "updated_at": "2026-08-04T23:20:59.641174Z"
+    },
+    "previous_hash": "ec87375a6ce5e98ac8fdcf5297b67239791b0200dee92cd6b20608562e937c2a",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:20:59.642177",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.399024",
+    "event_hash": "4e0261adbd7b7a80cea2df2d8993e8f53599a2872d4df39783eba23654a80161",
+    "event_type": "candidate.generated",
+    "id": "evt_526653df95db4667ab7ea25f223496bf",
+    "payload": {
+      "candidate_id": "cand_8e5f14d86b1143f1af99f9635253674d",
+      "candidate_version": 1,
+      "configuration": {
+        "max_retries": 2,
+        "max_runtime_seconds": 300
+      },
+      "content_hash": "8fff55d04d5a0b90669467f79ec3ed11b8e18da86b0bb0ab061a7b3ba8cb255d",
+      "created_at": "2026-08-04T23:21:00.397662Z",
+      "generator": "sdv-gaussian-copula",
+      "id": "run_55d056a34aa84222a1d4ffda2ef9471a",
+      "path": "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/candidate/cand_8e5f14d86b1143f1af99f9635253674d_v1.csv",
+      "retry_count": 0,
+      "row_count": 5000,
+      "runtime_seconds": 0.739783,
+      "updated_at": "2026-08-04T23:21:00.397664Z"
+    },
+    "previous_hash": "cfd856743bb488954a01b077b2c21ecbc2e459fd2ab932cbac8153fc1538fc2d",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:21:00.399024",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.521026",
+    "event_hash": "0413c20693f083273d594a8bb58d42e0a23848d906afc0f576164552800057d3",
+    "event_type": "candidate.evaluated",
+    "id": "evt_ba28f6016aff433480a8e97b3b019d81",
+    "payload": {
+      "privacy": {
+        "created_at": "2026-08-04T23:21:00.519189Z",
+        "evidence_hash": "3cbce61932569246b4958ed7fe93587e3c5d23d8d4c1a693d61c3ccde10f9107",
+        "exact_match_rate": 0.0,
+        "id": "ent_937031cb393e485fa121276c04cd4529",
+        "limitations": [
+          "Local nearest-neighbour test is a reproducible screening gate, not a formal privacy guarantee.",
+          "No production population or adversary model is represented."
+        ],
+        "mean_source_similarity": 0.314699,
+        "near_duplicate_count": 0,
+        "near_duplicate_rate": 0.0,
+        "passed": true,
+        "quasi_identifier_risk": 0.1049,
+        "rare_combination_exposure": 0.0,
+        "residual_risk": "Synthetic data is not automatically anonymous; recipient auxiliary information and rare combinations remain relevant.",
+        "risk_category": "LOW",
+        "threshold_results": {
+          "exact_match": true,
+          "mean_similarity": true,
+          "near_duplicate_rate": true,
+          "rare_combination_exposure": true
+        },
+        "updated_at": "2026-08-04T23:21:00.519193Z"
+      },
+      "recipient": {
+        "approved_recipient": true,
+        "auxiliary_data_risk": "RESIDUAL",
+        "contract_boundary": "named simulated partner",
+        "created_at": "2026-08-04T23:21:00.519436Z",
+        "destination": "named_external_partner",
+        "external": true,
+        "id": "ent_ae1cf851d3d74f35954f730fbd8889dc",
+        "recipient": "northlake_analytics_partner",
+        "updated_at": "2026-08-04T23:21:00.519437Z"
+      },
+      "utility": {
+        "created_at": "2026-08-04T23:21:00.465663Z",
+        "distribution_similarity": 0.751144,
+        "evidence_hash": "0f81550045fcac37b8de652943fd02f317ab9602cb2500e204b4f315e8fe6195",
+        "fraud_f1": 0.0,
+        "fraud_pr_auc": 0.51403,
+        "fraud_recall": 0.0,
+        "fraud_roc_auc": 0.760557,
+        "id": "ent_c89fb95d309e47febf0459767e54f29b",
+        "limitations": [
+          "Toy fictional dataset; metrics do not establish production model fitness.",
+          "Utility does not imply privacy."
+        ],
+        "normalized_utility_score": 0.863899,
+        "passed": true,
+        "relationship_similarity": 0.960275,
+        "seed": 20260804,
+        "threshold": 0.55,
+        "updated_at": "2026-08-04T23:21:00.465666Z"
+      }
+    },
+    "previous_hash": "4e0261adbd7b7a80cea2df2d8993e8f53599a2872d4df39783eba23654a80161",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:21:00.521026",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.522439",
+    "event_hash": "3affca46914cb8818aebb8c4f8360eb0c75eb4ae3d7ca54e06d4423ce5f7d445",
+    "event_type": "model.explanation",
+    "id": "evt_b36d507b16304303b2f5d619408c28f5",
+    "payload": {
+      "explanation": "Control Plane decision REQUIRE_APPROVAL. External release has residual auxiliary-information risk and requires Data Owner and Privacy Officer approval. Trace: trace_f8a28b92720a4bb895649fd3d65c20fa."
+    },
+    "previous_hash": "0413c20693f083273d594a8bb58d42e0a23848d906afc0f576164552800057d3",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:21:00.522439",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.523886",
+    "event_hash": "671ca558fb0a0e76912196f662cc6e0e8afa248019a10044357349f01a889207",
+    "event_type": "approval.required",
+    "id": "evt_1ae21b2530b343dbb87c36f0f4bdc31b",
+    "payload": {
+      "decision": "REQUIRE_APPROVAL",
+      "evidence_requirements": [
+        "request",
+        "identity",
+        "delegated_authority",
+        "classification",
+        "generation_plan",
+        "utility_report",
+        "privacy_report",
+        "recipient_assessment",
+        "policy_input",
+        "policy_output"
+      ],
+      "expiry_conditions": [
+        "release expires after the authorized duration",
+        "candidate modification invalidates approvals"
+      ],
+      "failed_controls": [
+        "POL-APP-001"
+      ],
+      "permitted_next_actions": [
+        "record_data_owner_approval",
+        "record_privacy_officer_approval",
+        "reject"
+      ],
+      "policy_version": "2026.08.1",
+      "prohibited_next_actions": [
+        "modify_policy",
+        "lower_privacy_thresholds",
+        "self_approve",
+        "arbitrary_export",
+        "export",
+        "requester_self_approval",
+        "agent_self_approval"
+      ],
+      "rationale": "External release has residual auxiliary-information risk and requires Data Owner and Privacy Officer approval.",
+      "required_approvals": [
+        "DATA_OWNER",
+        "PRIVACY_OFFICER"
+      ],
+      "triggered_policies": [
+        "POL-RECIP-001",
+        "POL-APP-001"
+      ]
+    },
+    "previous_hash": "3affca46914cb8818aebb8c4f8360eb0c75eb4ae3d7ca54e06d4423ce5f7d445",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:21:00.523886",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.536964",
+    "event_hash": "bb5d16fe25bbc988471e95b3ba3d88bda59eaff184468e86cdbfaa56350be508",
+    "event_type": "approval.recorded",
+    "id": "evt_6a2b0ee3898040d8a1cb7fd4c253a251",
+    "payload": {
+      "approver_id": "data_owner_001",
+      "candidate_version": 1,
+      "comment": "Data owner reviewed purpose, recipient and utility.",
+      "created_at": "2026-08-04T23:21:00.534316Z",
+      "evidence_viewed": [
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/approvals.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/audit_timeline.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/dataset_profile.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/delegated_authority.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/evidence_bundle.zip",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/export_receipt.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/field_classification.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/generation_plan.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/generation_run.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/identity.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/known_limitations.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/manifest.sha256.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/metrics.csv",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/policy_decision.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/privacy_report.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/recipient_assessment.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/request.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/summary.md",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/utility_report.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/workflow_state.json"
+      ],
+      "id": "aprd_d31c58669618496f8ffc83e076ab6bc1",
+      "outcome": "APPROVE",
+      "request_version": 1,
+      "role": "DATA_OWNER",
+      "updated_at": "2026-08-04T23:21:00.534317Z",
+      "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+    },
+    "previous_hash": "671ca558fb0a0e76912196f662cc6e0e8afa248019a10044357349f01a889207",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:21:00.536964",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.544704",
+    "event_hash": "8e4ca419b8d0a18982e4d133fe8b4847ae274792b0a2c40cda46e92407f4a98c",
+    "event_type": "approval.recorded",
+    "id": "evt_ef477c9e02f8473eb6f9f954096decc3",
+    "payload": {
+      "approver_id": "privacy_officer_001",
+      "candidate_version": 1,
+      "comment": "Privacy officer reviewed residual and auxiliary-data risk.",
+      "created_at": "2026-08-04T23:21:00.543285Z",
+      "evidence_viewed": [
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/approvals.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/audit_timeline.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/dataset_profile.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/delegated_authority.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/evidence_bundle.zip",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/export_receipt.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/field_classification.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/generation_plan.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/generation_run.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/identity.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/known_limitations.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/manifest.sha256.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/metrics.csv",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/policy_decision.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/privacy_report.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/recipient_assessment.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/request.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/summary.md",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/utility_report.json",
+        "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/evidence/wf_7215e0c568c9480d93f30e26028737cc/workflow_state.json"
+      ],
+      "id": "aprd_f35fc698ab9b40598a905c889841c7bd",
+      "outcome": "APPROVE",
+      "request_version": 1,
+      "role": "PRIVACY_OFFICER",
+      "updated_at": "2026-08-04T23:21:00.543286Z",
+      "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+    },
+    "previous_hash": "bb5d16fe25bbc988471e95b3ba3d88bda59eaff184468e86cdbfaa56350be508",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:21:00.544704",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.552401",
+    "event_hash": "8d9e9206f3193a5f4aaa0dd15555c2454b61ee381fca22da7257a0436e0e6977",
+    "event_type": "approval.complete",
+    "id": "evt_04a51b5f9c1940f9af6fb28106b137c2",
+    "payload": {
+      "approved_roles": [
+        "DATA_OWNER",
+        "PRIVACY_OFFICER"
+      ]
+    },
+    "previous_hash": "8e4ca419b8d0a18982e4d133fe8b4847ae274792b0a2c40cda46e92407f4a98c",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:21:00.552401",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.560805",
+    "event_hash": "20e695f4ebc9005dfd771c6d03efea3529871aa2dfc946f34ba25489e48a94e4",
+    "event_type": "dataset.released",
+    "id": "evt_40d1b7b1bc2240088fb8195349cbbfda",
+    "payload": {
+      "candidate_id": "cand_8e5f14d86b1143f1af99f9635253674d",
+      "content_hash": "8fff55d04d5a0b90669467f79ec3ed11b8e18da86b0bb0ab061a7b3ba8cb255d",
+      "created_at": "2026-08-04T23:21:00.559799Z",
+      "destination": "named_external_partner",
+      "expiry_at": "2026-08-11T23:20:59.629583Z",
+      "id": "receipt_4712974d008b45a4a0e7666fd0feaf8f",
+      "idempotency_key": "wf_7215e0c568c9480d93f30e26028737cc:cand_8e5f14d86b1143f1af99f9635253674d:named_external_partner:v1",
+      "released_path": "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/released/named_external_partner/cand_8e5f14d86b1143f1af99f9635253674d.csv",
+      "updated_at": "2026-08-04T23:21:00.559800Z",
+      "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+    },
+    "previous_hash": "8d9e9206f3193a5f4aaa0dd15555c2454b61ee381fca22da7257a0436e0e6977",
+    "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+    "updated_at": "2026-08-04T23:21:00.560805",
+    "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+  }
+]

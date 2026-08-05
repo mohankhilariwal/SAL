@@ -1,0 +1,17 @@
+{
+  "candidate_id": "cand_3eb316d1a03d4f2f8cc18d6b6d66f34f",
+  "candidate_version": 1,
+  "configuration": {
+    "max_retries": 2,
+    "max_runtime_seconds": 300
+  },
+  "content_hash": "833a3d05a416ea721b8b423bf8157f73239ef0ad1d90c734dac532894cb03afe",
+  "created_at": "2026-08-04T23:21:01.337993Z",
+  "generator": "sdv-gaussian-copula",
+  "id": "run_79e82cef63c64661a26fe9e33ae51eb0",
+  "path": "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/quarantine/cand_3eb316d1a03d4f2f8cc18d6b6d66f34f_v1.csv",
+  "retry_count": 0,
+  "row_count": 5000,
+  "runtime_seconds": 0.737566,
+  "updated_at": "2026-08-04T23:21:01.337996Z"
+}

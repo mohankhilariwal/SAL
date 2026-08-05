@@ -1,0 +1,11 @@
+{
+  "approved_recipient": true,
+  "auxiliary_data_risk": "LOW",
+  "contract_boundary": "internal sandbox",
+  "created_at": "2026-08-04T23:20:59.598910Z",
+  "destination": "internal_sandbox",
+  "external": false,
+  "id": "ent_20ffabcb4dcc4ab5bacb9e9fcf4cc94b",
+  "recipient": "maplebridge_internal_fraud_sandbox",
+  "updated_at": "2026-08-04T23:20:59.598911Z"
+}

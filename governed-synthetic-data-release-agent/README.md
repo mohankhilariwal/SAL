@@ -1,0 +1,188 @@
+# Governed Autonomous Synthetic Data Release Agent
+
+**Session:** *When an AI Agent Decides Whether Data May Leave the Vault*
+
+This is a working local reference implementation using entirely synthetic financial data. It is not presented as a customer deployment. It demonstrates how an AI agent can generate a candidate dataset while an independent Control Plane governs purpose, data access, privacy testing, utility, human approval and release evidence.
+
+## What it demonstrates
+
+MapleBridge Payments is fictional. The repository generates approximately 2,000 fictional source transactions, treats them as restricted data, and processes a request for 5,000 synthetic transactions. The workload agent can interpret a request and propose a generation plan, but cannot approve itself, modify policy, lower privacy thresholds, bypass evaluation, add a destination, or release a file.
+
+Decision authority is deliberately separated:
+
+```mermaid
+flowchart LR
+    U[Requester] --> A[Workload agent]
+    A -->|interpret / propose| CP[Agentic AI Control Plane]
+    CP --> M[Deterministic metrics]
+    CP --> P[Policy decision point]
+    P -->|REQUIRE_APPROVAL| H[Data Owner + Privacy Officer]
+    P -->|ALLOW only| E[Export gateway]
+    H -->|both approve| E
+    E --> R[Controlled released area]
+    A -. no direct release authority .-> R
+```
+
+## Architecture
+
+```mermaid
+flowchart TB
+    UI[Streamlit UI] --> API[FastAPI]
+    API --> WF[Durable workflow service]
+    WF --> ID[Identity / delegated authority]
+    WF --> CL[Deterministic classification]
+    WF --> GEN[Generator port]
+    GEN --> SDV[SDV GaussianCopula]
+    GEN --> FB[Offline fallback]
+    WF --> EVAL[Privacy + utility evaluators]
+    WF --> PDP[Python PDP / optional OPA]
+    WF --> APR[SQLite approvals]
+    WF --> EV[Evidence builder]
+    WF --> AUD[Hash-chained audit ledger]
+    WF --> EXP[Controlled export gateway]
+    WF --> LLM[Stub / optional Ollama]
+    EXP --> REL[Allow-listed local destinations]
+```
+
+Domain and application code do not import Streamlit, FastAPI, SQLite paths, Ollama, OPA, cloud SDKs, or SDV-specific implementation details. Adapters own those dependencies.
+
+## Prerequisites
+
+- macOS with Python 3.12 or 3.13.
+- Xcode Command Line Tools are useful when a Python dependency needs compilation.
+- No Docker, Kubernetes, cloud account, Ollama, OPA, or real banking data is required.
+
+## Installation
+
+```bash
+git clone <this-repository-or-unzip-the-download>
+cd governed-synthetic-data-release-agent
+make setup
+make verify
+```
+
+`make setup` creates `.venv`, installs the complete local stack, applies the database schema, generates the fictional source CSV, seeds request templates, and writes `requirements.lock` from the tested environment.
+
+A smaller installation without Streamlit, SDV, SDMetrics and Presidio is available for constrained environments:
+
+```bash
+make setup-core
+```
+
+In that mode the deterministic fallback generator is used. The normal demonstration path is `make setup` and the default generator is SDV Gaussian Copula when SDV is installed.
+
+## Ollama-optional setup
+
+The demo uses a deterministic offline model adapter by default. To use a local Ollama model only for request interpretation and human-readable explanations:
+
+```bash
+cp .env.example .env
+# edit .env:
+# GOVERNED_RELEASE_MODEL_GATEWAY=ollama
+# GOVERNED_RELEASE_OLLAMA_MODEL=llama3.2:3b
+ollama pull llama3.2:3b
+make demo
+```
+
+If Ollama is unavailable or times out, the workflow falls back to the offline adapter. LLM output never calculates metrics, assigns final risk, chooses the policy decision, approves, exports, or invents audit facts.
+
+## Commands
+
+| Command | Purpose |
+|---|---|
+| `make setup` | Full virtual environment and local stack |
+| `make verify` | Verify Python, packages and optional binaries |
+| `make seed` | Write four request templates |
+| `make test` | Full automated test suite |
+| `make test-fast` | Core tests with fallback generator |
+| `make test-integration` | SDV, SDMetrics, Presidio and infrastructure smoke tests |
+| `make lint` | Ruff checks |
+| `make typecheck` | Mypy checks |
+| `make api` | FastAPI on `127.0.0.1:8000` |
+| `make ui` | Streamlit on `127.0.0.1:8501` |
+| `make demo` | Bootstrap and run API plus UI |
+| `make scenarios` | Execute all four scenarios from the command line |
+| `make evidence-check` | Verify evidence manifests and the audit hash chain |
+| `make reset` | Remove runtime artifacts and rebuild the demo |
+
+Equivalent direct commands:
+
+```bash
+.venv/bin/python scripts/bootstrap.py
+.venv/bin/uvicorn governed_release.api.app:app --host 127.0.0.1 --port 8000
+.venv/bin/streamlit run src/governed_release/ui/app.py --server.address 127.0.0.1 --server.port 8501
+.venv/bin/python scripts/run_scenarios.py
+```
+
+## Demo scenarios
+
+1. **Internal sandbox release allowed** — valid employee, approved fraud-research purpose, internal destination, identifiers removed, utility/privacy passed, seven-day expiry. Expected terminal decision: `ALLOW`, stage `RELEASED`.
+2. **External release requires approval** — technical tests pass, but a named partner may possess auxiliary information. The workflow pauses at `REQUIRE_APPROVAL`. Separate Data Owner and Privacy Officer approvals are mandatory before export.
+3. **Privacy leakage detected** — deterministic attack mode injects exact rows, near duplicates and rare combinations. Expected decision: `DENY`, stage `QUARANTINED`; evidence and remediation are preserved.
+4. **Prompt injection and exfiltration attempt** — malicious text requests raw identifiers, evaluator bypass and an arbitrary endpoint. Prohibited tool intentions are recorded, the decision is `DENY`, and the workflow is `SUSPENDED` before source generation.
+
+Run all scenarios:
+
+```bash
+make scenarios
+cat artifacts/scenario-results.json
+```
+
+The packaged build includes the executed results and limitations in `artifacts/verification-report.md`.
+
+## Five UI screens
+
+The Streamlit application presents five tabs: request and identity; deterministic classification; generation and budget; privacy and utility; and final decision, approvals, evidence, export, trace and kill-switch state. Agent recommendation, metric result, policy decision, human decision and export status are displayed as different authorities.
+
+## Evidence bundle
+
+Each workflow creates `data/evidence/<workflow_id>/` containing JSON facts, a Markdown summary, CSV metric extracts, an audit timeline, SHA-256 manifest and ZIP bundle. An allowed export receives a separate receipt and content hash. Verify with:
+
+```bash
+make evidence-check
+```
+
+The local hash chain is tamper-evident demonstration evidence, not production-grade non-repudiation.
+
+## Security model
+
+- Localhost binding by default.
+- Pydantic input validation and request-size limit.
+- SQLAlchemy parameterized ORM access.
+- Destination allow-list with no arbitrary URLs or paths.
+- Candidate path and direct-identifier checks inside the export gateway.
+- Separate requester, workload-agent and approver identities.
+- Single-use role approvals; candidate-version binding.
+- Prompt-injection and authority-boundary rules.
+- Redacted structured events and chained hashes.
+- Global, export, request and recipient kill-switch scopes.
+- Row, runtime, retry and model-call budgets.
+- Secrets only through environment variables.
+
+See `docs/threat-model.md`, `docs/testing-pack.md`, and `SECURITY.md`.
+
+## Known limitations
+
+This is not a privacy guarantee, legal opinion, formal certification, production identity system, immutable ledger, or customer deployment. A local administrator can modify files. The example approval identity store is seeded and the external delivery is simulated as a second local folder. The fallback generator is designed for resilience and testing; SDV is the normal full-stack path. See `docs/limitations.md`.
+
+## Production migration
+
+Ports isolate database, object storage, model, policy, identity, workflow, telemetry and export implementations. PostgreSQL, governed object storage, enterprise identity, durable callbacks and centralized telemetry can replace local adapters without changing domain rules. See `docs/production-migration.md`, `docs/cloud-portability.md`, `docs/version-choices.md`, and `docs/build-stages.md`.
+
+## Troubleshooting
+
+- **Python version failure:** install Python 3.12 or 3.13 and recreate `.venv`.
+- **SDV installation conflict:** remove `.venv`, run `make setup` in a clean environment.
+- **Ollama unavailable:** keep `GOVERNED_RELEASE_MODEL_GATEWAY=stub`.
+- **OPA unavailable:** keep `GOVERNED_RELEASE_POLICY_ENGINE=python`; tests do not require OPA.
+- **Port in use:** stop the existing process or change the ports in `.env` and direct commands.
+- **Stale evidence or database:** run `make reset`.
+
+## Cleanup
+
+```bash
+make reset
+rm -rf .venv
+```
+
+Generated datasets, evidence, logs and SQLite files are ignored by Git.

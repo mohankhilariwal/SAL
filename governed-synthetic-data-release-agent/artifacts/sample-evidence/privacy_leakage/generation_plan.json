@@ -1,0 +1,29 @@
+{
+  "configuration": {
+    "max_retries": 2,
+    "max_runtime_seconds": 300
+  },
+  "created_at": "2026-08-04T23:21:00.584145Z",
+  "generator": "auto",
+  "id": "plan_e5d7e148ab614b2893d9a7e59443cb8d",
+  "included_fields": [
+    "transaction_amount",
+    "merchant_category",
+    "city",
+    "province",
+    "transaction_timestamp",
+    "is_fraud",
+    "account_tenure_months",
+    "transactions_last_24h",
+    "average_transaction_amount_30d"
+  ],
+  "removed_fields": [
+    "transaction_id",
+    "customer_id",
+    "account_number"
+  ],
+  "requested_rows": 5000,
+  "seed": 20260804,
+  "unsafe_mode": true,
+  "updated_at": "2026-08-04T23:21:00.584146Z"
+}

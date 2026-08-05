@@ -1,0 +1,51 @@
+{
+  "decision": "ALLOW",
+  "evidence_requirements": [
+    "request",
+    "identity",
+    "delegated_authority",
+    "classification",
+    "generation_plan",
+    "utility_report",
+    "privacy_report",
+    "recipient_assessment",
+    "policy_input",
+    "policy_output"
+  ],
+  "expiry_conditions": [
+    "release expires after the authorized duration",
+    "candidate modification invalidates approvals"
+  ],
+  "failed_controls": [],
+  "permitted_next_actions": [
+    "build_evidence_bundle",
+    "export_through_gateway"
+  ],
+  "policy_version": "2026.08.1",
+  "prohibited_next_actions": [
+    "modify_policy",
+    "lower_privacy_thresholds",
+    "self_approve",
+    "arbitrary_export",
+    "direct_file_copy",
+    "change_candidate_after_approval"
+  ],
+  "rationale": "Identity, authority, purpose, data scope, privacy, utility, recipient, evidence, budget and approval controls passed.",
+  "required_approvals": [],
+  "triggered_policies": [
+    "POL-ID-001",
+    "POL-AUTH-001",
+    "POL-PUR-001",
+    "POL-DATA-001",
+    "POL-PII-001",
+    "POL-TOOL-001",
+    "POL-PRIV-001",
+    "POL-UTIL-001",
+    "POL-RECIP-001",
+    "POL-EVID-001",
+    "POL-BUD-001",
+    "POL-KILL-001",
+    "POL-INJ-001",
+    "POL-APP-001"
+  ]
+}

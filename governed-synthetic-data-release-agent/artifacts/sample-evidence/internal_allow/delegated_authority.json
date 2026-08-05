@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-08-04T23:20:55.899883Z",
+  "dataset_id": "maplebridge_transactions",
+  "expiry_days": 7,
+  "id": "auth_4c7e5c3c560349538b9a6c5d17ee07f9",
+  "max_rows": 5000,
+  "purpose": "fraud_research",
+  "recipient": "maplebridge_internal_fraud_sandbox",
+  "requester_id": "usr_analyst_001",
+  "updated_at": "2026-08-04T23:20:55.899883Z",
+  "valid": true
+}

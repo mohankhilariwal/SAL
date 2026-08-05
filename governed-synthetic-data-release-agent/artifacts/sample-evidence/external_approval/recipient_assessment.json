@@ -1,0 +1,11 @@
+{
+  "approved_recipient": true,
+  "auxiliary_data_risk": "RESIDUAL",
+  "contract_boundary": "named simulated partner",
+  "created_at": "2026-08-04T23:21:00.519436Z",
+  "destination": "named_external_partner",
+  "external": true,
+  "id": "ent_ae1cf851d3d74f35954f730fbd8889dc",
+  "recipient": "northlake_analytics_partner",
+  "updated_at": "2026-08-04T23:21:00.519437Z"
+}

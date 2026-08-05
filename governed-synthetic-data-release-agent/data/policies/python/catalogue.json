@@ -1,0 +1,8 @@
+{
+  "version": "2026.08.1",
+  "policies": [
+    "POL-ID-001", "POL-AUTH-001", "POL-PUR-001", "POL-DATA-001", "POL-PII-001",
+    "POL-TOOL-001", "POL-PRIV-001", "POL-UTIL-001", "POL-RECIP-001", "POL-APP-001",
+    "POL-EXP-001", "POL-EVID-001", "POL-BUD-001", "POL-RET-001", "POL-INJ-001", "POL-KILL-001"
+  ]
+}

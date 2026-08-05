@@ -1,0 +1,6 @@
+FROM python:3.13-slim
+WORKDIR /app
+COPY . .
+RUN pip install --no-cache-dir ".[full]"
+EXPOSE 8501
+CMD ["streamlit", "run", "src/governed_release/ui/app.py", "--server.address", "0.0.0.0", "--server.port", "8501"]

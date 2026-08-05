@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-08-04T23:21:00.519189Z",
+  "evidence_hash": "3cbce61932569246b4958ed7fe93587e3c5d23d8d4c1a693d61c3ccde10f9107",
+  "exact_match_rate": 0.0,
+  "id": "ent_937031cb393e485fa121276c04cd4529",
+  "limitations": [
+    "Local nearest-neighbour test is a reproducible screening gate, not a formal privacy guarantee.",
+    "No production population or adversary model is represented."
+  ],
+  "mean_source_similarity": 0.314699,
+  "near_duplicate_count": 0,
+  "near_duplicate_rate": 0.0,
+  "passed": true,
+  "quasi_identifier_risk": 0.1049,
+  "rare_combination_exposure": 0.0,
+  "residual_risk": "Synthetic data is not automatically anonymous; recipient auxiliary information and rare combinations remain relevant.",
+  "risk_category": "LOW",
+  "threshold_results": {
+    "exact_match": true,
+    "mean_similarity": true,
+    "near_duplicate_rate": true,
+    "rare_combination_exposure": true
+  },
+  "updated_at": "2026-08-04T23:21:00.519193Z"
+}

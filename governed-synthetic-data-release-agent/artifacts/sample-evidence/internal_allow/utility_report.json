@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-08-04T23:20:59.544367Z",
+  "distribution_similarity": 0.751144,
+  "evidence_hash": "0f81550045fcac37b8de652943fd02f317ab9602cb2500e204b4f315e8fe6195",
+  "fraud_f1": 0.0,
+  "fraud_pr_auc": 0.51403,
+  "fraud_recall": 0.0,
+  "fraud_roc_auc": 0.760557,
+  "id": "ent_9b0c2778a4dc4a369923ed3f9bab1511",
+  "limitations": [
+    "Toy fictional dataset; metrics do not establish production model fitness.",
+    "Utility does not imply privacy."
+  ],
+  "normalized_utility_score": 0.863899,
+  "passed": true,
+  "relationship_similarity": 0.960275,
+  "seed": 20260804,
+  "threshold": 0.55,
+  "updated_at": "2026-08-04T23:20:59.544371Z"
+}

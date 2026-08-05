@@ -1,0 +1,17 @@
+{
+  "agent": {
+    "created_at": "2026-08-04T23:20:55.891126Z",
+    "id": "agt_9cefb5bf6e6f4b88bd0ec2d0550493bf",
+    "updated_at": "2026-08-04T23:20:55.891126Z",
+    "version": "0.1.0",
+    "workload": "synthetic-data-release-agent"
+  },
+  "requester": {
+    "active": true,
+    "created_at": "2026-08-04T23:20:55.890907Z",
+    "display_name": "Avery Chen",
+    "id": "usr_analyst_001",
+    "role": "fraud_analyst",
+    "updated_at": "2026-08-04T23:20:55.890911Z"
+  }
+}

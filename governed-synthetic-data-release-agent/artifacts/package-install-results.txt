@@ -1,0 +1,19 @@
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Looking in indexes: https://reader:****@packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/pypi/pypi-public/simple
+Obtaining file:///mnt/data/governed-synthetic-data-release-agent
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: governed-synthetic-data-release-agent
+  Building editable for governed-synthetic-data-release-agent (pyproject.toml): started
+  Building editable for governed-synthetic-data-release-agent (pyproject.toml): finished with status 'done'
+  Created wheel for governed-synthetic-data-release-agent: filename=governed_synthetic_data_release_agent-0.1.0-0.editable-py3-none-any.whl size=6712 sha256=61a689468d000e54c85a3db54c7b444fd886cd3b47ee21031880446a968e8ca3
+  Stored in directory: /tmp/pip-ephem-wheel-cache-_qr36gt0/wheels/f9/99/d6/93bd60bca0f100ebd7cdebfc0ee5c492707b0550086ee0d4c9
+Successfully built governed-synthetic-data-release-agent
+Installing collected packages: governed-synthetic-data-release-agent
+  Attempting uninstall: governed-synthetic-data-release-agent
+    Found existing installation: governed-synthetic-data-release-agent 0.1.0
+    Uninstalling governed-synthetic-data-release-agent-0.1.0:
+      Successfully uninstalled governed-synthetic-data-release-agent-0.1.0
+Successfully installed governed-synthetic-data-release-agent-0.1.0

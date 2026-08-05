@@ -1,0 +1,2 @@
+[console_scripts]
+governed-release = governed_release.cli:main

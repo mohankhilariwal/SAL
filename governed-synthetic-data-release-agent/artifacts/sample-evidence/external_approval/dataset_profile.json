@@ -1,0 +1,24 @@
+{
+  "classification": "RESTRICTED",
+  "columns": [
+    "transaction_id",
+    "customer_id",
+    "account_number",
+    "transaction_amount",
+    "merchant_category",
+    "city",
+    "province",
+    "transaction_timestamp",
+    "is_fraud",
+    "account_tenure_months",
+    "transactions_last_24h",
+    "average_transaction_amount_30d"
+  ],
+  "created_at": "2026-08-04T23:20:59.637789Z",
+  "id": "ds_maplebridge_transactions_v1",
+  "name": "maplebridge_transactions",
+  "path": "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/source/maplebridge_transactions.csv",
+  "row_count": 2000,
+  "updated_at": "2026-08-04T23:20:59.637791Z",
+  "version": "1"
+}

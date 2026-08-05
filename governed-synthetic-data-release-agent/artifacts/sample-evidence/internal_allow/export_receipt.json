@@ -1,0 +1,12 @@
+{
+  "candidate_id": "cand_6f1cc9e717ce4be798a55e6848e91ae0",
+  "content_hash": "8fff55d04d5a0b90669467f79ec3ed11b8e18da86b0bb0ab061a7b3ba8cb255d",
+  "created_at": "2026-08-04T23:20:59.615882Z",
+  "destination": "internal_sandbox",
+  "expiry_at": "2026-08-11T23:20:55.890932Z",
+  "id": "receipt_c289f0ae0b584142b46dec780481f2a0",
+  "idempotency_key": "wf_558e0508774146dd9a76c1290b67111e:cand_6f1cc9e717ce4be798a55e6848e91ae0:internal_sandbox:v1",
+  "released_path": "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/released/internal_sandbox/cand_6f1cc9e717ce4be798a55e6848e91ae0.csv",
+  "updated_at": "2026-08-04T23:20:59.615883Z",
+  "workflow_id": "wf_558e0508774146dd9a76c1290b67111e"
+}

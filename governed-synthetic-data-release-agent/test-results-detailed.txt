@@ -1,0 +1,6 @@
+......sss...................                                             [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/integration/test_presidio.py:8: Presidio optional dependency not installed
+SKIPPED [1] tests/integration/test_sdmetrics.py:9: SDMetrics optional dependency not installed
+SKIPPED [1] tests/integration/test_sdv.py:11: SDV optional dependency not installed
+25 passed, 3 skipped in 3.50s

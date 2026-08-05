@@ -1,0 +1,20 @@
+{
+  "candidate_id": "cand_ccb3ff1dcd1740abb2d8f362421d133e",
+  "dataset_version": "1",
+  "decision": "DENY",
+  "evidence_bundle_id": "bundle_ec66488bacb445f99cd4a8eb37cf243f",
+  "policy_version": "2026.08.1",
+  "remediation_proposal": null,
+  "request_id": "req_afa30e105fa24f6a9e435abc7a5e0923",
+  "security_events": [
+    "RAW_IDENTIFIER_ACCESS",
+    "RAW_DATA_EXPORT",
+    "EVALUATOR_BYPASS",
+    "POLICY_OVERRIDE",
+    "UNAPPROVED_DESTINATION",
+    "RETRIEVED_CONTENT_AS_AUTHORITY"
+  ],
+  "stage": "SUSPENDED",
+  "trace_id": "trace_ed52f6746f924b1da4337e66bd3c6ac8",
+  "workflow_id": "wf_4dcd3b6e1b85493292e05e44ed2928de"
+}

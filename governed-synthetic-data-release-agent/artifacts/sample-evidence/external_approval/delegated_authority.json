@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-08-04T23:20:59.632556Z",
+  "dataset_id": "maplebridge_transactions",
+  "expiry_days": 7,
+  "id": "auth_ca3a754762454b4ab307adaa7ab189c3",
+  "max_rows": 5000,
+  "purpose": "fraud_model_development",
+  "recipient": "northlake_analytics_partner",
+  "requester_id": "usr_analyst_001",
+  "updated_at": "2026-08-04T23:20:59.632557Z",
+  "valid": true
+}

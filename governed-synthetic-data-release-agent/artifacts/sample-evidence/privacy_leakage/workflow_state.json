@@ -1,0 +1,13 @@
+{
+  "candidate_id": "cand_3eb316d1a03d4f2f8cc18d6b6d66f34f",
+  "dataset_version": "1",
+  "decision": "DENY",
+  "evidence_bundle_id": "bundle_6619eacb587f463e9550b2c7e910276a",
+  "policy_version": "2026.08.1",
+  "remediation_proposal": "Regenerate with stronger disclosure controls, no copied rows, larger perturbation and reviewed rare-combination handling.",
+  "request_id": "req_18854777ad9942e8b711b8ea3e14f579",
+  "security_events": [],
+  "stage": "QUARANTINED",
+  "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+  "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+}

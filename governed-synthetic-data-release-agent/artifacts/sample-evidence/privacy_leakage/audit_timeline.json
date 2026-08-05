@@ -1,0 +1,461 @@
+[
+  {
+    "created_at": "2026-08-04T23:21:00.572668",
+    "event_hash": "7fbd5d5848e48457881efa82347f1dd0d2c9302330c12d1f01efb22e891dc1ff",
+    "event_type": "request.received",
+    "id": "evt_05dd244386664c66be24191ca6e07384",
+    "payload": {
+      "request": {
+        "agent": {
+          "created_at": "2026-08-04T23:21:00.571706Z",
+          "id": "agt_8728265f02974763b8c99140b1faf117",
+          "updated_at": "2026-08-04T23:21:00.571707Z",
+          "version": "0.1.0",
+          "workload": "synthetic-data-release-agent"
+        },
+        "created_at": "2026-08-04T23:21:00.571701Z",
+        "dataset_name": "maplebridge_transactions",
+        "destination": "internal_sandbox",
+        "id": "req_18854777ad9942e8b711b8ea3e14f579",
+        "intended_use": "Deterministic privacy attack demonstration",
+        "malicious_content": null,
+        "purpose": "fraud_research",
+        "recipient": "maplebridge_internal_fraud_sandbox",
+        "release_duration_days": 7,
+        "request_version": 1,
+        "requested_rows": 5000,
+        "requester": {
+          "active": true,
+          "created_at": "2026-08-04T23:21:00.571682Z",
+          "display_name": "Avery Chen",
+          "id": "usr_analyst_001",
+          "role": "fraud_analyst",
+          "updated_at": "2026-08-04T23:21:00.571684Z"
+        },
+        "scenario": "privacy_leakage",
+        "updated_at": "2026-08-04T23:21:00.571701Z"
+      },
+      "scenario": "privacy_leakage"
+    },
+    "previous_hash": "20e695f4ebc9005dfd771c6d03efea3529871aa2dfc946f34ba25489e48a94e4",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:00.572668",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.573327",
+    "event_hash": "6cdd36be4d1ad7f435095015ee8309ff7969a5922c48e68e81e91a667b205ae0",
+    "event_type": "model.interpretation",
+    "id": "evt_6ef778fffd3449d2a6e829fc253c60e3",
+    "payload": {
+      "adapter": "deterministic-stub",
+      "detected_authority_boundary_signals": [],
+      "suggested_sensitive_topics": [
+        "financial behaviour",
+        "identifiers"
+      ],
+      "summary": "Deterministic privacy attack demonstration",
+      "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b"
+    },
+    "previous_hash": "7fbd5d5848e48457881efa82347f1dd0d2c9302330c12d1f01efb22e891dc1ff",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:00.573327",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.574472",
+    "event_hash": "cc1ec20ef7bf1bf6eff5fd39afe45c78234d93557b6d2dc4a6ba6c76b4ca31ad",
+    "event_type": "identity.validated",
+    "id": "evt_ba635d9d98554777a286f5efa1e604e2",
+    "payload": {
+      "active": true,
+      "requester_id": "usr_analyst_001",
+      "role": "fraud_analyst"
+    },
+    "previous_hash": "6cdd36be4d1ad7f435095015ee8309ff7969a5922c48e68e81e91a667b205ae0",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:00.574472",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.575732",
+    "event_hash": "ad764854cdf3dfff51991c128496b5b602f2b68e1f20578bcd9b95fd626df00c",
+    "event_type": "authority.validated",
+    "id": "evt_efbc07b41e7546ceb3c13fc2916d5d45",
+    "payload": {
+      "created_at": "2026-08-04T23:21:00.574977Z",
+      "dataset_id": "maplebridge_transactions",
+      "expiry_days": 7,
+      "id": "auth_8c5663606bae4fff87c542ce9ebe8497",
+      "max_rows": 5000,
+      "purpose": "fraud_research",
+      "recipient": "maplebridge_internal_fraud_sandbox",
+      "requester_id": "usr_analyst_001",
+      "updated_at": "2026-08-04T23:21:00.574978Z",
+      "valid": true
+    },
+    "previous_hash": "cc1ec20ef7bf1bf6eff5fd39afe45c78234d93557b6d2dc4a6ba6c76b4ca31ad",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:00.575732",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.581938",
+    "event_hash": "70c0c54647c6910ffe555503ebfbc6a707fc6e7ae01bf85779abc4d776267399",
+    "event_type": "dataset.profiled",
+    "id": "evt_1072047be53c4aeea3e676effeeffbbf",
+    "payload": {
+      "columns": [
+        "transaction_id",
+        "[REDACTED_CUSTOMER]",
+        "account_number",
+        "transaction_amount",
+        "merchant_category",
+        "city",
+        "province",
+        "transaction_timestamp",
+        "is_fraud",
+        "account_tenure_months",
+        "transactions_last_24h",
+        "average_transaction_amount_30d"
+      ],
+      "fraud_rate": 0.014,
+      "row_count": 2000
+    },
+    "previous_hash": "ad764854cdf3dfff51991c128496b5b602f2b68e1f20578bcd9b95fd626df00c",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:00.581938",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.583311",
+    "event_hash": "2f6619a85defd887112b6fc94500fdcdc88a25f0a7fa7199a2a0730b5500a617",
+    "event_type": "dataset.classified",
+    "id": "evt_ad620d9469c94a768e1be197211d05d9",
+    "payload": {
+      "classifications": [
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582428Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PROHIBITED",
+          "field_class": "OPERATIONAL_ATTRIBUTE",
+          "field_name": "transaction_id",
+          "human_override": false,
+          "id": "ent_7280c3256abc4285a96b7cb95ff5feaf",
+          "reason": "Source transaction key is not needed in the released dataset.",
+          "rule_id": "COL-OPS-001",
+          "updated_at": "2026-08-04T23:21:00.582429Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582435Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PROHIBITED",
+          "field_class": "DIRECT_IDENTIFIER",
+          "field_name": "[REDACTED_CUSTOMER]",
+          "human_override": false,
+          "id": "ent_81ec9fc832e6400c9bd8802ed0f63bc8",
+          "reason": "Internal [REDACTED_CUSTOMER] identifier.",
+          "rule_id": "COL-PII-001",
+          "updated_at": "2026-08-04T23:21:00.582435Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582439Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PROHIBITED",
+          "field_class": "DIRECT_IDENTIFIER",
+          "field_name": "account_number",
+          "human_override": false,
+          "id": "ent_9c2576a1cd6c4d9092466dd51a18dc88",
+          "reason": "Fictional account number treated as restricted identifier.",
+          "rule_id": "COL-PII-002",
+          "updated_at": "2026-08-04T23:21:00.582439Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582443Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "SENSITIVE_ATTRIBUTE",
+          "field_name": "transaction_amount",
+          "human_override": false,
+          "id": "ent_660ee99bbd224f938c7259ce3897da39",
+          "reason": "Transaction amount is sensitive financial behaviour.",
+          "rule_id": "COL-SEN-002",
+          "updated_at": "2026-08-04T23:21:00.582443Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582446Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "OPERATIONAL_ATTRIBUTE",
+          "field_name": "merchant_category",
+          "human_override": false,
+          "id": "ent_bf93fb05637d45a186644603617a1fbe",
+          "reason": "Operational merchant grouping.",
+          "rule_id": "COL-OPS-002",
+          "updated_at": "2026-08-04T23:21:00.582447Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582449Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "QUASI_IDENTIFIER",
+          "field_name": "city",
+          "human_override": false,
+          "id": "ent_beaa34cfad0d4bbd9fca80bb8074d13c",
+          "reason": "City can contribute to re-identification risk.",
+          "rule_id": "COL-QID-002",
+          "updated_at": "2026-08-04T23:21:00.582450Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582453Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "QUASI_IDENTIFIER",
+          "field_name": "province",
+          "human_override": false,
+          "id": "ent_36824334d87a4ec1a71557934b36ec18",
+          "reason": "Province is a coarse quasi-identifier.",
+          "rule_id": "COL-QID-003",
+          "updated_at": "2026-08-04T23:21:00.582453Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582456Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "QUASI_IDENTIFIER",
+          "field_name": "transaction_timestamp",
+          "human_override": false,
+          "id": "ent_d67b6e34e0914bb5a637e235c0a38e5d",
+          "reason": "Timestamp is a quasi-identifier and is generated, not copied.",
+          "rule_id": "COL-QID-001",
+          "updated_at": "2026-08-04T23:21:00.582456Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582459Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "SENSITIVE_ATTRIBUTE",
+          "field_name": "is_fraud",
+          "human_override": false,
+          "id": "ent_7d3f7eddca6b4c9da7a73fc837244c22",
+          "reason": "Fraud label is sensitive analytical data.",
+          "rule_id": "COL-SEN-001",
+          "updated_at": "2026-08-04T23:21:00.582459Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582462Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "DERIVED_FEATURE",
+          "field_name": "account_tenure_months",
+          "human_override": false,
+          "id": "ent_a8b638ec97a841ccaf9ace13c380214a",
+          "reason": "Derived account feature.",
+          "rule_id": "COL-DER-001",
+          "updated_at": "2026-08-04T23:21:00.582462Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582465Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "DERIVED_FEATURE",
+          "field_name": "transactions_last_24h",
+          "human_override": false,
+          "id": "ent_f60b854e37f14cbd9ea823f4ad9b0bb8",
+          "reason": "Derived velocity feature.",
+          "rule_id": "COL-DER-002",
+          "updated_at": "2026-08-04T23:21:00.582465Z"
+        },
+        {
+          "confidence": 1.0,
+          "created_at": "2026-08-04T23:21:00.582468Z",
+          "detection_method": "deterministic-column-rule",
+          "disposition": "RELEASE_PERMITTED",
+          "field_class": "DERIVED_FEATURE",
+          "field_name": "average_transaction_amount_30d",
+          "human_override": false,
+          "id": "ent_7b0a843c22824d87921dd55403ccaebe",
+          "reason": "Derived behavioural aggregate.",
+          "rule_id": "COL-DER-003",
+          "updated_at": "2026-08-04T23:21:00.582468Z"
+        }
+      ]
+    },
+    "previous_hash": "70c0c54647c6910ffe555503ebfbc6a707fc6e7ae01bf85779abc4d776267399",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:00.583311",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:00.584914",
+    "event_hash": "699533ac793a87d57d78ede130b83e1ac7b18da7ec463f6d865e7098ed0ba488",
+    "event_type": "generation.plan_authorized",
+    "id": "evt_b845edd98e764393a425d632f2520eb2",
+    "payload": {
+      "configuration": {
+        "max_retries": 2,
+        "max_runtime_seconds": 300
+      },
+      "created_at": "2026-08-04T23:21:00.584145Z",
+      "generator": "auto",
+      "id": "plan_e5d7e148ab614b2893d9a7e59443cb8d",
+      "included_fields": [
+        "transaction_amount",
+        "merchant_category",
+        "city",
+        "province",
+        "transaction_timestamp",
+        "is_fraud",
+        "account_tenure_months",
+        "transactions_last_24h",
+        "average_transaction_amount_30d"
+      ],
+      "removed_fields": [
+        "transaction_id",
+        "[REDACTED_CUSTOMER]",
+        "account_number"
+      ],
+      "requested_rows": 5000,
+      "seed": 20260804,
+      "unsafe_mode": true,
+      "updated_at": "2026-08-04T23:21:00.584146Z"
+    },
+    "previous_hash": "2f6619a85defd887112b6fc94500fdcdc88a25f0a7fa7199a2a0730b5500a617",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:00.584914",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:01.339287",
+    "event_hash": "0e78af099d4901d1de1f8a5dee09e5a655c638b18f774cd1f11eed620542edd4",
+    "event_type": "candidate.generated",
+    "id": "evt_21fd46786fe14ee6912a82e78eefca99",
+    "payload": {
+      "candidate_id": "cand_3eb316d1a03d4f2f8cc18d6b6d66f34f",
+      "candidate_version": 1,
+      "configuration": {
+        "max_retries": 2,
+        "max_runtime_seconds": 300
+      },
+      "content_hash": "833a3d05a416ea721b8b423bf8157f73239ef0ad1d90c734dac532894cb03afe",
+      "created_at": "2026-08-04T23:21:01.337993Z",
+      "generator": "sdv-gaussian-copula",
+      "id": "run_79e82cef63c64661a26fe9e33ae51eb0",
+      "path": "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/candidate/cand_3eb316d1a03d4f2f8cc18d6b6d66f34f_v1.csv",
+      "retry_count": 0,
+      "row_count": 5000,
+      "runtime_seconds": 0.737566,
+      "updated_at": "2026-08-04T23:21:01.337996Z"
+    },
+    "previous_hash": "699533ac793a87d57d78ede130b83e1ac7b18da7ec463f6d865e7098ed0ba488",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:01.339287",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:01.448391",
+    "event_hash": "20d45649ec642cdc2f1171e62ed25532645afe0ed93dfbf2014b0655c4236097",
+    "event_type": "candidate.evaluated",
+    "id": "evt_7497138118184dd697882348c3b1f733",
+    "payload": {
+      "privacy": {
+        "created_at": "2026-08-04T23:21:01.446541Z",
+        "evidence_hash": "aba90d3faad1f8f50ef3e3736d9e471e4cad7fdbf9ab5456a4f39a9a83c3d43b",
+        "exact_match_rate": 0.2578,
+        "id": "ent_226dfb6b1be84ef3977873769ea2ff0a",
+        "limitations": [
+          "Local nearest-neighbour test is a reproducible screening gate, not a formal privacy guarantee.",
+          "No production population or adversary model is represented."
+        ],
+        "mean_source_similarity": 0.438432,
+        "near_duplicate_count": 671,
+        "near_duplicate_rate": 0.134167,
+        "passed": false,
+        "quasi_identifier_risk": 0.276144,
+        "rare_combination_exposure": 0.1322,
+        "residual_risk": "Synthetic data is not automatically anonymous; recipient auxiliary information and rare combinations remain relevant.",
+        "risk_category": "HIGH",
+        "threshold_results": {
+          "exact_match": false,
+          "mean_similarity": true,
+          "near_duplicate_rate": false,
+          "rare_combination_exposure": true
+        },
+        "updated_at": "2026-08-04T23:21:01.446544Z"
+      },
+      "recipient": {
+        "approved_recipient": true,
+        "auxiliary_data_risk": "LOW",
+        "contract_boundary": "internal sandbox",
+        "created_at": "2026-08-04T23:21:01.446775Z",
+        "destination": "internal_sandbox",
+        "external": false,
+        "id": "ent_5860f17b00d04f8ca55dee8071656284",
+        "recipient": "maplebridge_internal_fraud_sandbox",
+        "updated_at": "2026-08-04T23:21:01.446775Z"
+      },
+      "utility": {
+        "created_at": "2026-08-04T23:21:01.398319Z",
+        "distribution_similarity": 0.816744,
+        "evidence_hash": "9b96d51349e2a883676a9b559307b9622a9bce28c9ee47fd37713af83f70f1f0",
+        "fraud_f1": 0.380952,
+        "fraud_pr_auc": 0.507442,
+        "fraud_recall": 0.5,
+        "fraud_roc_auc": 0.636824,
+        "id": "ent_4a32e4d1847146fa81316185903c62d0",
+        "limitations": [
+          "Toy fictional dataset; metrics do not establish production model fitness.",
+          "Utility does not imply privacy."
+        ],
+        "normalized_utility_score": 0.870675,
+        "passed": true,
+        "relationship_similarity": 0.976869,
+        "seed": 20260804,
+        "threshold": 0.55,
+        "updated_at": "2026-08-04T23:21:01.398321Z"
+      }
+    },
+    "previous_hash": "0e78af099d4901d1de1f8a5dee09e5a655c638b18f774cd1f11eed620542edd4",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:01.448391",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:01.449663",
+    "event_hash": "4d7e864825c4105212af9424267925f9514f294a293d2e5f6ce4dcc1721bb8b7",
+    "event_type": "model.explanation",
+    "id": "evt_2de48c74094b4573806771ad0ee456b7",
+    "payload": {
+      "explanation": "Control Plane decision DENY. Disclosure risk is above the configured privacy threshold. Trace: trace_d90bc7a3deb7481095ef505a572ef39b."
+    },
+    "previous_hash": "20d45649ec642cdc2f1171e62ed25532645afe0ed93dfbf2014b0655c4236097",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:01.449663",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  },
+  {
+    "created_at": "2026-08-04T23:21:01.451042",
+    "event_hash": "818217036b583b058c3cc5b363797da20750dc62cd7ffb061ee31899a9c2a930",
+    "event_type": "candidate.quarantined",
+    "id": "evt_a3667ffa29f54b548e4d814f4b4fdbe9",
+    "payload": {
+      "path": "/System/Volumes/Data/Mohan/DataScience/sal/SAL/governed-synthetic-data-release-agent/data/quarantine/cand_3eb316d1a03d4f2f8cc18d6b6d66f34f_v1.csv",
+      "reason": "Disclosure risk is above the configured privacy threshold."
+    },
+    "previous_hash": "4d7e864825c4105212af9424267925f9514f294a293d2e5f6ce4dcc1721bb8b7",
+    "trace_id": "trace_d90bc7a3deb7481095ef505a572ef39b",
+    "updated_at": "2026-08-04T23:21:01.451042",
+    "workflow_id": "wf_a878073cd3984b4c8401dcf2cb8614c6"
+  }
+]

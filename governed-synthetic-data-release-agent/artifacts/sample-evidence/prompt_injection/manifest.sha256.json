@@ -1,0 +1,26 @@
+{
+  "bundle_id": "bundle_ec66488bacb445f99cd4a8eb37cf243f",
+  "files": {
+    "approvals.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "audit_timeline.json": "dae829701806ba4d3b1a023c8a9ec033260b550dd2da9608f374fbfca67bf10b",
+    "dataset_profile.json": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "delegated_authority.json": "aaed72873f9d2251a818907649bc0e578498f376315ed678e2f2e7b6c1d31f97",
+    "export_receipt.json": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "field_classification.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "generation_plan.json": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "generation_run.json": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "identity.json": "62484f000ebd9d2a90ab6f3d7b97eeb752e80a16bb5ac7d6bdfa25b134983c02",
+    "known_limitations.json": "5bdb6866868649123925b10846578049461b788dcdaaf990f9cd337b7462cc0e",
+    "metrics.csv": "06b37e5ac67cb0419e39aeb773c3ce3a624df45486d9c4f42a2ee0a3c1d3d077",
+    "policy_decision.json": "edd7f22c75911207cc9e295bf7e46a6b45ed4810450dec08e48ecdf133c85b21",
+    "privacy_report.json": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "recipient_assessment.json": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "request.json": "0919b1c08fae5f9790918c942a6f3244c5a2a6b682356aa3ae0da909f50ae49c",
+    "summary.md": "ff4283f7b36a1e2cb337fc7f28d6821f75730a2994bd838b2948e158a05f03a3",
+    "utility_report.json": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "workflow_state.json": "5d7f2ddbec872b7efe71e702fd99ed4469b8cef1d5f37915e4692456ab770a99"
+  },
+  "hash_algorithm": "SHA-256",
+  "trace_id": "trace_ed52f6746f924b1da4337e66bd3c6ac8",
+  "workflow_id": "wf_4dcd3b6e1b85493292e05e44ed2928de"
+}

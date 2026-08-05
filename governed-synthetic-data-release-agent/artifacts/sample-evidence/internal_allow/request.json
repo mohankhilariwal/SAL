@@ -1,0 +1,30 @@
+{
+  "agent": {
+    "created_at": "2026-08-04T23:20:55.891126Z",
+    "id": "agt_9cefb5bf6e6f4b88bd0ec2d0550493bf",
+    "updated_at": "2026-08-04T23:20:55.891126Z",
+    "version": "0.1.0",
+    "workload": "synthetic-data-release-agent"
+  },
+  "created_at": "2026-08-04T23:20:55.890932Z",
+  "dataset_name": "maplebridge_transactions",
+  "destination": "internal_sandbox",
+  "id": "req_fc873cbcefdc4cc78dfca275d9085ac3",
+  "intended_use": "Internal fraud-model sandbox testing",
+  "malicious_content": null,
+  "purpose": "fraud_research",
+  "recipient": "maplebridge_internal_fraud_sandbox",
+  "release_duration_days": 7,
+  "request_version": 1,
+  "requested_rows": 5000,
+  "requester": {
+    "active": true,
+    "created_at": "2026-08-04T23:20:55.890907Z",
+    "display_name": "Avery Chen",
+    "id": "usr_analyst_001",
+    "role": "fraud_analyst",
+    "updated_at": "2026-08-04T23:20:55.890911Z"
+  },
+  "scenario": "internal_allow",
+  "updated_at": "2026-08-04T23:20:55.890933Z"
+}

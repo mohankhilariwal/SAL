@@ -1,0 +1,2 @@
+GET /health: 200 {'status': 'ok'}
+GET /ready: 200 {'status': 'ready', 'generator': 'auto', 'policy_engine': 'python', 'model_gateway': 'stub', 'database': 'sqlite'}

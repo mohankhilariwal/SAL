@@ -1,0 +1,40 @@
+{
+  "decision": "DENY",
+  "evidence_requirements": [
+    "request",
+    "identity",
+    "delegated_authority",
+    "classification",
+    "generation_plan",
+    "utility_report",
+    "privacy_report",
+    "recipient_assessment",
+    "policy_input",
+    "policy_output"
+  ],
+  "expiry_conditions": [
+    "release expires after the authorized duration",
+    "candidate modification invalidates approvals"
+  ],
+  "failed_controls": [
+    "POL-PRIV-001"
+  ],
+  "permitted_next_actions": [
+    "quarantine",
+    "regenerate_with_stronger_controls"
+  ],
+  "policy_version": "2026.08.1",
+  "prohibited_next_actions": [
+    "modify_policy",
+    "lower_privacy_thresholds",
+    "self_approve",
+    "arbitrary_export",
+    "export",
+    "manual_release"
+  ],
+  "rationale": "Disclosure risk is above the configured privacy threshold.",
+  "required_approvals": [],
+  "triggered_policies": [
+    "POL-PRIV-001"
+  ]
+}

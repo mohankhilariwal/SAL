@@ -1,0 +1,8 @@
+{
+  "limitations": [
+    "Entirely fictional source data and a local demonstration environment.",
+    "Privacy metrics are screening controls, not a proof of anonymity.",
+    "The local hash chain is tamper-evident demonstration evidence, not non-repudiation.",
+    "Local operating-system administrators can modify files outside the application boundary."
+  ]
+}

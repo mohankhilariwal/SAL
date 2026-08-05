@@ -1,0 +1,88 @@
+[
+  {
+    "workflow_id": "wf_ffa0204e94b1462ea2ea8b4d6cf74031",
+    "scenario": "internal_allow",
+    "stage": "RELEASED",
+    "decision": "ALLOW",
+    "utility_score": 0.941972,
+    "privacy_passed": true,
+    "privacy_risk": "LOW",
+    "approvals": [],
+    "export_receipt": {
+      "id": "receipt_f30ddfa4c30d4f4c95dee0cbe8333b68",
+      "created_at": "2026-08-04T21:46:31.270053Z",
+      "updated_at": "2026-08-04T21:46:31.270055Z",
+      "workflow_id": "wf_ffa0204e94b1462ea2ea8b4d6cf74031",
+      "candidate_id": "cand_5e7e04a52c7b4b9a82a18e6ba13cded0",
+      "destination": "internal_sandbox",
+      "released_path": "data/released/internal_sandbox/cand_5e7e04a52c7b4b9a82a18e6ba13cded0.csv",
+      "content_hash": "5189dc3d0161adf54671be1cda33a573bc9f5b8c744e99443b89074f064719fb",
+      "idempotency_key": "wf_ffa0204e94b1462ea2ea8b4d6cf74031:cand_5e7e04a52c7b4b9a82a18e6ba13cded0:internal_sandbox:v1",
+      "expiry_at": "2026-08-11T21:46:30.895733Z"
+    },
+    "evidence_dir": "data/evidence/wf_ffa0204e94b1462ea2ea8b4d6cf74031",
+    "sample_evidence_dir": "artifacts/sample-evidence/internal_allow"
+  },
+  {
+    "workflow_id": "wf_49b0962207e743c495a9a2dcda60d9c2",
+    "scenario": "external_approval",
+    "stage": "RELEASED",
+    "decision": "ALLOW",
+    "utility_score": 0.941972,
+    "privacy_passed": true,
+    "privacy_risk": "LOW",
+    "approvals": [
+      "DATA_OWNER",
+      "PRIVACY_OFFICER"
+    ],
+    "export_receipt": {
+      "id": "receipt_591b47b3fc314327bdf1107365f54a33",
+      "created_at": "2026-08-04T21:46:31.640094Z",
+      "updated_at": "2026-08-04T21:46:31.640096Z",
+      "workflow_id": "wf_49b0962207e743c495a9a2dcda60d9c2",
+      "candidate_id": "cand_38d1ab1acea74cf0b20fac0c30989c9c",
+      "destination": "named_external_partner",
+      "released_path": "data/released/named_external_partner/cand_38d1ab1acea74cf0b20fac0c30989c9c.csv",
+      "content_hash": "5189dc3d0161adf54671be1cda33a573bc9f5b8c744e99443b89074f064719fb",
+      "idempotency_key": "wf_49b0962207e743c495a9a2dcda60d9c2:cand_38d1ab1acea74cf0b20fac0c30989c9c:named_external_partner:v1",
+      "expiry_at": "2026-08-11T21:46:31.283415Z"
+    },
+    "evidence_dir": "data/evidence/wf_49b0962207e743c495a9a2dcda60d9c2",
+    "sample_evidence_dir": "artifacts/sample-evidence/external_approval",
+    "approval_checkpoint": {
+      "stage": "AWAITING_APPROVAL",
+      "decision": "REQUIRE_APPROVAL",
+      "required_approvals": [
+        "DATA_OWNER",
+        "PRIVACY_OFFICER"
+      ],
+      "export_blocked": true
+    }
+  },
+  {
+    "workflow_id": "wf_9b86e4f7e8cd4f24b2d1445785f36773",
+    "scenario": "privacy_leakage",
+    "stage": "QUARANTINED",
+    "decision": "DENY",
+    "utility_score": 0.931417,
+    "privacy_passed": false,
+    "privacy_risk": "HIGH",
+    "approvals": [],
+    "export_receipt": null,
+    "evidence_dir": "data/evidence/wf_9b86e4f7e8cd4f24b2d1445785f36773",
+    "sample_evidence_dir": "artifacts/sample-evidence/privacy_leakage"
+  },
+  {
+    "workflow_id": "wf_83096a3e1a2448ef9409e02d4caee620",
+    "scenario": "prompt_injection",
+    "stage": "SUSPENDED",
+    "decision": "DENY",
+    "utility_score": null,
+    "privacy_passed": null,
+    "privacy_risk": null,
+    "approvals": [],
+    "export_receipt": null,
+    "evidence_dir": "data/evidence/wf_83096a3e1a2448ef9409e02d4caee620",
+    "sample_evidence_dir": "artifacts/sample-evidence/prompt_injection"
+  }
+]

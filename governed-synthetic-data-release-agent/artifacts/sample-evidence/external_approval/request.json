@@ -1,0 +1,30 @@
+{
+  "agent": {
+    "created_at": "2026-08-04T23:20:59.629589Z",
+    "id": "agt_d450128442c9460f94f2765bc51868f8",
+    "updated_at": "2026-08-04T23:20:59.629589Z",
+    "version": "0.1.0",
+    "workload": "synthetic-data-release-agent"
+  },
+  "created_at": "2026-08-04T23:20:59.629583Z",
+  "dataset_name": "maplebridge_transactions",
+  "destination": "named_external_partner",
+  "id": "req_4e7616da00564293acaf1664a36319d4",
+  "intended_use": "External model-development validation under named partner boundary",
+  "malicious_content": null,
+  "purpose": "fraud_model_development",
+  "recipient": "northlake_analytics_partner",
+  "release_duration_days": 7,
+  "request_version": 1,
+  "requested_rows": 5000,
+  "requester": {
+    "active": true,
+    "created_at": "2026-08-04T23:20:59.629567Z",
+    "display_name": "Avery Chen",
+    "id": "usr_analyst_001",
+    "role": "fraud_analyst",
+    "updated_at": "2026-08-04T23:20:59.629569Z"
+  },
+  "scenario": "external_approval",
+  "updated_at": "2026-08-04T23:20:59.629584Z"
+}

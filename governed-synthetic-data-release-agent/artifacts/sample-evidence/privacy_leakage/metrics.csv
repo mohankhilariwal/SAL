@@ -1,0 +1,10 @@
+metric,value
+utility.distribution_similarity,0.816744
+utility.relationship_similarity,0.976869
+utility.fraud_roc_auc,0.636824
+utility.fraud_pr_auc,0.507442
+utility.normalized_score,0.870675
+privacy.exact_match_rate,0.2578
+privacy.mean_source_similarity,0.438432
+privacy.near_duplicate_rate,0.134167
+privacy.rare_combination_exposure,0.1322

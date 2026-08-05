@@ -1,0 +1,13 @@
+{
+  "candidate_id": "cand_8e5f14d86b1143f1af99f9635253674d",
+  "dataset_version": "1",
+  "decision": "ALLOW",
+  "evidence_bundle_id": "bundle_260a00cb1ae4437984f2c13359a87c0e",
+  "policy_version": "2026.08.1",
+  "remediation_proposal": null,
+  "request_id": "req_4e7616da00564293acaf1664a36319d4",
+  "security_events": [],
+  "stage": "RELEASED",
+  "trace_id": "trace_f8a28b92720a4bb895649fd3d65c20fa",
+  "workflow_id": "wf_7215e0c568c9480d93f30e26028737cc"
+}
