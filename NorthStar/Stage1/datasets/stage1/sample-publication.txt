@@ -1,0 +1,8 @@
+SYNTHETIC SUPERVISORY NOTICE 2026-NS-17
+This fictional notice is provided only for the NorthStar tutorial.
+Institutions must document the data sources used in automated credit adjudication.
+Institutions shall provide a human escalation route for materially adverse automated credit decisions.
+Payment-screening models must be reviewed when a material sanctions-list update changes decision logic.
+Customer personal data may not be shared for a new purpose without documented authority or consent.
+The institution must complete an initial impact review within 60 calendar days of receiving this notice.
+Further technical guidance will be published separately; this notice does not define a required model architecture.

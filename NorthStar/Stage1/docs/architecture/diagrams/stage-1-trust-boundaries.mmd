@@ -1,0 +1,8 @@
+flowchart LR
+    U[Untrusted publication content] --> I[CMP-002 validated intake]
+    I --> P[Instruction/data separation]
+    P --> M[External or local model boundary]
+    M --> V[Deterministic schema and evidence validation]
+    V --> H[Human review required]
+    V --> A[Local evidence artifacts]
+    X[No tools, secrets, enterprise retrieval or action authority] -. limits blast radius .-> M

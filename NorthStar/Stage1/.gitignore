@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+examples/stage1-output/*
+!examples/stage1-output/.gitkeep

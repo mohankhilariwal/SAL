@@ -1,0 +1,25 @@
+sequenceDiagram
+    actor Maya
+    participant CLI as CMP-001 Analyst Experience Portal
+    participant Intake as CMP-002 Regulatory Intake Boundary
+    participant Flow as CMP-003 Single-turn orchestration
+    participant Model as Provider-neutral model gateway
+    participant Validate as Deterministic evidence validator
+    participant Artifacts as CMP-009 local evidence artifacts
+
+    Maya->>CLI: Submit text/Markdown publication + metadata
+    CLI->>Intake: Validate type, size, UTF-8 and provenance
+    Intake-->>Flow: DATA-001 + SHA-256 + numbered lines
+    Flow->>Model: One structured summarization request
+    Model-->>Flow: Candidate JSON payload
+    Flow->>Validate: Validate schema, line ranges, excerpts
+    alt validation succeeds
+        Validate-->>Flow: DATA-015 preliminary summary
+        Flow->>Artifacts: Persist source, metadata, invocation, summary
+        Flow-->>CLI: preliminary_unapproved
+        CLI-->>Maya: Reviewable JSON and artifact path
+    else validation fails
+        Validate-->>Flow: explicit failure
+        Flow-->>CLI: no successful summary
+        CLI-->>Maya: Error; manual process remains available
+    end

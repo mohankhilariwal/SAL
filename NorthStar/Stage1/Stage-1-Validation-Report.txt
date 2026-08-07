@@ -1,0 +1,64 @@
+NORTHSTAR AGENTIC AI ARCHITECTURE PLAYBOOK
+STAGE 1 — MANUAL PROCESS AND BASIC LLM ASSISTANT
+VALIDATION REPORT
+
+Execution date: 2026-07-31
+Architecture version: 0.2.0
+Repository version: 0.2.0
+Handoff version: 0.2.0
+
+SCOPE IMPLEMENTED
+- bounded UTF-8 text/Markdown intake with size, emptiness and NUL checks;
+- immutable SHA-256 publication identity and line-preserving provenance;
+- provider-neutral single-turn summary model contract;
+- deterministic offline model test double;
+- optional OpenAI Responses API adapter isolated behind the contract;
+- application-owned preliminary/unapproved/human-review semantics;
+- typed preliminary summary, claim, deadline, publication and invocation records;
+- deterministic exact source-hash, line-range and excerpt validation;
+- atomic local source, metadata, invocation and summary persistence;
+- cumulative Mermaid architecture and focused sequence/trust-boundary diagrams;
+- ADR-008 through ADR-010 and all ten updated source-of-truth artefacts.
+
+EXPLICITLY NOT IMPLEMENTED
+- retrieval or RAG;
+- model-selectable tools or enterprise actions;
+- agent identity, agent loop, graph, memory or multi-agent system;
+- persistent regulatory case state or executable approval workflow;
+- enterprise identity/policy enforcement, audit ledger or production runtime.
+
+EXECUTED VALIDATION
+1. PYTHONPATH=src python3 -m unittest discover -s tests -v
+   Result: 12 tests passed (TEST-008 through TEST-019).
+2. python3 -m compileall -q src scripts tests
+   Result: passed.
+3. python3 scripts/validate_source_of_truth.py
+   Result: passed; CMP-001 through CMP-011 and ADR-001 through ADR-010 present;
+   no numeric agent/tool identifier allocated; handoff authorizes retrieval only.
+4. python3 scripts/validate_stage1.py
+   Result: PASSED WITH RECORDED EXCEPTIONS.
+5. NORTHSTAR_OUTPUT_DIR=/tmp/northstar-stage1-demo bash scripts/run_stage1_demo.sh
+   Result: succeeded.
+
+DEMO RESULT
+- publication_id: PUB-BA1C53E42978F2F6
+- disposition: preliminary_unapproved
+- human_review_required: true
+- source_fact_count: 6
+- deadline_candidate_count: 1
+- persisted artifacts: source.txt, metadata.json, model-invocation.json, summary.json
+
+CONSISTENCY AUDIT
+Result: PASSED WITH RECORDED EXCEPTIONS.
+Confirmed:
+- narrative, diagrams, catalogue, schemas and code use the uploaded S00 handoff taxonomy;
+- model output cannot set approval, legal conclusion or final disposition;
+- exact evidence validation is executed outside the model;
+- no RAG, tool, agent, graph, memory or later-stage runtime is claimed;
+- repository paths and handoff align with version 0.2.0.
+
+RECORDED EXCEPTIONS
+- Python 3.12 was unavailable; Python 3.13.5 passed. ISS-006 remains open.
+- The optional managed-provider adapter was not live-called. ISS-007 remains open.
+- Mermaid was statically reviewed but not rendered through Mermaid CLI. ISS-004 remains open.
+- The individual S00 register files were not mounted in the execution sandbox; the uploaded latest S00 handoff was treated as authoritative over older incompatible library artefacts. ISS-008 remains open for reviewer confirmation.
