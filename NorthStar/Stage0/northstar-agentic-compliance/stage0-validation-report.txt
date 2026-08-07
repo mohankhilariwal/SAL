@@ -1,0 +1,24 @@
+NorthStar Stage 0 Validation Report
+Date: 2026-07-31
+Project baseline: Python 3.12
+Executed interpreter: Python 3.13.5
+Note: Python 3.12 was unavailable; direct 3.12 verification is ISS-006.
+
+Stage 0 validation: PASSED
+- Required artefacts: 10
+- Identifier references checked: 609
+- Component catalogue references: consistent
+- Agent inventory: intentionally empty
+- Repository manifest paths: present
+- Mermaid validation: structural only (renderer not configured)
+
+test_001_all_ten_artefacts_exist (unit.test_source_of_truth.SourceOfTruthTests.test_001_all_ten_artefacts_exist) ... ok
+test_002_handoff_sections_exist (unit.test_source_of_truth.SourceOfTruthTests.test_002_handoff_sections_exist) ... ok
+test_003_validator_passes (unit.test_source_of_truth.SourceOfTruthTests.test_003_validator_passes) ... ok
+test_004_stage_one_is_blocked_pending_acceptance (unit.test_source_of_truth.SourceOfTruthTests.test_004_stage_one_is_blocked_pending_acceptance) ... ok
+test_005_no_agent_identifier_is_allocated (unit.test_source_of_truth.SourceOfTruthTests.test_005_no_agent_identifier_is_allocated) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.765s
+
+OK
