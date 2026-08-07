@@ -2,7 +2,7 @@
 name = "northstar-agentic-compliance"
 version = "0.1.0"
 description = "Cumulative implementation repository for the NorthStar Agentic AI Architecture Playbook"
-requires-python = ">=3.12,<3.14"
+requires-python = ">=3.13,<3.14"
 readme = "README.md"
 license = { text = "Tutorial use only; licensing to be finalized" }
 authors = [{ name = "NorthStar Playbook Project" }]

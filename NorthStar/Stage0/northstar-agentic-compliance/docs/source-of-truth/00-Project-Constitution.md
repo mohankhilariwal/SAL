@@ -156,7 +156,7 @@ Identifiers are never reused. Renaming, retirement or supersession preserves the
 
 ## 11. Code conventions
 
-- Baseline language: Python 3.12, selected as a conservative project baseline and subject to review before implementation stages.
+- Baseline language: Python 3.13, selected as the project baseline and subject to review before later implementation stages.
 - New modules include type hints and docstrings for public contracts.
 - Data and tool boundaries use explicit schemas; untyped dictionaries are not accepted at architectural boundaries.
 - External dependencies are pinned only after official documentation and compatibility verification in the stage that introduces them.

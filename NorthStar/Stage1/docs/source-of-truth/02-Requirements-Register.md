@@ -44,7 +44,7 @@ Other functional requirements remain accepted and planned.
 | NFR-019 | Evidence summaries rather than hidden reasoning. | Enforced |
 | NFR-020 | Analyst-readable structured output. | Enforced as JSON |
 | NFR-021 | Accessibility/usability beyond CLI. | Planned |
-| NFR-022 | Compatibility and change-control evidence. | Enforced; Python 3.12 direct run open |
+| NFR-022 | Compatibility and change-control evidence. | Enforced; Python 3.13 baseline verified |
 
 ## Policies and controls
 

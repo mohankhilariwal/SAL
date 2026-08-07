@@ -53,7 +53,7 @@
 | ISS-003 | Exact production SLOs, volumes, model choices and costs are unknown. | Keep targets provisional until S07 workload and benchmark evidence. | Open |
 | ISS-004 | Full Mermaid rendering was not performed in Stage 0. | Structural checks only; add approved Mermaid renderer and render validation in a later stage. | Open, recorded exception |
 | ISS-005 | Legal and regulatory framework mappings will change over time. | Verify primary sources at execution time and require qualified review. | Open throughout |
-| ISS-006 | Python 3.12 is the selected baseline, but Stage 0 tests were executed only with Python 3.13.5 because 3.12 was unavailable. | Re-run the validator and tests with Python 3.12 before accepting Stage 1 implementation. | Open for S01 |
+| ISS-006 | Python baseline was previously 3.12 while Stage 0 tests ran on 3.13.5. | Baseline upgraded to Python 3.13 and verified on Python 3.13.5. | Closed |
 
 ## 4. Change history
 

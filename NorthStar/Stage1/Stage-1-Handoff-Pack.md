@@ -110,11 +110,11 @@ The complete tree is in `07-Repository-Manifest.md`.
 6. No production identity, authorization, residency, observability, audit ledger or records integration exists.
 7. Production latency, concurrency, cost and quality SLOs are unknown.
 8. Mermaid was not rendered by CLI.
-9. Python 3.12 direct execution remains open; Python 3.13.5 passed.
+9. Python 3.13 is the accepted baseline; Python 3.13.5 passed (`ISS-006` closed).
 
 ## K. Open risks, assumptions and issues
 
-Active immediate items include `RSK-003`, `RSK-005`, `RSK-010`, `RSK-015`, `RSK-018` through `RSK-023`; `ASM-001`, `ASM-002`, `ASM-005`, `ASM-009`; and `ISS-002`, `ISS-003`, `ISS-004`, `ISS-006`, `ISS-007`, `ISS-008`.
+Active immediate items include `RSK-003`, `RSK-005`, `RSK-010`, `RSK-015`, `RSK-018` through `RSK-023`; `ASM-001`, `ASM-002`, `ASM-005`, `ASM-009`; and `ISS-002`, `ISS-003`, `ISS-004`, `ISS-007`, `ISS-008`. `ISS-006` is closed.
 
 ## L. Compatibility constraints
 

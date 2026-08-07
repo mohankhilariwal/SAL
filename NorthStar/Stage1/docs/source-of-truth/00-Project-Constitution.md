@@ -24,7 +24,7 @@ Model-generated fields cannot set approval, final disposition or legal conclusio
 
 ## Technology and verification rule
 
-The runtime is Python-standard-library only. The accepted baseline is Python 3.12; the generated package was executed on Python 3.13.5 because Python 3.12 was unavailable. Optional provider adapters are isolated and not counted as live-verified unless a credentialed call is recorded.
+The runtime is Python-standard-library only. The accepted baseline is Python 3.13; the package is verified on Python 3.13.5. Optional provider adapters are isolated and not counted as live-verified unless a credentialed call is recorded.
 
 ## Definition of done for S01
 

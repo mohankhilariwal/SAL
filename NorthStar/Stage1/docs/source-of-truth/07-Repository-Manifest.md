@@ -59,7 +59,7 @@ northstar-agentic-compliance/
 
 ## Compatibility baseline
 
-- Accepted Python: 3.12; supported/tested package metadata allows 3.12 and 3.13.
+- Accepted Python: 3.13; package metadata requires `>=3.13,<3.14`.
 - Executed environment: Python 3.13.5.
 - Runtime dependencies: standard library only.
 - Managed provider: optional and not live-called in acceptance.

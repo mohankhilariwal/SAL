@@ -324,7 +324,7 @@ The Stage 0 validation suite executed the following:
 | TEST-006 | Manifest-required repository paths exist. | Passed |
 | TEST-007 | Mermaid source receives structural checks. | Passed with recorded exception: not rendered |
 
-The validator and five unit tests passed under Python 3.13.5. Python 3.12 is the selected baseline but was unavailable in the execution environment; direct 3.12 verification is recorded as `ISS-006`. The full output is included in the generated repository package.
+The validator and five unit tests passed under Python 3.13.5. Python 3.13 is the accepted project baseline. The full output is included in the generated repository package.
 
 ## 20. Failure Scenarios and Recovery
 
@@ -399,7 +399,7 @@ No AI business capability has been introduced, which is the correct outcome for 
 6. Production SLOs, capacity and cost are unknown.
 7. Mermaid diagrams were structurally checked but not rendered.
 8. Component and data schemas are conceptual and may require ADR-controlled refinement.
-9. Python 3.12 baseline compatibility has not yet been executed; Stage 0 tests passed on Python 3.13.5.
+9. Python 3.13 is the accepted baseline; Stage 0 tests passed on Python 3.13.5.
 
 ## 25. Narrative Bridge to the Next Stage
 
@@ -442,4 +442,4 @@ The complete compact handoff is maintained in `docs/source-of-truth/09-Stage-Han
 - Repository paths match the manifest.
 - No future-stage capability is described as implemented.
 - Exception: Mermaid was structurally checked but not rendered (`ISS-004`).
-- Exception: Tests passed on Python 3.13.5; Python 3.12 baseline execution remains pending (`ISS-006`).
+- Exception: None for the Python baseline; tests passed on Python 3.13.5 (`ISS-006` closed by upgrading the baseline to Python 3.13).

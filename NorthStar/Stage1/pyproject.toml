@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "northstar-agentic-compliance"
 version = "0.2.0"
 description = "NorthStar Stage 1 bounded regulatory summarizer"
-requires-python = ">=3.12,<3.14"
+requires-python = ">=3.13,<3.14"
 dependencies = []
 
 [project.scripts]

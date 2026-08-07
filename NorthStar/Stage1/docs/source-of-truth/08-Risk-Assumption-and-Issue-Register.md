@@ -34,6 +34,6 @@
 - `ISS-002`: Production workloads, SLOs, concurrency and cost thresholds are unknown. Open.
 - `ISS-003`: Entity-specific legal/regulatory control mappings require qualified review. Open.
 - `ISS-004`: Mermaid received static structure review but was not rendered through Mermaid CLI. Open.
-- `ISS-006`: Python 3.12 direct execution remains open; tests passed on Python 3.13.5.
+- `ISS-006`: Closed — Python baseline upgraded to 3.13 and verified on Python 3.13.5.
 - `ISS-007`: The optional managed-provider adapter was not live-called in the build environment. Open.
 - `ISS-008`: Individual S00 register files were not mounted in the execution sandbox; S01 preserved identifiers and meanings from the accepted S00 chapter and handoff, and records this reconstruction boundary for reviewer confirmation. Open review item.

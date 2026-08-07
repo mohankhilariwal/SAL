@@ -1,8 +1,8 @@
 NorthStar Stage 0 Validation Report
-Date: 2026-07-31
-Project baseline: Python 3.12
+Date: 2026-08-07
+Project baseline: Python 3.13
 Executed interpreter: Python 3.13.5
-Note: Python 3.12 was unavailable; direct 3.12 verification is ISS-006.
+Note: ISS-006 closed — Python 3.13 is the accepted project baseline.
 
 Stage 0 validation: PASSED
 - Required artefacts: 10

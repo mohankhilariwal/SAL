@@ -35,7 +35,7 @@ def main() -> int:
         result = json.loads(proc.stdout)
         assert result["disposition"] == "preliminary_unapproved"
         assert result["human_review_required"] is True
-    print("Stage 1 validation: PASSED WITH RECORDED EXCEPTIONS (Python 3.12 and live provider not executed; Mermaid statically checked only)")
+    print("Stage 1 validation: PASSED WITH RECORDED EXCEPTIONS (live provider not executed; Mermaid statically checked only)")
     return 0
 
 

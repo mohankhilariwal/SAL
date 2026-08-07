@@ -6,7 +6,7 @@
 | Repository version | 0.1.0 |
 | Baseline date | 2026-07-31 |
 | Status | Stage 0 scaffold implemented |
-| Python baseline | 3.12 |
+| Python baseline | 3.13 |
 | Stage 0 tests executed with | Python 3.13.5 |
 | External runtime dependencies | None |
 
@@ -91,11 +91,11 @@ None.
 
 ```bash
 cd northstar-agentic-compliance
-python3.12 scripts/validate_source_of_truth.py
-python3.12 -m unittest discover -s tests -p 'test_*.py' -v
+python3.13 scripts/validate_source_of_truth.py
+python3.13 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-The Stage 0 validation was executed with Python 3.13.5 because Python 3.12 was not installed in the execution environment. Python 3.12 remains the selected project baseline; direct 3.12 execution must be confirmed before Stage 1 implementation is accepted.
+The Stage 0 validation was executed with Python 3.13.5. Python 3.13 is the accepted project baseline.
 
 ## 8. Compatibility notes
 

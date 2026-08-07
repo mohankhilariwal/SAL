@@ -109,7 +109,7 @@ The complete file tree is authoritative in `07-Repository-Manifest.md`.
 4. Production SLOs, cost and capacity are unknown.
 5. Mermaid diagrams received structural, not renderer-based, validation.
 6. Legal and regulatory mappings are not yet researched or asserted.
-7. Tests passed on Python 3.13.5; direct Python 3.12 baseline verification remains open as `ISS-006`.
+7. Tests passed on Python 3.13.5; Python 3.13 is the accepted project baseline (`ISS-006` closed).
 
 ## K. Open risks, assumptions and issues
 
@@ -127,7 +127,7 @@ Use `08-Risk-Assumption-and-Issue-Register.md`. Immediate items for S01 are `RSK
 8. Do not store or require hidden chain-of-thought.
 9. Do not introduce RAG, agents or multi-agent capabilities in S01 beyond the stage's explicit scope.
 10. Use one evolving repository and update all ten artefacts.
-11. Re-run Stage 0 validation under Python 3.12 before accepting Stage 1 implementation.
+11. Use Python 3.13 as the accepted baseline for Stage 1 and later stages.
 
 ## M. Required input for the next stage
 

@@ -383,7 +383,7 @@ Confirmed after execution:
 - source-of-truth and Python compilation checks pass;
 - the handoff authorizes only retrieval work.
 
-Recorded exceptions: Python 3.12 was unavailable; Python 3.13.5 passed. The optional managed-provider adapter was not live-called. Mermaid was statically inspected but not renderer-validated. `ISS-008` records the reconstruction boundary for the individual S00 register files.
+Recorded exceptions: Python 3.13 is the accepted baseline; Python 3.13.5 passed (`ISS-006` closed). The optional managed-provider adapter was not live-called. Mermaid was statically inspected but not renderer-validated. `ISS-008` records the reconstruction boundary for the individual S00 register files.
 
 ### Sources
 

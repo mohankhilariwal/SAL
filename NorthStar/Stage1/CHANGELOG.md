@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Upgraded the NorthStar accepted Python baseline from 3.12 to 3.13.
+- Set `requires-python = ">=3.13,<3.14"` and closed `ISS-006`.
+
 ## 0.2.0 — 2026-07-31
 
 - Completed S01: manual process and bounded basic LLM assistant.

@@ -58,7 +58,7 @@ Confirmed:
 - repository paths and handoff align with version 0.2.0.
 
 RECORDED EXCEPTIONS
-- Python 3.12 was unavailable; Python 3.13.5 passed. ISS-006 remains open.
+- Python 3.13 is the accepted baseline; Python 3.13.5 passed. ISS-006 is closed.
 - The optional managed-provider adapter was not live-called. ISS-007 remains open.
 - Mermaid was statically reviewed but not rendered through Mermaid CLI. ISS-004 remains open.
 - The individual S00 register files were not mounted in the execution sandbox; the uploaded latest S00 handoff was treated as authoritative over older incompatible library artefacts. ISS-008 remains open for reviewer confirmation.
