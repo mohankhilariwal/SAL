@@ -1,0 +1,12 @@
+{
+  "gate_profile": "stage5a-local",
+  "deny_by_default": true,
+  "required_evaluations": ["EVAL-042", "EVAL-043", "EVAL-044", "EVAL-045", "EVAL-046", "EVAL-047"],
+  "required_tests": ["TEST-183", "TEST-184", "TEST-185", "TEST-186", "TEST-187", "TEST-188", "TEST-189", "TEST-190", "TEST-191", "TEST-192", "TEST-193", "TEST-194", "TEST-195", "TEST-196", "TEST-197", "TEST-198", "TEST-199", "TEST-200", "TEST-201", "TEST-202", "TEST-203", "TEST-204", "TEST-205", "TEST-206", "TEST-207", "TEST-208", "TEST-209", "TEST-210", "TEST-211", "TEST-212"],
+  "blocking_security_findings_max": 0,
+  "future_stage_flags": {
+    "memory_enabled": false,
+    "concurrent_graph_branches": false,
+    "multiple_agents_enabled": false
+  }
+}

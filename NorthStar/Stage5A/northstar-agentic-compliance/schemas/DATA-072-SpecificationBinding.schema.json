@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-072-SpecificationBinding.schema.json",
+  "title": "DATA-072 SpecificationBinding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["specification_id", "specification_version", "specification_digest", "agent_id", "graph_id", "graph_version", "instruction_id", "instruction_digest", "manifest_digest"],
+  "properties": {
+    "specification_id": {"const": "AGT-001-spec"},
+    "specification_version": {"type": "string"},
+    "specification_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "agent_id": {"const": "AGT-001"},
+    "graph_id": {"const": "GRAPH-001"},
+    "graph_version": {"const": "1.1.0"},
+    "instruction_id": {"type": "string"},
+    "instruction_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "manifest_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

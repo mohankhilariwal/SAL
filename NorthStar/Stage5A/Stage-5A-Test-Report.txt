@@ -1,0 +1,8 @@
+..............................                                           [100%]
+30 passed
+
+TEST GROUPS
+TEST-183–191: specification structure, canonical digest, stable IDs/graph/owners/invariants/retirement — passed.
+TEST-192–200: manifest binding, runtime assertions, timeout/duplicate effect, gate and retired start — passed.
+TEST-201–208: authority/tool/context/token/final-closure security boundaries — passed.
+TEST-209–212: evaluation completeness, security and human-control gates — passed.

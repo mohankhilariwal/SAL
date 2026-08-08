@@ -1,0 +1,66 @@
+{
+  "manifest_id": "northstar-harness-manifest",
+  "version": "1.1.0",
+  "architecture_version": "1.1.0",
+  "repository_version": "1.1.0",
+  "agent_id": "AGT-001",
+  "agent_count": 1,
+  "graph": {
+    "id": "GRAPH-001",
+    "version": "1.1.0"
+  },
+  "state_schema": {
+    "id": "DATA-009",
+    "version": "1.1.0"
+  },
+  "instruction": {
+    "id": "AGT-001-system",
+    "version": "1.0.0",
+    "sha256": "ddc1abe0dad45ebdb1a385863d9a2f5bf8ba0afff98583e4acc59b710755f6bb"
+  },
+  "agent_specification": {
+    "id": "AGT-001-spec",
+    "version": "1.0.0",
+    "sha256": "74b8863c656e1b0bf9dc73ff74207d3374548fcf950dc99470b627fb854f711e"
+  },
+  "tools": [
+    {
+      "id": "TOOL-001",
+      "version": "1.0.0"
+    },
+    {
+      "id": "TOOL-002",
+      "version": "1.0.0"
+    },
+    {
+      "id": "TOOL-003",
+      "version": "1.0.0"
+    },
+    {
+      "id": "TOOL-004",
+      "version": "1.0.0"
+    },
+    {
+      "id": "TOOL-005",
+      "version": "1.0.0"
+    },
+    {
+      "id": "TOOL-006",
+      "version": "1.0.0"
+    }
+  ],
+  "validators": [
+    "specification_schema",
+    "specification_semantics",
+    "pre_start_assertions",
+    "post_result_assertions"
+  ],
+  "hooks": [
+    "invariant_evaluation_hook"
+  ],
+  "future_stage_flags": {
+    "memory_enabled": false,
+    "concurrent_graph_branches": false,
+    "multiple_agents_enabled": false
+  }
+}

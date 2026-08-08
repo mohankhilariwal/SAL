@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-078-RetirementDecision.schema.json",
+  "title": "DATA-078 RetirementDecision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["specification_id", "from_status", "to_status", "reason", "approved_by", "effective_at", "new_starts_allowed"],
+  "properties": {
+    "specification_id": {"const": "AGT-001-spec"},
+    "from_status": {"enum": ["active", "deprecated"]},
+    "to_status": {"enum": ["deprecated", "retired"]},
+    "reason": {"type": "string", "minLength": 1},
+    "approved_by": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "effective_at": {"type": "string"},
+    "new_starts_allowed": {"const": false}
+  }
+}

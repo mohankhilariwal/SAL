@@ -1,0 +1,31 @@
+flowchart TB
+  MAYA[Maya Chen] --> C1[CMP-001 Analyst Experience Portal]
+  C1 --> C3[CMP-003 Case and Workflow Orchestration Boundary]
+  C2[CMP-002 Regulatory Intake Boundary] --> C3
+  C3 --> HAR[Framework-neutral S04C Harness]
+  SPEC[DATA-071 AGT-001 Specification]:::new --> VAL[INT-047/048 resolution and validation]:::new
+  VAL --> BIND[DATA-072 specification binding]:::new
+  BIND --> HAR
+  SPEC --> CP[DATA-077 Context Policy Profile]:::new
+  CP --> C4[CMP-004 Knowledge and Evidence Access Boundary]
+  C4 --> CTX[DATA-065 authorized bounded context]
+  CTX --> HAR
+  HAR --> PRE[INT-049 pre-start assertions]:::new
+  PRE --> A1[AGT-001 Regulatory Impact Assessment Agent]
+  A1 --> G[GRAPH-001 1.1.0]
+  G --> C5[CMP-005 Enterprise Integration Boundary]
+  C5 --> T[TOOL-001..006]
+  G --> C6[CMP-006 Human Review and Approval Boundary]
+  C7[CMP-007 Identity, Authorization and Policy Boundary] --> C4
+  C7 --> C5
+  G --> C10[CMP-010 Runtime and Deployment Boundary]
+  G --> RES[DATA-070 preliminary harness result]
+  RES --> POST[INT-049 post-result assertions]:::new
+  POST --> C8[CMP-008 Evaluation and Assurance Boundary]
+  C8 --> OBL[DATA-075 evaluation obligations]:::new
+  OBL --> GATE[DATA-076 deny-by-default gate]:::new
+  HAR --> C9[CMP-009 Observability and Audit Boundary: redacted non-audit trace]
+  SPEC --> LIFE[INT-052 lifecycle and DATA-078 retirement]:::new
+  C11[CMP-011 Source-of-Truth Governance Pack] --> SPEC
+  C11 --> GATE
+  classDef new fill:#fff4cc,stroke:#7a5a00,stroke-width:2px;

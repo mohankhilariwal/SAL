@@ -1,0 +1,25 @@
+{
+  "deployment_gate": {
+    "iterations": 1000,
+    "max_ms": 0.020441,
+    "p50_ms": 0.004006,
+    "p95_ms": 0.004166,
+    "p99_ms": 0.004636
+  },
+  "pre_start_assertions": {
+    "iterations": 1000,
+    "max_ms": 0.019529,
+    "p50_ms": 0.002624,
+    "p95_ms": 0.002744,
+    "p99_ms": 0.003155
+  },
+  "python_operations_only": true,
+  "scope": "local standard-library control-path microbenchmark; not a production SLO benchmark",
+  "specification_validation": {
+    "iterations": 1000,
+    "max_ms": 0.365624,
+    "p50_ms": 0.026479,
+    "p95_ms": 0.027921,
+    "p99_ms": 0.043615
+  }
+}

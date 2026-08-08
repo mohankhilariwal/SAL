@@ -1,0 +1,25 @@
+{
+  "agent_id": "AGT-001",
+  "allowed_tools": [
+    "TOOL-001",
+    "TOOL-002",
+    "TOOL-003",
+    "TOOL-004",
+    "TOOL-005",
+    "TOOL-006"
+  ],
+  "context_profile": "DATA-077",
+  "deployment_gate_allowed": true,
+  "final_disposition": "preliminary_grounded_human_approved",
+  "final_legal_or_compliance_closure": false,
+  "graph": {
+    "id": "GRAPH-001",
+    "version": "1.1.0"
+  },
+  "memory_enabled": false,
+  "post_result_assertions_passed": true,
+  "pre_start_assertions_passed": true,
+  "specification_digest": "74b8863c656e1b0bf9dc73ff74207d3374548fcf950dc99470b627fb854f711e",
+  "specification_id": "AGT-001-spec",
+  "specification_version": "1.0.0"
+}

@@ -1,0 +1,149 @@
+NorthStar Agentic AI Architecture Playbook
+Stage 5A — Specification and Context Engineering: Agent Specification Boundary
+Validation date: 2026-08-01
+Architecture/repository/handoff version: 1.1.0
+
+EXECUTED ENVIRONMENT
+Python 3.13.5
+pytest 9.0.2
+Package target: Python >=3.11,<3.15
+Runtime dependencies: standard library only
+
+EXECUTED CHECKS
+1. python -m pytest -q
+..............................                                           [100%]
+2. python -m compileall -q src scripts tests
+   package compilation passed
+3. python scripts/run_stage5a_demo.py
+{
+  "agent_id": "AGT-001",
+  "allowed_tools": [
+    "TOOL-001",
+    "TOOL-002",
+    "TOOL-003",
+    "TOOL-004",
+    "TOOL-005",
+    "TOOL-006"
+  ],
+  "context_profile": "DATA-077",
+  "deployment_gate_allowed": true,
+  "final_disposition": "preliminary_grounded_human_approved",
+  "final_legal_or_compliance_closure": false,
+  "graph": {
+    "id": "GRAPH-001",
+    "version": "1.1.0"
+  },
+  "memory_enabled": false,
+  "post_result_assertions_passed": true,
+  "pre_start_assertions_passed": true,
+  "specification_digest": "74b8863c656e1b0bf9dc73ff74207d3374548fcf950dc99470b627fb854f711e",
+  "specification_id": "AGT-001-spec",
+  "specification_version": "1.0.0"
+}
+4. python scripts/run_stage5a_evaluation.py
+{
+  "EVAL-042": {
+    "digest": "74b8863c656e1b0bf9dc73ff74207d3374548fcf950dc99470b627fb854f711e",
+    "goals": 6,
+    "invariants": 12,
+    "name": "specification completeness and semantic consistency",
+    "non_goals": 7,
+    "passed": true
+  },
+  "EVAL-043": {
+    "name": "runtime specification assertion lifecycle",
+    "passed": true,
+    "post_result": {
+      "checks": {
+        "approved_requires_human_outcome": true,
+        "known_status": true,
+        "no_final_closure": true,
+        "no_persisted_approval_token": true,
+        "preliminary_disposition_only": true,
+        "rejected_requires_human_outcome": true,
+        "timeout_never_approves": true,
+        "tool006_single_effect": true
+      },
+      "failures": [],
+      "passed": true,
+      "phase": "post_result"
+    },
+    "pre_start": {
+      "checks": {
+        "agent_id_matches": true,
+        "concurrency_disabled": true,
+        "context_policy_passed": true,
+        "graph_version_matches": true,
+        "memory_disabled": true,
+        "multi_agent_disabled": true,
+        "one_agent": true,
+        "specification_active": true,
+        "specification_digest_matches": true
+      },
+      "failures": [],
+      "passed": true,
+      "phase": "pre_start"
+    }
+  },
+  "EVAL-044": {
+    "authority_expansion_rejected": true,
+    "name": "authority and manifest drift resistance",
+    "passed": true
+  },
+  "EVAL-045": {
+    "authorized_before_load": true,
+    "memory_context_rejected": true,
+    "name": "context policy and no-memory boundary",
+    "passed": true
+  },
+  "EVAL-046": {
+    "blocking_reasons": [
+      "required_evaluations_passed"
+    ],
+    "complete_evidence_allowed": true,
+    "missing_evaluation_denied": true,
+    "name": "fail-closed evaluation and deployment gate",
+    "passed": true
+  },
+  "EVAL-047": {
+    "final_closure_authority": false,
+    "name": "retirement and human-accountability boundary",
+    "passed": true,
+    "retired_new_start_denied": true
+  }
+}
+5. python scripts/benchmark_stage5a.py
+{
+  "deployment_gate": {
+    "iterations": 1000,
+    "max_ms": 0.020441,
+    "p50_ms": 0.004006,
+    "p95_ms": 0.004166,
+    "p99_ms": 0.004636
+  },
+  "pre_start_assertions": {
+    "iterations": 1000,
+    "max_ms": 0.019529,
+    "p50_ms": 0.002624,
+    "p95_ms": 0.002744,
+    "p99_ms": 0.003155
+  },
+  "python_operations_only": true,
+  "scope": "local standard-library control-path microbenchmark; not a production SLO benchmark",
+  "specification_validation": {
+    "iterations": 1000,
+    "max_ms": 0.365624,
+    "p50_ms": 0.026479,
+    "p95_ms": 0.027921,
+    "p99_ms": 0.043615
+  }
+}
+6. python scripts/validate_stage5a.py
+stage5a structural validation passed
+7. python scripts/consistency_audit_stage5a.py
+stage5a consistency audit passed with recorded reconstruction and production exceptions
+
+CONSISTENCY RESULT
+Passed with recorded reconstruction and production exceptions.
+Confirmed: stable NorthStar names and IDs; one AGT-001; GRAPH-001 and DATA-009 1.1.0; exact gateway-only TOOL-001..006; external human approval; timeout never approves; late decisions fail closed; one TOOL-006 effect; AGT-001-spec 1.0.0 canonical digest bound to manifest; strict structural/semantic validation; pre-start/post-result assertions; deny-by-default evidence gate; retirement blocks new starts; authorized bounded context; no memory, compaction, concurrent branches or multiple agents.
+Exceptions: ISS-050 reconstruction overlay; ISS-051 external JSON Schema conformance not executed; ISS-052 Mermaid CLI unavailable; ISS-053 full Python version matrix not executed; ISS-054 no signing/attestation; ISS-055 no production benchmark; ISS-056 context compaction/memory deferred; inherited enterprise identity/connectors/legal/records/audit/deployment/DR gaps.

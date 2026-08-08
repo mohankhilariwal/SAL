@@ -1,0 +1,9 @@
+flowchart LR
+  S[DATA-071 Agent Specification] --> P[DATA-077 Context Policy Profile]
+  P --> AUTH[Authorization before loader]
+  AUTH --> LOAD[Allowed source loaders only]
+  LOAD --> ENV[DATA-065 Context Envelope]
+  ENV --> ASSERT[INT-049 budget/kind/provenance assertions]
+  BAD[Memory, user memory, episodic memory, semantic memory] -->|deny| ASSERT
+  X[Cross-case reuse] -->|disabled| ASSERT
+  CMP[Compaction/regeneration] -->|not implemented in S05A| ASSERT

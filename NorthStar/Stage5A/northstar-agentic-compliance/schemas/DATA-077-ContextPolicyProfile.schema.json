@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-077-ContextPolicyProfile.schema.json",
+  "title": "DATA-077 ContextPolicyProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile_id", "allowed_kinds", "prohibited_kinds", "authorization_before_load", "memory_enabled", "max_items", "max_characters", "ordering", "provenance_required", "content_hash_required", "cross_case_reuse", "compaction_or_regeneration"],
+  "properties": {
+    "profile_id": {"const": "DATA-077"},
+    "allowed_kinds": {"type": "array", "uniqueItems": true, "items": {"enum": ["publication", "evidence", "run_state", "policy_context"]}},
+    "prohibited_kinds": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "authorization_before_load": {"const": true},
+    "memory_enabled": {"const": false},
+    "max_items": {"const": 8},
+    "max_characters": {"const": 12000},
+    "ordering": {"const": "priority_then_source_id"},
+    "provenance_required": {"const": true},
+    "content_hash_required": {"const": true},
+    "cross_case_reuse": {"const": false},
+    "compaction_or_regeneration": {"const": "not_implemented_in_stage_5a"}
+  }
+}

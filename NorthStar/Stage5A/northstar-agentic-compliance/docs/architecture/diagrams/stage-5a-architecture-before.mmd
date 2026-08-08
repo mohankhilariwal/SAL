@@ -1,0 +1,8 @@
+flowchart LR
+  H[DATA-063 Harness Manifest] --> I[DATA-064 Instruction]
+  H --> C[DATA-065 Authorized Context]
+  H --> G[GRAPH-001 1.1.0]
+  G --> GW[CMP-005 Gateway / TOOL-001..006]
+  G --> AP[CMP-006 External Human Decision]
+  G --> R[DATA-070 Harness Result]
+  D[Purpose, authority, termination, SLOs and retirement scattered across instructions, code, ADRs and tests] -. limitation .-> H

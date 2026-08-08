@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-073-RuntimeAssertionResult.schema.json",
+  "title": "DATA-073 RuntimeAssertionResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["passed", "phase", "checks", "failures"],
+  "properties": {
+    "passed": {"type": "boolean"},
+    "phase": {"enum": ["pre_start", "post_result"]},
+    "checks": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "failures": {"type": "array", "items": {"type": "string"}}
+  }
+}

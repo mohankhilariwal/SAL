@@ -1,0 +1,217 @@
+{
+  "$schema": "https://northstar.example/schemas/DATA-071-AgentSpecification.schema.json",
+  "specification_id": "AGT-001-spec",
+  "version": "1.0.0",
+  "agent": {
+    "id": "AGT-001",
+    "name": "Regulatory Impact Assessment Agent",
+    "graph": {
+      "id": "GRAPH-001",
+      "version": "1.1.0"
+    },
+    "harness_contract": "INT-041",
+    "instruction_contract": "INT-042",
+    "state_schema": {
+      "id": "DATA-009",
+      "version": "1.1.0"
+    }
+  },
+  "ownership": {
+    "business_owner": "Daniel Brooks — Chief Compliance Officer",
+    "technical_owner": "Priya Raman — Enterprise Agentic AI Architect",
+    "risk_owner": "Sofia Alvarez — AI Governance and Model Risk Lead",
+    "operations_owner": "Liam O’Connor — Site Reliability and AgentOps Engineer"
+  },
+  "purpose": "Produce an evidence-backed preliminary regulatory impact assessment and route it for accountable human review without transferring final legal, compliance or approval authority to the AI system.",
+  "users": [
+    "Maya Chen — Regulatory Compliance Analyst",
+    "Authorized compliance reviewers through CMP-006",
+    "Authorized architecture, evaluation and operations personnel"
+  ],
+  "goals": [
+    "Ingest one bounded regulatory publication with provenance.",
+    "Identify candidate obligations, jurisdictions, affected business units, policies, controls and business processes using authorized evidence.",
+    "Create only reversible unapproved draft artefacts through TOOL-004 and TOOL-005.",
+    "Create exactly one idempotent human review request through TOOL-006 when review is required.",
+    "Return a typed preliminary result with evidence, uncertainty and review status.",
+    "Terminate, escalate or wait according to application-owned graph, budget, recovery and approval controls."
+  ],
+  "non_goals": [
+    "Provide a final legal interpretation or final compliance conclusion.",
+    "Approve, reject, close or finalize an enterprise compliance case autonomously.",
+    "Modify authoritative policies, controls, business processes or remediation commitments.",
+    "Send unrestricted external communications or execute irreversible, financial, privileged or safety-critical actions.",
+    "Register tools, change graph routes, set budgets, grant authority or weaken policy.",
+    "Use long-term memory, user memory, episodic memory, semantic memory or cross-case memory.",
+    "Delegate work, create another agent or run concurrent graph branches."
+  ],
+  "contracts": {
+    "inputs": [
+      "DATA-001 regulatory publication or accepted publication reference",
+      "DATA-041 immutable agent goal",
+      "DATA-065 authorized bounded context envelope",
+      "Synthetic local principal and purpose context accepted by existing controls",
+      "DATA-063 harness manifest extended by DATA-072 specification binding"
+    ],
+    "outputs": [
+      "DATA-070 HarnessRunResult with preliminary disposition",
+      "Existing draft case, candidate mapping and review-request references created only through TOOL-004..006",
+      "DATA-068 redacted non-audit trace evidence",
+      "DATA-073 runtime assertion results and DATA-076 deployment gate evidence"
+    ],
+    "preconditions": [
+      "AGT-001-spec is active, schema-valid, semantically valid and SHA-256 bound to the harness manifest.",
+      "AGT-001, GRAPH-001 1.1.0, DATA-009 1.1.0, instruction and tool versions exactly match the accepted manifest.",
+      "Only TOOL-001..006 are present and the registry is frozen before runtime.",
+      "Authorization is evaluated before any context source loader is invoked.",
+      "Memory, concurrent branches and multiple-agent feature flags are false.",
+      "The initiator, purpose, session, run and trace correlation inputs are present."
+    ],
+    "postconditions": [
+      "Every observed tool action has passed INT-017/CMP-005 and uses the accepted tool version.",
+      "Waiting state remains preliminary_grounded_unapproved and contains one external review request.",
+      "Approved and rejected results remain preliminary human-reviewed dispositions, not final legal or compliance closure.",
+      "Expired or late decisions do not approve and fail closed or escalate.",
+      "TOOL-006 has at most one committed effect for the accepted idempotency key.",
+      "No raw callback token, unrestricted credential, hidden reasoning or memory record is persisted.",
+      "The specification digest is retained as run evidence without becoming an audit/WORM claim."
+    ],
+    "invariants": [
+      "exactly_one_agent",
+      "graph_routes_are_application_owned",
+      "all_tools_execute_through_cmp_005",
+      "instructions_and_prompts_grant_no_authority",
+      "authorization_precedes_context_loading",
+      "timeout_never_approves",
+      "late_decisions_fail_closed",
+      "tool_006_effect_is_idempotent_and_single",
+      "approved_and_rejected_dispositions_remain_preliminary",
+      "memory_is_disabled",
+      "concurrent_graph_branches_are_disabled",
+      "multiple_agents_are_disabled"
+    ]
+  },
+  "authority": {
+    "classification": "bounded regulated decision-support with reversible unapproved writes and mandatory human review",
+    "autonomy": "single-agent bounded execution inside GRAPH-001",
+    "risk_tier": "NorthStar internal high-oversight decision-support tier; not a legal classification",
+    "can_grant_authority": false,
+    "can_approve_or_finalize": false,
+    "can_delegate": false,
+    "can_create_agents": false,
+    "can_register_tools": false,
+    "allowed_tools": [
+      {"id": "TOOL-001", "version": "1.0.0", "purpose": "Search the synthetic regulatory source catalogue", "impact": "read_only", "via": "INT-017/CMP-005"},
+      {"id": "TOOL-002", "version": "1.0.0", "purpose": "Query the synthetic control and business metadata catalogue", "impact": "read_only", "via": "INT-017/CMP-005"},
+      {"id": "TOOL-003", "version": "1.0.0", "purpose": "Retrieve authorized internal evidence", "impact": "read_only", "via": "INT-017/CMP-005"},
+      {"id": "TOOL-004", "version": "1.0.0", "purpose": "Create an idempotent reversible unapproved draft case artefact", "impact": "reversible_unapproved_write", "via": "INT-017/CMP-005"},
+      {"id": "TOOL-005", "version": "1.0.0", "purpose": "Save an idempotent reversible unapproved candidate mapping artefact", "impact": "reversible_unapproved_write", "via": "INT-017/CMP-005"},
+      {"id": "TOOL-006", "version": "1.0.0", "purpose": "Queue one idempotent human review request", "impact": "reversible_unapproved_write", "via": "INT-017/CMP-005"}
+    ],
+    "prohibited_actions": [
+      "Direct adapter invocation or execution outside INT-017/CMP-005",
+      "Irreversible, financial, privileged administrative, safety-critical or regulated final actions",
+      "Self-approval, reviewer impersonation or decision interpretation outside CMP-006",
+      "Modification of manifest, specification, instruction, graph, budgets, leases, checkpoints, policies or registries",
+      "Unrestricted credential handling, arbitrary code execution, browser control, MCP/A2A delegation or dynamic plugins"
+    ]
+  },
+  "context_policy": {
+    "profile_id": "DATA-077",
+    "allowed_kinds": ["publication", "evidence", "run_state", "policy_context"],
+    "prohibited_kinds": ["memory", "user_memory", "episodic_memory", "semantic_memory"],
+    "authorization_before_load": true,
+    "memory_enabled": false,
+    "max_items": 8,
+    "max_characters": 12000,
+    "ordering": "priority_then_source_id",
+    "provenance_required": true,
+    "content_hash_required": true,
+    "cross_case_reuse": false,
+    "compaction_or_regeneration": "not_implemented_in_stage_5a"
+  },
+  "human_control": {
+    "external_decision_service": "CMP-006",
+    "required_roles": ["compliance_approver"],
+    "separation_of_duties": true,
+    "signed_typed_single_use_decision": true,
+    "decision_expiry": true,
+    "timeout_behavior": "escalate_unapproved",
+    "late_decision_behavior": "fail_closed",
+    "final_legal_or_compliance_closure": false
+  },
+  "termination": {
+    "owned_by": "GRAPH-001/CMP-003",
+    "allowed_terminal_categories": ["completed", "escalated", "terminated_guard"],
+    "allowed_wait_state": "waiting_for_human_review",
+    "guard_reasons": ["iteration_limit", "time_limit", "token_limit", "cost_limit", "tool_call_limit", "failure_limit", "repetition", "no_progress", "cancelled", "compatibility_mismatch"],
+    "model_cannot_name_next_route": true,
+    "model_cannot_assert_business_success_without_postconditions": true
+  },
+  "errors": {
+    "fail_closed_codes": [
+      "specification_not_found",
+      "agent_specification_invalid",
+      "specification_digest_mismatch",
+      "manifest_specification_mismatch",
+      "unsupported_tool_or_version",
+      "context_policy_violation",
+      "runtime_assertion_failed",
+      "deployment_gate_failed",
+      "retired_specification"
+    ],
+    "recoverable_only_by": "controlled configuration correction, new compatible run, or an accepted migration/change ADR",
+    "no_prompt_override": true
+  },
+  "operational_slos": {
+    "scope": "provisional local specification-control gates only; no production service SLO is claimed",
+    "specification_validation_p95_ms_max": 50,
+    "deployment_gate_p95_ms_max": 20,
+    "runtime_assertion_p95_ms_max": 20,
+    "availability": "not_measured",
+    "throughput": "not_measured",
+    "model_latency": "inherited and not benchmarked in this stage",
+    "cost": "standard-library CPU and file I/O only; production governance and registry cost not measured"
+  },
+  "evaluation": {
+    "required_evaluations": ["EVAL-042", "EVAL-043", "EVAL-044", "EVAL-045", "EVAL-046", "EVAL-047"],
+    "deployment_gate": "deny_by_default",
+    "minimum_evidence": [
+      "specification schema and semantic validation",
+      "manifest/specification digest binding",
+      "pre-start and post-result runtime assertions",
+      "authority, context, approval and retirement negative tests",
+      "all required tests and evaluations passed",
+      "zero blocking security findings inside the local verification boundary"
+    ],
+    "evaluation_is_not_authority": true,
+    "production_revalidation_required": true
+  },
+  "lifecycle": {
+    "status": "active",
+    "effective_date": "2026-08-01",
+    "supersedes": null,
+    "change_policy": "Any purpose, authority, tool, data/context, approval, termination, SLO, evaluation or retirement change requires version advancement, impact analysis, ADR and regression evidence.",
+    "retirement": {
+      "criteria": [
+        "Business purpose is withdrawn or replaced.",
+        "Required owner or accountable human-review process no longer exists.",
+        "Security, legal, regulatory, model-risk or operational review requires suspension.",
+        "Mandatory evaluations or controls cannot be maintained.",
+        "A superseding specification and migration/closure plan is accepted."
+      ],
+      "effects": [
+        "New starts are denied.",
+        "In-flight handling follows an accepted migration, safe completion or cancellation decision.",
+        "Tools and credentials are not expanded to complete retired work.",
+        "Retention and evidence obligations remain with their existing owners."
+      ]
+    }
+  },
+  "traceability": {
+    "requirements": ["FR-120", "FR-121", "FR-122", "FR-123", "FR-124", "FR-125", "FR-126", "FR-127", "FR-128", "FR-129", "FR-130", "FR-131", "FR-132", "FR-133", "FR-134", "FR-135", "FR-136"],
+    "controls": ["CTL-072", "CTL-073", "CTL-074", "CTL-075", "CTL-076", "CTL-077", "CTL-078", "CTL-079", "CTL-080", "CTL-081", "CTL-082", "CTL-083", "CTL-084"],
+    "tests": ["TEST-183", "TEST-184", "TEST-185", "TEST-186", "TEST-187", "TEST-188", "TEST-189", "TEST-190", "TEST-191", "TEST-192", "TEST-193", "TEST-194", "TEST-195", "TEST-196", "TEST-197", "TEST-198", "TEST-199", "TEST-200", "TEST-201", "TEST-202", "TEST-203", "TEST-204", "TEST-205", "TEST-206", "TEST-207", "TEST-208", "TEST-209", "TEST-210", "TEST-211", "TEST-212"],
+    "adrs": ["ADR-036", "ADR-037", "ADR-038", "ADR-039"]
+  }
+}

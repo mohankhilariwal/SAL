@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-071-AgentSpecification.schema.json",
+  "title": "DATA-071 AgentSpecification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "specification_id", "version", "agent", "ownership", "purpose", "users",
+    "goals", "non_goals", "contracts", "authority", "context_policy", "human_control",
+    "termination", "errors", "operational_slos", "evaluation", "lifecycle", "traceability"
+  ],
+  "properties": {
+    "$schema": {"type": "string"},
+    "specification_id": {"const": "AGT-001-spec"},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "graph", "harness_contract", "instruction_contract", "state_schema"],
+      "properties": {
+        "id": {"const": "AGT-001"},
+        "name": {"const": "Regulatory Impact Assessment Agent"},
+        "graph": {"type": "object", "additionalProperties": false, "required": ["id", "version"], "properties": {"id": {"const": "GRAPH-001"}, "version": {"const": "1.1.0"}}},
+        "harness_contract": {"const": "INT-041"},
+        "instruction_contract": {"const": "INT-042"},
+        "state_schema": {"type": "object", "additionalProperties": false, "required": ["id", "version"], "properties": {"id": {"const": "DATA-009"}, "version": {"const": "1.1.0"}}}
+      }
+    },
+    "ownership": {"type": "object"},
+    "purpose": {"type": "string", "minLength": 1},
+    "users": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "goals": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "non_goals": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "contracts": {"type": "object"},
+    "authority": {"type": "object"},
+    "context_policy": {"$ref": "DATA-077-ContextPolicyProfile.schema.json"},
+    "human_control": {"type": "object"},
+    "termination": {"type": "object"},
+    "errors": {"type": "object"},
+    "operational_slos": {"type": "object"},
+    "evaluation": {"type": "object"},
+    "lifecycle": {"type": "object"},
+    "traceability": {"type": "object"}
+  }
+}

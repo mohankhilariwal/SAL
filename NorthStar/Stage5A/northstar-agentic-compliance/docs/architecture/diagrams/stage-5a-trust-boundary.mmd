@@ -1,0 +1,24 @@
+flowchart TB
+  subgraph DT[Design-time governance boundary]
+    SPEC[DATA-071 Specification]
+    VAL[INT-048 Validator]
+    GATE[INT-050 Deployment Gate]
+  end
+  subgraph RT[Runtime composition boundary]
+    H[CMP-003/CMP-010 Harness]
+    GR[GRAPH-001]
+    CTX[DATA-065 Context]
+  end
+  subgraph AUTH[Independent authority boundaries]
+    GW[CMP-005 Tool Gateway]
+    PDP[CMP-007 Identity/Policy]
+    APR[CMP-006 Human Decision]
+  end
+  SPEC --> VAL --> H
+  SPEC --> GATE
+  H --> GR
+  H --> CTX
+  GR --> GW
+  GW --> PDP
+  GR --> APR
+  SPEC -. cannot grant permission, route, approval or final closure .-> AUTH

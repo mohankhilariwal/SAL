@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-075-EvaluationObligation.schema.json",
+  "title": "DATA-075 EvaluationObligation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["evaluation_id", "objective", "blocking", "evidence_type"],
+  "properties": {
+    "evaluation_id": {"type": "string", "pattern": "^EVAL-[0-9]{3}$"},
+    "objective": {"type": "string", "minLength": 1},
+    "blocking": {"type": "boolean"},
+    "evidence_type": {"enum": ["deterministic", "integration", "security", "performance", "human"]}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-074-SpecificationValidationReport.schema.json",
+  "title": "DATA-074 SpecificationValidationReport",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["valid", "specification_id", "specification_version", "digest", "findings"],
+  "properties": {
+    "valid": {"type": "boolean"},
+    "specification_id": {"type": ["string", "null"]},
+    "specification_version": {"type": ["string", "null"]},
+    "digest": {"type": ["string", "null"]},
+    "findings": {"type": "array", "items": {"type": "object"}}
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "EVAL-042": {
+    "digest": "74b8863c656e1b0bf9dc73ff74207d3374548fcf950dc99470b627fb854f711e",
+    "goals": 6,
+    "invariants": 12,
+    "name": "specification completeness and semantic consistency",
+    "non_goals": 7,
+    "passed": true
+  },
+  "EVAL-043": {
+    "name": "runtime specification assertion lifecycle",
+    "passed": true,
+    "post_result": {
+      "checks": {
+        "approved_requires_human_outcome": true,
+        "known_status": true,
+        "no_final_closure": true,
+        "no_persisted_approval_token": true,
+        "preliminary_disposition_only": true,
+        "rejected_requires_human_outcome": true,
+        "timeout_never_approves": true,
+        "tool006_single_effect": true
+      },
+      "failures": [],
+      "passed": true,
+      "phase": "post_result"
+    },
+    "pre_start": {
+      "checks": {
+        "agent_id_matches": true,
+        "concurrency_disabled": true,
+        "context_policy_passed": true,
+        "graph_version_matches": true,
+        "memory_disabled": true,
+        "multi_agent_disabled": true,
+        "one_agent": true,
+        "specification_active": true,
+        "specification_digest_matches": true
+      },
+      "failures": [],
+      "passed": true,
+      "phase": "pre_start"
+    }
+  },
+  "EVAL-044": {
+    "authority_expansion_rejected": true,
+    "name": "authority and manifest drift resistance",
+    "passed": true
+  },
+  "EVAL-045": {
+    "authorized_before_load": true,
+    "memory_context_rejected": true,
+    "name": "context policy and no-memory boundary",
+    "passed": true
+  },
+  "EVAL-046": {
+    "blocking_reasons": [
+      "required_evaluations_passed"
+    ],
+    "complete_evidence_allowed": true,
+    "missing_evaluation_denied": true,
+    "name": "fail-closed evaluation and deployment gate",
+    "passed": true
+  },
+  "EVAL-047": {
+    "final_closure_authority": false,
+    "name": "retirement and human-accountability boundary",
+    "passed": true,
+    "retired_new_start_denied": true
+  }
+}
