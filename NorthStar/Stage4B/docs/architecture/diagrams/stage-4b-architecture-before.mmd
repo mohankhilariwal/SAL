@@ -1,0 +1,6 @@
+flowchart LR
+  M[Maya Chen] --> C3[CMP-003 GRAPH-001 v1.0.0]
+  C3 --> T6[TOOL-006 queue review]
+  T6 --> C6[CMP-006 queued request only]
+  C3 --> J[DATA-050 local checkpoint]
+  G[No durable wait, decision, timeout or safe resume] -. limitation .-> C3

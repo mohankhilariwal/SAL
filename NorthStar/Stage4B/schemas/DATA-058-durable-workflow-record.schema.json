@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "run_id",
+    "graph_id",
+    "graph_version",
+    "state_sha256",
+    "revision"
+  ],
+  "title": "DATA-058 DurableWorkflowRecord",
+  "type": "object"
+}

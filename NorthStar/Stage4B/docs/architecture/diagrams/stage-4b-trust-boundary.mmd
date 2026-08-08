@@ -1,0 +1,7 @@
+flowchart LR
+  R[Reviewer browser / synthetic identity claims] -->|signed expiring token + decision| A[CMP-006 decision endpoint]
+  A --> V[Schema, signature, expiry, role, SoD, single-use validation]
+  V --> D[(DATA-007 decision + DATA-059 wait)]
+  D --> G[CMP-003 resume lease and decision gate]
+  G --> P[Preliminary human-reviewed outcome]
+  X[No unrestricted credentials or raw token persistence] -. control .-> A

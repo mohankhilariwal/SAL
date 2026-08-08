@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "status": {
+      "enum": [
+        "pending",
+        "decided",
+        "expired",
+        "cancelled"
+      ]
+    }
+  },
+  "required": [
+    "wait_id",
+    "run_id",
+    "review_request_id",
+    "status",
+    "expires_at",
+    "required_role"
+  ],
+  "title": "DATA-059 HumanApprovalWait",
+  "type": "object"
+}

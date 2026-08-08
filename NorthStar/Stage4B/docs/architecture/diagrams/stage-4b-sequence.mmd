@@ -1,0 +1,19 @@
+sequenceDiagram
+  actor Maya
+  participant Graph as CMP-003 / GRAPH-001
+  participant Gateway as CMP-005 / TOOL-006
+  participant Approval as CMP-006 Approval Service
+  participant DB as SQLite durable store
+  actor Daniel
+  Maya->>Graph: start run
+  Graph->>Gateway: queue review (idempotency key)
+  Gateway-->>Graph: review_request_id
+  Graph->>Approval: create wait + expiry
+  Approval->>DB: persist wait and state
+  Graph-->>Maya: waiting + callback token
+  Note over Graph: process releases CPU and may stop
+  Daniel->>Approval: signed token + approve/reject
+  Approval->>DB: validate and store single decision atomically
+  Maya->>Graph: resume run
+  Graph->>DB: acquire lease and load state/event
+  Graph-->>Maya: approved, rejected or timeout-escalated outcome

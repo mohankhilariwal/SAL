@@ -1,0 +1,10 @@
+flowchart TD
+  N70[N70 completion check] -->|review_ready| N75[N75 create durable wait]
+  N75 -->|wait| SUSPEND[[Release execution resources]]
+  SUSPEND -. external decision or timer .-> N80[N80 decision gate]
+  N80 -->|approved| N82[N82 approved branch]
+  N80 -->|rejected| N84[N84 rejected branch]
+  N80 -->|expired/invalid| N86[N86 escalate]
+  N82 --> N90[N90 terminate]
+  N84 --> N90
+  N86 --> N90

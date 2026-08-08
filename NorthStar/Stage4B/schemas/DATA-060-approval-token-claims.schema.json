@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": [
+    "wait_id",
+    "run_id",
+    "review_request_id",
+    "graph_id",
+    "graph_version",
+    "required_role",
+    "exp",
+    "nonce"
+  ],
+  "title": "DATA-060 ApprovalCallbackTokenClaims",
+  "type": "object"
+}

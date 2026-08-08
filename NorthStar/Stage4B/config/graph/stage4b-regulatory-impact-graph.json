@@ -1,0 +1,159 @@
+{
+  "edges": [
+    {
+      "route": "valid",
+      "source": "N00_VALIDATE_CONTEXT",
+      "target": "N10_GUARDS"
+    },
+    {
+      "route": "invalid",
+      "source": "N00_VALIDATE_CONTEXT",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "continue",
+      "source": "N10_GUARDS",
+      "target": "N20_MODEL_DECIDE"
+    },
+    {
+      "route": "tool",
+      "source": "N20_MODEL_DECIDE",
+      "target": "N30_POLICY_GATE"
+    },
+    {
+      "route": "allowed",
+      "source": "N30_POLICY_GATE",
+      "target": "N40_TOOL_EXECUTE"
+    },
+    {
+      "route": "denied",
+      "source": "N30_POLICY_GATE",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "success",
+      "source": "N40_TOOL_EXECUTE",
+      "target": "N60_OBSERVE"
+    },
+    {
+      "route": "observed",
+      "source": "N60_OBSERVE",
+      "target": "N70_COMPLETION_CHECK"
+    },
+    {
+      "route": "review_ready",
+      "source": "N70_COMPLETION_CHECK",
+      "target": "N75_CREATE_REVIEW_WAIT"
+    },
+    {
+      "route": "invalid_completion",
+      "source": "N70_COMPLETION_CHECK",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "wait",
+      "source": "N75_CREATE_REVIEW_WAIT",
+      "target": "N80_REVIEW_DECISION_GATE"
+    },
+    {
+      "route": "approved",
+      "source": "N80_REVIEW_DECISION_GATE",
+      "target": "N82_APPROVED_BRANCH"
+    },
+    {
+      "route": "rejected",
+      "source": "N80_REVIEW_DECISION_GATE",
+      "target": "N84_REJECTED_BRANCH"
+    },
+    {
+      "route": "expired",
+      "source": "N80_REVIEW_DECISION_GATE",
+      "target": "N86_EXPIRED_ESCALATION"
+    },
+    {
+      "route": "invalid",
+      "source": "N80_REVIEW_DECISION_GATE",
+      "target": "N86_EXPIRED_ESCALATION"
+    },
+    {
+      "route": "complete",
+      "source": "N82_APPROVED_BRANCH",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "complete",
+      "source": "N84_REJECTED_BRANCH",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "escalate",
+      "source": "N86_EXPIRED_ESCALATION",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "end",
+      "source": "N90_TERMINATE",
+      "target": "__END__"
+    }
+  ],
+  "entry_node": "N00_VALIDATE_CONTEXT",
+  "graph_id": "GRAPH-001",
+  "graph_version": "1.1.0",
+  "nodes": [
+    {
+      "node_id": "N00_VALIDATE_CONTEXT",
+      "node_type": "deterministic"
+    },
+    {
+      "node_id": "N10_GUARDS",
+      "node_type": "deterministic"
+    },
+    {
+      "node_id": "N20_MODEL_DECIDE",
+      "node_type": "deterministic"
+    },
+    {
+      "node_id": "N30_POLICY_GATE",
+      "node_type": "deterministic"
+    },
+    {
+      "node_id": "N40_TOOL_EXECUTE",
+      "node_type": "deterministic"
+    },
+    {
+      "node_id": "N60_OBSERVE",
+      "node_type": "deterministic"
+    },
+    {
+      "node_id": "N70_COMPLETION_CHECK",
+      "node_type": "deterministic"
+    },
+    {
+      "node_id": "N75_CREATE_REVIEW_WAIT",
+      "node_type": "deterministic"
+    },
+    {
+      "node_id": "N80_REVIEW_DECISION_GATE",
+      "node_type": "human"
+    },
+    {
+      "node_id": "N82_APPROVED_BRANCH",
+      "node_type": "human"
+    },
+    {
+      "node_id": "N84_REJECTED_BRANCH",
+      "node_type": "human"
+    },
+    {
+      "node_id": "N86_EXPIRED_ESCALATION",
+      "node_type": "human"
+    },
+    {
+      "node_id": "N90_TERMINATE",
+      "node_type": "deterministic"
+    }
+  ],
+  "terminal_nodes": [
+    "N90_TERMINATE"
+  ]
+}

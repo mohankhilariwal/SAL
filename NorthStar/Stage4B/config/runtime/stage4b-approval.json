@@ -1,0 +1,12 @@
+{
+  "allowed_decisions": [
+    "approved",
+    "rejected"
+  ],
+  "raw_token_persisted": false,
+  "rejection_reason_required": true,
+  "required_role": "compliance_approver",
+  "resume_lease_seconds": 30,
+  "token_algorithm": "HMAC-SHA-256",
+  "wait_timeout_seconds": 3600
+}

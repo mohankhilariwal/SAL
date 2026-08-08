@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "decision": {
+      "enum": [
+        "approved",
+        "rejected"
+      ]
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "decision_id",
+    "wait_id",
+    "run_id",
+    "decision",
+    "reviewer_id",
+    "reviewer_roles",
+    "issued_at",
+    "token_nonce"
+  ],
+  "title": "DATA-007 ReviewDecision",
+  "type": "object"
+}
