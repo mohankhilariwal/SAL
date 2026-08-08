@@ -1,0 +1,163 @@
+{
+  "$defs": {
+    "fact": {
+      "additionalProperties": false,
+      "properties": {
+        "fact_id": {
+          "type": "string"
+        },
+        "field_name": {
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "authoritative_state",
+            "human_decision_reference"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "value": {}
+      },
+      "required": [
+        "fact_id",
+        "field_name",
+        "value",
+        "source",
+        "origin"
+      ],
+      "type": "object"
+    },
+    "scope": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "tenant_id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "tenant_id",
+        "case_id",
+        "user_id"
+      ],
+      "type": "object"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "classification": {
+          "type": "string"
+        },
+        "source_ref": {
+          "type": "string"
+        },
+        "source_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_ref",
+        "source_version",
+        "source_sha256",
+        "classification"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://northstar.example/schemas/DATA-080-ContextSnapshot.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "char_count": {
+      "maximum": 12000,
+      "type": "integer"
+    },
+    "content_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "created_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "facts": {
+      "items": {
+        "$ref": "#/$defs/fact"
+      },
+      "type": "array"
+    },
+    "included_item_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8,
+      "type": "array"
+    },
+    "item_count": {
+      "maximum": 8,
+      "type": "integer"
+    },
+    "omitted_item_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "rendered_context": {
+      "maxLength": 12000,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "snapshot_id": {
+      "type": "string"
+    },
+    "source_bindings": {
+      "items": {
+        "$ref": "#/$defs/source"
+      },
+      "type": "array"
+    },
+    "strategy": {
+      "const": "deterministic_extractive_v1"
+    }
+  },
+  "required": [
+    "snapshot_id",
+    "schema_version",
+    "plan_id",
+    "scope",
+    "strategy",
+    "rendered_context",
+    "included_item_ids",
+    "omitted_item_refs",
+    "facts",
+    "source_bindings",
+    "char_count",
+    "item_count",
+    "created_at",
+    "content_sha256"
+  ],
+  "title": "DATA-080 ContextSnapshot",
+  "type": "object"
+}

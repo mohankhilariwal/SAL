@@ -1,0 +1,47 @@
+flowchart TB
+  classDef new fill:#eef,stroke:#336,stroke-width:2px
+  classDef retained fill:#fff,stroke:#666
+  classDef external fill:#f8f8f8,stroke:#999,stroke-dasharray: 5 5
+
+  Maya[Maya Chen / CMP-001 Analyst Experience Portal]:::retained
+  Intake[CMP-002 Regulatory Intake Boundary]:::retained
+  Orchestrator[CMP-003 Case and Workflow Orchestration Boundary]:::retained
+  Knowledge[CMP-004 Knowledge and Evidence Access Boundary]:::retained
+  Gateway[CMP-005 Enterprise Integration Boundary]:::retained
+  Human[CMP-006 Human Review and Approval Boundary]:::external
+  IAM[CMP-007 Identity Authorization and Policy Boundary]:::external
+  Eval[CMP-008 Evaluation and Assurance Boundary]:::retained
+  Obs[CMP-009 Observability and Audit Boundary]:::retained
+  Runtime[CMP-010 Runtime and Deployment Boundary]:::retained
+  Gov[CMP-011 Source-of-Truth Governance Pack]:::retained
+
+  Spec[DATA-071 AGT-001 Specification 1.1.0]:::new
+  State[DATA-009 Graph State 1.1.0]:::retained
+  Graph[GRAPH-001 1.1.0 / AGT-001]:::retained
+  Regen[DATA-079 Context Regeneration Plan]:::new
+  Snapshot[DATA-080 Deterministic Context Snapshot]:::new
+  Consent[DATA-082 Memory Consent Grant]:::new
+  Memory[DATA-081 Case-Local Working Memory]:::new
+  Lifecycle[DATA-085/086 Delete and Expire]:::new
+
+  Maya --> IAM --> Orchestrator
+  Maya --> Intake --> Orchestrator
+  Spec --> Orchestrator
+  State --> Regen
+  Knowledge --> Regen
+  Human --> Regen
+  Consent --> Memory
+  Memory --> Regen
+  Regen --> Snapshot --> Orchestrator
+  Orchestrator --> Graph
+  Graph --> Gateway
+  Graph --> Human
+  Graph --> State
+  Snapshot --> Memory
+  Memory --> Lifecycle
+  Eval --> Spec
+  Eval --> Memory
+  Orchestrator --> Obs
+  Runtime --> Orchestrator
+  Gov --> Spec
+  Gov --> Eval

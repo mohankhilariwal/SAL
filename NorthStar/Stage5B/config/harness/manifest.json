@@ -1,0 +1,11 @@
+{
+  "manifest_id": "HARNESS-MANIFEST-001",
+  "version": "1.2.0",
+  "agent_count": 1,
+  "agent_specification": {"id": "AGT-001-spec", "version": "1.1.0"},
+  "graph": {"id": "GRAPH-001", "version": "1.1.0"},
+  "state": {"id": "DATA-009", "version": "1.1.0"},
+  "context_policy": {"id": "DATA-077", "version": "1.1.0", "max_items": 8, "max_chars": 12000},
+  "memory_policy": {"id": "MEM-POL-001", "version": "1.0.0", "kind": "case_working"},
+  "future_capabilities": {"multi_agent": false, "concurrent_graph_branches": false, "mcp": false, "a2a": false}
+}

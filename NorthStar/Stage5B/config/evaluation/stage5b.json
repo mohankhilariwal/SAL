@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "required_evaluations": [
+    "EVAL-048",
+    "EVAL-049",
+    "EVAL-050",
+    "EVAL-051",
+    "EVAL-052",
+    "EVAL-053",
+    "EVAL-054"
+  ],
+  "deny_by_default": true
+}

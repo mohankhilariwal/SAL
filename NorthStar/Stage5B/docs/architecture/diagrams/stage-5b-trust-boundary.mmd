@@ -1,0 +1,24 @@
+flowchart LR
+  subgraph USER[Human/user boundary]
+    Maya[Maya Chen]
+    Consent[DATA-082 opt-in]
+  end
+  subgraph RUNTIME[NorthStar runtime boundary]
+    Harness[CMP-003 Harness]
+    Regen[INT-053/054 regeneration and compaction]
+    Store[Local case memory store]
+    Graph[GRAPH-001]
+  end
+  subgraph EXTERNAL[External authority boundaries]
+    PDP[CMP-007 IAM/PDP]
+    Approval[CMP-006 Human Approval]
+    Gateway[CMP-005 Tool Gateway]
+  end
+  Maya --> Consent --> Harness
+  PDP --> Harness
+  Harness --> Regen --> Store
+  Store --> Regen --> Graph
+  Graph --> Gateway
+  Graph --> Approval
+  Store -. cannot grant authority .-> Gateway
+  Store -. cannot approve .-> Approval

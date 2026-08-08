@@ -1,0 +1,10 @@
+stateDiagram-v2
+  [*] --> Absent
+  Absent --> Active: consent + validated deterministic write
+  Active --> Superseded: newer case snapshot
+  Active --> Expired: retention deadline
+  Active --> Deleted: authorized deletion/revocation
+  Superseded --> Deleted: cleanup request
+  Superseded --> Expired: retention deadline
+  Expired --> [*]: content removed; tombstone only
+  Deleted --> [*]: content removed; tombstone only

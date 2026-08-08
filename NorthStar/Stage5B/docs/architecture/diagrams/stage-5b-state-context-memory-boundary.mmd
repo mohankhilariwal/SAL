@@ -1,0 +1,23 @@
+flowchart TB
+  subgraph AUTH[Authoritative plane]
+    ST[DATA-009 Workflow State]
+    EV[Authorized evidence sources]
+    HD[CMP-006 human decision references]
+  end
+  subgraph DERIVED[Derived context plane]
+    RP[DATA-079 Regeneration Plan]
+    CS[DATA-080 Context Snapshot]
+  end
+  subgraph MEMORY[Optional continuity memory]
+    CG[DATA-082 Consent Grant]
+    MR[DATA-081 Case Working Memory]
+  end
+  ST --> RP
+  EV --> RP
+  HD --> RP
+  RP --> CS
+  CG --> MR
+  CS --> MR
+  MR -. stale / optional input .-> RP
+  ST -- always wins conflicts --> RP
+  MR -. never authorizes .-> ST

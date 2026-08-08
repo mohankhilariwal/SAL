@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.1.0",
+  "specification_id": "AGT-001-spec",
+  "specification_version": "1.1.0",
+  "agent_id": "AGT-001",
+  "agent_name": "Regulatory Impact Assessment Agent",
+  "status": "active",
+  "graph_binding": {"graph_id": "GRAPH-001", "version": "1.1.0"},
+  "state_binding": {"data_id": "DATA-009", "version": "1.1.0"},
+  "authority": {
+    "tool_ids": ["TOOL-001", "TOOL-002", "TOOL-003", "TOOL-004", "TOOL-005", "TOOL-006"],
+    "gateway_only": true,
+    "may_approve": false,
+    "may_finalize_compliance": false,
+    "may_choose_graph_routes": false,
+    "may_create_agents": false,
+    "may_run_concurrent_branches": false
+  },
+  "memory": {
+    "enabled": true,
+    "management_owner": "CMP-003 harness boundary",
+    "allowed_kinds": ["case_working"],
+    "direct_model_write": false,
+    "write_sources": ["authoritative_state", "human_decision_reference"],
+    "requires_user_opt_in": true,
+    "requires_provenance": true,
+    "requires_expiry": true,
+    "supports_deletion": true,
+    "cross_case_recall": false,
+    "user_profile_memory": false,
+    "semantic_memory": false,
+    "episodic_memory": false,
+    "organizational_memory": false,
+    "shared_agent_memory": false
+  },
+  "context": {
+    "regeneration_strategy": "authoritative_regeneration_v1",
+    "compaction_strategy": "deterministic_extractive_v1",
+    "hard_max_items": 8,
+    "hard_max_chars": 12000,
+    "memory_never_overrides_state": true
+  },
+  "human_control": {
+    "service_owner": "CMP-006",
+    "timeout_never_approves": true,
+    "late_decision_fails_closed": true,
+    "dispositions_remain_preliminary": true
+  },
+  "release_evidence": {
+    "required_tests": ["TEST-213", "TEST-214", "TEST-215", "TEST-216", "TEST-217", "TEST-218", "TEST-219", "TEST-220", "TEST-221", "TEST-222", "TEST-223", "TEST-224", "TEST-225", "TEST-226", "TEST-227", "TEST-228", "TEST-229", "TEST-230", "TEST-231", "TEST-232", "TEST-233", "TEST-234", "TEST-235", "TEST-236", "TEST-237", "TEST-238", "TEST-239", "TEST-240", "TEST-241", "TEST-242"],
+    "required_evaluations": ["EVAL-048", "EVAL-049", "EVAL-050", "EVAL-051", "EVAL-052", "EVAL-053", "EVAL-054"]
+  }
+}

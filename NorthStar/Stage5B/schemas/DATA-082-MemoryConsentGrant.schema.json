@@ -1,0 +1,139 @@
+{
+  "$defs": {
+    "fact": {
+      "additionalProperties": false,
+      "properties": {
+        "fact_id": {
+          "type": "string"
+        },
+        "field_name": {
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "authoritative_state",
+            "human_decision_reference"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "value": {}
+      },
+      "required": [
+        "fact_id",
+        "field_name",
+        "value",
+        "source",
+        "origin"
+      ],
+      "type": "object"
+    },
+    "scope": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "tenant_id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "tenant_id",
+        "case_id",
+        "user_id"
+      ],
+      "type": "object"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "classification": {
+          "type": "string"
+        },
+        "source_ref": {
+          "type": "string"
+        },
+        "source_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_ref",
+        "source_version",
+        "source_sha256",
+        "classification"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://northstar.example/schemas/DATA-082-MemoryConsentGrant.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acknowledgement": {
+      "const": "user_opt_in"
+    },
+    "allowed_operations": {
+      "items": {
+        "enum": [
+          "write",
+          "read",
+          "delete"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "expires_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "grant_id": {
+      "type": "string"
+    },
+    "issued_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "purpose": {
+      "const": "case_session_continuity"
+    },
+    "revoked_at": {
+      "format": "date-time",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    }
+  },
+  "required": [
+    "grant_id",
+    "schema_version",
+    "scope",
+    "purpose",
+    "allowed_operations",
+    "issued_at",
+    "expires_at",
+    "acknowledgement"
+  ],
+  "title": "DATA-082 MemoryConsentGrant",
+  "type": "object"
+}

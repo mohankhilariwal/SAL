@@ -1,0 +1,8 @@
+flowchart LR
+  S[DATA-009 authoritative state] --> H[S04C Harness]
+  C[DATA-065 bounded context] --> H
+  H --> G[GRAPH-001 1.1.0]
+  G --> W[CMP-006 human wait]
+  W -. resume after long delay .-> H
+  X[Full history exceeds 8 items / 12,000 chars] -. limitation .-> C
+  M[Memory and compaction disabled] -. no continuity .-> H

@@ -1,0 +1,133 @@
+{
+  "$defs": {
+    "fact": {
+      "additionalProperties": false,
+      "properties": {
+        "fact_id": {
+          "type": "string"
+        },
+        "field_name": {
+          "type": "string"
+        },
+        "origin": {
+          "enum": [
+            "authoritative_state",
+            "human_decision_reference"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "value": {}
+      },
+      "required": [
+        "fact_id",
+        "field_name",
+        "value",
+        "source",
+        "origin"
+      ],
+      "type": "object"
+    },
+    "scope": {
+      "additionalProperties": false,
+      "properties": {
+        "case_id": {
+          "type": "string"
+        },
+        "tenant_id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "tenant_id",
+        "case_id",
+        "user_id"
+      ],
+      "type": "object"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "classification": {
+          "type": "string"
+        },
+        "source_ref": {
+          "type": "string"
+        },
+        "source_sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_ref",
+        "source_version",
+        "source_sha256",
+        "classification"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://northstar.example/schemas/DATA-079-ContextRegenerationPlan.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "generated_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "include_memory": {
+      "type": "boolean"
+    },
+    "max_chars": {
+      "maximum": 12000,
+      "type": "integer"
+    },
+    "max_items": {
+      "maximum": 8,
+      "type": "integer"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "scope": {
+      "$ref": "#/$defs/scope"
+    },
+    "state_object_id": {
+      "const": "DATA-009"
+    },
+    "state_version": {
+      "const": "1.1.0"
+    },
+    "strategy": {
+      "const": "authoritative_regeneration_v1"
+    }
+  },
+  "required": [
+    "plan_id",
+    "schema_version",
+    "strategy",
+    "scope",
+    "state_object_id",
+    "state_version",
+    "include_memory",
+    "max_items",
+    "max_chars",
+    "generated_at"
+  ],
+  "title": "DATA-079 ContextRegenerationPlan",
+  "type": "object"
+}

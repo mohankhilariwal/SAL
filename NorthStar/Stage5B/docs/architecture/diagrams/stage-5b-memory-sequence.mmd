@@ -1,0 +1,24 @@
+sequenceDiagram
+  actor Maya
+  participant Portal as CMP-001
+  participant Policy as CMP-007
+  participant Harness as CMP-003 Harness
+  participant State as DATA-009 Store
+  participant Memory as Case Memory Service
+  participant Graph as GRAPH-001
+
+  Maya->>Portal: Resume CASE-2026-0001 with opt-in
+  Portal->>Policy: Authorize case/state/memory purpose
+  Policy-->>Portal: scoped decision evidence
+  Portal->>Harness: scope + DATA-082 grant
+  Harness->>State: load current state/version
+  State-->>Harness: authoritative state
+  Harness->>Memory: INT-056 read same tenant/case/user
+  Memory-->>Harness: active fresh DATA-081 or empty
+  Harness->>Harness: INT-053 regenerate + INT-054 compact
+  Harness->>Graph: DATA-080 bounded context
+  Graph-->>Harness: updated unapproved state
+  Harness->>Harness: regenerate deterministic snapshot
+  Harness->>Memory: INT-055 write with provenance/TTL/idempotency
+  Memory-->>Harness: DATA-081 record
+  Harness-->>Portal: preliminary result + continuity status
