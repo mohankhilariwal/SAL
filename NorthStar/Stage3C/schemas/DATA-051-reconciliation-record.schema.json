@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "northstar://schemas/DATA-051/1.0.0",
+  "title": "DATA-051 ReconciliationRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tool_id",
+    "idempotency_key",
+    "status"
+  ],
+  "properties": {
+    "tool_id": {
+      "type": "string"
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "committed",
+        "not_committed",
+        "unknown"
+      ]
+    },
+    "artifact": {
+      "type": [
+        "object",
+        "null"
+      ]
+    }
+  }
+}

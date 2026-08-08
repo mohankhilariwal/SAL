@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph TB1["Untrusted / probabilistic boundary"]
+        DP["Decision provider output\nDATA-042"]
+        EVID["Retrieved evidence text"]
+    end
+    subgraph TB2["Application-owned deterministic boundary"]
+        VAL["Schema and allowlist validation"]
+        BM["Budget manager"]
+        RM["Recovery classifier"]
+        TERM["Completion / termination evaluator"]
+        CP["Checkpoint checksum"]
+    end
+    subgraph TB3["Controlled capability boundary"]
+        GW["CMP-005 Gateway"]
+        TOOLS["TOOL-001..TOOL-006"]
+        REC["Write reconciler"]
+    end
+    DP --> VAL
+    EVID --> DP
+    VAL --> BM
+    BM --> RM
+    RM --> GW
+    GW --> TOOLS
+    TOOLS --> REC
+    REC --> RM
+    RM --> TERM
+    TERM --> CP
+    AUTH["Trusted principal and write scope"] --> GW
+    NOTE["Provider cannot create authority, budget, completion, retry safety or final disposition"] -.-> VAL

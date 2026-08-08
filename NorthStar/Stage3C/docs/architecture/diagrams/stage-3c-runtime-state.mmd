@@ -1,0 +1,18 @@
+stateDiagram-v2
+    [*] --> Running: create or load DATA-009
+    Running --> Running: decision + successful observation
+    Running --> Recovering: retryable failure / dead end / provider failure
+    Recovering --> Running: retry, fallback, replan or reconciled commit succeeds
+    Recovering --> Escalated: permanent failure or unresolved ambiguous write
+    Running --> Completed: completion invariants pass
+    Running --> Cancelled: cancellation observed
+    Running --> TerminatedGuard: any independent budget exhausted
+    Recovering --> TerminatedGuard: failure/retry/replan/time budget exhausted
+    Running --> Checkpointed: atomic checkpoint after accepted transition
+    Checkpointed --> Running: same process continues
+    Checkpointed --> Resumed: later process validates checksum and resumes
+    Resumed --> Running
+    Completed --> [*]
+    Escalated --> [*]
+    Cancelled --> [*]
+    TerminatedGuard --> [*]

@@ -1,0 +1,27 @@
+flowchart TB
+    classDef new fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef retained fill:#eef3f8,stroke:#456,stroke-width:1px
+    classDef boundary fill:#fff3e0,stroke:#ef6c00,stroke-width:1px
+
+    MAYA["Maya Chen"] --> C1["CMP-001 Analyst Experience Portal"]:::retained
+    C1 --> C2["CMP-002 Regulatory Intake Boundary"]:::retained
+    C1 --> C3["CMP-003 Case and Workflow Orchestration Boundary"]:::retained
+    C3 --> A1["AGT-001 Regulatory Impact Assessment Agent"]:::retained
+    A1 --> DP["INT-022 Structured Decision Provider"]:::retained
+    A1 --> BM["INT-026 Budget Enforcement\nDATA-045/046"]:::new
+    A1 --> RM["INT-027 Failure Classification and Recovery\nDATA-047/048"]:::new
+    C1 --> CS["INT-028 Cancellation\nDATA-049"]:::new
+    CS --> C3
+    C3 --> CP["INT-029 Checkpoint and Resume\nDATA-050"]:::new
+    A1 --> C5["CMP-005 Enterprise Integration Boundary / Tool Gateway"]:::boundary
+    C5 --> T["TOOL-001..TOOL-006"]:::retained
+    C5 --> RC["INT-030 Ambiguous Write Reconciliation\nDATA-051"]:::new
+    T --> C4["CMP-004 Knowledge and Evidence Access Boundary"]:::retained
+    T --> C6["CMP-006 Human Review Queue - local only"]:::retained
+    C7["CMP-007 Identity, Authorization and Policy Boundary - partial"]:::boundary -. enforce .-> C5
+    C3 --> C8["CMP-008 Evaluation and Assurance Boundary"]:::retained
+    C3 --> C9["CMP-009 Local Run Evidence\nDATA-052"]:::new
+    C10["CMP-010 Local Single-Process Runtime"]:::retained
+    C11["CMP-011 Source-of-Truth Governance Pack 0.7.0"]:::new
+    CP --> C10
+    C9 --> C10

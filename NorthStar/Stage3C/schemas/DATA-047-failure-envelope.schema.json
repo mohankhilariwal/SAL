@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "northstar://schemas/DATA-047/1.0.0",
+  "title": "DATA-047 FailureEnvelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "code",
+    "message",
+    "retryable",
+    "stage"
+  ],
+  "properties": {
+    "kind": {
+      "enum": [
+        "transient",
+        "rate_limited",
+        "timeout",
+        "authorization",
+        "validation",
+        "permanent",
+        "dependency",
+        "ambiguous_write",
+        "cancelled"
+      ]
+    },
+    "code": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "stage": {
+      "enum": [
+        "before_dispatch",
+        "after_dispatch",
+        "response_validation",
+        "unknown"
+      ]
+    },
+    "committed": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "tool_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "idempotency_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

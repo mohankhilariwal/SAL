@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "northstar://schemas/DATA-045/1.0.0",
+  "title": "DATA-045 RuntimeBudget",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "max_iterations",
+    "max_wall_time_ms",
+    "max_input_tokens",
+    "max_output_tokens",
+    "max_total_tokens",
+    "max_cost_micro_cad",
+    "max_tool_calls",
+    "max_failures",
+    "max_retries",
+    "max_replans",
+    "max_model_calls"
+  ],
+  "properties": {
+    "max_iterations": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_wall_time_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_input_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_output_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_total_tokens": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_cost_micro_cad": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_tool_calls": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_failures": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_retries": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_replans": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_model_calls": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "northstar://schemas/DATA-052/1.0.0",
+  "title": "DATA-052 RecoveryOutcome",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "terminal_status",
+    "termination_reason",
+    "budget_ledger",
+    "completed_milestones",
+    "missing_milestones",
+    "recovery_records"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string"
+    },
+    "terminal_status": {
+      "type": "string"
+    },
+    "termination_reason": {
+      "type": "string"
+    },
+    "budget_ledger": {
+      "$ref": "northstar://schemas/DATA-046/1.0.0"
+    },
+    "completed_milestones": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_milestones": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recovery_records": {
+      "type": "array",
+      "items": {
+        "$ref": "northstar://schemas/DATA-048/1.0.0"
+      }
+    }
+  }
+}

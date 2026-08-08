@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "currency": "CAD",
+  "tariff_assumption": {
+    "input_micro_cad_per_token": 2,
+    "output_micro_cad_per_token": 6,
+    "note": "Tutorial synthetic tariff; not a vendor price."
+  },
+  "limits": {
+    "max_iterations": 12,
+    "max_wall_time_ms": 30000,
+    "max_input_tokens": 12000,
+    "max_output_tokens": 4000,
+    "max_total_tokens": 16000,
+    "max_cost_micro_cad": 75000,
+    "max_tool_calls": 12,
+    "max_failures": 5,
+    "max_retries": 3,
+    "max_replans": 2,
+    "max_model_calls": 14
+  }
+}

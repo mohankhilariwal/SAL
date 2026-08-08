@@ -1,0 +1,8 @@
+flowchart LR
+    MAYA["Maya Chen"] --> C1["CMP-001 Analyst Experience Portal"]
+    C1 --> C3["CMP-003 Bounded Agent Runtime 0.6.0"]
+    C3 --> A1["AGT-001"]
+    A1 --> C5["CMP-005 Tool Gateway"]
+    C5 --> T["TOOL-001..TOOL-006"]
+    G1["Iteration / repetition / no-progress guards"] -. controls .-> C3
+    GAP["Every tool error escalates; no token/time/cost/tool/failure budgets; no resume"] -. limitation .-> C3

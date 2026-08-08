@@ -1,0 +1,25 @@
+sequenceDiagram
+    actor Maya
+    participant Runtime as CMP-003 Runtime
+    participant Budget as INT-026 Budget Manager
+    participant Agent as AGT-001 / INT-022
+    participant Gateway as CMP-005 Gateway
+    participant Tool as TOOL-004 Draft Case
+    participant Reconcile as INT-030 Reconciler
+    participant Checkpoint as INT-029 Checkpoint Store
+
+    Maya->>Runtime: Run goal with trusted principal and budgets
+    Runtime->>Budget: Check time/model/iteration budget
+    Runtime->>Agent: Request one structured decision
+    Agent-->>Runtime: call TOOL-004 + usage
+    Runtime->>Budget: Settle model tokens/cost
+    Runtime->>Gateway: Invoke with application idempotency key
+    Gateway->>Tool: Create draft
+    Tool-->>Gateway: Timeout after dispatch (commit unknown)
+    Gateway-->>Runtime: DATA-047 ambiguous_write
+    Runtime->>Budget: Record failure
+    Runtime->>Reconcile: Query status by tool + idempotency key
+    Reconcile-->>Runtime: Committed artifact found
+    Runtime->>Checkpoint: Persist reconciled observation and ledger
+    Runtime->>Agent: Continue from validated state
+    Note over Runtime,Agent: No blind write retry occurred

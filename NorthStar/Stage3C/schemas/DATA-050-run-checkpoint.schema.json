@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "northstar://schemas/DATA-050/1.0.0",
+  "title": "DATA-050 RunCheckpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "checkpoint_schema",
+    "sha256",
+    "state"
+  ],
+  "properties": {
+    "checkpoint_schema": {
+      "const": "1.0.0"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "state": {
+      "type": "object"
+    }
+  }
+}

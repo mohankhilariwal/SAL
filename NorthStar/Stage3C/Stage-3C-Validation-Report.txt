@@ -1,0 +1,99 @@
+NorthStar Agentic AI Architecture Playbook
+Stage 3C — Loop Failures, Recovery and Budgets
+Validation date: 2026-07-31
+Architecture/repository/handoff version: 0.7.0
+
+EXECUTION BOUNDARY
+- Local/offline synthetic regulatory catalogue, controls, authorized evidence and reversible local writes.
+- Exactly one agent, AGT-001, and six retained tools, TOOL-001 through TOOL-006.
+- No managed model, enterprise IAM/PDP, live connector, distributed workflow engine, graph, memory, multi-agent runtime, production audit or deployment.
+- The byte-exact Stage 3B archive/registers were not mounted; the supplied Stage 3B handoff and full chapter were used to reconstruct a compatible 0.7.0 overlay (ISS-029).
+
+EXECUTED ENVIRONMENT
+- Python 3.13.5
+- pytest 9.0.2
+- Runtime package dependencies: Python standard library only
+- Package target: Python >=3.11,<3.15
+
+EXECUTED CHECKS
+1. pytest -q
+   Result: 22 passed.
+2. python -m compileall -q src scripts tests
+   Result: passed.
+3. python scripts/run_stage3c_demo.py
+   Result: completed/goal_complete with seven decisions, six tool observations, six milestones and fixed preliminary_grounded_unapproved disposition.
+4. python scripts/run_stage3c_evaluation.py
+   Result: all five scenarios produced expected statuses/reasons.
+5. python scripts/validate_stage3c.py
+   Result: Stage 3C structural validation PASSED.
+6. python scripts/consistency_audit_stage3c.py
+   Result: PASSED WITH RECORDED EXCEPTIONS.
+7. python -m pip install -e . --no-deps --no-build-isolation
+   Result: passed.
+8. Installed-package demo without PYTHONPATH
+   Result: passed.
+9. JSON parse of DATA-045 through DATA-052 schemas
+   Result: passed.
+10. Static Mermaid delimiter/identifier checks
+    Result: passed; Mermaid CLI rendering was not executed.
+
+S03C TEST RESULTS
+- TEST-088 total-token budget: passed.
+- TEST-089 cost budget: passed.
+- TEST-090 tool-call budget: passed.
+- TEST-091 checkpoint round trip: passed.
+- TEST-092 checkpoint tamper/checksum detection: passed.
+- TEST-093 happy path and unapproved semantics: passed.
+- TEST-094 transient read fallback: passed.
+- TEST-095 ambiguous write reconciliation with one draft and no blind retry: passed.
+- TEST-096 model-provider fallback: passed.
+- TEST-097 partial outcome on tool-call budget: passed.
+- TEST-098 failure budget exhaustion: passed.
+- TEST-099 checkpoint resume without repeating completed local reads: passed.
+- TEST-100 external cancellation: passed.
+- TEST-101 bounded dead-end replan: passed.
+- TEST-102 authority-like argument rejection: passed.
+- TEST-103 non-allowlisted tool blocked before gateway: passed.
+- TEST-104 restricted Borealis evidence absent: passed.
+- TEST-105 write-scope denial: passed.
+- TEST-106 recovery and loop-efficiency metrics: passed.
+- TEST-107 exactly one agent and no future-stage module: passed.
+- TEST-108 wall-time budget: passed.
+- TEST-109 retry budget: passed.
+
+EVALUATION RESULTS
+- EVAL-022 normal run: completed/goal_complete; 7 iterations, 6 tools, 0 failures.
+- EVAL-023 primary read transient failure: completed; 1 failure, 1 retry, registered read fallback used.
+- EVAL-024 TOOL-004 timeout after commit: completed; same-key reconciliation found one committed draft; no duplicate.
+- EVAL-025 primary decision-provider timeout: completed; secondary provider used; 1 failure, 1 retry.
+- EVAL-026 max_tool_calls=2: terminated_guard/tool_call_budget_exhausted; two completed milestones and remaining milestones preserved.
+
+HAPPY-PATH LOCAL LEDGER
+- input_tokens: 635
+- output_tokens: 156
+- iterations/model calls: 7
+- tool calls: 6
+- synthetic cost: 2,206 micro-CAD
+- elapsed time in final evaluation run: 15 ms
+
+The token and cost figures are deterministic fixture values. The tariff is an explicit tutorial assumption, not vendor pricing, and elapsed times are not production benchmarks.
+
+CONSISTENCY RESULT
+Passed with recorded exceptions.
+Validated:
+- unchanged CMP-001 through CMP-011 names;
+- exactly one agent AGT-001;
+- TOOL-001 through TOOL-006 and gateway-only execution preserved;
+- DATA-009 schema 1.1.0, DATA-045 through DATA-052 and INT-026 through INT-030 align across code, schemas, diagrams, registers and handoff;
+- provider output cannot create authority, budgets, retry safety, fallback selection, reconciliation, completion or final disposition;
+- authorization and validation failures are not retried;
+- ambiguous write recovery performs reconciliation and creates one draft;
+- all partial/terminal outcomes remain preliminary_grounded_unapproved and human_review_required=true;
+- no graph, harness, memory, second agent, MCP/A2A or production capability is claimed.
+
+RECORDED EXCEPTIONS
+- ISS-014, ISS-015, ISS-021 through ISS-028: inherited open items.
+- ISS-029: compatible overlay rather than byte-exact Stage 3B continuation.
+- ISS-030: local checkpoint lacks multi-process/multi-host durable workflow guarantees.
+- ISS-031: managed model, live adapter error semantics, cost, cancellation and reconciliation are not live-verified.
+- Mermaid CLI rendering, production workload benchmarks, enterprise identity/PDP, signed audit evidence and distributed durability remain open.

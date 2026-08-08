@@ -1,0 +1,20 @@
+flowchart TD
+    S["Start or resume run"] --> L["Load DATA-045 limits and DATA-046 ledger"]
+    L --> P1{"Pre-iteration: time, iteration, model-call available?"}
+    P1 -- No --> TG["terminated_guard with exact budget reason"]
+    P1 -- Yes --> M["Invoke decision provider"]
+    M --> U["Settle actual input/output tokens and synthetic CAD cost"]
+    U --> P2{"Token and cost budgets remain?"}
+    P2 -- No --> TG
+    P2 -- Yes --> D{"Tool action?"}
+    D -- No --> T["Completion/escalation evaluation"]
+    D -- Yes --> P3{"Tool-call budget remains?"}
+    P3 -- No --> TG
+    P3 -- Yes --> X["Invoke gateway"]
+    X --> F{"Failure?"}
+    F -- No --> C["Checkpoint state and continue"]
+    F -- Yes --> P4{"Failure/retry/replan budget and safe recovery class?"}
+    P4 -- No --> E["Escalate or terminate guard"]
+    P4 -- Yes --> R["Retry/fallback/replan/reconcile"]
+    R --> C
+    C --> P1

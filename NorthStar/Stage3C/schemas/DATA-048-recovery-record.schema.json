@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "northstar://schemas/DATA-048/1.0.0",
+  "title": "DATA-048 RecoveryRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "action",
+    "reason",
+    "attempt",
+    "outcome"
+  ],
+  "properties": {
+    "action": {
+      "enum": [
+        "retry",
+        "model_fallback",
+        "tool_fallback",
+        "bounded_replan",
+        "reconcile_write",
+        "reject_invalid_action",
+        "model_failure"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "tool_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "outcome": {
+      "type": "string"
+    }
+  }
+}

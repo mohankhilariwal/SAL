@@ -1,0 +1,349 @@
+{
+  "EVAL-022": {
+    "artifacts": {
+      "candidate_mapping": {
+        "case_id": "CASE-001",
+        "mapping_id": "MAP-001",
+        "status": "candidate_unapproved"
+      },
+      "controls": [
+        {
+          "control_id": "CTL-LEND-017",
+          "name": "Adverse action evidence retention"
+        }
+      ],
+      "draft_case": {
+        "case_id": "CASE-001",
+        "human_review_required": true,
+        "status": "draft_unapproved"
+      },
+      "evidence": [
+        {
+          "citation_id": "CIT-NS-001",
+          "excerpt": "Retain evidence for automated credit decisions.",
+          "source": "POL-LEND-004"
+        }
+      ],
+      "regulatory_sources": [
+        {
+          "publication_id": "PUB-EVAL",
+          "title": "Synthetic lending notice"
+        }
+      ],
+      "review_request": {
+        "case_id": "CASE-001",
+        "human_review_required": true,
+        "review_id": "REV-001",
+        "status": "queued_for_human_review"
+      }
+    },
+    "budget_ledger": {
+      "cost_micro_cad": 2206,
+      "elapsed_ms": 15,
+      "failures": 0,
+      "input_tokens": 635,
+      "iterations": 7,
+      "model_calls": 7,
+      "output_tokens": 156,
+      "replans": 0,
+      "retries": 0,
+      "tool_calls": 6
+    },
+    "completed_milestones": [
+      "regulatory_sources_found",
+      "authorized_evidence_retrieved",
+      "control_candidates_found",
+      "draft_case_created",
+      "candidate_mapping_saved",
+      "human_review_queued"
+    ],
+    "final_disposition": "preliminary_grounded_unapproved",
+    "human_review_required": true,
+    "missing_milestones": [],
+    "recovery_records": [],
+    "run_id": "RUN-A224DD8F8B7C",
+    "status": "completed",
+    "termination_reason": "goal_complete"
+  },
+  "EVAL-023": {
+    "artifacts": {
+      "candidate_mapping": {
+        "case_id": "CASE-001",
+        "mapping_id": "MAP-001",
+        "status": "candidate_unapproved"
+      },
+      "controls": [
+        {
+          "control_id": "CTL-LEND-017",
+          "name": "Adverse action evidence retention"
+        }
+      ],
+      "draft_case": {
+        "case_id": "CASE-001",
+        "human_review_required": true,
+        "status": "draft_unapproved"
+      },
+      "evidence": [
+        {
+          "citation_id": "CIT-NS-001",
+          "excerpt": "Retain evidence for automated credit decisions.",
+          "source": "POL-LEND-004"
+        }
+      ],
+      "regulatory_sources": [
+        {
+          "publication_id": "PUB-EVAL",
+          "title": "Synthetic lending notice"
+        }
+      ],
+      "review_request": {
+        "case_id": "CASE-001",
+        "human_review_required": true,
+        "review_id": "REV-001",
+        "status": "queued_for_human_review"
+      }
+    },
+    "budget_ledger": {
+      "cost_micro_cad": 2206,
+      "elapsed_ms": 33,
+      "failures": 1,
+      "input_tokens": 635,
+      "iterations": 7,
+      "model_calls": 7,
+      "output_tokens": 156,
+      "replans": 0,
+      "retries": 1,
+      "tool_calls": 7
+    },
+    "completed_milestones": [
+      "regulatory_sources_found",
+      "authorized_evidence_retrieved",
+      "control_candidates_found",
+      "draft_case_created",
+      "candidate_mapping_saved",
+      "human_review_queued"
+    ],
+    "final_disposition": "preliminary_grounded_unapproved",
+    "human_review_required": true,
+    "missing_milestones": [],
+    "recovery_records": [
+      {
+        "action": "retry",
+        "attempt": 1,
+        "outcome": "scheduled",
+        "reason": "temporary_unavailable",
+        "tool_id": "TOOL-001"
+      },
+      {
+        "action": "tool_fallback",
+        "attempt": 1,
+        "outcome": "selected",
+        "reason": "temporary_unavailable",
+        "tool_id": "TOOL-001"
+      }
+    ],
+    "run_id": "RUN-F2E2D223AE7F",
+    "status": "completed",
+    "termination_reason": "goal_complete"
+  },
+  "EVAL-024": {
+    "artifacts": {
+      "candidate_mapping": {
+        "case_id": "CASE-001",
+        "mapping_id": "MAP-001",
+        "status": "candidate_unapproved"
+      },
+      "controls": [
+        {
+          "control_id": "CTL-LEND-017",
+          "name": "Adverse action evidence retention"
+        }
+      ],
+      "draft_case": {
+        "case_id": "CASE-001",
+        "human_review_required": true,
+        "status": "draft_unapproved"
+      },
+      "evidence": [
+        {
+          "citation_id": "CIT-NS-001",
+          "excerpt": "Retain evidence for automated credit decisions.",
+          "source": "POL-LEND-004"
+        }
+      ],
+      "regulatory_sources": [
+        {
+          "publication_id": "PUB-EVAL",
+          "title": "Synthetic lending notice"
+        }
+      ],
+      "review_request": {
+        "case_id": "CASE-001",
+        "human_review_required": true,
+        "review_id": "REV-001",
+        "status": "queued_for_human_review"
+      }
+    },
+    "budget_ledger": {
+      "cost_micro_cad": 2206,
+      "elapsed_ms": 15,
+      "failures": 1,
+      "input_tokens": 635,
+      "iterations": 7,
+      "model_calls": 7,
+      "output_tokens": 156,
+      "replans": 0,
+      "retries": 0,
+      "tool_calls": 6
+    },
+    "completed_milestones": [
+      "regulatory_sources_found",
+      "authorized_evidence_retrieved",
+      "control_candidates_found",
+      "draft_case_created",
+      "candidate_mapping_saved",
+      "human_review_queued"
+    ],
+    "final_disposition": "preliminary_grounded_unapproved",
+    "human_review_required": true,
+    "missing_milestones": [],
+    "recovery_records": [
+      {
+        "action": "reconcile_write",
+        "attempt": 1,
+        "outcome": "query_by_idempotency_key",
+        "reason": "timeout_after_dispatch",
+        "tool_id": "TOOL-004"
+      },
+      {
+        "action": "reconcile_write",
+        "attempt": 1,
+        "outcome": "committed",
+        "reason": "artifact_found",
+        "tool_id": "TOOL-004"
+      }
+    ],
+    "run_id": "RUN-C9A35D564574",
+    "status": "completed",
+    "termination_reason": "goal_complete"
+  },
+  "EVAL-025": {
+    "artifacts": {
+      "candidate_mapping": {
+        "case_id": "CASE-001",
+        "mapping_id": "MAP-001",
+        "status": "candidate_unapproved"
+      },
+      "controls": [
+        {
+          "control_id": "CTL-LEND-017",
+          "name": "Adverse action evidence retention"
+        }
+      ],
+      "draft_case": {
+        "case_id": "CASE-001",
+        "human_review_required": true,
+        "status": "draft_unapproved"
+      },
+      "evidence": [
+        {
+          "citation_id": "CIT-NS-001",
+          "excerpt": "Retain evidence for automated credit decisions.",
+          "source": "POL-LEND-004"
+        }
+      ],
+      "regulatory_sources": [
+        {
+          "publication_id": "PUB-EVAL",
+          "title": "Synthetic lending notice"
+        }
+      ],
+      "review_request": {
+        "case_id": "CASE-001",
+        "human_review_required": true,
+        "review_id": "REV-001",
+        "status": "queued_for_human_review"
+      }
+    },
+    "budget_ledger": {
+      "cost_micro_cad": 2206,
+      "elapsed_ms": 15,
+      "failures": 1,
+      "input_tokens": 635,
+      "iterations": 7,
+      "model_calls": 8,
+      "output_tokens": 156,
+      "replans": 0,
+      "retries": 1,
+      "tool_calls": 6
+    },
+    "completed_milestones": [
+      "regulatory_sources_found",
+      "authorized_evidence_retrieved",
+      "control_candidates_found",
+      "draft_case_created",
+      "candidate_mapping_saved",
+      "human_review_queued"
+    ],
+    "final_disposition": "preliminary_grounded_unapproved",
+    "human_review_required": true,
+    "missing_milestones": [],
+    "recovery_records": [
+      {
+        "action": "model_fallback",
+        "attempt": 1,
+        "outcome": "selected",
+        "reason": "synthetic model timeout",
+        "tool_id": null
+      }
+    ],
+    "run_id": "RUN-2BAFF1A38B96",
+    "status": "completed",
+    "termination_reason": "goal_complete"
+  },
+  "EVAL-026": {
+    "artifacts": {
+      "evidence": [
+        {
+          "citation_id": "CIT-NS-001",
+          "excerpt": "Retain evidence for automated credit decisions.",
+          "source": "POL-LEND-004"
+        }
+      ],
+      "regulatory_sources": [
+        {
+          "publication_id": "PUB-EVAL",
+          "title": "Synthetic lending notice"
+        }
+      ]
+    },
+    "budget_ledger": {
+      "cost_micro_cad": 960,
+      "elapsed_ms": 5,
+      "failures": 0,
+      "input_tokens": 264,
+      "iterations": 3,
+      "model_calls": 3,
+      "output_tokens": 72,
+      "replans": 0,
+      "retries": 0,
+      "tool_calls": 2
+    },
+    "completed_milestones": [
+      "regulatory_sources_found",
+      "authorized_evidence_retrieved"
+    ],
+    "final_disposition": "preliminary_grounded_unapproved",
+    "human_review_required": true,
+    "missing_milestones": [
+      "control_candidates_found",
+      "draft_case_created",
+      "candidate_mapping_saved",
+      "human_review_queued"
+    ],
+    "recovery_records": [],
+    "run_id": "RUN-E3F1F8FCD111",
+    "status": "terminated_guard",
+    "termination_reason": "tool_call_budget_exhausted"
+  }
+}
