@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "errors": [],
+  "chunk_count": 19,
+  "index_id": "RIDX-D379C683D515BCAF3E3D",
+  "evidence_count": 4,
+  "all_citations_valid": true,
+  "unauthorized_asmt_scored": false
+}

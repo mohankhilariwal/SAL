@@ -1,0 +1,81 @@
+[
+  {
+    "case_id": "EVAL-009",
+    "precision_at_k": 0.5,
+    "recall_at_k": 0.25,
+    "reciprocal_rank": 1.0,
+    "citation_correctness": 1.0,
+    "forbidden_hits": 0,
+    "duplicate_source_spans": 0,
+    "latency_ms": 1.7345649999924717,
+    "retrieved_chunk_ids": [
+      "CHK-38C89BC4EA14B5EBAE95",
+      "CHK-7613F566916559C0C79D",
+      "CHK-FABAE761D24D964580EB",
+      "CHK-CD2417A03DE0A74BC4C7"
+    ]
+  },
+  {
+    "case_id": "EVAL-010",
+    "precision_at_k": 1.0,
+    "recall_at_k": 0.4444444444444444,
+    "reciprocal_rank": 1.0,
+    "citation_correctness": 1.0,
+    "forbidden_hits": 0,
+    "duplicate_source_spans": 0,
+    "latency_ms": 1.198724999994738,
+    "retrieved_chunk_ids": [
+      "CHK-17F9FE002DFF864E4B10",
+      "CHK-CD2417A03DE0A74BC4C7",
+      "CHK-27936953C3668CA2BF72",
+      "CHK-B1253E026C790E24759F"
+    ]
+  },
+  {
+    "case_id": "EVAL-011",
+    "precision_at_k": 1.0,
+    "recall_at_k": 0.4444444444444444,
+    "reciprocal_rank": 1.0,
+    "citation_correctness": 1.0,
+    "forbidden_hits": 0,
+    "duplicate_source_spans": 0,
+    "latency_ms": 1.3535419999470832,
+    "retrieved_chunk_ids": [
+      "CHK-FABAE761D24D964580EB",
+      "CHK-6AFDBA615DEC4D701EE0",
+      "CHK-A73A8D364BC192A48D57",
+      "CHK-1ADA4C21B429A62A14B0"
+    ]
+  },
+  {
+    "case_id": "EVAL-012",
+    "precision_at_k": 0.0,
+    "recall_at_k": 1.0,
+    "reciprocal_rank": 0.0,
+    "citation_correctness": 1.0,
+    "forbidden_hits": 0,
+    "duplicate_source_spans": 0,
+    "latency_ms": 1.4201369999682356,
+    "retrieved_chunk_ids": [
+      "CHK-27936953C3668CA2BF72",
+      "CHK-B1253E026C790E24759F",
+      "CHK-CD2417A03DE0A74BC4C7",
+      "CHK-E92DA6A1695B8387A8D4"
+    ]
+  },
+  {
+    "case_id": "EVAL-013",
+    "precision_at_k": 1.0,
+    "recall_at_k": 1.0,
+    "reciprocal_rank": 1.0,
+    "citation_correctness": 1.0,
+    "forbidden_hits": 0,
+    "duplicate_source_spans": 0,
+    "latency_ms": 0.38196200000584213,
+    "retrieved_chunk_ids": [
+      "CHK-59825939BB13EE7DADDC",
+      "CHK-7F6D8ABC3CB4237EFA8E",
+      "CHK-ED56BA150E449D27C8A0"
+    ]
+  }
+]

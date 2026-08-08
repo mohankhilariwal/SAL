@@ -1,0 +1,20 @@
+{
+  "built_at": "2026-07-31T21:02:51.590987+00:00",
+  "chunk_count": 19,
+  "config_hash": "d45ce2a220db191491a983c7f41435888e551739245b39620678aef9382c99d1",
+  "corpus_hash": "5e6601c18ca4ce6105a0da79b0e052a19c0ce4ad2c7ab72f8f4b57e505d0e331",
+  "fusion_algorithm": "weighted-RRF(k=60)",
+  "index_id": "RIDX-D379C683D515BCAF3E3D",
+  "lexical_algorithm": "BM25(k1=1.5,b=0.75)",
+  "reranker": "deterministic-metadata-aware-v1",
+  "schema_version": "1.0.0",
+  "semantic_algorithm": "TF-IDF+truncated-SVD-LSA",
+  "semantic_dimensions": 8,
+  "source_versions": [
+    "KSV-0921CE196D63A7CE6773",
+    "KSV-3CD13C57F3A62D76108E",
+    "KSV-8933A97D01785479DFB7",
+    "KSV-D617CDA60FF9A2BA7206",
+    "KSV-F3EC747F8737F30E2B86"
+  ]
+}

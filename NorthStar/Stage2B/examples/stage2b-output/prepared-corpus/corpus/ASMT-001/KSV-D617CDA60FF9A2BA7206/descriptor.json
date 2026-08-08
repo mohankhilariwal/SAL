@@ -1,0 +1,29 @@
+{
+  "access": {
+    "allowed_groups": [
+      "MODEL_RISK",
+      "LEGAL_COUNSEL"
+    ],
+    "classification": "RESTRICTED",
+    "purpose": "REGULATORY_CHANGE_ANALYSIS",
+    "residency": "CA"
+  },
+  "authoritative": false,
+  "business_domains": [
+    "PAYMENTS",
+    "FINANCIAL_CRIME",
+    "INCIDENT"
+  ],
+  "effective_from": "2025-07-01",
+  "effective_to": null,
+  "jurisdictions": [
+    "CA"
+  ],
+  "owner": "Model Risk and Legal",
+  "relative_path": "documents/ASMT-001-prior-impact.md",
+  "retention_class": "ASSESSMENT_RESTRICTED",
+  "source_id": "ASMT-001",
+  "source_type": "PRIOR_ASSESSMENT",
+  "title": "Prior Impact Assessment \u2014 Project Borealis",
+  "version_label": "2025.4"
+}

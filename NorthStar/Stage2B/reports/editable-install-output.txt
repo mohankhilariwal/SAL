@@ -1,0 +1,14 @@
+Looking in indexes: https://reader:****@packages.applied-caas-gateway1.internal.api.openai.org/artifactory/api/pypi/pypi-public/simple
+Obtaining file:///mnt/data/NorthStar-Agentic-AI-Playbook-Stage-2B/northstar-agentic-compliance
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: northstar-agentic-compliance
+  Building editable for northstar-agentic-compliance (pyproject.toml): started
+  Building editable for northstar-agentic-compliance (pyproject.toml): finished with status 'done'
+  Created wheel for northstar-agentic-compliance: filename=northstar_agentic_compliance-0.4.0-0.editable-py3-none-any.whl size=1629 sha256=72ea75ec6b8cc903d07f1bdbd357001665566e705cca6a0755a985a85d3c80e1
+  Stored in directory: /tmp/pip-ephem-wheel-cache-kugl0jx_/wheels/f7/65/05/2bd107db98e5f8ba5f4c10ae09061dd417e5622d1702b5cc41
+Successfully built northstar-agentic-compliance
+Installing collected packages: northstar-agentic-compliance
+Successfully installed northstar-agentic-compliance-0.4.0

@@ -1,0 +1,30 @@
+{
+  "access": {
+    "allowed_groups": [
+      "COMPLIANCE_ANALYST",
+      "PAYMENTS_OPERATIONS"
+    ],
+    "classification": "INTERNAL",
+    "purpose": "REGULATORY_CHANGE_ANALYSIS",
+    "residency": "CA"
+  },
+  "authoritative": true,
+  "business_domains": [
+    "PAYMENTS",
+    "FINANCIAL_CRIME"
+  ],
+  "effective_from": "2026-02-15",
+  "effective_to": null,
+  "jurisdictions": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "owner": "Payments Operations Owner",
+  "relative_path": "documents/PROC-001-payments-screening.md",
+  "retention_class": "PROCESS_ACTIVE",
+  "source_id": "PROC-001",
+  "source_type": "PROCESS",
+  "title": "Payments Screening and Escalation Process",
+  "version_label": "2026.3"
+}

@@ -1,0 +1,10 @@
+flowchart LR
+    classDef implemented fill:#e8f5e9,stroke:#2e7d32;
+    classDef partial fill:#fff8e1,stroke:#f57f17;
+    classDef planned fill:#f3f4f6,stroke:#6b7280,stroke-dasharray:5 5;
+    MAYA["Maya Chen"] --> C1["CMP-001 Analyst Experience Portal"]:::partial
+    C1 --> C3["CMP-003 One-shot application flow"]:::partial
+    C3 -. cannot query .-> C4["CMP-004 Knowledge and Evidence Access Boundary"]:::partial
+    C4 --> PREP["Prepared corpus\nDATA-019 to DATA-025"]:::implemented
+    C7["CMP-007 Identity, Authorization and Policy Boundary"]:::planned -. access strings only .-> PREP
+    PREP --> C8["CMP-008 preparation validation"]:::partial

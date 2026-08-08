@@ -1,0 +1,42 @@
+flowchart TB
+    classDef implemented fill:#e8f5e9,stroke:#2e7d32,stroke-width:1.5px;
+    classDef partial fill:#fff8e1,stroke:#f57f17,stroke-width:1.5px;
+    classDef planned fill:#f3f4f6,stroke:#6b7280,stroke-dasharray:5 5;
+    classDef new fill:#fce4ec,stroke:#ad1457,stroke-width:2px;
+    classDef external fill:#ede7f6,stroke:#5e35b1;
+
+    MAYA["Maya Chen\nRegulatory Compliance Analyst"]:::external --> C1["CMP-001 Analyst Experience Portal\nlocal CLI / evidence view"]:::partial
+    PUB["Regulatory publication"]:::external --> C2["CMP-002 Regulatory Intake Boundary\nStage 1 bounded input"]:::implemented
+    C1 --> C2 --> C3["CMP-003 Case and Workflow Orchestration Boundary\none-shot application flow"]:::partial
+    C3 --> S1["Stage 1 provider-neutral summary contract"]:::partial
+
+    SRCS["Approved policy, control, process, taxonomy\nand prior-assessment exports"]:::external --> C4["CMP-004 Knowledge and Evidence Access Boundary"]:::new
+    subgraph K["CMP-004 implemented through S02B"]
+        PREP["S02A parser, provenance, chunker, immutable corpus"]:::implemented
+        AUTH["Deterministic query authorization\nbefore candidate scoring"]:::new
+        LEX["BM25 lexical candidates"]:::new
+        SEM["TF-IDF + SVD latent semantic candidates"]:::new
+        FUS["Weighted reciprocal-rank fusion"]:::new
+        RER["Metadata-aware reranking\nand overlap suppression"]:::new
+        CITE["Exact line citation builder\nand context assembly"]:::new
+        PREP --> AUTH
+        AUTH --> LEX
+        AUTH --> SEM
+        LEX --> FUS
+        SEM --> FUS
+        FUS --> RER --> CITE
+    end
+    SRCS --> PREP
+    C3 --> AUTH
+    CITE --> C3
+
+    C7["CMP-007 Identity, Authorization and Policy Boundary\nenterprise identity/PDP planned"]:::planned -. locally asserted principal context .-> AUTH
+    C8["CMP-008 Evaluation and Assurance Boundary\nretrieval regression and permission tests"]:::new --> K
+    C9["CMP-009 Observability and Audit Boundary\nlocal manifests/reports; not audit ledger"]:::partial <-->|"local evidence"| K
+    C10["CMP-010 Runtime and Deployment Boundary\nlocal Python runtime"]:::partial --> K
+    C11["CMP-011 Source-of-Truth Governance Pack\nversion 0.4.0"]:::implemented --> K
+
+    C5["CMP-005 Enterprise Integration Boundary"]:::planned
+    C6["CMP-006 Human Review and Approval Boundary"]:::planned
+    C4 -. no live connectors .-> C5
+    C3 -. no approval workflow .-> C6

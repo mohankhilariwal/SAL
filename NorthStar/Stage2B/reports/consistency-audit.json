@@ -1,0 +1,12 @@
+{
+  "result": "PASSED",
+  "errors": [],
+  "exceptions": [
+    "ISS-014 Mermaid CLI rendering not executed",
+    "ISS-015 Python 3.12 direct execution not available",
+    "ISS-016 production semantic/reranking providers not live-benchmarked",
+    "ISS-018 enterprise identity/PDP not connected",
+    "ISS-019 nine detailed prior registers/repository not attached",
+    "ISS-020 answer-generation metrics intentionally unavailable"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "chunker_version": "northstar-markdown-line-window-v1",
+  "line_count": 13,
+  "metadata_sha256": "73dfcd22de3f56151930f8a99eced2d95f98965aa211099c9d18094c8cb7a406",
+  "normalized_sha256": "ff7792aef56fc78089e65677807cbcd3cbc406799df398f37960a46af1af0224",
+  "parser_version": "northstar-text-parser-v1",
+  "raw_sha256": "ff7792aef56fc78089e65677807cbcd3cbc406799df398f37960a46af1af0224",
+  "risk_flags": [],
+  "schema_version": "1.0.0",
+  "source_id": "TAX-001",
+  "source_version_id": "KSV-8933A97D01785479DFB7",
+  "version_label": "2026.1"
+}

@@ -1,0 +1,16 @@
+{
+  "chunker_version": "northstar-markdown-line-window-v1",
+  "line_count": 12,
+  "metadata_sha256": "e266f9bce24ec6f595bc28399f6de9dae448b7e3c7cb334367e046aba399fed2",
+  "normalized_sha256": "28e6124d1c09956340e01d94535229053a95382a58c27dd3b08d057fb1a4055d",
+  "parser_version": "northstar-text-parser-v1",
+  "raw_sha256": "28e6124d1c09956340e01d94535229053a95382a58c27dd3b08d057fb1a4055d",
+  "risk_flags": [
+    "INSTRUCTION_LIKE_CONTENT",
+    "CREDENTIAL_SEEKING_CONTENT"
+  ],
+  "schema_version": "1.0.0",
+  "source_id": "CTL-001",
+  "source_version_id": "KSV-F3EC747F8737F30E2B86",
+  "version_label": "2026.2"
+}

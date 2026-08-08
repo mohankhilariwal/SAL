@@ -1,0 +1,46 @@
+{
+  "chunk_count": 19,
+  "chunker_version": "northstar-markdown-line-window-v1",
+  "corpus_hash": "5e6601c18ca4ce6105a0da79b0e052a19c0ce4ad2c7ab72f8f4b57e505d0e331",
+  "corpus_id": "CORPUS-5E6601C18CA4CE6105A0",
+  "entries": [
+    {
+      "active_source_version_id": "KSV-0921CE196D63A7CE6773",
+      "chunk_count": 3,
+      "historical_source_version_ids": [],
+      "package_path": "corpus/POL-001/KSV-0921CE196D63A7CE6773",
+      "source_id": "POL-001"
+    },
+    {
+      "active_source_version_id": "KSV-F3EC747F8737F30E2B86",
+      "chunk_count": 4,
+      "historical_source_version_ids": [],
+      "package_path": "corpus/CTL-001/KSV-F3EC747F8737F30E2B86",
+      "source_id": "CTL-001"
+    },
+    {
+      "active_source_version_id": "KSV-3CD13C57F3A62D76108E",
+      "chunk_count": 4,
+      "historical_source_version_ids": [],
+      "package_path": "corpus/PROC-001/KSV-3CD13C57F3A62D76108E",
+      "source_id": "PROC-001"
+    },
+    {
+      "active_source_version_id": "KSV-8933A97D01785479DFB7",
+      "chunk_count": 5,
+      "historical_source_version_ids": [],
+      "package_path": "corpus/TAX-001/KSV-8933A97D01785479DFB7",
+      "source_id": "TAX-001"
+    },
+    {
+      "active_source_version_id": "KSV-D617CDA60FF9A2BA7206",
+      "chunk_count": 3,
+      "historical_source_version_ids": [],
+      "package_path": "corpus/ASMT-001/KSV-D617CDA60FF9A2BA7206",
+      "source_id": "ASMT-001"
+    }
+  ],
+  "parser_version": "northstar-text-parser-v1",
+  "schema_version": "1.0.0",
+  "source_count": 5
+}

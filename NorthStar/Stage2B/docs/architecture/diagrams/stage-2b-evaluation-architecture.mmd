@@ -1,0 +1,8 @@
+flowchart LR
+    DS["Versioned evaluation cases\nnormal, negative, permission-boundary"] --> RUN["Offline retrieval runner"]
+    RUN --> MET["Precision@k, recall@k, MRR,\ncitation correctness, forbidden hits,\nduplicate spans, latency"]
+    RUN --> TRACE["Retrieved chunk IDs and ranking reasons"]
+    MET --> GATE["Regression gate"]
+    TRACE --> GATE
+    HUMAN["Future human relevance labels"] -. production calibration .-> DS
+    GEN["Future grounded answer generation"] -. faithfulness/answer relevance .-> FUT["Deferred generation evaluation"]

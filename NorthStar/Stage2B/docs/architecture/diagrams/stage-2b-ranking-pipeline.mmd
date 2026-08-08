@@ -1,0 +1,13 @@
+flowchart LR
+    Q["DATA-027 RetrievalQuery"] --> PEP["Authorization filter\nprincipal + purpose + clearance + groups + residency + date"]
+    P["DATA-026 RetrievalPrincipalContext"] --> PEP
+    CORPUS["INT-010 Prepared Corpus Export"] --> PEP
+    PEP --> AUTHSET["Authorized chunk subset"]
+    AUTHSET --> BM25["BM25 lexical ranking"]
+    AUTHSET --> LSA["TF-IDF + truncated-SVD semantic ranking"]
+    BM25 --> RRF["Weighted reciprocal-rank fusion"]
+    LSA --> RRF
+    RRF --> RERANK["Deterministic metadata-aware reranker"]
+    RERANK --> DEDUP["Overlapping-span suppression"]
+    DEDUP --> CIT["Exact citation construction + independent validation"]
+    CIT --> CTX["DATA-032 RetrievalContext"]

@@ -1,0 +1,27 @@
+sequenceDiagram
+    actor Maya
+    participant UX as CMP-001 Analyst Experience Portal
+    participant R as CMP-004 Retrieval Service
+    participant A as Authorization Filter
+    participant L as Lexical Ranker
+    participant S as Semantic Ranker
+    participant F as Fusion/Reranker
+    participant V as Citation Validator
+    participant E as CMP-008 Evaluation Boundary
+
+    Maya->>UX: Query + locally asserted principal context
+    UX->>R: INT-012 Authorized Retrieval Request
+    R->>A: Filter DATA-022 chunks before text scoring
+    A-->>R: Authorized chunk IDs only
+    par Candidate generation
+        R->>L: Rank authorized chunks with BM25
+        R->>S: Rank authorized chunks with latent semantic vectors
+    end
+    L-->>F: Ranked lexical candidates
+    S-->>F: Ranked semantic candidates
+    F-->>R: Fused, reranked, deduplicated candidates
+    R->>V: Build and reconstruct exact line citations
+    V-->>R: Citation-valid evidence
+    R-->>UX: INT-014 Retrieval context
+    UX-->>Maya: Ranked passages and citations
+    R-->>E: INT-015 retrieval evaluation evidence

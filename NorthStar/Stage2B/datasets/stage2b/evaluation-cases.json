@@ -1,0 +1,39 @@
+{
+  "cases": [
+    {
+      "case_id": "ECASE-001",
+      "query": "Which NorthStar evidence requires assessing borrower affordability and ability to repay?",
+      "principal": "MAYA",
+      "relevant_source_ids": ["POL-001", "TAX-001"],
+      "forbidden_source_ids": ["ASMT-001"]
+    },
+    {
+      "case_id": "ECASE-002",
+      "query": "Which passages cover sanctions screening, restricted parties, transaction monitoring and escalation?",
+      "principal": "MAYA",
+      "relevant_source_ids": ["PROC-001", "TAX-001"],
+      "forbidden_source_ids": ["ASMT-001"]
+    },
+    {
+      "case_id": "ECASE-003",
+      "query": "What controls govern third-party sharing of customer personal data and cross-border transfers?",
+      "principal": "MAYA",
+      "relevant_source_ids": ["CTL-001", "TAX-001"],
+      "forbidden_source_ids": ["ASMT-001"]
+    },
+    {
+      "case_id": "ECASE-004",
+      "query": "What did Project Borealis find about the delayed sanctions screening incident?",
+      "principal": "MAYA",
+      "relevant_source_ids": [],
+      "forbidden_source_ids": ["ASMT-001"]
+    },
+    {
+      "case_id": "ECASE-005",
+      "query": "What did Project Borealis find about the delayed sanctions screening incident?",
+      "principal": "SOFIA",
+      "relevant_source_ids": ["ASMT-001"],
+      "forbidden_source_ids": []
+    }
+  ]
+}

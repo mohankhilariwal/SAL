@@ -1,0 +1,29 @@
+{
+  "access": {
+    "allowed_groups": [
+      "COMPLIANCE_ANALYST",
+      "LENDING_POLICY_OWNER"
+    ],
+    "classification": "CONFIDENTIAL",
+    "purpose": "REGULATORY_CHANGE_ANALYSIS",
+    "residency": "CA"
+  },
+  "authoritative": true,
+  "business_domains": [
+    "LENDING",
+    "CUSTOMER_OUTCOMES"
+  ],
+  "effective_from": "2026-01-01",
+  "effective_to": null,
+  "jurisdictions": [
+    "CA",
+    "US"
+  ],
+  "owner": "Lending Policy Owner",
+  "relative_path": "documents/POL-001-lending-policy.md",
+  "retention_class": "POLICY_ACTIVE",
+  "source_id": "POL-001",
+  "source_type": "POLICY",
+  "title": "Responsible Lending Policy",
+  "version_label": "2026.1"
+}

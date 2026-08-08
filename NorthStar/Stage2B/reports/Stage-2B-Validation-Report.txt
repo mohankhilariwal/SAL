@@ -1,0 +1,43 @@
+NorthStar Agentic AI Architecture Playbook
+Stage 2B — Retrieval, Reranking, Citations and RAG Evaluation
+Validation date: 2026-07-31
+Architecture/repository/handoff version: 0.4.0
+
+EXECUTION BOUNDARY
+- Local/offline synthetic text and Markdown corpus.
+- Python 3.13.5; NumPy 2.3.5; pytest 9.0.2.
+- No enterprise identity, managed embedding service, vector database, cross-encoder, model generator, tools or agents.
+
+EXECUTED CHECKS
+- 20 pytest tests passed.
+- Demo completed for four Maya queries.
+- Prepared-corpus/index validator passed.
+- 19 chunks validated.
+- Index ID: RIDX-D379C683D515BCAF3E3D.
+- All returned citations reconstructed exactly.
+- Restricted ASMT-001 chunks were not scored for Maya.
+- Python package compilation passed.
+- Editable package installation passed in the acceptance environment using --no-build-isolation --no-deps.
+- Stage consistency audit passed.
+
+SYNTHETIC RETRIEVAL EVALUATIONS
+EVAL-009 lending: precision@4 0.50; recall@4 0.25; MRR 1.00; citation correctness 1.00; forbidden hits 0; duplicate spans 0.
+EVAL-010 payments: precision@4 1.00; recall@4 0.444; MRR 1.00; citation correctness 1.00; forbidden hits 0; duplicate spans 0.
+EVAL-011 customer data: precision@4 1.00; recall@4 0.444; MRR 1.00; citation correctness 1.00; forbidden hits 0; duplicate spans 0.
+EVAL-012 Maya restricted-negative: forbidden hits 0; citation correctness 1.00; no restricted chunk scored or returned.
+EVAL-013 Sofia restricted-positive: precision@4 1.00; recall@4 1.00; MRR 1.00; citation correctness 1.00; forbidden hits 0; duplicate spans 0.
+
+CONSISTENCY RESULT
+Passed with recorded exceptions:
+- ISS-014 Mermaid CLI rendering not executed; Mermaid declarations received structural checks.
+- ISS-015 Python 3.12 direct execution unavailable.
+- ISS-016 production semantic/reranking providers not live-benchmarked.
+- ISS-018 enterprise identity/PDP not connected.
+- ISS-019 nine detailed prior registers and byte-exact repository not attached.
+- ISS-020 generated-answer metrics intentionally unavailable because no generator exists.
+
+SCOPE AUDIT
+- No numbered agent identifier allocated.
+- No numbered model-selectable tool identifier allocated.
+- No agent loop, graph, memory, case/workflow state, approval service or generated-answer contract introduced.
+- S02B stops after authorized retrieval, ranking, citations, context assembly and retrieval/RAG evaluation.

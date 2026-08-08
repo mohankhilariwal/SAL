@@ -1,0 +1,14 @@
+flowchart TB
+    classDef trusted fill:#e8f5e9,stroke:#2e7d32;
+    classDef untrusted fill:#ffebee,stroke:#c62828;
+    classDef planned fill:#f3f4f6,stroke:#6b7280,stroke-dasharray:5 5;
+
+    USER["Locally asserted principal attributes\nnot enterprise-authenticated"]:::untrusted --> PEP["Deterministic retrieval PEP"]:::trusted
+    DOCS["Prepared document text\nuntrusted evidence data"]:::untrusted --> PEP
+    META["Approved manifest metadata"]:::trusted --> PEP
+    PDP["CMP-007 enterprise identity/PDP"]:::planned -. future signed decision .-> PEP
+    PEP --> AUTH["Authorized candidate IDs"]:::trusted
+    AUTH --> SCORE["Lexical and semantic scorers"]:::trusted
+    SCORE --> CITE["Citation and context assembler"]:::trusted
+    CITE --> MODEL["Future grounded generation boundary"]:::planned
+    DOCS -. never becomes instruction .-> CITE

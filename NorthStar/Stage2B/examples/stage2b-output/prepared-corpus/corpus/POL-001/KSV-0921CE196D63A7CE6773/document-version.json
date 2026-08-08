@@ -1,0 +1,13 @@
+{
+  "chunker_version": "northstar-markdown-line-window-v1",
+  "line_count": 11,
+  "metadata_sha256": "4536e3e6ead101c8fef573629e3fd665d2c663866d1fe148593aa65beaa429af",
+  "normalized_sha256": "84f4d8f16707d60b8a44c4fbc8714573437d962e7381a3a02d2f8deb93d86a82",
+  "parser_version": "northstar-text-parser-v1",
+  "raw_sha256": "84f4d8f16707d60b8a44c4fbc8714573437d962e7381a3a02d2f8deb93d86a82",
+  "risk_flags": [],
+  "schema_version": "1.0.0",
+  "source_id": "POL-001",
+  "source_version_id": "KSV-0921CE196D63A7CE6773",
+  "version_label": "2026.1"
+}

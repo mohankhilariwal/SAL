@@ -1,0 +1,30 @@
+{
+  "index_id": "RIDX-D379C683D515BCAF3E3D",
+  "queries": 4,
+  "top_sources": [
+    [
+      "POL-001",
+      "TAX-001",
+      "PROC-001",
+      "CTL-001"
+    ],
+    [
+      "TAX-001",
+      "PROC-001",
+      "PROC-001",
+      "PROC-001"
+    ],
+    [
+      "TAX-001",
+      "CTL-001",
+      "CTL-001",
+      "CTL-001"
+    ],
+    [
+      "PROC-001",
+      "PROC-001",
+      "PROC-001",
+      "PROC-001"
+    ]
+  ]
+}

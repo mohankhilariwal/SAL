@@ -1,0 +1,623 @@
+{
+  "index": {
+    "built_at": "2026-07-31T21:02:51.004894+00:00",
+    "chunk_count": 19,
+    "config_hash": "d45ce2a220db191491a983c7f41435888e551739245b39620678aef9382c99d1",
+    "corpus_hash": "5e6601c18ca4ce6105a0da79b0e052a19c0ce4ad2c7ab72f8f4b57e505d0e331",
+    "fusion_algorithm": "weighted-RRF(k=60)",
+    "index_id": "RIDX-D379C683D515BCAF3E3D",
+    "lexical_algorithm": "BM25(k1=1.5,b=0.75)",
+    "reranker": "deterministic-metadata-aware-v1",
+    "schema_version": "1.0.0",
+    "semantic_algorithm": "TF-IDF+truncated-SVD-LSA",
+    "semantic_dimensions": 8,
+    "source_versions": [
+      "KSV-0921CE196D63A7CE6773",
+      "KSV-3CD13C57F3A62D76108E",
+      "KSV-8933A97D01785479DFB7",
+      "KSV-D617CDA60FF9A2BA7206",
+      "KSV-F3EC747F8737F30E2B86"
+    ]
+  },
+  "results": [
+    {
+      "authorization_applied_before_scoring": true,
+      "context_text": "[CIT-0F77B0E1CF77618D6BB9] Responsible Lending Policy v2026.1 (POL-001/KSV-0921CE196D63A7CE6773, lines 3-8)\n## Affordability and ability to repay\nNorthStar must assess a borrower's ability to repay before approving or materially increasing a lending facility.\nThe assessment must consider verified income, committed expenses, existing debt obligations and reasonably foreseeable payment stress.\nAn automated recommendation may support the analysis, but it must not replace the accountable lending decision.\nEvidence of the assessment and any exception must be retained with the application record.\n\n\n[CIT-3869E1467445A236FC10] Regulatory Change Taxonomy v2026.1 (TAX-001/KSV-8933A97D01785479DFB7, lines 3-5)\n## Lending\nLending topics include affordability, ability to repay, creditworthiness, vulnerable customers, collections and fair treatment.\n\n\n[CIT-0EE68CECBE2DD1C84A7C] Payments Screening and Escalation Process v2026.3 (PROC-001/KSV-3CD13C57F3A62D76108E, lines 7-10)\n## Transaction monitoring\nPost-execution transaction monitoring identifies unusual patterns, structuring indicators and repeated threshold avoidance.\nA material alert is escalated to Payments Compliance with transaction evidence, customer context and the screening disposition.\n\n\n[CIT-A744C31DE45AE1B78B82] Customer Data Sharing Control v2026.2 (CTL-001/KSV-F3EC747F8737F30E2B86, lines 3-6)\n## Third-party disclosure\nCustomer personal data may be disclosed to a third party only for an approved purpose, under a current agreement and with the minimum necessary fields.\nThe control owner must verify the recipient, lawful basis, contractual safeguards and permitted retention before release.\n",
+      "evidence": [
+        {
+          "authoritative": true,
+          "business_domains": [
+            "LENDING",
+            "CUSTOMER_OUTCOMES"
+          ],
+          "citation": {
+            "chunk_id": "CHK-38C89BC4EA14B5EBAE95",
+            "citation_id": "CIT-0F77B0E1CF77618D6BB9",
+            "excerpt": "## Affordability and ability to repay\nNorthStar must assess a borrower's ability to repay before approving or materially increasing a lending facility.\nThe assessment must consider verified income, committed expenses, existing debt obligations and reasonably foreseeable payment stress.\nAn automated recommendation may support the analysis, but it must not replace the accountable lending decision.\nEvidence of the assessment and any exception must be retained with the application record.\n",
+            "line_end": 8,
+            "line_start": 3,
+            "normalized_source_sha256": "84f4d8f16707d60b8a44c4fbc8714573437d962e7381a3a02d2f8deb93d86a82",
+            "source_id": "POL-001",
+            "source_version_id": "KSV-0921CE196D63A7CE6773",
+            "title": "Responsible Lending Policy",
+            "version_label": "2026.1"
+          },
+          "jurisdictions": [
+            "CA",
+            "US"
+          ],
+          "rank": 1,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=1.000",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.09252247488101534,
+          "source_type": "POLICY"
+        },
+        {
+          "authoritative": false,
+          "business_domains": [
+            "LENDING",
+            "PAYMENTS",
+            "CUSTOMER_DATA"
+          ],
+          "citation": {
+            "chunk_id": "CHK-7613F566916559C0C79D",
+            "citation_id": "CIT-3869E1467445A236FC10",
+            "excerpt": "## Lending\nLending topics include affordability, ability to repay, creditworthiness, vulnerable customers, collections and fair treatment.\n",
+            "line_end": 5,
+            "line_start": 3,
+            "normalized_source_sha256": "ff7792aef56fc78089e65677807cbcd3cbc406799df398f37960a46af1af0224",
+            "source_id": "TAX-001",
+            "source_version_id": "KSV-8933A97D01785479DFB7",
+            "title": "Regulatory Change Taxonomy",
+            "version_label": "2026.1"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 2,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.714"
+          ],
+          "risk_flags": [],
+          "score": 0.0677163338453661,
+          "source_type": "TAXONOMY"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "PAYMENTS",
+            "FINANCIAL_CRIME"
+          ],
+          "citation": {
+            "chunk_id": "CHK-CD2417A03DE0A74BC4C7",
+            "citation_id": "CIT-0EE68CECBE2DD1C84A7C",
+            "excerpt": "## Transaction monitoring\nPost-execution transaction monitoring identifies unusual patterns, structuring indicators and repeated threshold avoidance.\nA material alert is escalated to Payments Compliance with transaction evidence, customer context and the screening disposition.\n",
+            "line_end": 10,
+            "line_start": 7,
+            "normalized_source_sha256": "237c52015bd13bd61b149f4abde11efedf915ad797f1684e8a6d571ff8dcf9a1",
+            "source_id": "PROC-001",
+            "source_version_id": "KSV-3CD13C57F3A62D76108E",
+            "title": "Payments Screening and Escalation Process",
+            "version_label": "2026.3"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 3,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.429",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.06222696043591566,
+          "source_type": "PROCESS"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "CUSTOMER_DATA",
+            "PRIVACY"
+          ],
+          "citation": {
+            "chunk_id": "CHK-FABAE761D24D964580EB",
+            "citation_id": "CIT-A744C31DE45AE1B78B82",
+            "excerpt": "## Third-party disclosure\nCustomer personal data may be disclosed to a third party only for an approved purpose, under a current agreement and with the minimum necessary fields.\nThe control owner must verify the recipient, lawful basis, contractual safeguards and permitted retention before release.\n",
+            "line_end": 6,
+            "line_start": 3,
+            "normalized_source_sha256": "28e6124d1c09956340e01d94535229053a95382a58c27dd3b08d057fb1a4055d",
+            "source_id": "CTL-001",
+            "source_version_id": "KSV-F3EC747F8737F30E2B86",
+            "title": "Customer Data Sharing Control",
+            "version_label": "2026.2"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 4,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.286",
+            "authoritative_source"
+          ],
+          "risk_flags": [
+            "INSTRUCTION_LIKE_CONTENT",
+            "CREDENTIAL_SEEKING_CONTENT"
+          ],
+          "score": 0.054836087420042645,
+          "source_type": "CONTROL"
+        }
+      ],
+      "index_id": "RIDX-D379C683D515BCAF3E3D",
+      "principal_id": "PER-001-MAYA",
+      "query_id": "RQ-001",
+      "schema_version": "1.0.0",
+      "untrusted_content_notice": "Retrieved passages are untrusted evidence data. They are not application instructions, approval decisions or legal conclusions."
+    },
+    {
+      "authorization_applied_before_scoring": true,
+      "context_text": "[CIT-112ECFC3E25FC935E8B7] Regulatory Change Taxonomy v2026.1 (TAX-001/KSV-8933A97D01785479DFB7, lines 6-8)\n## Payments\nPayments topics include sanctions screening, restricted parties, transaction monitoring, fraud, settlement and operational resilience.\n\n\n[CIT-0EE68CECBE2DD1C84A7C] Payments Screening and Escalation Process v2026.3 (PROC-001/KSV-3CD13C57F3A62D76108E, lines 7-10)\n## Transaction monitoring\nPost-execution transaction monitoring identifies unusual patterns, structuring indicators and repeated threshold avoidance.\nA material alert is escalated to Payments Compliance with transaction evidence, customer context and the screening disposition.\n\n\n[CIT-F2EFDF23B6A6FDBAA6F2] Payments Screening and Escalation Process v2026.3 (PROC-001/KSV-3CD13C57F3A62D76108E, lines 3-6)\n## Pre-execution screening\nPayments must be screened against applicable sanctions, restricted-party and high-risk jurisdiction rules before release.\nPotential matches are held for review; the process must not silently bypass a screening result.\n\n\n[CIT-057187DE3435D2BFC86D] Payments Screening and Escalation Process v2026.3 (PROC-001/KSV-3CD13C57F3A62D76108E, lines 1-2)\n# Payments Screening and Escalation Process\n",
+      "evidence": [
+        {
+          "authoritative": false,
+          "business_domains": [
+            "LENDING",
+            "PAYMENTS",
+            "CUSTOMER_DATA"
+          ],
+          "citation": {
+            "chunk_id": "CHK-17F9FE002DFF864E4B10",
+            "citation_id": "CIT-112ECFC3E25FC935E8B7",
+            "excerpt": "## Payments\nPayments topics include sanctions screening, restricted parties, transaction monitoring, fraud, settlement and operational resilience.\n",
+            "line_end": 8,
+            "line_start": 6,
+            "normalized_source_sha256": "ff7792aef56fc78089e65677807cbcd3cbc406799df398f37960a46af1af0224",
+            "source_id": "TAX-001",
+            "source_version_id": "KSV-8933A97D01785479DFB7",
+            "title": "Regulatory Change Taxonomy",
+            "version_label": "2026.1"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 1,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.857"
+          ],
+          "risk_flags": [],
+          "score": 0.0753796177381582,
+          "source_type": "TAXONOMY"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "PAYMENTS",
+            "FINANCIAL_CRIME"
+          ],
+          "citation": {
+            "chunk_id": "CHK-CD2417A03DE0A74BC4C7",
+            "citation_id": "CIT-0EE68CECBE2DD1C84A7C",
+            "excerpt": "## Transaction monitoring\nPost-execution transaction monitoring identifies unusual patterns, structuring indicators and repeated threshold avoidance.\nA material alert is escalated to Payments Compliance with transaction evidence, customer context and the screening disposition.\n",
+            "line_end": 10,
+            "line_start": 7,
+            "normalized_source_sha256": "237c52015bd13bd61b149f4abde11efedf915ad797f1684e8a6d571ff8dcf9a1",
+            "source_id": "PROC-001",
+            "source_version_id": "KSV-3CD13C57F3A62D76108E",
+            "title": "Payments Screening and Escalation Process",
+            "version_label": "2026.3"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 2,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.429",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.06395104630958677,
+          "source_type": "PROCESS"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "PAYMENTS",
+            "FINANCIAL_CRIME"
+          ],
+          "citation": {
+            "chunk_id": "CHK-27936953C3668CA2BF72",
+            "citation_id": "CIT-F2EFDF23B6A6FDBAA6F2",
+            "excerpt": "## Pre-execution screening\nPayments must be screened against applicable sanctions, restricted-party and high-risk jurisdiction rules before release.\nPotential matches are held for review; the process must not silently bypass a screening result.\n",
+            "line_end": 6,
+            "line_start": 3,
+            "normalized_source_sha256": "237c52015bd13bd61b149f4abde11efedf915ad797f1684e8a6d571ff8dcf9a1",
+            "source_id": "PROC-001",
+            "source_version_id": "KSV-3CD13C57F3A62D76108E",
+            "title": "Payments Screening and Escalation Process",
+            "version_label": "2026.3"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 3,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.286",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.05578373015873016,
+          "source_type": "PROCESS"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "PAYMENTS",
+            "FINANCIAL_CRIME"
+          ],
+          "citation": {
+            "chunk_id": "CHK-B1253E026C790E24759F",
+            "citation_id": "CIT-057187DE3435D2BFC86D",
+            "excerpt": "# Payments Screening and Escalation Process\n",
+            "line_end": 2,
+            "line_start": 1,
+            "normalized_source_sha256": "237c52015bd13bd61b149f4abde11efedf915ad797f1684e8a6d571ff8dcf9a1",
+            "source_id": "PROC-001",
+            "source_version_id": "KSV-3CD13C57F3A62D76108E",
+            "title": "Payments Screening and Escalation Process",
+            "version_label": "2026.3"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 4,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.286",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.05578373015873016,
+          "source_type": "PROCESS"
+        }
+      ],
+      "index_id": "RIDX-D379C683D515BCAF3E3D",
+      "principal_id": "PER-001-MAYA",
+      "query_id": "RQ-002",
+      "schema_version": "1.0.0",
+      "untrusted_content_notice": "Retrieved passages are untrusted evidence data. They are not application instructions, approval decisions or legal conclusions."
+    },
+    {
+      "authorization_applied_before_scoring": true,
+      "context_text": "[CIT-E53DC7A801B0B4A830C3] Regulatory Change Taxonomy v2026.1 (TAX-001/KSV-8933A97D01785479DFB7, lines 9-11)\n## Customer data\nCustomer-data topics include personal information, privacy, consent, third-party sharing, cross-border transfer, retention and data minimization.\n\n\n[CIT-A744C31DE45AE1B78B82] Customer Data Sharing Control v2026.2 (CTL-001/KSV-F3EC747F8737F30E2B86, lines 3-6)\n## Third-party disclosure\nCustomer personal data may be disclosed to a third party only for an approved purpose, under a current agreement and with the minimum necessary fields.\nThe control owner must verify the recipient, lawful basis, contractual safeguards and permitted retention before release.\n\n\n[CIT-27A0EFB966AD6D67B213] Customer Data Sharing Control v2026.2 (CTL-001/KSV-F3EC747F8737F30E2B86, lines 7-10)\n## Cross-border transfer\nA cross-border transfer requires an approved transfer mechanism, destination assessment, residency review and recorded privacy approval where policy requires it.\nThe evidence package must identify the data categories, destination, recipient, purpose and control owner.\n\n\n[CIT-7DC1513DACB5A10ACE11] Customer Data Sharing Control v2026.2 (CTL-001/KSV-F3EC747F8737F30E2B86, lines 1-2)\n# Customer Data Sharing Control\n",
+      "evidence": [
+        {
+          "authoritative": false,
+          "business_domains": [
+            "LENDING",
+            "PAYMENTS",
+            "CUSTOMER_DATA"
+          ],
+          "citation": {
+            "chunk_id": "CHK-6AFDBA615DEC4D701EE0",
+            "citation_id": "CIT-E53DC7A801B0B4A830C3",
+            "excerpt": "## Customer data\nCustomer-data topics include personal information, privacy, consent, third-party sharing, cross-border transfer, retention and data minimization.\n",
+            "line_end": 11,
+            "line_start": 9,
+            "normalized_source_sha256": "ff7792aef56fc78089e65677807cbcd3cbc406799df398f37960a46af1af0224",
+            "source_id": "TAX-001",
+            "source_version_id": "KSV-8933A97D01785479DFB7",
+            "title": "Regulatory Change Taxonomy",
+            "version_label": "2026.1"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 1,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.857"
+          ],
+          "risk_flags": [],
+          "score": 0.07512360135310955,
+          "source_type": "TAXONOMY"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "CUSTOMER_DATA",
+            "PRIVACY"
+          ],
+          "citation": {
+            "chunk_id": "CHK-FABAE761D24D964580EB",
+            "citation_id": "CIT-A744C31DE45AE1B78B82",
+            "excerpt": "## Third-party disclosure\nCustomer personal data may be disclosed to a third party only for an approved purpose, under a current agreement and with the minimum necessary fields.\nThe control owner must verify the recipient, lawful basis, contractual safeguards and permitted retention before release.\n",
+            "line_end": 6,
+            "line_start": 3,
+            "normalized_source_sha256": "28e6124d1c09956340e01d94535229053a95382a58c27dd3b08d057fb1a4055d",
+            "source_id": "CTL-001",
+            "source_version_id": "KSV-F3EC747F8737F30E2B86",
+            "title": "Customer Data Sharing Control",
+            "version_label": "2026.2"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 2,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.571",
+            "authoritative_source"
+          ],
+          "risk_flags": [
+            "INSTRUCTION_LIKE_CONTENT",
+            "CREDENTIAL_SEEKING_CONTENT"
+          ],
+          "score": 0.07083788706739526,
+          "source_type": "CONTROL"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "CUSTOMER_DATA",
+            "PRIVACY"
+          ],
+          "citation": {
+            "chunk_id": "CHK-1ADA4C21B429A62A14B0",
+            "citation_id": "CIT-27A0EFB966AD6D67B213",
+            "excerpt": "## Cross-border transfer\nA cross-border transfer requires an approved transfer mechanism, destination assessment, residency review and recorded privacy approval where policy requires it.\nThe evidence package must identify the data categories, destination, recipient, purpose and control owner.\n",
+            "line_end": 10,
+            "line_start": 7,
+            "normalized_source_sha256": "28e6124d1c09956340e01d94535229053a95382a58c27dd3b08d057fb1a4055d",
+            "source_id": "CTL-001",
+            "source_version_id": "KSV-F3EC747F8737F30E2B86",
+            "title": "Customer Data Sharing Control",
+            "version_label": "2026.2"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 3,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.429",
+            "authoritative_source"
+          ],
+          "risk_flags": [
+            "INSTRUCTION_LIKE_CONTENT",
+            "CREDENTIAL_SEEKING_CONTENT"
+          ],
+          "score": 0.06368663594470046,
+          "source_type": "CONTROL"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "CUSTOMER_DATA",
+            "PRIVACY"
+          ],
+          "citation": {
+            "chunk_id": "CHK-A73A8D364BC192A48D57",
+            "citation_id": "CIT-7DC1513DACB5A10ACE11",
+            "excerpt": "# Customer Data Sharing Control\n",
+            "line_end": 2,
+            "line_start": 1,
+            "normalized_source_sha256": "28e6124d1c09956340e01d94535229053a95382a58c27dd3b08d057fb1a4055d",
+            "source_id": "CTL-001",
+            "source_version_id": "KSV-F3EC747F8737F30E2B86",
+            "title": "Customer Data Sharing Control",
+            "version_label": "2026.2"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 4,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.286",
+            "authoritative_source"
+          ],
+          "risk_flags": [
+            "INSTRUCTION_LIKE_CONTENT",
+            "CREDENTIAL_SEEKING_CONTENT"
+          ],
+          "score": 0.055535714285714285,
+          "source_type": "CONTROL"
+        }
+      ],
+      "index_id": "RIDX-D379C683D515BCAF3E3D",
+      "principal_id": "PER-001-MAYA",
+      "query_id": "RQ-003",
+      "schema_version": "1.0.0",
+      "untrusted_content_notice": "Retrieved passages are untrusted evidence data. They are not application instructions, approval decisions or legal conclusions."
+    },
+    {
+      "authorization_applied_before_scoring": true,
+      "context_text": "[CIT-F2EFDF23B6A6FDBAA6F2] Payments Screening and Escalation Process v2026.3 (PROC-001/KSV-3CD13C57F3A62D76108E, lines 3-6)\n## Pre-execution screening\nPayments must be screened against applicable sanctions, restricted-party and high-risk jurisdiction rules before release.\nPotential matches are held for review; the process must not silently bypass a screening result.\n\n\n[CIT-057187DE3435D2BFC86D] Payments Screening and Escalation Process v2026.3 (PROC-001/KSV-3CD13C57F3A62D76108E, lines 1-2)\n# Payments Screening and Escalation Process\n\n\n[CIT-0EE68CECBE2DD1C84A7C] Payments Screening and Escalation Process v2026.3 (PROC-001/KSV-3CD13C57F3A62D76108E, lines 7-10)\n## Transaction monitoring\nPost-execution transaction monitoring identifies unusual patterns, structuring indicators and repeated threshold avoidance.\nA material alert is escalated to Payments Compliance with transaction evidence, customer context and the screening disposition.\n\n\n[CIT-71BAA020906022632DC6] Payments Screening and Escalation Process v2026.3 (PROC-001/KSV-3CD13C57F3A62D76108E, lines 11-12)\n## Operational recovery\nIf the screening service is unavailable, the payment remains queued or follows the approved manual contingency; it is not automatically released.",
+      "evidence": [
+        {
+          "authoritative": true,
+          "business_domains": [
+            "PAYMENTS",
+            "FINANCIAL_CRIME"
+          ],
+          "citation": {
+            "chunk_id": "CHK-27936953C3668CA2BF72",
+            "citation_id": "CIT-F2EFDF23B6A6FDBAA6F2",
+            "excerpt": "## Pre-execution screening\nPayments must be screened against applicable sanctions, restricted-party and high-risk jurisdiction rules before release.\nPotential matches are held for review; the process must not silently bypass a screening result.\n",
+            "line_end": 6,
+            "line_start": 3,
+            "normalized_source_sha256": "237c52015bd13bd61b149f4abde11efedf915ad797f1684e8a6d571ff8dcf9a1",
+            "source_id": "PROC-001",
+            "source_version_id": "KSV-3CD13C57F3A62D76108E",
+            "title": "Payments Screening and Escalation Process",
+            "version_label": "2026.3"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 1,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.333",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.059189141547682005,
+          "source_type": "PROCESS"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "PAYMENTS",
+            "FINANCIAL_CRIME"
+          ],
+          "citation": {
+            "chunk_id": "CHK-B1253E026C790E24759F",
+            "citation_id": "CIT-057187DE3435D2BFC86D",
+            "excerpt": "# Payments Screening and Escalation Process\n",
+            "line_end": 2,
+            "line_start": 1,
+            "normalized_source_sha256": "237c52015bd13bd61b149f4abde11efedf915ad797f1684e8a6d571ff8dcf9a1",
+            "source_id": "PROC-001",
+            "source_version_id": "KSV-3CD13C57F3A62D76108E",
+            "title": "Payments Screening and Escalation Process",
+            "version_label": "2026.3"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 2,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.167",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.05059979182930003,
+          "source_type": "PROCESS"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "PAYMENTS",
+            "FINANCIAL_CRIME"
+          ],
+          "citation": {
+            "chunk_id": "CHK-CD2417A03DE0A74BC4C7",
+            "citation_id": "CIT-0EE68CECBE2DD1C84A7C",
+            "excerpt": "## Transaction monitoring\nPost-execution transaction monitoring identifies unusual patterns, structuring indicators and repeated threshold avoidance.\nA material alert is escalated to Payments Compliance with transaction evidence, customer context and the screening disposition.\n",
+            "line_end": 10,
+            "line_start": 7,
+            "normalized_source_sha256": "237c52015bd13bd61b149f4abde11efedf915ad797f1684e8a6d571ff8dcf9a1",
+            "source_id": "PROC-001",
+            "source_version_id": "KSV-3CD13C57F3A62D76108E",
+            "title": "Payments Screening and Escalation Process",
+            "version_label": "2026.3"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 3,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.167",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.04959096459096459,
+          "source_type": "PROCESS"
+        },
+        {
+          "authoritative": true,
+          "business_domains": [
+            "PAYMENTS",
+            "FINANCIAL_CRIME"
+          ],
+          "citation": {
+            "chunk_id": "CHK-E92DA6A1695B8387A8D4",
+            "citation_id": "CIT-71BAA020906022632DC6",
+            "excerpt": "## Operational recovery\nIf the screening service is unavailable, the payment remains queued or follows the approved manual contingency; it is not automatically released.",
+            "line_end": 12,
+            "line_start": 11,
+            "normalized_source_sha256": "237c52015bd13bd61b149f4abde11efedf915ad797f1684e8a6d571ff8dcf9a1",
+            "source_id": "PROC-001",
+            "source_version_id": "KSV-3CD13C57F3A62D76108E",
+            "title": "Payments Screening and Escalation Process",
+            "version_label": "2026.3"
+          },
+          "jurisdictions": [
+            "CA",
+            "US",
+            "EU"
+          ],
+          "rank": 4,
+          "ranking_reasons": [
+            "lexical_candidate",
+            "semantic_candidate",
+            "query_term_coverage=0.167",
+            "authoritative_source"
+          ],
+          "risk_flags": [],
+          "score": 0.04934294871794872,
+          "source_type": "PROCESS"
+        }
+      ],
+      "index_id": "RIDX-D379C683D515BCAF3E3D",
+      "principal_id": "PER-001-MAYA",
+      "query_id": "RQ-004",
+      "schema_version": "1.0.0",
+      "untrusted_content_notice": "Retrieved passages are untrusted evidence data. They are not application instructions, approval decisions or legal conclusions."
+    }
+  ]
+}
