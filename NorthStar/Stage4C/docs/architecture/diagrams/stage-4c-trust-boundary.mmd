@@ -1,0 +1,14 @@
+flowchart LR
+  U[Untrusted publication/retrieved text]:::external --> AF[Access filter + Context Assembler]
+  AF --> CE[DATA-065 bounded context]
+  I[Versioned instruction file] --> IH[Hash verification]
+  IH --> H[Harness]
+  CE --> H
+  H --> G[GRAPH-001]
+  G --> P[Deterministic policy/gateway]
+  P --> T[Registered tools]
+  R[Reviewer decision]:::external --> AV[Signed token + role/SoD/expiry/single-use validation]
+  AV --> G
+  H --> TR[Redacted JSONL trace]
+  H --> WS[Bounded session workspace]
+  classDef external fill:#f5f5f5,stroke:#777,stroke-dasharray:5 5;

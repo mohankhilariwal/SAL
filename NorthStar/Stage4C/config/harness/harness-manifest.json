@@ -1,0 +1,32 @@
+{
+  "agent_id": "AGT-001",
+  "agent_version": "1.0.0",
+  "architecture_version": "1.0.0",
+  "concurrent_graph_branches": false,
+  "critical_controls_external": true,
+  "graph_id": "GRAPH-001",
+  "graph_version": "1.1.0",
+  "hook_names": [
+    "invariant_evaluation"
+  ],
+  "instruction_name": "AGT-001-system",
+  "instruction_sha256": "ddc1abe0dad45ebdb1a385863d9a2f5bf8ba0afff98583e4acc59b710755f6bb",
+  "instruction_version": "1.0.0",
+  "memory_enabled": false,
+  "multiple_agents_enabled": false,
+  "repository_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "tool_versions": {
+    "TOOL-001": "1.0.0",
+    "TOOL-002": "1.0.0",
+    "TOOL-003": "1.0.0",
+    "TOOL-004": "1.0.0",
+    "TOOL-005": "1.0.0",
+    "TOOL-006": "1.0.0"
+  },
+  "validator_names": [
+    "manifest_validator",
+    "context_envelope_validator",
+    "result_validator"
+  ]
+}

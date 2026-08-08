@@ -1,0 +1,37 @@
+{
+  "$id": "DATA-069",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "findings": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "hook_name": {
+      "type": "string"
+    },
+    "lifecycle_event": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "failed",
+        "warning"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "hook_name",
+    "lifecycle_event",
+    "status",
+    "findings"
+  ],
+  "title": "DATA-069 HookResult",
+  "type": "object"
+}

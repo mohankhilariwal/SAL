@@ -1,0 +1,36 @@
+{
+  "$id": "DATA-064",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "content": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "content_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "critical_controls_external": {
+      "const": true
+    },
+    "instruction_name": {
+      "type": "string"
+    },
+    "instruction_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "schema_version",
+    "instruction_name",
+    "instruction_version",
+    "content",
+    "content_sha256",
+    "critical_controls_external"
+  ],
+  "title": "DATA-064 InstructionBundle",
+  "type": "object"
+}

@@ -1,0 +1,59 @@
+{
+  "$id": "DATA-066",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "context_digest": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "initiator_id": {
+      "type": "string"
+    },
+    "instruction_digest": {
+      "type": "string"
+    },
+    "manifest_digest": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "running",
+        "waiting",
+        "completed",
+        "escalated"
+      ]
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "updated_at": {
+      "type": "string"
+    },
+    "workspace_path": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "session_id",
+    "initiator_id",
+    "manifest_digest",
+    "trace_id",
+    "instruction_digest",
+    "context_digest",
+    "workspace_path",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "title": "DATA-066 HarnessSession",
+  "type": "object"
+}

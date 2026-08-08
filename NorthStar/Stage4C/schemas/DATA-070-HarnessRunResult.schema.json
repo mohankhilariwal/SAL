@@ -1,0 +1,80 @@
+{
+  "$id": "DATA-070",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "approval_token": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "context_digest": {
+      "type": "string"
+    },
+    "current_node": {
+      "type": "string"
+    },
+    "disposition": {
+      "enum": [
+        "preliminary_grounded_unapproved",
+        "preliminary_grounded_human_approved",
+        "preliminary_grounded_human_rejected"
+      ]
+    },
+    "hook_results": {
+      "type": "array"
+    },
+    "instruction_digest": {
+      "type": "string"
+    },
+    "manifest_digest": {
+      "type": "string"
+    },
+    "review_outcome": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "waiting_for_human_review",
+        "completed",
+        "escalated"
+      ]
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "wait_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "session_id",
+    "run_id",
+    "status",
+    "current_node",
+    "disposition",
+    "manifest_digest",
+    "instruction_digest",
+    "context_digest",
+    "trace_id",
+    "hook_results"
+  ],
+  "title": "DATA-070 HarnessRunResult",
+  "type": "object"
+}

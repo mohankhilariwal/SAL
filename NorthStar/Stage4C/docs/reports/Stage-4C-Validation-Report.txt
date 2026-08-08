@@ -1,0 +1,97 @@
+NorthStar Agentic AI Architecture Playbook
+Stage 4C — Agent Harness Engineering
+Validation date: 2026-07-31
+Architecture/repository/handoff version: 1.0.0
+
+EXECUTED ENVIRONMENT
+Python 3.13.5
+pytest 9.0.2
+Package target: Python >=3.11,<3.15
+Runtime dependencies: standard library only
+
+EXECUTED CHECKS
+1. python -m pytest -q
+........................                                                 [100%]
+24 passed in 0.56s
+2. python -m compileall -q src scripts tests
+   package compilation passed
+3. python scripts/validate_stage4c.py
+stage4c structural validation passed
+4. python scripts/consistency_audit_stage4c.py
+stage4c consistency audit passed with recorded reconstruction and production exceptions
+5. python scripts/run_stage4c_demo.py
+session_id=SESSION-277F141B594B14D1
+run_id=RUN-A8A2FD31562F2759
+waiting_status=waiting_for_human_review
+context_digest=8eac53cd22f1801b7875190ac74d505978426987f5d8fcab04ce4189b9c80dde
+instruction_digest=ddc1abe0dad45ebdb1a385863d9a2f5bf8ba0afff98583e4acc59b710755f6bb
+manifest_digest=167c92d7e3b91800190958c08580ede86c006ec58cfd8caae8b4f33b35df1d58
+final_status=completed
+review_outcome=approved
+final_disposition=preliminary_grounded_human_approved
+tool006_effects=1
+trace_events=5
+memory_enabled=false
+agent_count=1
+6. python scripts/run_stage4c_evaluation.py
+{
+  "EVAL-037": {
+    "disposition": "preliminary_grounded_human_approved",
+    "review_outcome": "approved",
+    "sensitive_trace_material": false,
+    "status": "completed",
+    "tool006_effects": 1,
+    "trace_event_types": [
+      "approval.accepted",
+      "harness.completed",
+      "harness.resume",
+      "harness.start",
+      "harness.suspended"
+    ]
+  },
+  "EVAL-038": {
+    "disposition": "preliminary_grounded_human_rejected",
+    "review_outcome": "rejected",
+    "sensitive_trace_material": false,
+    "status": "completed",
+    "tool006_effects": 1,
+    "trace_event_types": [
+      "approval.accepted",
+      "harness.completed",
+      "harness.resume",
+      "harness.start",
+      "harness.suspended"
+    ]
+  },
+  "EVAL-039": {
+    "disposition": "preliminary_grounded_unapproved",
+    "review_outcome": "expired_escalated",
+    "sensitive_trace_material": false,
+    "status": "escalated",
+    "tool006_effects": 1,
+    "trace_event_types": [
+      "harness.completed",
+      "harness.resume",
+      "harness.start",
+      "harness.suspended"
+    ]
+  },
+  "EVAL-040": {
+    "access_before_context": true,
+    "concurrent_graph_branches": false,
+    "instruction_hash_verified": true,
+    "manifest_bound": true,
+    "memory_enabled": false,
+    "multiple_agents_enabled": false
+  },
+  "EVAL-041": {
+    "audit_claimed": false,
+    "trace_redaction": true,
+    "workspace_raw_approval_token": false
+  }
+}
+
+CONSISTENCY RESULT
+Passed with recorded reconstruction and production exceptions.
+Confirmed: stable names and IDs; GRAPH-001 1.1.0; DATA-009 1.1.0; one AGT-001; gateway-only tools; external approval; no timeout approval; one TOOL-006 effect; versioned manifest/instruction/context; access-before-loader; frozen registry; bounded workspace; redacted one-trace lifecycle; observer-only hooks; no memory, concurrent branch or multiple-agent modules.
+Exceptions: ISS-043 reconstruction overlay; ISS-044–049; inherited production identity/connectors/legal/records/performance/deployment/DR gaps; Mermaid CLI unavailable in the environment.

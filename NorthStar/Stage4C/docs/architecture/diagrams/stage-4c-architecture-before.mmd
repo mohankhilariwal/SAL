@@ -1,0 +1,8 @@
+flowchart LR
+  G[GRAPH-001 v1.1.0] --> GW[CMP-005 Tool Gateway]
+  G --> D[DATA-058 Durable Workflow]
+  G --> A[CMP-006 Approval Service]
+  CFG[Scattered configuration] -.-> G
+  V[Scattered validators] -.-> G
+  T[Scattered tracing] -.-> G
+  W[Ad hoc workspace/session wiring] -.-> G

@@ -1,0 +1,9 @@
+{
+  "python_target": ">=3.11,<3.15",
+  "durable_adapter": "sqlite",
+  "workspace_max_file_bytes": 64000,
+  "workspace_max_bytes": 1000000,
+  "automatic_scheduler": false,
+  "multiple_workers": false,
+  "memory_enabled": false
+}

@@ -1,0 +1,56 @@
+{
+  "EVAL-037": {
+    "disposition": "preliminary_grounded_human_approved",
+    "review_outcome": "approved",
+    "sensitive_trace_material": false,
+    "status": "completed",
+    "tool006_effects": 1,
+    "trace_event_types": [
+      "approval.accepted",
+      "harness.completed",
+      "harness.resume",
+      "harness.start",
+      "harness.suspended"
+    ]
+  },
+  "EVAL-038": {
+    "disposition": "preliminary_grounded_human_rejected",
+    "review_outcome": "rejected",
+    "sensitive_trace_material": false,
+    "status": "completed",
+    "tool006_effects": 1,
+    "trace_event_types": [
+      "approval.accepted",
+      "harness.completed",
+      "harness.resume",
+      "harness.start",
+      "harness.suspended"
+    ]
+  },
+  "EVAL-039": {
+    "disposition": "preliminary_grounded_unapproved",
+    "review_outcome": "expired_escalated",
+    "sensitive_trace_material": false,
+    "status": "escalated",
+    "tool006_effects": 1,
+    "trace_event_types": [
+      "harness.completed",
+      "harness.resume",
+      "harness.start",
+      "harness.suspended"
+    ]
+  },
+  "EVAL-040": {
+    "access_before_context": true,
+    "concurrent_graph_branches": false,
+    "instruction_hash_verified": true,
+    "manifest_bound": true,
+    "memory_enabled": false,
+    "multiple_agents_enabled": false
+  },
+  "EVAL-041": {
+    "audit_claimed": false,
+    "trace_redaction": true,
+    "workspace_raw_approval_token": false
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$id": "DATA-065",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "agent_id": {
+      "const": "AGT-001"
+    },
+    "content_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "envelope_id": {
+      "type": "string"
+    },
+    "items": {
+      "maxItems": 8,
+      "type": "array"
+    },
+    "omitted_source_ids": {
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "total_characters": {
+      "maximum": 12000,
+      "minimum": 0,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "schema_version",
+    "envelope_id",
+    "agent_id",
+    "items",
+    "omitted_source_ids",
+    "total_characters",
+    "created_at",
+    "content_sha256"
+  ],
+  "title": "DATA-065 ContextEnvelope",
+  "type": "object"
+}

@@ -1,0 +1,28 @@
+sequenceDiagram
+  actor Maya
+  participant H as CMP-010 Harness Runtime
+  participant C as Context Assembler
+  participant G as GRAPH-001 v1.1.0
+  participant GW as CMP-005 Tool Gateway
+  participant A as CMP-006 Approval Service
+  participant S as Durable Store
+  participant Daniel
+
+  Maya->>H: start(request)
+  H->>H: verify manifest + instruction hash
+  H->>C: assemble authorized typed context
+  C-->>H: DATA-065 ContextEnvelope
+  H->>H: create DATA-066 session/workspace/trace
+  H->>G: start(run, digests)
+  G->>GW: TOOL-006 via INT-017
+  GW-->>G: idempotent review request
+  G->>A: create DATA-059 wait
+  G->>S: persist DATA-058 at N80
+  G-->>H: waiting_for_human_review
+  H-->>Maya: transient callback token + typed result
+  Daniel->>H: submit signed typed decision
+  H->>A: validate/persist DATA-007
+  Maya->>H: resume(run)
+  H->>G: resume via lease
+  G-->>H: approved/rejected/expired route
+  H-->>Maya: preliminary human-reviewed disposition

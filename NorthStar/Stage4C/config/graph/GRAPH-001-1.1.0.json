@@ -1,0 +1,19 @@
+{
+  "graph_id": "GRAPH-001",
+  "version": "1.1.0",
+  "entry_node": "N00_START",
+  "nodes": [
+    "N00_START",
+    "N10_PREPARE_CONTEXT",
+    "N20_AGENT_DECISION",
+    "N70_COMPLETE_UNAPPROVED_PACKAGE",
+    "N75_CREATE_REVIEW_WAIT",
+    "N80_REVIEW_DECISION_GATE",
+    "N82_APPROVED_CONTINUATION",
+    "N84_REJECTED_OUTCOME",
+    "N86_EXPIRED_ESCALATION",
+    "N90_TERMINATE"
+  ],
+  "route_owner": "application",
+  "agent_selects_nodes": false
+}

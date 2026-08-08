@@ -1,0 +1,44 @@
+flowchart TB
+  classDef existing fill:#eef5ff,stroke:#3366aa;
+  classDef new fill:#fff1d6,stroke:#b36b00,stroke-width:2px;
+  classDef human fill:#ffffff,stroke:#333333;
+  classDef external fill:#f5f5f5,stroke:#777777,stroke-dasharray:5 5;
+
+  subgraph HUM[Human accountability boundary]
+    MAYA[Maya Chen]:::human
+    DANIEL[Daniel Brooks]:::human
+    AISHA[Aisha Rahman]:::human
+  end
+
+  subgraph NS[NorthStar AI-assisted system]
+    C1[CMP-001 Analyst Experience Portal]:::existing
+    C2[CMP-002 Regulatory Intake Boundary]:::existing
+    C3[CMP-003 Case and Workflow Orchestration Boundary<br/>GRAPH-001 v1.1.0]:::existing
+    C4[CMP-004 Knowledge and Evidence Access Boundary]:::existing
+    C5[CMP-005 Enterprise Integration Boundary<br/>Authoritative tool gateway]:::existing
+    C6[CMP-006 Human Review and Approval Boundary]:::existing
+    C7[CMP-007 Identity, Authorization and Policy Boundary]:::existing
+    C8[CMP-008 Evaluation and Assurance Boundary]:::existing
+    C9[CMP-009 Observability and Audit Boundary<br/>Local trace evidence only]:::existing
+    C10[CMP-010 Runtime and Deployment Boundary]:::existing
+    H[Framework-neutral Agent Harness<br/>manifest, instructions, context, registries, validation,<br/>session/workspace, hooks, tracing]:::new
+    C11[CMP-011 Source-of-Truth Governance Pack]:::existing
+  end
+
+  MAYA --> C1 --> H
+  H --> C2
+  H --> C3
+  H --> C4
+  C3 --> C5
+  C3 --> C6
+  C7 --> H
+  C7 --> C5
+  C7 --> C6
+  H --> C8
+  H --> C9
+  H --> C10
+  C11 -. constrains .-> H
+  C6 --> DANIEL
+  C6 --> AISHA
+  DANIEL --> C6
+  AISHA --> C6

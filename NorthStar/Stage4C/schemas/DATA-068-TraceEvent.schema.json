@@ -1,0 +1,50 @@
+{
+  "$id": "DATA-068",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "attributes": {
+      "type": "object"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "parent_span_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "run_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "trace_id",
+    "span_id",
+    "session_id",
+    "event_type",
+    "timestamp",
+    "attributes"
+  ],
+  "title": "DATA-068 TraceEvent",
+  "type": "object"
+}

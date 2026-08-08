@@ -1,0 +1,46 @@
+{
+  "$id": "DATA-067",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "allowed_suffixes": {
+      "items": {
+        "enum": [
+          ".json",
+          ".jsonl"
+        ]
+      },
+      "type": "array"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "max_file_bytes": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "max_workspace_bytes": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "root_relative_path": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "session_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "session_id",
+    "root_relative_path",
+    "allowed_suffixes",
+    "max_file_bytes",
+    "max_workspace_bytes",
+    "created_at"
+  ],
+  "title": "DATA-067 WorkspaceManifest",
+  "type": "object"
+}
