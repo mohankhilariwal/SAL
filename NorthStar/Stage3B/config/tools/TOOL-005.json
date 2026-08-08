@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "version": "1.0.0",
+  "allowed_groups": [
+    "RegulatoryCompliance"
+  ],
+  "allowed_purposes": [
+    "regulatory-impact-assessment"
+  ],
+  "allowed_residencies": [
+    "CA"
+  ],
+  "approval_required": false,
+  "timeout_ms": 2000,
+  "max_result_bytes": 65536,
+  "sensitive_input_fields": [],
+  "impact_class": "reversible_write",
+  "idempotency_required": true,
+  "retry_policy": {
+    "max_attempts": 1,
+    "retryable_errors": []
+  },
+  "tool_id": "TOOL-005",
+  "name": "Save Candidate Mapping",
+  "description": "Save a reversible candidate case-to-control mapping that remains unapproved.",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "case_id",
+      "control_ids",
+      "evidence_ids"
+    ],
+    "properties": {
+      "case_id": {
+        "type": "string"
+      },
+      "control_ids": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 20,
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      },
+      "evidence_ids": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 20,
+        "uniqueItems": true,
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "mapping_id",
+      "status",
+      "case_id"
+    ],
+    "properties": {
+      "mapping_id": {
+        "type": "string"
+      },
+      "status": {
+        "const": "candidate_unapproved"
+      },
+      "case_id": {
+        "type": "string"
+      }
+    }
+  },
+  "rate_limit_per_minute": 100,
+  "circuit_failure_threshold": 3,
+  "circuit_reset_seconds": 30
+}

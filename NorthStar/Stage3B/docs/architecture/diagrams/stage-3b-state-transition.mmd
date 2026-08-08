@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> Running: create DATA-009
+    Running --> Running: valid tool result adds observation/milestone
+    Running --> Completed: complete proposed AND deterministic invariants pass
+    Running --> Escalated: explicit escalation
+    Running --> Escalated: invalid completion/decision/tool failure
+    Running --> TerminatedGuard: iteration/repetition/no-progress guard
+    Completed --> [*]
+    Escalated --> [*]
+    TerminatedGuard --> [*]

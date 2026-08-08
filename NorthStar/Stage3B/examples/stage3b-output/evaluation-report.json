@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "evaluations": [
+    {
+      "case": "happy_path",
+      "status": "completed",
+      "termination_reason": "goal_complete",
+      "iterations": 7,
+      "milestones": 6,
+      "tool_observations": 6
+    },
+    {
+      "case": "early_completion",
+      "status": "escalated",
+      "termination_reason": "invalid_completion",
+      "iterations": 1,
+      "milestones": 0,
+      "tool_observations": 0
+    },
+    {
+      "case": "explicit_escalation",
+      "status": "escalated",
+      "termination_reason": "human_escalation",
+      "iterations": 1,
+      "milestones": 0,
+      "tool_observations": 0
+    },
+    {
+      "case": "iteration_guard",
+      "status": "terminated_guard",
+      "termination_reason": "iteration_limit",
+      "iterations": 1,
+      "milestones": 1,
+      "tool_observations": 1
+    }
+  ]
+}

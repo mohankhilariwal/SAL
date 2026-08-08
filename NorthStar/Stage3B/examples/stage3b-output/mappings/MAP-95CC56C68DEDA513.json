@@ -1,0 +1,14 @@
+{
+  "case_id": "CASE-09C3D1058846E9F0",
+  "control_ids": [
+    "CTL-LEND-017",
+    "CTL-PRIV-044",
+    "CTL-PAY-022"
+  ],
+  "evidence_ids": [
+    "CIT-001",
+    "CIT-002"
+  ],
+  "mapping_id": "MAP-95CC56C68DEDA513",
+  "status": "candidate_unapproved"
+}

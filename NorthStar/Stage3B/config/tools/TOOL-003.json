@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "version": "1.0.0",
+  "allowed_groups": [
+    "RegulatoryCompliance",
+    "AIGovernance"
+  ],
+  "allowed_purposes": [
+    "regulatory-impact-assessment"
+  ],
+  "allowed_residencies": [
+    "CA"
+  ],
+  "approval_required": false,
+  "timeout_ms": 2000,
+  "max_result_bytes": 65536,
+  "sensitive_input_fields": [],
+  "tool_id": "TOOL-003",
+  "name": "Retrieve Authorized Evidence",
+  "description": "Retrieve S02B-compatible evidence after deterministic authorization-before-scoring.",
+  "impact_class": "read_only",
+  "idempotency_required": false,
+  "retry_policy": {
+    "max_attempts": 2,
+    "retryable_errors": [
+      "transient"
+    ]
+  },
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "query",
+      "top_k"
+    ],
+    "properties": {
+      "query": {
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 500
+      },
+      "top_k": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 8
+      }
+    }
+  },
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "retrieval_context_id",
+      "citations",
+      "untrusted_content_notice"
+    ],
+    "properties": {
+      "retrieval_context_id": {
+        "type": "string"
+      },
+      "citations": {
+        "type": "array",
+        "maxItems": 8,
+        "items": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "citation_id",
+            "source_version_id",
+            "chunk_id",
+            "excerpt",
+            "classification"
+          ],
+          "properties": {
+            "citation_id": {
+              "type": "string"
+            },
+            "source_version_id": {
+              "type": "string"
+            },
+            "chunk_id": {
+              "type": "string"
+            },
+            "excerpt": {
+              "type": "string"
+            },
+            "classification": {
+              "enum": [
+                "internal",
+                "restricted"
+              ]
+            }
+          }
+        }
+      },
+      "untrusted_content_notice": {
+        "type": "string"
+      }
+    }
+  },
+  "rate_limit_per_minute": 100,
+  "circuit_failure_threshold": 3,
+  "circuit_reset_seconds": 30
+}

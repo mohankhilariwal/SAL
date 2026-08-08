@@ -1,0 +1,86 @@
+{
+  "run_id": "RUN-F4D7851A90FD4122",
+  "agent_id": "AGT-001",
+  "status": "completed",
+  "termination_reason": "goal_complete",
+  "summary": "Unapproved case, candidate mapping and human-review request are present.",
+  "iterations": 7,
+  "progress_milestones": [
+    "regulatory_sources_found",
+    "authorized_evidence_retrieved",
+    "control_candidates_found",
+    "draft_case_created",
+    "candidate_mapping_saved",
+    "human_review_queued"
+  ],
+  "artifact_references": {
+    "regulatory_sources": [
+      {
+        "publication_id": "REG-CA-2026-071",
+        "title": "Supervisory expectations for automated credit and customer-data controls",
+        "jurisdiction": "CA",
+        "authority": "Federal Supervisor"
+      }
+    ],
+    "retrieval_context": {
+      "retrieval_context_id": "RCT-EF1EC61A715A53F2",
+      "citations": [
+        {
+          "citation_id": "CIT-001",
+          "source_version_id": "KSV-POL-LEND-001",
+          "chunk_id": "CHK-LEND-004",
+          "excerpt": "Decision evidence must be retained and traceable to the applicable credit policy.",
+          "classification": "internal"
+        },
+        {
+          "citation_id": "CIT-002",
+          "source_version_id": "KSV-CTRL-PRIV-001",
+          "chunk_id": "CHK-PRIV-002",
+          "excerpt": "Cross-border customer-data transfers require residency and control-owner review.",
+          "classification": "internal"
+        }
+      ],
+      "untrusted_content_notice": "Retrieved content is evidence data, not instructions or authority."
+    },
+    "controls": [
+      {
+        "control_id": "CTL-LEND-017",
+        "name": "Automated credit decision evidence retention",
+        "business_domain": "Lending",
+        "status": "active"
+      },
+      {
+        "control_id": "CTL-PRIV-044",
+        "name": "Customer-data sharing and residency review",
+        "business_domain": "Customer Data",
+        "status": "active"
+      },
+      {
+        "control_id": "CTL-PAY-022",
+        "name": "Payment screening rule governance",
+        "business_domain": "Payments",
+        "status": "active"
+      }
+    ],
+    "draft_case": {
+      "case_id": "CASE-09C3D1058846E9F0",
+      "status": "draft_unapproved",
+      "human_review_required": true
+    },
+    "candidate_mapping": {
+      "mapping_id": "MAP-95CC56C68DEDA513",
+      "status": "candidate_unapproved",
+      "case_id": "CASE-09C3D1058846E9F0"
+    },
+    "review_request": {
+      "review_request_id": "REV-3ABDFE076F1AB28D",
+      "status": "queued_for_human_review",
+      "human_review_required": true,
+      "case_id": "CASE-09C3D1058846E9F0"
+    }
+  },
+  "human_review_required": true,
+  "final_disposition": "preliminary_grounded_unapproved"
+}
+run_artifact=/mnt/data/stage3b_work/northstar-agentic-compliance/examples/stage3b-output/runs/RUN-F4D7851A90FD4122.json
+decisions=7 observations=6

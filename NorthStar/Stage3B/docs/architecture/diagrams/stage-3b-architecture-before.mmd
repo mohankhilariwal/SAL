@@ -1,0 +1,8 @@
+flowchart LR
+    MAYA["Maya Chen"] --> C1["CMP-001 Analyst Experience Portal"]
+    C1 --> C3["CMP-003 deterministic caller"]
+    C3 --> C5["CMP-005 Tool Gateway"]
+    C5 --> T["TOOL-001..TOOL-006"]
+    C5 --> C7["CMP-007 local policy checks"]
+    C5 --> C9["CMP-009 local execution events"]
+    GAP["No AGT-* / no DATA-009 run state / hard-coded sequence"] -. limitation .-> C3

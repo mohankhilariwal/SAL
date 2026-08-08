@@ -1,0 +1,83 @@
+NorthStar Agentic AI Architecture Playbook
+Stage 3B — Single-Agent Loop and Termination
+Validation date: 2026-07-31
+Architecture/repository/handoff version: 0.6.0
+
+EXECUTION BOUNDARY
+- Local/offline synthetic regulatory catalogue, controls, authorized evidence and reversible local writes.
+- Exact Stage 3A archive/register files were not mounted; the full Stage 3A chapter and handoff were used to reconstruct a compatible overlay (ISS-025).
+- No managed decision model, enterprise IAM/PDP, live connector, durable checkpoint, graph, memory or multi-agent runtime.
+
+EXECUTED ENVIRONMENT
+- Python 3.13.5
+- jsonschema 4.26.0
+- pytest 9.0.2
+- Package target: Python >=3.11,<3.15
+
+EXECUTED CHECKS
+1. PYTHONPATH=src python -m pytest -q
+   Result: 14 passed.
+2. python -m compileall -q src scripts
+   Result: passed.
+3. python scripts/validate_stage3b.py
+   Result: Stage 3B structural validation PASSED.
+4. python scripts/consistency_audit_stage3b.py
+   Result: PASSED WITH RECORDED EXCEPTIONS.
+5. python -m pip install -e . --no-deps --no-build-isolation
+   Result: passed.
+6. Installed-package demo without PYTHONPATH
+   Result: passed.
+7. Local happy-path demonstration
+   Result: completed with 7 decisions, 6 tool observations, 6 required milestones,
+   one draft_unapproved case, one candidate_unapproved mapping and one
+   queued_for_human_review request.
+8. Four-case evaluation script
+   Result: expected terminal statuses/reasons for happy path, premature completion,
+   explicit escalation and iteration guard.
+
+S03B TEST RESULTS
+- TEST-074 decision schema missing fields: passed.
+- TEST-075 terminal decision with tool fields: passed.
+- TEST-076 iteration guard: passed.
+- TEST-077 completion invariant: passed.
+- TEST-078 happy path and final persistence: passed.
+- TEST-079 premature completion: passed.
+- TEST-080 iteration exhaustion: passed.
+- TEST-081 repetition guard: passed.
+- TEST-082 explicit escalation: passed.
+- TEST-083 non-allowlisted tool: passed; no gateway event.
+- TEST-084 model arguments cannot grant write scope: passed; no artifact.
+- TEST-085 Maya restricted evidence boundary: passed; zero Borealis citations.
+- TEST-086 termination accuracy/loop efficiency: passed.
+- TEST-087 one-agent/no-graph/no-memory boundary: passed.
+
+EVALUATION RESULTS
+- EVAL-018: completed after 7 decisions / 6 observations / 6 milestones.
+- EVAL-019: early completion -> invalid_completion; explicit escalation -> human_escalation;
+  iteration guard -> iteration_limit.
+- EVAL-020: non-allowlisted/privileged tool executions 0; unauthorized write artifacts 0.
+- EVAL-021: Maya restricted hits 0; agent count 1; graph modules 0; memory modules 0.
+
+CONSISTENCY RESULT
+Passed with recorded exceptions.
+Validated:
+- unchanged CMP-001 through CMP-011 names;
+- exactly one agent AGT-001;
+- TOOL-001 through TOOL-006 and gateway-only execution preserved;
+- DATA-009, DATA-041 through DATA-044 and INT-021 through INT-025 align across code,
+  schemas, diagrams, registers and handoff;
+- completion cannot be set by provider assertion;
+- final disposition remains preliminary_grounded_unapproved and human review required;
+- no graph, durable checkpoint, memory or multi-agent capability is claimed.
+
+RECORDED EXCEPTIONS
+- ISS-014: Mermaid CLI was unavailable; Mermaid sources received static structural review.
+- ISS-015: Python 3.12 was not separately executed; Python 3.13.5 passed.
+- ISS-025: exact Stage 3A package/registers unavailable; compatible reconstruction used.
+- ISS-026: no managed decision provider live call or semantic evaluation.
+- ISS-027: advanced budgets, retry/fallback, cancellation and recovery deferred to Stage 3C.
+- ISS-028: final persistence is not durable checkpoint/resume or tamper-evident audit.
+- Inherited enterprise identity, live connector, records, production performance and legal-review gaps remain.
+
+OVERALL RESULT
+PASSED WITH RECORDED EXCEPTIONS

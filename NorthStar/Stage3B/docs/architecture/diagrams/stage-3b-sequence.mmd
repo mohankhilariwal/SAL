@@ -1,0 +1,31 @@
+sequenceDiagram
+    actor Maya
+    participant Portal as CMP-001 Portal
+    participant Runtime as CMP-003 Agent Runtime
+    participant Agent as AGT-001
+    participant State as DATA-009 Run State
+    participant Gateway as CMP-005 Tool Gateway
+    participant Tools as TOOL-001..006
+    participant Evidence as CMP-009 Local Evidence
+
+    Maya->>Portal: Submit bounded goal
+    Portal->>Runtime: INT-021 run(goal, principal, limits)
+    Runtime->>State: create running state
+    loop one structured decision per iteration
+        Runtime->>Agent: goal + bounded state + model-visible tool view
+        Agent-->>Runtime: DATA-042 call_tool / complete / escalate
+        alt call_tool
+            Runtime->>Gateway: INT-017 trusted principal + typed request
+            Gateway->>Tools: validate, authorize, execute
+            Tools-->>Gateway: typed result
+            Gateway-->>Runtime: DATA-038 result envelope
+            Runtime->>State: DATA-043 observation + milestone update
+        else complete
+            Runtime->>State: evaluate deterministic completion invariants
+        else escalate
+            Runtime->>State: set escalated terminal state
+        end
+    end
+    Runtime->>Evidence: persist final state/outcome (not audit record)
+    Runtime-->>Portal: DATA-044 outcome
+    Portal-->>Maya: Unapproved package / escalation reason

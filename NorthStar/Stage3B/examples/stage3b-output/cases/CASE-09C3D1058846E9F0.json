@@ -1,0 +1,11 @@
+{
+  "case_id": "CASE-09C3D1058846E9F0",
+  "evidence_ids": [
+    "CIT-001",
+    "CIT-002"
+  ],
+  "human_review_required": true,
+  "publication_id": "REG-CA-2026-071",
+  "status": "draft_unapproved",
+  "title": "Supervisory expectations for automated credit and customer-data controls"
+}

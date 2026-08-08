@@ -1,0 +1,36 @@
+flowchart TB
+    MAYA["Maya Chen — Regulatory Compliance Analyst"] --> C1["CMP-001 Analyst Experience Portal"]
+    C1 --> C2["CMP-002 Regulatory Intake Boundary"]
+    C1 --> C3["CMP-003 Case and Workflow Orchestration Boundary"]
+    C2 --> C3
+    C3 --> A1["AGT-001 Regulatory Impact Assessment Agent"]
+    A1 --> DP["INT-022 Structured Decision Provider"]
+    A1 --> S9["DATA-009 AgentRunState"]
+    A1 --> TERM["INT-024 Termination Evaluation"]
+    A1 --> C5["CMP-005 Enterprise Integration Boundary / Tool Gateway"]
+    C5 --> REG["INT-016 Tool Registry"]
+    REG --> T1["TOOL-001 Regulatory Catalogue"]
+    REG --> T2["TOOL-002 Control Catalogue"]
+    REG --> T3["TOOL-003 Authorized Evidence"]
+    REG --> T4["TOOL-004 Draft Case"]
+    REG --> T5["TOOL-005 Candidate Mapping"]
+    REG --> T6["TOOL-006 Human Review Queue"]
+    T3 --> C4["CMP-004 Knowledge and Evidence Access Boundary"]
+    T4 --> LOCAL["Reversible local unapproved artifacts"]
+    T5 --> LOCAL
+    T6 --> C6["CMP-006 Human Review and Approval Boundary — queued only"]
+    C7["CMP-007 Identity, Authorization and Policy Boundary — local partial"] -. policy .-> C5
+    C8["CMP-008 Evaluation and Assurance Boundary"] -. evaluates .-> A1
+    C8 -. evaluates .-> C5
+    C3 --> C9["CMP-009 Observability and Audit Boundary — local evidence only"]
+    C5 --> C9
+    C10["CMP-010 Runtime and Deployment Boundary — local Python"] --> C3
+    C11["CMP-011 Source-of-Truth Governance Pack"] -. governs .-> C3
+    C11 -. governs .-> C5
+
+    classDef new fill:#fff4cc,stroke:#8a6d1d,stroke-width:2px;
+    classDef partial fill:#e8f1fb,stroke:#2a5d8f;
+    classDef planned fill:#f2f2f2,stroke:#777,stroke-dasharray: 5 5;
+    class A1,DP,S9,TERM new;
+    class C1,C2,C3,C4,C5,C7,C8,C9,C10,C11,REG,T1,T2,T3,T4,T5,T6,LOCAL partial;
+    class C6 planned;

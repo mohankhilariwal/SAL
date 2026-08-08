@@ -1,0 +1,22 @@
+flowchart TD
+    G["Receive DATA-041 AgentGoal"] --> S["Create DATA-009 AgentRunState"]
+    S --> PRE{"Iteration guard reached?"}
+    PRE -- yes --> TG["terminated_guard"]
+    PRE -- no --> D["INT-022 structured decision"]
+    D --> KIND{"Decision kind"}
+    KIND -- escalate --> ES["escalated"]
+    KIND -- complete --> INV{"Completion invariants met?"}
+    INV -- yes --> CO["completed"]
+    INV -- no --> ES2["escalated: invalid completion"]
+    KIND -- call_tool --> ALLOW{"TOOL-001..006?"}
+    ALLOW -- no --> ES3["escalated: invalid decision"]
+    ALLOW -- yes --> REP{"Repeated action guard?"}
+    REP -- yes --> TG2["terminated_guard"]
+    REP -- no --> GW["INT-017 CMP-005 Tool Gateway"]
+    GW --> OBS["DATA-043 validated observation"]
+    OBS --> OK{"Tool succeeded?"}
+    OK -- no --> ES4["escalated: tool failure"]
+    OK -- yes --> UPD["Update artifacts and milestones"]
+    UPD --> PROG{"No-progress guard?"}
+    PROG -- yes --> TG3["terminated_guard"]
+    PROG -- no --> PRE

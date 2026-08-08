@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "version": "1.0.0",
+  "allowed_groups": [
+    "RegulatoryCompliance"
+  ],
+  "allowed_purposes": [
+    "regulatory-impact-assessment"
+  ],
+  "allowed_residencies": [
+    "CA"
+  ],
+  "approval_required": false,
+  "timeout_ms": 2000,
+  "max_result_bytes": 65536,
+  "sensitive_input_fields": [],
+  "impact_class": "reversible_write",
+  "idempotency_required": true,
+  "retry_policy": {
+    "max_attempts": 1,
+    "retryable_errors": []
+  },
+  "tool_id": "TOOL-006",
+  "name": "Queue Human Review",
+  "description": "Queue a local review request for a named reviewer group without issuing an external notification.",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "case_id",
+      "mapping_id",
+      "reviewer_group",
+      "priority"
+    ],
+    "properties": {
+      "case_id": {
+        "type": "string"
+      },
+      "mapping_id": {
+        "type": "string"
+      },
+      "reviewer_group": {
+        "enum": [
+          "ComplianceReview",
+          "AIGovernanceReview"
+        ]
+      },
+      "priority": {
+        "enum": [
+          "normal",
+          "high"
+        ]
+      }
+    }
+  },
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "review_request_id",
+      "status",
+      "human_review_required",
+      "case_id"
+    ],
+    "properties": {
+      "review_request_id": {
+        "type": "string"
+      },
+      "status": {
+        "const": "queued_for_human_review"
+      },
+      "human_review_required": {
+        "const": true
+      },
+      "case_id": {
+        "type": "string"
+      }
+    }
+  },
+  "rate_limit_per_minute": 100,
+  "circuit_failure_threshold": 3,
+  "circuit_reset_seconds": 30
+}

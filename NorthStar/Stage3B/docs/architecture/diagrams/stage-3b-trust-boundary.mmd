@@ -1,0 +1,25 @@
+flowchart LR
+    subgraph U["Human and experience boundary"]
+      MAYA["Maya"] --> C1["CMP-001 Portal"]
+    end
+    subgraph P["Probabilistic decision boundary"]
+      A["AGT-001 decision provider"]
+    end
+    subgraph D["Deterministic application boundary"]
+      R["CMP-003 bounded runtime"]
+      S["DATA-009 run state"]
+      T["INT-024 termination evaluator"]
+      G["CMP-005 Tool Gateway"]
+      R --> S
+      R --> T
+      R --> G
+    end
+    subgraph E["Synthetic/local integration boundary"]
+      TOOLS["TOOL-001..006"]
+      ART["Local unapproved artifacts"]
+    end
+    C1 --> R
+    R --> A
+    A --> R
+    G --> TOOLS --> ART
+    NOTE["Agent output cannot create identity, scope, approval or final disposition"] -. enforcement .-> R
