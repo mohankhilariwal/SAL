@@ -1,0 +1,117 @@
+{
+  "allowed_groups": [
+    "regulatory_analysts",
+    "ai_governance"
+  ],
+  "allowed_purposes": [
+    "regulatory_change_assessment"
+  ],
+  "allowed_residencies": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "approval_required": false,
+  "description": "Create a local draft regulatory-change case with fixed unapproved disposition and mandatory human review. The tool cannot create an accepted case, approve findings, modify production systems or produce an enterprise record.",
+  "idempotency_required": true,
+  "impact_class": "reversible_write",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "candidate_domains": {
+        "items": {
+          "enum": [
+            "lending",
+            "payments",
+            "customer_data",
+            "insurance"
+          ]
+        },
+        "maxItems": 4,
+        "minItems": 1,
+        "type": "array"
+      },
+      "jurisdictions": {
+        "items": {
+          "enum": [
+            "CA",
+            "US",
+            "EU"
+          ]
+        },
+        "maxItems": 3,
+        "minItems": 1,
+        "type": "array"
+      },
+      "publication_id": {
+        "maxLength": 80,
+        "minLength": 3,
+        "type": "string"
+      },
+      "source_citation_ids": {
+        "items": {
+          "pattern": "^CIT-",
+          "type": "string"
+        },
+        "maxItems": 20,
+        "minItems": 1,
+        "type": "array"
+      },
+      "title": {
+        "maxLength": 300,
+        "minLength": 3,
+        "type": "string"
+      }
+    },
+    "required": [
+      "publication_id",
+      "title",
+      "jurisdictions",
+      "candidate_domains",
+      "source_citation_ids"
+    ],
+    "type": "object"
+  },
+  "max_result_bytes": 8192,
+  "name": "create_draft_regulatory_case",
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "case_id": {
+        "pattern": "^CASE-DRAFT-",
+        "type": "string"
+      },
+      "created": {
+        "type": "boolean"
+      },
+      "disposition": {
+        "const": "preliminary_unapproved"
+      },
+      "human_review_required": {
+        "const": true
+      },
+      "status": {
+        "const": "DRAFT_UNAPPROVED"
+      }
+    },
+    "required": [
+      "case_id",
+      "status",
+      "disposition",
+      "human_review_required",
+      "created"
+    ],
+    "type": "object"
+  },
+  "retry_policy": {
+    "max_attempts": 1,
+    "retryable_errors": []
+  },
+  "schema_version": "1.0.0",
+  "sensitive_input_fields": [],
+  "timeout_ms": 500,
+  "tool_id": "TOOL-004",
+  "version": "1.0.0"
+}

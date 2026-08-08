@@ -1,0 +1,128 @@
+{
+  "allowed_groups": [
+    "regulatory_analysts",
+    "ai_governance",
+    "privacy",
+    "compliance_officers"
+  ],
+  "allowed_purposes": [
+    "regulatory_change_assessment",
+    "model_risk_review"
+  ],
+  "allowed_residencies": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "approval_required": false,
+  "description": "Invoke the Stage 2B-compatible evidence-search adapter with the caller principal preserved. It may only narrow authorization and returns exact citation identifiers plus an untrusted-content notice; evidence is not an accepted mapping or legal conclusion.",
+  "idempotency_required": false,
+  "impact_class": "read_only",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "jurisdiction": {
+        "enum": [
+          "CA",
+          "US",
+          "EU",
+          null
+        ],
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "query": {
+        "maxLength": 500,
+        "minLength": 2,
+        "type": "string"
+      },
+      "top_k": {
+        "maximum": 8,
+        "minimum": 1,
+        "type": "integer"
+      }
+    },
+    "required": [
+      "query",
+      "top_k",
+      "jurisdiction"
+    ],
+    "type": "object"
+  },
+  "max_result_bytes": 65536,
+  "name": "search_authorized_evidence",
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "evidence": {
+        "items": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "additionalProperties": false,
+          "properties": {
+            "chunk_id": {
+              "pattern": "^CHK-",
+              "type": "string"
+            },
+            "citation_id": {
+              "pattern": "^CIT-",
+              "type": "string"
+            },
+            "excerpt": {
+              "type": "string"
+            },
+            "jurisdiction": {
+              "type": "string"
+            },
+            "source_version_id": {
+              "pattern": "^KSV-",
+              "type": "string"
+            }
+          },
+          "required": [
+            "citation_id",
+            "chunk_id",
+            "source_version_id",
+            "excerpt",
+            "jurisdiction"
+          ],
+          "type": "object"
+        },
+        "minItems": 0,
+        "type": "array"
+      },
+      "result_count": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "retrieval_contract": {
+        "type": "string"
+      },
+      "untrusted_content_notice": {
+        "minLength": 40,
+        "type": "string"
+      }
+    },
+    "required": [
+      "evidence",
+      "result_count",
+      "retrieval_contract",
+      "untrusted_content_notice"
+    ],
+    "type": "object"
+  },
+  "retry_policy": {
+    "max_attempts": 2,
+    "retryable_errors": [
+      "TransientToolError"
+    ]
+  },
+  "schema_version": "1.0.0",
+  "sensitive_input_fields": [],
+  "timeout_ms": 300,
+  "tool_id": "TOOL-003",
+  "version": "1.0.0"
+}

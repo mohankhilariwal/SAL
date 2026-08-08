@@ -1,0 +1,42 @@
+flowchart TB
+    classDef implemented fill:#e8f5e9,stroke:#2e7d32,stroke-width:1.5px;
+    classDef partial fill:#fff8e1,stroke:#f57f17,stroke-width:1.5px;
+    classDef planned fill:#f3f4f6,stroke:#6b7280,stroke-dasharray:5 5;
+    classDef new fill:#fce4ec,stroke:#ad1457,stroke-width:2px;
+    classDef external fill:#ede7f6,stroke:#5e35b1;
+
+    MAYA["Maya Chen\nRegulatory Compliance Analyst"]:::external --> C1["CMP-001 Analyst Experience Portal\nlocal demonstration caller"]:::partial
+    C1 --> C3["CMP-003 Case and Workflow Orchestration Boundary\ndeterministic caller only; no agent loop"]:::partial
+    C3 --> GW["CMP-005 Tool Gateway\nregistry, validation, policy, controls, result envelope"]:::new
+
+    subgraph TG["Stage 3A controlled capability plane"]
+      REG["INT-016 Tool Registry Contract\nTOOL-001 to TOOL-006"]:::new
+      VAL["JSON Schema input/output validation"]:::new
+      PDP["INT-018 Local Tool Policy Decision\nunauthenticated tutorial claims"]:::new
+      CTRL["Idempotency, timeout, rate limit,\nread-only retry, circuit breaker, dry-run"]:::new
+      ADP["INT-019 Adapter Contract"]:::new
+      EVT["INT-020 Redacted execution evidence\nnot an audit ledger"]:::new
+      REG --> VAL --> PDP --> CTRL --> ADP --> EVT
+    end
+    GW --> REG
+
+    ADP --> T1["TOOL-001 Regulatory catalogue search\nread-only local fixture"]:::new
+    ADP --> T2["TOOL-002 Control catalogue query\nread-only local fixture"]:::new
+    ADP --> T3["TOOL-003 Authorized evidence search\nwraps S02B boundary"]:::new
+    ADP --> T4["TOOL-004 Create draft case\nreversible local write"]:::new
+    ADP --> T5["TOOL-005 Save candidate mapping\nreversible local write"]:::new
+    ADP --> T6["TOOL-006 Queue human review\nreversible local write; no notification"]:::new
+
+    T3 --> C4["CMP-004 Knowledge and Evidence Access Boundary\nS02B authorization-before-scoring preserved"]:::implemented
+    T1 --> C5["CMP-005 Enterprise Integration Boundary\npartial through local adapters"]:::new
+    T2 --> C5
+    T4 --> C5
+    T5 --> C5
+    T6 -. future enterprise review adapter .-> C6["CMP-006 Human Review and Approval Boundary"]:::planned
+    C7["CMP-007 Identity, Authorization and Policy Boundary\nenterprise IAM/PDP planned"]:::planned -. local deterministic policy .-> PDP
+    C8["CMP-008 Evaluation and Assurance Boundary\ntool contract/gateway evaluation"]:::new --> GW
+    EVT --> C9["CMP-009 Observability and Audit Boundary\nlocal JSONL evidence only"]:::partial
+    C10["CMP-010 Runtime and Deployment Boundary\nPython 3.13 verified"]:::partial --> GW
+    C11["CMP-011 Source-of-Truth Governance Pack\n0.5.0"]:::implemented --> REG
+
+    AGT["No AGT-* allocated\nmodel-selected loop deferred to S03B"]:::planned -. does not call .-> GW

@@ -1,0 +1,119 @@
+{
+  "allowed_groups": [
+    "regulatory_analysts",
+    "ai_governance",
+    "compliance_officers"
+  ],
+  "allowed_purposes": [
+    "regulatory_change_assessment",
+    "model_risk_review"
+  ],
+  "allowed_residencies": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "approval_required": false,
+  "description": "Query the local synthetic NorthStar control catalogue by control identifier or domain. The result is a candidate control record for analysis and is not an authoritative production control-repository response.",
+  "idempotency_required": false,
+  "impact_class": "read_only",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "control_id": {
+        "maxLength": 64,
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "domain": {
+        "enum": [
+          "lending",
+          "payments",
+          "customer_data",
+          null
+        ],
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "required": [
+      "control_id",
+      "domain"
+    ],
+    "type": "object"
+  },
+  "max_result_bytes": 32768,
+  "name": "query_control_catalogue",
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "authoritative_service": {
+        "const": false
+      },
+      "catalogue_version": {
+        "type": "string"
+      },
+      "controls": {
+        "items": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "additionalProperties": false,
+          "properties": {
+            "control_id": {
+              "type": "string"
+            },
+            "domain": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "owner": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "control_id",
+            "name",
+            "domain",
+            "owner",
+            "status"
+          ],
+          "type": "object"
+        },
+        "minItems": 0,
+        "type": "array"
+      },
+      "result_count": {
+        "minimum": 0,
+        "type": "integer"
+      }
+    },
+    "required": [
+      "controls",
+      "result_count",
+      "catalogue_version",
+      "authoritative_service"
+    ],
+    "type": "object"
+  },
+  "retry_policy": {
+    "max_attempts": 2,
+    "retryable_errors": [
+      "TransientToolError"
+    ]
+  },
+  "schema_version": "1.0.0",
+  "sensitive_input_fields": [],
+  "timeout_ms": 250,
+  "tool_id": "TOOL-002",
+  "version": "1.0.0"
+}

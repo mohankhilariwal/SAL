@@ -1,0 +1,18 @@
+{
+  "agent_identifier_allocated": false,
+  "boundary": "local synthetic adapters and locally asserted principal claims; not production assurance",
+  "case_write_count": 1,
+  "contract_validity_rate": 1.0,
+  "evaluation_ids": [
+    "EVAL-014",
+    "EVAL-015",
+    "EVAL-016",
+    "EVAL-017"
+  ],
+  "maya_restricted_hits": 0,
+  "registered_tool_count": 6,
+  "schema_version": "1.0.0",
+  "sofia_restricted_hits": 1,
+  "unapproved_status_preserved": true,
+  "write_replay_status": "replayed"
+}

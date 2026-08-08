@@ -1,0 +1,18 @@
+{
+  "accepted": false,
+  "case_id": "CASE-DRAFT-B3BFC97DE515281B",
+  "control_ids": [
+    "CTL-LEND-017"
+  ],
+  "created_at": "2026-07-31T21:28:12.858545Z",
+  "created_by": "maya.chen",
+  "human_review_required": true,
+  "mapping_id": "MAP-CAND-05499C8D5E1019ED",
+  "policy_id": "POL-LEND-004",
+  "rationale": "The cited evidence indicates that ability-to-repay records may require analyst review.",
+  "schema_version": "1.0.0",
+  "source_citation_ids": [
+    "CIT-A2C5075B64B4E443"
+  ],
+  "status": "CANDIDATE_UNAPPROVED"
+}

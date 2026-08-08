@@ -1,0 +1,91 @@
+{
+  "allowed_groups": [
+    "regulatory_analysts",
+    "ai_governance"
+  ],
+  "allowed_purposes": [
+    "regulatory_change_assessment"
+  ],
+  "allowed_residencies": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "approval_required": false,
+  "description": "Queue a local human-review request for a draft case and candidate mappings. It records no approval and sends no external notification; a future human-review boundary must process the queue under separation-of-duties rules.",
+  "idempotency_required": true,
+  "impact_class": "reversible_write",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "case_id": {
+        "pattern": "^CASE-DRAFT-",
+        "type": "string"
+      },
+      "mapping_ids": {
+        "items": {
+          "pattern": "^MAP-CAND-",
+          "type": "string"
+        },
+        "maxItems": 20,
+        "minItems": 1,
+        "type": "array"
+      },
+      "reviewer_group": {
+        "enum": [
+          "compliance_reviewers",
+          "ai_governance_reviewers",
+          "business_control_owners"
+        ]
+      }
+    },
+    "required": [
+      "case_id",
+      "mapping_ids",
+      "reviewer_group"
+    ],
+    "type": "object"
+  },
+  "max_result_bytes": 8192,
+  "name": "queue_human_review_request",
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "approval_granted": {
+        "const": false
+      },
+      "created": {
+        "type": "boolean"
+      },
+      "external_notification_sent": {
+        "const": false
+      },
+      "review_request_id": {
+        "pattern": "^REVIEW-",
+        "type": "string"
+      },
+      "status": {
+        "const": "QUEUED_FOR_HUMAN_REVIEW"
+      }
+    },
+    "required": [
+      "review_request_id",
+      "status",
+      "approval_granted",
+      "external_notification_sent",
+      "created"
+    ],
+    "type": "object"
+  },
+  "retry_policy": {
+    "max_attempts": 1,
+    "retryable_errors": []
+  },
+  "schema_version": "1.0.0",
+  "sensitive_input_fields": [],
+  "timeout_ms": 500,
+  "tool_id": "TOOL-006",
+  "version": "1.0.0"
+}

@@ -1,0 +1,32 @@
+flowchart LR
+    classDef trusted fill:#e8f5e9,stroke:#2e7d32;
+    classDef constrained fill:#fff8e1,stroke:#f57f17;
+    classDef untrusted fill:#ffebee,stroke:#c62828;
+    classDef planned fill:#f3f4f6,stroke:#6b7280,stroke-dasharray:5 5;
+
+    subgraph APP["Application trust boundary"]
+      CALLER["Deterministic caller\nnot a model-selected agent"]:::constrained
+      GW["Tool Gateway PEP"]:::trusted
+      REG["Approved descriptor files\nchange-controlled"]:::trusted
+      POL["Local tutorial PDP\nclaims not authenticated"]:::constrained
+      IDEM["In-memory idempotency"]:::constrained
+      EVT["Redacted local JSONL events"]:::constrained
+      CALLER --> GW
+      REG --> GW
+      POL --> GW
+      IDEM --> GW
+      GW --> EVT
+    end
+
+    subgraph ADAPTERS["Adapter boundary"]
+      READ["Read-only synthetic catalogues"]:::constrained
+      RET["S02B retrieval adapter\npermission boundary retained"]:::trusted
+      WRITES["Local reversible write store\nnot enterprise records"]:::constrained
+    end
+    GW --> READ
+    GW --> RET
+    GW --> WRITES
+
+    MODEL["Future model/agent output"]:::untrusted -. cannot directly invoke .-> GW
+    IAM["Enterprise IAM/PDP"]:::planned -. future authenticated context .-> POL
+    LIVE["Live enterprise/external systems"]:::planned -. future adapters .-> ADAPTERS

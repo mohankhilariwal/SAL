@@ -1,0 +1,16 @@
+flowchart LR
+    classDef implemented fill:#e8f5e9,stroke:#2e7d32,stroke-width:1.5px;
+    classDef partial fill:#fff8e1,stroke:#f57f17,stroke-width:1.5px;
+    classDef planned fill:#f3f4f6,stroke:#6b7280,stroke-dasharray:5 5;
+    classDef external fill:#ede7f6,stroke:#5e35b1;
+
+    MAYA["Maya Chen"]:::external --> C1["CMP-001 Analyst Experience Portal"]:::partial
+    C1 --> C3["CMP-003 Case and Workflow Orchestration Boundary\none-shot application flow"]:::partial
+    C3 --> C4["CMP-004 Knowledge and Evidence Access Boundary\nauthorized retrieval and exact citations"]:::implemented
+    C7["CMP-007 Identity, Authorization and Policy Boundary\nenterprise service planned"]:::planned -. local principal claims .-> C4
+    C3 -. no controlled action interface .-> C5["CMP-005 Enterprise Integration Boundary"]:::planned
+    C3 -. no review operation .-> C6["CMP-006 Human Review and Approval Boundary"]:::planned
+    C8["CMP-008 Evaluation and Assurance Boundary"]:::partial --> C4
+    C9["CMP-009 Observability and Audit Boundary\nlocal reports only"]:::partial
+    C10["CMP-010 Runtime and Deployment Boundary\nlocal Python"]:::partial
+    C11["CMP-011 Source-of-Truth Governance Pack\n0.4.0"]:::implemented

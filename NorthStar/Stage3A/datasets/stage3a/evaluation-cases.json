@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "S03A",
+  "cases": [
+    {
+      "evaluation_id": "EVAL-014",
+      "name": "descriptor_contract_validity",
+      "expected": {
+        "valid_descriptors": 6,
+        "prohibited_impact_tools": 0
+      }
+    },
+    {
+      "evaluation_id": "EVAL-015",
+      "name": "unapproved_idempotent_draft_flow",
+      "expected": {
+        "case_writes": 1,
+        "replay_status": "replayed",
+        "disposition": "preliminary_unapproved"
+      }
+    },
+    {
+      "evaluation_id": "EVAL-016",
+      "name": "permission_boundary",
+      "expected": {
+        "maya_restricted_hits": 0,
+        "sofia_restricted_hits": 1
+      }
+    },
+    {
+      "evaluation_id": "EVAL-017",
+      "name": "authority_boundary",
+      "expected": {
+        "agent_identifier_allocated": false,
+        "irreversible_tools": 0
+      }
+    }
+  ]
+}

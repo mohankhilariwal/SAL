@@ -1,0 +1,10 @@
+{
+  "agent_identifier_allocated": false,
+  "approval_granted": false,
+  "case_writes": 1,
+  "duplicate_case_status": "replayed",
+  "external_notification_sent": false,
+  "mapping_writes": 1,
+  "review_writes": 1,
+  "tool_descriptors": 6
+}

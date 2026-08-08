@@ -1,0 +1,4 @@
+jsonschema==4.26.0
+pytest==9.0.2
+# Retained S02B compatibility dependency; not required by the Stage 3A gateway modules:
+numpy==2.3.5

@@ -1,0 +1,28 @@
+sequenceDiagram
+    autonumber
+    participant Caller as Deterministic caller (CMP-003)
+    participant Gateway as Tool Gateway (CMP-005)
+    participant Registry as Tool Registry (INT-016)
+    participant Validator as Schema Validator
+    participant Policy as Local Policy Engine (INT-018)
+    participant Controls as Runtime Controls
+    participant Adapter as Tool Adapter (INT-019)
+    participant Evidence as Event Writer (INT-020)
+
+    Caller->>Gateway: DATA-036 ToolInvocationRequest
+    Gateway->>Registry: resolve TOOL-ID + exact version
+    Registry-->>Gateway: DATA-035 descriptor + hash
+    Gateway->>Validator: validate arguments against Draft 2020-12 schema
+    Validator-->>Gateway: valid / fail closed
+    Gateway->>Policy: subject, action, tool, purpose, residency, approval
+    Policy-->>Gateway: DATA-037 allow/deny + obligations
+    Gateway->>Controls: idempotency, rate limit, circuit, timeout, retry class
+    alt dry-run reversible write
+        Controls-->>Gateway: no side effect
+    else permitted execution
+        Gateway->>Adapter: typed arguments + bounded principal context
+        Adapter-->>Gateway: typed result or error
+        Gateway->>Validator: validate result + enforce byte limit
+    end
+    Gateway->>Evidence: hashed/redacted DATA-040 event
+    Gateway-->>Caller: DATA-038 ToolResultEnvelope

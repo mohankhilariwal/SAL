@@ -1,0 +1,9 @@
+{
+  "boundary": "single-process local synthetic adapter; not a production SLO",
+  "mean_ms": 2.882417550001719,
+  "p50_ms": 2.865292499905081,
+  "p95_ms": 3.05529000002025,
+  "p99_ms": 3.2410270000582386,
+  "sample_count": 100,
+  "schema_version": "1.0.0"
+}

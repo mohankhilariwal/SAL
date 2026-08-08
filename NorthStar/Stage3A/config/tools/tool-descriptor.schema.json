@@ -1,0 +1,136 @@
+{
+  "$id": "https://northstar.example/schemas/tool-descriptor.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_groups": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "allowed_purposes": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "allowed_residencies": {
+      "items": {
+        "enum": [
+          "CA",
+          "US",
+          "EU"
+        ]
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "approval_required": {
+      "type": "boolean"
+    },
+    "description": {
+      "maxLength": 1000,
+      "minLength": 40,
+      "type": "string"
+    },
+    "idempotency_required": {
+      "type": "boolean"
+    },
+    "impact_class": {
+      "enum": [
+        "read_only",
+        "reversible_write",
+        "irreversible_write",
+        "privileged_regulated"
+      ]
+    },
+    "input_schema": {
+      "type": "object"
+    },
+    "max_result_bytes": {
+      "maximum": 1048576,
+      "minimum": 256,
+      "type": "integer"
+    },
+    "name": {
+      "pattern": "^[a-z][a-z0-9_]{2,63}$",
+      "type": "string"
+    },
+    "output_schema": {
+      "type": "object"
+    },
+    "retry_policy": {
+      "additionalProperties": false,
+      "properties": {
+        "max_attempts": {
+          "maximum": 3,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "retryable_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "max_attempts",
+        "retryable_errors"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "sensitive_input_fields": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "timeout_ms": {
+      "maximum": 30000,
+      "minimum": 10,
+      "type": "integer"
+    },
+    "tool_id": {
+      "pattern": "^TOOL-[0-9]{3}$",
+      "type": "string"
+    },
+    "version": {
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "tool_id",
+    "name",
+    "version",
+    "description",
+    "impact_class",
+    "input_schema",
+    "output_schema",
+    "allowed_groups",
+    "allowed_purposes",
+    "allowed_residencies",
+    "timeout_ms",
+    "max_result_bytes",
+    "idempotency_required",
+    "approval_required",
+    "retry_policy"
+  ],
+  "title": "NorthStar Tool Descriptor",
+  "type": "object"
+}

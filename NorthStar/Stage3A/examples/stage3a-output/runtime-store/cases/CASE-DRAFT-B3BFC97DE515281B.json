@@ -1,0 +1,20 @@
+{
+  "candidate_domains": [
+    "lending"
+  ],
+  "case_id": "CASE-DRAFT-B3BFC97DE515281B",
+  "created_at": "2026-07-31T21:28:12.855069Z",
+  "created_by": "maya.chen",
+  "disposition": "preliminary_unapproved",
+  "human_review_required": true,
+  "jurisdictions": [
+    "CA"
+  ],
+  "publication_id": "REG-FCAC-2026-009",
+  "schema_version": "1.0.0",
+  "source_citation_ids": [
+    "CIT-A2C5075B64B4E443"
+  ],
+  "status": "DRAFT_UNAPPROVED",
+  "title": "Consumer lending disclosure and ability-to-repay review"
+}

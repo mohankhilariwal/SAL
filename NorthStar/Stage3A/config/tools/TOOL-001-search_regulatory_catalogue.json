@@ -1,0 +1,135 @@
+{
+  "allowed_groups": [
+    "regulatory_analysts",
+    "ai_governance",
+    "compliance_officers"
+  ],
+  "allowed_purposes": [
+    "regulatory_change_assessment",
+    "model_risk_review"
+  ],
+  "allowed_residencies": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "approval_required": false,
+  "description": "Search the local synthetic regulatory publication catalogue. Use it to discover candidate notices by query and jurisdiction; it does not search a live authority website and does not establish legal applicability.",
+  "idempotency_required": false,
+  "impact_class": "read_only",
+  "input_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "as_of_date": {
+        "format": "date",
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "jurisdiction": {
+        "enum": [
+          "CA",
+          "US",
+          "EU",
+          null
+        ],
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "limit": {
+        "maximum": 10,
+        "minimum": 1,
+        "type": "integer"
+      },
+      "query": {
+        "maxLength": 200,
+        "minLength": 2,
+        "type": "string"
+      }
+    },
+    "required": [
+      "query",
+      "jurisdiction",
+      "as_of_date",
+      "limit"
+    ],
+    "type": "object"
+  },
+  "max_result_bytes": 32768,
+  "name": "search_regulatory_catalogue",
+  "output_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "additionalProperties": false,
+    "properties": {
+      "authoritative_live_source": {
+        "const": false
+      },
+      "catalogue_version": {
+        "type": "string"
+      },
+      "matches": {
+        "items": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "additionalProperties": false,
+          "properties": {
+            "authority": {
+              "type": "string"
+            },
+            "jurisdiction": {
+              "type": "string"
+            },
+            "publication_id": {
+              "type": "string"
+            },
+            "published_date": {
+              "type": "string"
+            },
+            "source_uri": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "publication_id",
+            "title",
+            "jurisdiction",
+            "published_date",
+            "authority",
+            "source_uri"
+          ],
+          "type": "object"
+        },
+        "minItems": 0,
+        "type": "array"
+      },
+      "result_count": {
+        "minimum": 0,
+        "type": "integer"
+      }
+    },
+    "required": [
+      "matches",
+      "result_count",
+      "catalogue_version",
+      "authoritative_live_source"
+    ],
+    "type": "object"
+  },
+  "retry_policy": {
+    "max_attempts": 2,
+    "retryable_errors": [
+      "TransientToolError"
+    ]
+  },
+  "schema_version": "1.0.0",
+  "sensitive_input_fields": [],
+  "timeout_ms": 250,
+  "tool_id": "TOOL-001",
+  "version": "1.0.0"
+}
