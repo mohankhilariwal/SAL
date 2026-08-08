@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "source_id": "POL-001",
+      "title": "Automated Lending Decision Policy",
+      "source_type": "POLICY",
+      "owner": "Lending Policy Owner",
+      "relative_path": "documents/POL-001-lending-policy.md",
+      "version_label": "2026.1",
+      "effective_from": "2026-01-01",
+      "effective_to": null,
+      "jurisdictions": ["CA", "US"],
+      "business_domains": ["LENDING"],
+      "access": {
+        "classification": "INTERNAL",
+        "allowed_groups": ["COMPLIANCE_ANALYST", "LENDING_POLICY_OWNER"],
+        "residency": "CA",
+        "purpose": "REGULATORY_CHANGE_ANALYSIS"
+      },
+      "retention_class": "POLICY_ACTIVE",
+      "authoritative": true
+    },
+    {
+      "source_id": "CTL-001",
+      "title": "Customer Data Sharing Control",
+      "source_type": "CONTROL",
+      "owner": "Privacy Control Owner",
+      "relative_path": "documents/CTL-001-customer-data-control.md",
+      "version_label": "2026.2",
+      "effective_from": "2026-04-01",
+      "effective_to": null,
+      "jurisdictions": ["CA", "US", "EU"],
+      "business_domains": ["CUSTOMER_DATA", "PRIVACY"],
+      "access": {
+        "classification": "CONFIDENTIAL",
+        "allowed_groups": ["COMPLIANCE_ANALYST", "PRIVACY_CONTROL_OWNER"],
+        "residency": "CA",
+        "purpose": "REGULATORY_CHANGE_ANALYSIS"
+      },
+      "retention_class": "CONTROL_ACTIVE",
+      "authoritative": true
+    },
+    {
+      "source_id": "PROC-001",
+      "title": "Payments Screening Operations",
+      "source_type": "BUSINESS_PROCESS",
+      "owner": "Payments Operations",
+      "relative_path": "documents/PROC-001-payments-screening.md",
+      "version_label": "2026.3",
+      "effective_from": "2026-05-15",
+      "effective_to": null,
+      "jurisdictions": ["CA", "US", "EU"],
+      "business_domains": ["PAYMENTS"],
+      "access": {
+        "classification": "INTERNAL",
+        "allowed_groups": ["COMPLIANCE_ANALYST", "PAYMENTS_OPERATIONS"],
+        "residency": "CA",
+        "purpose": "REGULATORY_CHANGE_ANALYSIS"
+      },
+      "retention_class": "PROCESS_ACTIVE",
+      "authoritative": true
+    },
+    {
+      "source_id": "TAX-001",
+      "title": "Regulatory Change Taxonomy",
+      "source_type": "TAXONOMY",
+      "owner": "Regulatory Compliance",
+      "relative_path": "documents/TAX-001-regulatory-taxonomy.md",
+      "version_label": "2026.1",
+      "effective_from": "2026-01-01",
+      "effective_to": null,
+      "jurisdictions": ["CA", "US", "EU"],
+      "business_domains": ["ENTERPRISE"],
+      "access": {
+        "classification": "INTERNAL",
+        "allowed_groups": ["COMPLIANCE_ANALYST", "AI_GOVERNANCE"],
+        "residency": "CA",
+        "purpose": "REGULATORY_CHANGE_ANALYSIS"
+      },
+      "retention_class": "TAXONOMY_ACTIVE",
+      "authoritative": true
+    },
+    {
+      "source_id": "ASMT-001",
+      "title": "Prior Impact Assessment Example",
+      "source_type": "PRIOR_ASSESSMENT",
+      "owner": "Regulatory Compliance",
+      "relative_path": "documents/ASMT-001-prior-impact.md",
+      "version_label": "2025.4",
+      "effective_from": "2025-10-01",
+      "effective_to": null,
+      "jurisdictions": ["CA"],
+      "business_domains": ["LENDING"],
+      "access": {
+        "classification": "CONFIDENTIAL",
+        "allowed_groups": ["COMPLIANCE_ANALYST"],
+        "residency": "CA",
+        "purpose": "REGULATORY_CHANGE_ANALYSIS"
+      },
+      "retention_class": "ASSESSMENT_REFERENCE",
+      "authoritative": false
+    }
+  ]
+}

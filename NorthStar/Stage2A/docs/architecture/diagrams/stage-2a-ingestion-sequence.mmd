@@ -1,0 +1,26 @@
+sequenceDiagram
+    actor Elena as Elena Petrov
+    participant Source as Approved Export Staging
+    participant Service as CMP-004 Knowledge Preparation Service
+    participant Validator as Metadata and Path Validator
+    participant Parser as Strict UTF-8 Parser
+    participant Chunker as Structure-aware Line Chunker
+    participant Store as Immutable Prepared Corpus
+    participant Eval as CMP-008 Corpus Validator
+
+    Elena->>Service: prepare(manifest.json)
+    Service->>Validator: validate source descriptors and access scope
+    Validator-->>Service: fail closed or accepted descriptors
+    loop Each approved source
+        Service->>Source: read bounded relative path
+        Source-->>Service: raw bytes
+        Service->>Parser: strict UTF-8 parse and newline normalization
+        Parser-->>Service: hashes, lines, risk flags
+        Service->>Chunker: source version + lines + metadata
+        Chunker-->>Service: deterministic line-exact chunks
+        Service->>Store: atomic version package write
+        Store-->>Service: CREATED or REUSED
+    end
+    Service->>Store: atomically update corpus manifest and run record
+    Service->>Eval: validate hashes, coordinates, access propagation, coverage
+    Eval-->>Elena: pass/fail report

@@ -1,0 +1,17 @@
+{
+  "result": "PASSED_WITH_RECORDED_EXCEPTIONS",
+  "checks": [
+    "ten_source_of_truth_files",
+    "component_ids_preserved",
+    "no_agent_tool_search_contract",
+    "data_and_interface_ids",
+    "mermaid_static_structure",
+    "prepared_corpus_counts",
+    "python_compilation"
+  ],
+  "exceptions": [
+    "ISS-009",
+    "ISS-014",
+    "ISS-015"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "access": {
+    "allowed_groups": [
+      "COMPLIANCE_ANALYST",
+      "LENDING_POLICY_OWNER"
+    ],
+    "classification": "INTERNAL",
+    "purpose": "REGULATORY_CHANGE_ANALYSIS",
+    "residency": "CA"
+  },
+  "authoritative": true,
+  "business_domains": [
+    "LENDING"
+  ],
+  "effective_from": "2026-01-01",
+  "effective_to": null,
+  "jurisdictions": [
+    "CA",
+    "US"
+  ],
+  "owner": "Lending Policy Owner",
+  "relative_path": "documents/POL-001-lending-policy.md",
+  "retention_class": "POLICY_ACTIVE",
+  "schema_version": "1.0.0",
+  "source_id": "POL-001",
+  "source_type": "POLICY",
+  "title": "Automated Lending Decision Policy",
+  "version_label": "2026.1"
+}

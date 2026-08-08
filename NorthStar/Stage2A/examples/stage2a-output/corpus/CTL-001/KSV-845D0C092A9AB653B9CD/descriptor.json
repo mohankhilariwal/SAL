@@ -1,0 +1,31 @@
+{
+  "access": {
+    "allowed_groups": [
+      "COMPLIANCE_ANALYST",
+      "PRIVACY_CONTROL_OWNER"
+    ],
+    "classification": "CONFIDENTIAL",
+    "purpose": "REGULATORY_CHANGE_ANALYSIS",
+    "residency": "CA"
+  },
+  "authoritative": true,
+  "business_domains": [
+    "CUSTOMER_DATA",
+    "PRIVACY"
+  ],
+  "effective_from": "2026-04-01",
+  "effective_to": null,
+  "jurisdictions": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "owner": "Privacy Control Owner",
+  "relative_path": "documents/CTL-001-customer-data-control.md",
+  "retention_class": "CONTROL_ACTIVE",
+  "schema_version": "1.0.0",
+  "source_id": "CTL-001",
+  "source_type": "CONTROL",
+  "title": "Customer Data Sharing Control",
+  "version_label": "2026.2"
+}

@@ -1,0 +1,30 @@
+{
+  "access": {
+    "allowed_groups": [
+      "COMPLIANCE_ANALYST",
+      "PAYMENTS_OPERATIONS"
+    ],
+    "classification": "INTERNAL",
+    "purpose": "REGULATORY_CHANGE_ANALYSIS",
+    "residency": "CA"
+  },
+  "authoritative": true,
+  "business_domains": [
+    "PAYMENTS"
+  ],
+  "effective_from": "2026-05-15",
+  "effective_to": null,
+  "jurisdictions": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "owner": "Payments Operations",
+  "relative_path": "documents/PROC-001-payments-screening.md",
+  "retention_class": "PROCESS_ACTIVE",
+  "schema_version": "1.0.0",
+  "source_id": "PROC-001",
+  "source_type": "BUSINESS_PROCESS",
+  "title": "Payments Screening Operations",
+  "version_label": "2026.3"
+}

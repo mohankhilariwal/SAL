@@ -1,0 +1,27 @@
+{
+  "access": {
+    "allowed_groups": [
+      "COMPLIANCE_ANALYST"
+    ],
+    "classification": "CONFIDENTIAL",
+    "purpose": "REGULATORY_CHANGE_ANALYSIS",
+    "residency": "CA"
+  },
+  "authoritative": false,
+  "business_domains": [
+    "LENDING"
+  ],
+  "effective_from": "2025-10-01",
+  "effective_to": null,
+  "jurisdictions": [
+    "CA"
+  ],
+  "owner": "Regulatory Compliance",
+  "relative_path": "documents/ASMT-001-prior-impact.md",
+  "retention_class": "ASSESSMENT_REFERENCE",
+  "schema_version": "1.0.0",
+  "source_id": "ASMT-001",
+  "source_type": "PRIOR_ASSESSMENT",
+  "title": "Prior Impact Assessment Example",
+  "version_label": "2025.4"
+}

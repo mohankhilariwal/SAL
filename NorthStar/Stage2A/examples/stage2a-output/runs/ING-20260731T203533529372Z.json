@@ -1,0 +1,53 @@
+{
+  "completed_at": "2026-07-31T20:35:33.560958+00:00",
+  "errors": [],
+  "items": [
+    {
+      "action": "CREATED",
+      "chunk_count": 5,
+      "risk_flags": [],
+      "source_id": "POL-001",
+      "source_version_id": "KSV-AD575B198243A176CDF7",
+      "status": "PREPARED"
+    },
+    {
+      "action": "CREATED",
+      "chunk_count": 4,
+      "risk_flags": [],
+      "source_id": "CTL-001",
+      "source_version_id": "KSV-845D0C092A9AB653B9CD",
+      "status": "PREPARED"
+    },
+    {
+      "action": "CREATED",
+      "chunk_count": 4,
+      "risk_flags": [],
+      "source_id": "PROC-001",
+      "source_version_id": "KSV-93E0A9167E46D6AE73A3",
+      "status": "PREPARED"
+    },
+    {
+      "action": "CREATED",
+      "chunk_count": 4,
+      "risk_flags": [],
+      "source_id": "TAX-001",
+      "source_version_id": "KSV-42EE6A144E2B4ED1A0BF",
+      "status": "PREPARED"
+    },
+    {
+      "action": "CREATED",
+      "chunk_count": 4,
+      "risk_flags": [
+        "indirect_prompt_instruction"
+      ],
+      "source_id": "ASMT-001",
+      "source_version_id": "KSV-361CA996693DFE43E86C",
+      "status": "PREPARED_WITH_WARNINGS"
+    }
+  ],
+  "manifest_sha256": "0e9344410cde654009b19e993402e74911e99ac0d5b05724fb6a8af2106037ab",
+  "run_id": "ING-20260731T203533529372Z",
+  "schema_version": "1.0.0",
+  "started_at": "2026-07-31T20:35:33.529401+00:00",
+  "status": "COMPLETED_WITH_WARNINGS"
+}

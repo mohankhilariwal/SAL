@@ -1,0 +1,26 @@
+flowchart LR
+    classDef untrusted fill:#ffebee,stroke:#c62828;
+    classDef controlled fill:#fff8e1,stroke:#f57f17;
+    classDef trusted fill:#e8f5e9,stroke:#2e7d32;
+    classDef planned fill:#f3f4f6,stroke:#6b7280,stroke-dasharray:5 5;
+
+    subgraph U["Untrusted content boundary"]
+      DOC["Document text, including possible embedded instructions"]:::untrusted
+    end
+    subgraph A["Approved export and metadata boundary"]
+      MAN["Manifest with owner, version, classification, groups, purpose, residency"]:::controlled
+    end
+    subgraph P["CMP-004 deterministic preparation boundary"]
+      PATH["Bounded path and file-type validation"]:::trusted
+      PARSE["Strict UTF-8 parser and SHA-256 provenance"]:::trusted
+      SCAN["Risk-flag scanner; content remains data"]:::trusted
+      CHUNK["Line-preserving deterministic chunker"]:::trusted
+      STORE["Immutable prepared corpus and atomic manifest"]:::trusted
+    end
+    PDP["CMP-007 enterprise identity and policy service"]:::planned
+    RET["Stage 2B access-aware retrieval"]:::planned
+
+    DOC --> PATH
+    MAN --> PATH --> PARSE --> SCAN --> CHUNK --> STORE
+    PDP -. future authenticated policy source .-> MAN
+    STORE -. no query path in Stage 2A .-> RET

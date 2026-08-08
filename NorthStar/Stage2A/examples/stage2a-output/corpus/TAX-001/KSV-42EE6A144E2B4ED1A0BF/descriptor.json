@@ -1,0 +1,30 @@
+{
+  "access": {
+    "allowed_groups": [
+      "AI_GOVERNANCE",
+      "COMPLIANCE_ANALYST"
+    ],
+    "classification": "INTERNAL",
+    "purpose": "REGULATORY_CHANGE_ANALYSIS",
+    "residency": "CA"
+  },
+  "authoritative": true,
+  "business_domains": [
+    "ENTERPRISE"
+  ],
+  "effective_from": "2026-01-01",
+  "effective_to": null,
+  "jurisdictions": [
+    "CA",
+    "US",
+    "EU"
+  ],
+  "owner": "Regulatory Compliance",
+  "relative_path": "documents/TAX-001-regulatory-taxonomy.md",
+  "retention_class": "TAXONOMY_ACTIVE",
+  "schema_version": "1.0.0",
+  "source_id": "TAX-001",
+  "source_type": "TAXONOMY",
+  "title": "Regulatory Change Taxonomy",
+  "version_label": "2026.1"
+}

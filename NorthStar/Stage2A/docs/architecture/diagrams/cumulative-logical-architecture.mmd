@@ -1,0 +1,62 @@
+flowchart TB
+    classDef implemented fill:#e8f5e9,stroke:#2e7d32,stroke-width:1px;
+    classDef partial fill:#fff8e1,stroke:#f57f17,stroke-width:1px;
+    classDef planned fill:#f3f4f6,stroke:#6b7280,stroke-dasharray:5 5;
+    classDef new fill:#fce4ec,stroke:#ad1457,stroke-width:2px;
+    classDef external fill:#ede7f6,stroke:#5e35b1;
+    classDef human fill:#e3f2fd,stroke:#1565c0;
+
+    subgraph HUMAN["Human accountability boundary"]
+      MAYA["Maya Chen"]:::human
+      DANIEL["Daniel Brooks"]:::human
+      AISHA["Aisha Rahman"]:::human
+      PRIYA["Priya Raman"]:::human
+      ELENA["Elena Petrov"]:::human
+      MARCUS["Marcus Green"]:::human
+      SOFIA["Sofia Alvarez"]:::human
+    end
+
+    subgraph EXTERNAL["Approved source and enterprise boundary"]
+      PUB["Regulatory publication"]:::external
+      KSRCS["Approved policy, control, process, taxonomy and prior-assessment exports"]:::external
+    end
+
+    subgraph PLATFORM["NorthStar AI-assisted compliance boundary"]
+      C1["CMP-001 Analyst Experience Portal"]:::partial
+      C2["CMP-002 Regulatory Intake Boundary"]:::implemented
+      C3["CMP-003 Case and Workflow Orchestration Boundary\nOne-shot only; no case state"]:::partial
+      C4["CMP-004 Knowledge and Evidence Access Boundary\nStage 2A parser, metadata validator, chunker and prepared corpus"]:::new
+      C5["CMP-005 Enterprise Integration Boundary"]:::planned
+      C6["CMP-006 Human Review and Approval Boundary"]:::planned
+      C7["CMP-007 Identity, Authorization and Policy Boundary"]:::planned
+      C8["CMP-008 Evaluation and Assurance Boundary"]:::partial
+      C9["CMP-009 Observability and Audit Boundary\nLocal run/provenance artifacts only"]:::partial
+      C10["CMP-010 Runtime and Deployment Boundary\nLocal Python runtime"]:::partial
+      C11["CMP-011 Source-of-Truth Governance Pack"]:::implemented
+      MODEL["Provider-neutral single-turn model contract"]:::partial
+      CORPUS["Prepared knowledge corpus\nDATA-019 to DATA-025"]:::new
+    end
+
+    PUB --> C2 --> C3 --> MODEL
+    MAYA --> C1 --> C2
+    MODEL --> C9
+
+    KSRCS --> C4 --> CORPUS
+    C4 --> C8
+    C4 --> C9
+    C7 -. deterministic enterprise authorization not yet connected .-> C4
+    C5 -. future live connectors and change feeds .-> KSRCS
+    C3 -. Stage 2B retrieval contract not implemented .-> C4
+    CORPUS -. Stage 2B search, reranking and citations .-> C3
+
+    PRIYA --> C11
+    ELENA --> C4
+    MARCUS --> C7
+    SOFIA --> C8
+    AISHA -. metadata ownership .-> KSRCS
+    DANIEL -. future approval .-> C6
+
+    C10 -. hosts .-> C1
+    C10 -. hosts .-> C4
+    C11 -. governs .-> C1
+    C11 -. governs .-> C4

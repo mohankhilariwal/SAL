@@ -1,0 +1,17 @@
+{
+  "byte_count": 629,
+  "chunker_version": "northstar-structure-line-chunker-1.0.0",
+  "ingested_at": "2026-07-31T20:35:33.529789+00:00",
+  "line_count": 13,
+  "metadata_sha256": "0be64fc4a11a2300de16ab00f62f2fe9467ce710ef6b1b9e1733520fdba447a7",
+  "normalized_sha256": "79c25fe124b886ecb50b5621ffcab660c52eee61332b33db948605a72296ded9",
+  "parser_version": "northstar-text-parser-1.0.0",
+  "raw_sha256": "79c25fe124b886ecb50b5621ffcab660c52eee61332b33db948605a72296ded9",
+  "risk_flags": [],
+  "schema_version": "1.0.0",
+  "source_id": "POL-001",
+  "source_version_id": "KSV-AD575B198243A176CDF7",
+  "status": "PREPARED",
+  "supersedes": null,
+  "version_label": "2026.1"
+}

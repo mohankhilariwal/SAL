@@ -1,0 +1,112 @@
+{
+  "active_chunk_count": 21,
+  "active_versions": {
+    "ASMT-001": "KSV-361CA996693DFE43E86C",
+    "CTL-001": "KSV-845D0C092A9AB653B9CD",
+    "POL-001": "KSV-AD575B198243A176CDF7",
+    "PROC-001": "KSV-93E0A9167E46D6AE73A3",
+    "TAX-001": "KSV-42EE6A144E2B4ED1A0BF"
+  },
+  "chunking_policy": {
+    "chunker_version": "northstar-structure-line-chunker-1.0.0",
+    "max_chars": 1200,
+    "max_lines": 24,
+    "overlap_lines": 2
+  },
+  "corpus_version": "0.3.0",
+  "manifest_input_sha256": "0e9344410cde654009b19e993402e74911e99ac0d5b05724fb6a8af2106037ab",
+  "parser_version": "northstar-text-parser-1.0.0",
+  "schema_version": "1.0.0",
+  "source_count": 5,
+  "updated_at": "2026-07-31T20:35:33.559825+00:00",
+  "version_count": 5,
+  "versions": {
+    "KSV-361CA996693DFE43E86C": {
+      "byte_count": 593,
+      "chunker_version": "northstar-structure-line-chunker-1.0.0",
+      "ingested_at": "2026-07-31T20:35:33.554720+00:00",
+      "line_count": 12,
+      "metadata_sha256": "d0abbf0ed70cd41083272e4737cf93c1ca1593e8a0b6a3b134be67f20d6c17e5",
+      "normalized_sha256": "7e3d2ec447c0ba430012c5fcbd067723235d3ee2f2a380905f1ef035ed56dd4f",
+      "parser_version": "northstar-text-parser-1.0.0",
+      "raw_sha256": "7e3d2ec447c0ba430012c5fcbd067723235d3ee2f2a380905f1ef035ed56dd4f",
+      "risk_flags": [
+        "indirect_prompt_instruction"
+      ],
+      "schema_version": "1.0.0",
+      "source_id": "ASMT-001",
+      "source_version_id": "KSV-361CA996693DFE43E86C",
+      "status": "PREPARED_WITH_WARNINGS",
+      "supersedes": null,
+      "version_label": "2025.4"
+    },
+    "KSV-42EE6A144E2B4ED1A0BF": {
+      "byte_count": 372,
+      "chunker_version": "northstar-structure-line-chunker-1.0.0",
+      "ingested_at": "2026-07-31T20:35:33.549494+00:00",
+      "line_count": 18,
+      "metadata_sha256": "825eddc92b185a329b64e20fdfc808e4f0565a75ef00c23b30d6e8453826e554",
+      "normalized_sha256": "b93bf6563eca1a8d76ba4ff149e3f8fcf02ad696a63814668d6b406d07527960",
+      "parser_version": "northstar-text-parser-1.0.0",
+      "raw_sha256": "b93bf6563eca1a8d76ba4ff149e3f8fcf02ad696a63814668d6b406d07527960",
+      "risk_flags": [],
+      "schema_version": "1.0.0",
+      "source_id": "TAX-001",
+      "source_version_id": "KSV-42EE6A144E2B4ED1A0BF",
+      "status": "PREPARED",
+      "supersedes": null,
+      "version_label": "2026.1"
+    },
+    "KSV-845D0C092A9AB653B9CD": {
+      "byte_count": 577,
+      "chunker_version": "northstar-structure-line-chunker-1.0.0",
+      "ingested_at": "2026-07-31T20:35:33.538154+00:00",
+      "line_count": 12,
+      "metadata_sha256": "c42bd75e60614f24b1ba22d64f749cb456a03812b37c4a9134a1c60f675b78d4",
+      "normalized_sha256": "82a60b677dfe0df32e2f8d005f710e8c01f6e4a94e587bec717bf05f3ac932cc",
+      "parser_version": "northstar-text-parser-1.0.0",
+      "raw_sha256": "82a60b677dfe0df32e2f8d005f710e8c01f6e4a94e587bec717bf05f3ac932cc",
+      "risk_flags": [],
+      "schema_version": "1.0.0",
+      "source_id": "CTL-001",
+      "source_version_id": "KSV-845D0C092A9AB653B9CD",
+      "status": "PREPARED",
+      "supersedes": null,
+      "version_label": "2026.2"
+    },
+    "KSV-93E0A9167E46D6AE73A3": {
+      "byte_count": 539,
+      "chunker_version": "northstar-structure-line-chunker-1.0.0",
+      "ingested_at": "2026-07-31T20:35:33.544362+00:00",
+      "line_count": 14,
+      "metadata_sha256": "5d62c84c8b5157bf468371fb3a74f1e0926adb9059a5b2b4c4fe3c7f7a1af950",
+      "normalized_sha256": "28248d695c819ec8e8e8db98645235e057851730a9a8b2159d7424708098eea6",
+      "parser_version": "northstar-text-parser-1.0.0",
+      "raw_sha256": "28248d695c819ec8e8e8db98645235e057851730a9a8b2159d7424708098eea6",
+      "risk_flags": [],
+      "schema_version": "1.0.0",
+      "source_id": "PROC-001",
+      "source_version_id": "KSV-93E0A9167E46D6AE73A3",
+      "status": "PREPARED",
+      "supersedes": null,
+      "version_label": "2026.3"
+    },
+    "KSV-AD575B198243A176CDF7": {
+      "byte_count": 629,
+      "chunker_version": "northstar-structure-line-chunker-1.0.0",
+      "ingested_at": "2026-07-31T20:35:33.529789+00:00",
+      "line_count": 13,
+      "metadata_sha256": "0be64fc4a11a2300de16ab00f62f2fe9467ce710ef6b1b9e1733520fdba447a7",
+      "normalized_sha256": "79c25fe124b886ecb50b5621ffcab660c52eee61332b33db948605a72296ded9",
+      "parser_version": "northstar-text-parser-1.0.0",
+      "raw_sha256": "79c25fe124b886ecb50b5621ffcab660c52eee61332b33db948605a72296ded9",
+      "risk_flags": [],
+      "schema_version": "1.0.0",
+      "source_id": "POL-001",
+      "source_version_id": "KSV-AD575B198243A176CDF7",
+      "status": "PREPARED",
+      "supersedes": null,
+      "version_label": "2026.1"
+    }
+  }
+}
