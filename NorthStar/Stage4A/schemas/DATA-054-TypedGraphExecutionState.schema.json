@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "current_node": {
+      "type": "string"
+    },
+    "graph_id": {
+      "type": "string"
+    },
+    "graph_version": {
+      "type": "string"
+    },
+    "pending_decision": {},
+    "pending_failure": {},
+    "pending_result": {},
+    "run_state": {
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "status": {
+      "type": "string"
+    },
+    "transitions": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "graph_id",
+    "graph_version",
+    "current_node",
+    "run_state",
+    "transitions",
+    "status"
+  ],
+  "title": "DATA-054 TypedGraphExecutionState",
+  "type": "object"
+}

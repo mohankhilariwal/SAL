@@ -1,0 +1,110 @@
+NorthStar Agentic AI Architecture Playbook
+Stage 4A — Graph Foundations and Typed State
+Validation date: 2026-07-31
+Architecture/repository/handoff version: 0.8.0
+
+EXECUTION BOUNDARY
+- Local/offline sequential typed graph with one deterministic decision provider.
+- Synthetic/public-safe regulatory, evidence, control and reversible-write fixtures.
+- Six retained TOOL-001 through TOOL-006 capabilities behind CMP-005.
+- Exact 0.7.0 repository and nine individual registers were not mounted; the authoritative
+  S03C handoff and prior exported records were used for a compatible 0.8.0 overlay (ISS-032).
+- No live model, enterprise IAM/PDP, live connector, actual human approval, distributed durable
+  workflow, event sourcing, graph migration, memory, harness, concurrency or multi-agent runtime.
+
+EXECUTED ENVIRONMENT
+- Python 3.13.5
+- pytest 9.0.2
+- Package target: Python >=3.11,<3.15
+- Runtime dependencies: Python standard library only
+
+EXECUTED CHECKS
+1. PYTHONPATH=src python -m pytest --override-ini addopts='' -q
+   Result: 24 passed.
+2. python -m compileall -q src scripts
+   Result: passed.
+3. PYTHONPATH=src python scripts/run_stage4a_demo.py
+   Result: completed; GRAPH-001 1.0.0; 41 transitions; 7 model calls; 6 tool calls;
+   six milestones; case/mapping/review artifacts; preliminary_grounded_unapproved=true;
+   human_review_required=true.
+4. PYTHONPATH=src python scripts/run_stage4a_evaluation.py
+   Result: EVAL-027 through EVAL-032 produced expected normal, fallback, reconciliation,
+   checkpoint-resume, policy-denial and architecture-boundary outcomes.
+5. PYTHONPATH=src python scripts/validate_stage4a.py
+   Result: Stage 4A structural validation PASSED.
+6. PYTHONPATH=src python scripts/consistency_audit_stage4a.py
+   Result: PASSED WITH RECORDED EXCEPTIONS.
+7. python -m pip install -e . --no-deps --no-build-isolation
+   Result: passed.
+8. Installed-package demonstration without PYTHONPATH
+   Result: completed with the same status and key counts.
+
+S04A TEST RESULTS
+- TEST-110 valid graph definition: passed.
+- TEST-111 duplicate node rejected: passed.
+- TEST-112 unknown edge target rejected: passed.
+- TEST-113 unreachable node rejected: passed.
+- TEST-114 duplicate source-route rejected: passed.
+- TEST-115 unauthorized/protected state patch rejected: passed.
+- TEST-116 patch application is copy-on-write: passed.
+- TEST-117 model node cannot change final disposition: passed.
+- TEST-118 happy path and deterministic completion invariants: passed.
+- TEST-119 conditional path includes required node types: passed.
+- TEST-120 policy denial occurs before write gateway execution: passed.
+- TEST-121 transient read uses registered fallback: passed.
+- TEST-122 ambiguous write reconciles without duplicate: passed.
+- TEST-123 cancellation is non-success and unapproved: passed.
+- TEST-124 graph transition budget stops execution: passed.
+- TEST-125 graph checkpoint round trip: passed.
+- TEST-126 resume does not repeat completed TOOL-001 work: passed.
+- TEST-127 graph-version mismatch rejected: passed.
+- TEST-128 checkpoint tamper detected: passed.
+- TEST-129 exactly one agent and no harness/memory/multi-agent modules: passed.
+- TEST-130 every tool action uses CMP-005 gateway: passed.
+- TEST-131 Maya restricted evidence boundary preserved: passed.
+- TEST-132 recovery-path coverage and efficiency metrics: passed.
+- TEST-133 run-scoped wall-time budget: passed.
+
+EVALUATION RESULTS
+- EVAL-027: normal graph completed in 41 transitions.
+- EVAL-028: transient TOOL-003 failure used registered fallback and completed.
+- EVAL-029: TOOL-004 timeout after commit reconciled exactly one case and completed.
+- EVAL-030: checkpoint resumed the same run and completed without repeating TOOL-001.
+- EVAL-031: write scope denial escalated before any write gateway call.
+- EVAL-032: nine graph nodes, one agent, zero harness, memory and multi-agent modules.
+
+CONSISTENCY RESULT
+Passed with recorded exceptions.
+Validated:
+- narrative begins from the accepted S03C increasingly branched-loop limitation;
+- CMP-001 through CMP-011 names and responsibilities are preserved;
+- AGT-001 remains the only agent and retains its low authority;
+- TOOL-001 through TOOL-006 remain read-only/reversible and gateway-only;
+- DATA-009 remains 1.1.0; DATA-045 through DATA-057 and INT-026 through INT-035
+  agree across code, schemas, diagrams, registers, chapter and handoff;
+- GRAPH-001 definition, node functions, owned paths and route table agree;
+- model output cannot choose arbitrary node targets or mutate principal, tool allowlist,
+  budgets, goal, final disposition or human-review requirement;
+- policy preflight cannot replace gateway authorization;
+- S03C budget, fallback, cancellation and reconciliation semantics are preserved;
+- ambiguous write recovery creates one case and performs no blind retry;
+- checkpoint checksum and graph-version mismatches fail before resume;
+- partial, cancelled, guard and escalated outcomes remain preliminary_grounded_unapproved
+  and require human review;
+- no actual human decision, durable workflow engine, event sourcing, memory, harness,
+  concurrency or multi-agent capability is falsely claimed;
+- repository paths, versions, ADRs and source-of-truth files are synchronized.
+
+RECORDED EXCEPTIONS
+- ISS-014: Mermaid CLI rendering was unavailable; sources received structural/static review.
+- ISS-015: Python 3.12 was not separately executed; Python 3.13.5 passed.
+- ISS-021 through ISS-031: inherited reconstruction/provider/enterprise gaps remain.
+- ISS-032: byte-exact 0.7.0 repository and nine registers were unavailable; compatible overlay.
+- ISS-033: Mermaid renderer conformance remains unverified.
+- ISS-034: in-flight graph-version migration is not implemented.
+- ISS-035: no framework, managed workflow, durable timer, multi-process or production benchmark.
+- Enterprise identity, policy, connectors, records, audit, legal review, production performance,
+  deployment and disaster recovery remain unverified.
+
+OVERALL RESULT
+PASSED WITH RECORDED EXCEPTIONS

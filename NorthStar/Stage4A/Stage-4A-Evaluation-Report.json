@@ -1,0 +1,55 @@
+{
+  "EVAL-027": {
+    "path_nodes": [
+      "N00_VALIDATE_CONTEXT",
+      "N10_GUARD_CHECK",
+      "N20_MODEL_DECIDE",
+      "N30_POLICY_GATE",
+      "N40_TOOL_EXECUTE",
+      "N60_OBSERVE",
+      "N70_COMPLETION_CHECK",
+      "N90_TERMINATE"
+    ],
+    "status": "completed",
+    "transitions": 41
+  },
+  "EVAL-028": {
+    "fallback_calls": [
+      [
+        "TOOL-003",
+        "fallback"
+      ]
+    ],
+    "status": "completed"
+  },
+  "EVAL-029": {
+    "case_records": 1,
+    "recoveries": [
+      {
+        "action": "reconcile_write",
+        "attempt": 1,
+        "outcome": "committed",
+        "reason": "timeout_after_dispatch",
+        "tool_id": "TOOL-004"
+      }
+    ],
+    "status": "completed"
+  },
+  "EVAL-030": {
+    "additional_calls": 4,
+    "resumed": true,
+    "status": "completed"
+  },
+  "EVAL-031": {
+    "reason": "write_scope_denied",
+    "status": "escalated",
+    "tool_calls": 3
+  },
+  "EVAL-032": {
+    "agent_count": 1,
+    "graph_nodes": 9,
+    "harness_modules": 0,
+    "memory_modules": 0,
+    "multi_agent_modules": 0
+  }
+}

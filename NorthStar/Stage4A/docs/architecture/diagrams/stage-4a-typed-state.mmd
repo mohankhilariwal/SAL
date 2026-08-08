@@ -1,0 +1,9 @@
+flowchart LR
+  SNAP["Immutable state snapshot"] --> NODE["Typed node"]
+  NODE --> RESULT["DATA-055 NodeResult"]
+  RESULT --> PATCH["DATA-056 StatePatch"]
+  PATCH --> OWN["INT-033 ownership validation"]
+  OWN -->|allowed| APPLY["Copy-on-write application"]
+  OWN -->|denied| FAIL["Fail closed"]
+  APPLY --> STATE["DATA-054 TypedGraphExecutionState"]
+  STATE --> CKPT["DATA-050 checksummed checkpoint"]

@@ -1,0 +1,25 @@
+flowchart LR
+  subgraph U[Analyst boundary]
+    MAYA["Maya / local principal claims"]
+  end
+  subgraph O[Application-owned orchestration]
+    GRAPH["CMP-003 typed graph"]
+    PATCH["INT-033 patch validator"]
+    BUDGET["INT-026 budgets"]
+    RECOVERY["INT-027 recovery"]
+  end
+  subgraph M[Probabilistic boundary]
+    AGT["AGT-001 decision provider"]
+  end
+  subgraph I[Integration boundary]
+    GW["CMP-005 authoritative gateway"]
+    TOOLS["TOOL-001..006"]
+  end
+  MAYA --> GRAPH
+  GRAPH --> AGT
+  AGT -->|proposal only| GRAPH
+  GRAPH --> PATCH
+  GRAPH --> GW
+  GW --> TOOLS
+  BUDGET -. cannot be changed by AGT .-> GRAPH
+  RECOVERY -. cannot be selected by AGT .-> GRAPH

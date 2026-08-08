@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "edges": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "entry_node": {
+      "type": "string"
+    },
+    "graph_id": {
+      "const": "GRAPH-001"
+    },
+    "graph_version": {
+      "type": "string"
+    },
+    "nodes": {
+      "items": {
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "terminal_nodes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "graph_id",
+    "graph_version",
+    "entry_node",
+    "terminal_nodes",
+    "nodes",
+    "edges"
+  ],
+  "title": "DATA-053 ExecutionGraphDefinition",
+  "type": "object"
+}

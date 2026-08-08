@@ -1,0 +1,18 @@
+flowchart TD
+  N00["N00 deterministic: validate context"] -->|valid| N10["N10 deterministic: guards"]
+  N00 -->|invalid| N90["N90 termination"]
+  N10 -->|continue| N20["N20 model: AGT-001 decision"]
+  N10 -->|cancel/guard| N90
+  N20 -->|tool| N30["N30 policy preflight"]
+  N20 -->|complete| N70["N70 deterministic completion check"]
+  N20 -->|escalate/budget| N90
+  N30 -->|allowed| N40["N40 tool via CMP-005"]
+  N30 -->|denied| N90
+  N40 -->|success| N60["N60 deterministic observation"]
+  N40 -->|failure| N50["N50 recovery"]
+  N50 -->|recovered| N60
+  N50 -->|unresolved| N90
+  N60 --> N70
+  N70 -->|continue| N10
+  N70 -->|complete/invalid| N90
+  N90 --> END((END))

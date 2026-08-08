@@ -1,0 +1,10 @@
+flowchart LR
+  MAYA["Maya"] --> C1["CMP-001 Analyst Experience Portal"]
+  C1 --> C3["CMP-003 imperative single-agent loop 0.7.0"]
+  C3 --> A1["AGT-001"]
+  A1 --> C5["CMP-005 gateway"]
+  C5 --> T["TOOL-001..006"]
+  C3 --> B["INT-026 budgets"]
+  C3 --> R["INT-027 recovery"]
+  C3 --> P["INT-029 checkpoint"]
+  L["Nested branches obscure node ownership and routes"] -. limitation .-> C3

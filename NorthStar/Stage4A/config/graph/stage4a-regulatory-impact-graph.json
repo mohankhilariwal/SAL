@@ -1,0 +1,213 @@
+{
+  "edges": [
+    {
+      "route": "valid",
+      "source": "N00_VALIDATE_CONTEXT",
+      "target": "N10_GUARD_CHECK"
+    },
+    {
+      "route": "invalid",
+      "source": "N00_VALIDATE_CONTEXT",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "continue",
+      "source": "N10_GUARD_CHECK",
+      "target": "N20_MODEL_DECIDE"
+    },
+    {
+      "route": "cancelled",
+      "source": "N10_GUARD_CHECK",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "guard_stop",
+      "source": "N10_GUARD_CHECK",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "tool",
+      "source": "N20_MODEL_DECIDE",
+      "target": "N30_POLICY_GATE"
+    },
+    {
+      "route": "complete",
+      "source": "N20_MODEL_DECIDE",
+      "target": "N70_COMPLETION_CHECK"
+    },
+    {
+      "route": "escalate",
+      "source": "N20_MODEL_DECIDE",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "budget_stop",
+      "source": "N20_MODEL_DECIDE",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "allowed",
+      "source": "N30_POLICY_GATE",
+      "target": "N40_TOOL_EXECUTE"
+    },
+    {
+      "route": "denied",
+      "source": "N30_POLICY_GATE",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "success",
+      "source": "N40_TOOL_EXECUTE",
+      "target": "N60_OBSERVE"
+    },
+    {
+      "route": "failure",
+      "source": "N40_TOOL_EXECUTE",
+      "target": "N50_RECOVERY"
+    },
+    {
+      "route": "budget_stop",
+      "source": "N40_TOOL_EXECUTE",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "recovered",
+      "source": "N50_RECOVERY",
+      "target": "N60_OBSERVE"
+    },
+    {
+      "route": "unresolved",
+      "source": "N50_RECOVERY",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "observed",
+      "source": "N60_OBSERVE",
+      "target": "N70_COMPLETION_CHECK"
+    },
+    {
+      "route": "continue",
+      "source": "N70_COMPLETION_CHECK",
+      "target": "N10_GUARD_CHECK"
+    },
+    {
+      "route": "complete",
+      "source": "N70_COMPLETION_CHECK",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "invalid_completion",
+      "source": "N70_COMPLETION_CHECK",
+      "target": "N90_TERMINATE"
+    },
+    {
+      "route": "end",
+      "source": "N90_TERMINATE",
+      "target": "__END__"
+    }
+  ],
+  "entry_node": "N00_VALIDATE_CONTEXT",
+  "graph_id": "GRAPH-001",
+  "graph_version": "1.0.0",
+  "nodes": [
+    {
+      "description": "Validate immutable identity, authority, disposition and review invariants.",
+      "node_id": "N00_VALIDATE_CONTEXT",
+      "node_type": "deterministic",
+      "owned_paths": [
+        "run_state.status",
+        "run_state.termination_reason"
+      ]
+    },
+    {
+      "description": "Check cancellation and graph transition budget before new work.",
+      "node_id": "N10_GUARD_CHECK",
+      "node_type": "deterministic",
+      "owned_paths": [
+        "run_state.status",
+        "run_state.termination_reason"
+      ]
+    },
+    {
+      "description": "AGT-001 proposes a tool, completion or escalation using bounded state.",
+      "node_id": "N20_MODEL_DECIDE",
+      "node_type": "model",
+      "owned_paths": [
+        "pending_decision",
+        "run_state.decisions",
+        "run_state.ledger",
+        "run_state.status",
+        "run_state.termination_reason"
+      ]
+    },
+    {
+      "description": "Preflight allowlist and authority-like argument checks; gateway remains authoritative.",
+      "node_id": "N30_POLICY_GATE",
+      "node_type": "policy",
+      "owned_paths": [
+        "run_state.status",
+        "run_state.termination_reason"
+      ]
+    },
+    {
+      "description": "Invoke TOOL-001..006 only through CMP-005 gateway.",
+      "node_id": "N40_TOOL_EXECUTE",
+      "node_type": "tool",
+      "owned_paths": [
+        "pending_result",
+        "pending_failure",
+        "run_state.ledger",
+        "run_state.status",
+        "run_state.termination_reason"
+      ]
+    },
+    {
+      "description": "Reuse S03C typed recovery, fallback and ambiguous-write reconciliation.",
+      "node_id": "N50_RECOVERY",
+      "node_type": "recovery",
+      "owned_paths": [
+        "pending_result",
+        "pending_failure",
+        "run_state.recovery_records",
+        "run_state.ledger",
+        "run_state.status",
+        "run_state.termination_reason"
+      ]
+    },
+    {
+      "description": "Project validated tool results into monotonic business milestones and artifacts.",
+      "node_id": "N60_OBSERVE",
+      "node_type": "deterministic",
+      "owned_paths": [
+        "run_state.observations",
+        "run_state.milestones",
+        "run_state.artifacts",
+        "pending_result",
+        "pending_failure"
+      ]
+    },
+    {
+      "description": "Application-owned completion validation; provider assertion is insufficient.",
+      "node_id": "N70_COMPLETION_CHECK",
+      "node_type": "deterministic",
+      "owned_paths": [
+        "pending_decision",
+        "run_state.status",
+        "run_state.termination_reason"
+      ]
+    },
+    {
+      "description": "Create the terminal local outcome while preserving unapproved disposition.",
+      "node_id": "N90_TERMINATE",
+      "node_type": "termination",
+      "owned_paths": [
+        "status",
+        "run_state.status",
+        "run_state.termination_reason"
+      ]
+    }
+  ],
+  "terminal_nodes": [
+    "N90_TERMINATE"
+  ]
+}

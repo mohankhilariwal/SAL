@@ -1,0 +1,20 @@
+{
+  "currency": "CAD",
+  "input_token_micro_cad": 2,
+  "limits": {
+    "max_cost_micro_cad": 15000,
+    "max_failures": 4,
+    "max_graph_transitions": 90,
+    "max_input_tokens": 3000,
+    "max_iterations": 12,
+    "max_model_calls": 12,
+    "max_output_tokens": 1200,
+    "max_replans": 2,
+    "max_retries": 2,
+    "max_tool_calls": 10,
+    "max_total_tokens": 4200,
+    "max_wall_seconds": 30
+  },
+  "output_token_micro_cad": 6,
+  "schema_version": "1.0.0"
+}

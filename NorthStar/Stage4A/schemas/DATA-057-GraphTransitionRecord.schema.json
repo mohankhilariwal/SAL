@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "evidence_summary": {
+      "type": "object"
+    },
+    "node_type": {
+      "type": "string"
+    },
+    "route": {
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "source_node": {
+      "type": "string"
+    },
+    "target_node": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "sequence",
+    "source_node",
+    "node_type",
+    "route",
+    "target_node",
+    "evidence_summary"
+  ],
+  "title": "DATA-057 GraphTransitionRecord",
+  "type": "object"
+}

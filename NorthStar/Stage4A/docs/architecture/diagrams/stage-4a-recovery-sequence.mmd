@@ -1,0 +1,15 @@
+sequenceDiagram
+  participant G as CMP-003 Graph Runtime
+  participant T as N40 Tool Node
+  participant W as CMP-005 Gateway
+  participant R as N50 Recovery Node
+  participant C as INT-030 Reconciliation
+  G->>T: Execute typed decision
+  T->>W: Invoke TOOL-004 with same idempotency key
+  W-->>T: ambiguous_write / after_dispatch
+  T-->>G: route=failure
+  G->>R: DATA-047 FailureEnvelope
+  R->>C: reconcile(tool_id, idempotency_key)
+  C-->>R: committed artifact
+  R-->>G: route=recovered + DATA-048 record
+  G->>G: Observe milestone; checkpoint transition
