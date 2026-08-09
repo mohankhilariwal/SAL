@@ -1,0 +1,34 @@
+{
+  "schema_id": "DATA-234",
+  "policy_id": "OBS-POL-001",
+  "version": "1.0.0",
+  "default_trace_sample_ratio": 0.25,
+  "always_sample_events": [
+    "authorization.denied",
+    "guardrail.denied",
+    "guardrail.quarantined",
+    "tool.write.requested",
+    "tool.write.completed",
+    "human.approval.requested",
+    "human.approval.decided",
+    "exception.applied",
+    "incident.raised",
+    "task.disposed"
+  ],
+  "raw_prompt_capture": false,
+  "raw_response_capture": false,
+  "baggage_sensitive_identifiers_allowed": false,
+  "forbidden_metric_labels": [
+    "user_id",
+    "session_id",
+    "run_id",
+    "task_id",
+    "case_id",
+    "trace_id",
+    "span_id",
+    "prompt",
+    "response",
+    "tool_arguments"
+  ],
+  "authority_effect": "none"
+}

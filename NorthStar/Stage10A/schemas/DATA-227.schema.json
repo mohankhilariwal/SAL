@@ -1,0 +1,49 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-227.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "from_state": {
+      "type": "string"
+    },
+    "from_version": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "owner_component": {
+      "const": "CMP-003"
+    },
+    "state_object_id": {
+      "type": "string"
+    },
+    "to_state": {
+      "type": "string"
+    },
+    "to_version": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "transition_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "state_object_id",
+    "from_version",
+    "to_version",
+    "from_state",
+    "to_state",
+    "transition_id",
+    "idempotency_key",
+    "owner_component",
+    "authority_effect"
+  ],
+  "title": "DATA-227 StateTransitionTelemetry",
+  "type": "object"
+}

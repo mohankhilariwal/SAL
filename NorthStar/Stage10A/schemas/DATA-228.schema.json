@@ -1,0 +1,31 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-228.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "digests": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "redacted_paths": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "sanitized": {}
+  },
+  "required": [
+    "sanitized",
+    "redacted_paths",
+    "digests",
+    "authority_effect"
+  ],
+  "title": "DATA-228 RedactionResult",
+  "type": "object"
+}

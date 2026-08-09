@@ -1,0 +1,39 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-231.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "errors": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "event_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "last_hash": {
+      "type": "string"
+    },
+    "valid": {
+      "type": "boolean"
+    },
+    "verified_at": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "valid",
+    "event_count",
+    "last_hash",
+    "errors",
+    "verified_at",
+    "authority_effect"
+  ],
+  "title": "DATA-231 AuditVerificationReport",
+  "type": "object"
+}

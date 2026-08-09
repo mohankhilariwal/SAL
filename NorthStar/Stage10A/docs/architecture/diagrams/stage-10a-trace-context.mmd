@@ -1,0 +1,30 @@
+sequenceDiagram
+  autonumber
+  participant U as Maya / CMP-001
+  participant O as CMP-003 Orchestrator
+  participant R as CMP-004 Retrieval
+  participant G as CMP-005 Tool Gateway
+  participant H as CMP-006 Human Review
+  participant X as CMP-009 OBS-001
+  participant A as CMP-009 AUD-001
+
+  U->>O: request + authenticated session + optional traceparent
+  O->>O: validate traceparent; create authoritative run/task/case context
+  O->>X: task.started span/event
+  O->>A: append task.started
+  O->>R: retrieval request + trace context + authenticated scope
+  R->>X: retrieval span, source refs, counts, freshness
+  R-->>O: cited evidence
+  O->>G: proposed protected write + grant + trace context
+  G->>A: append tool.write.requested (durable)
+  G->>G: AUTH-001 + BR-001 + guardrails
+  G->>X: tool span and operational metrics
+  G->>A: append tool.write.completed / ambiguous outcome
+  G-->>O: typed result
+  O->>H: review package + artefact digest
+  H->>A: append human.approval.decided
+  H->>X: human wait/decision telemetry
+  O->>A: append state.transitioned and task.disposed
+  O->>X: close trace
+
+  Note over U,A: trace IDs correlate the flow but never replace identity, authorization, approval or tenant checks

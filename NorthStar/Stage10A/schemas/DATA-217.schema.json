@@ -1,0 +1,64 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-217.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "agent_id": {
+      "const": "AGT-001"
+    },
+    "agent_spec_version": {
+      "const": "1.1.0"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "parent_span_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "span_id": {
+      "pattern": "^[0-9a-f]{16}$",
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "trace_flags": {
+      "pattern": "^[0-9a-f]{2}$",
+      "type": "string"
+    },
+    "trace_id": {
+      "pattern": "^[0-9a-f]{32}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "trace_id",
+    "span_id",
+    "trace_flags",
+    "session_id",
+    "run_id",
+    "task_id",
+    "case_id",
+    "tenant_id",
+    "agent_id",
+    "agent_spec_version",
+    "authority_effect"
+  ],
+  "title": "DATA-217 CorrelationContext",
+  "type": "object"
+}

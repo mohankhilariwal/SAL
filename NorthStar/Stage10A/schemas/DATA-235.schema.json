@@ -1,0 +1,55 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-235.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "hash_algorithm": {
+      "const": "SHA-256"
+    },
+    "hidden_chain_of_thought_capture": {
+      "const": false
+    },
+    "local_signature_algorithm": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "production_signature_requirement": {
+      "type": "string"
+    },
+    "production_storage_requirement": {
+      "type": "string"
+    },
+    "protected_effect_fail_mode": {
+      "const": "closed"
+    },
+    "required_events": {
+      "type": "array"
+    },
+    "schema_id": {
+      "const": "DATA-235"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_id",
+    "policy_id",
+    "version",
+    "required_events",
+    "hash_algorithm",
+    "local_signature_algorithm",
+    "production_signature_requirement",
+    "production_storage_requirement",
+    "protected_effect_fail_mode",
+    "hidden_chain_of_thought_capture",
+    "authority_effect"
+  ],
+  "title": "DATA-235 TelemetryRetentionPolicy",
+  "type": "object"
+}

@@ -1,0 +1,17 @@
+{
+  "diagrams_checked": 5,
+  "errors": [
+    "stage narrative missing invariant: Stage 8D remains unresolved"
+  ],
+  "recorded_exceptions": [
+    "ISS-096",
+    "ISS-131",
+    "ISS-141",
+    "ISS-158",
+    "ISS-170",
+    "ISS-171",
+    "ISS-179"
+  ],
+  "result": "failed",
+  "schemas_checked": 20
+}

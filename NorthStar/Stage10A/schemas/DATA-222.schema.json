@@ -1,0 +1,61 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-222.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "content_captured": {
+      "const": false
+    },
+    "duration_ms": {
+      "minimum": 0,
+      "type": "number"
+    },
+    "finish_reason": {
+      "type": "string"
+    },
+    "input_tokens": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "model_version": {
+      "type": "string"
+    },
+    "output_tokens": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "prompt_version": {
+      "type": "string"
+    },
+    "reasoning_tokens": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "trace_id",
+    "span_id",
+    "model_id",
+    "model_version",
+    "prompt_version",
+    "input_tokens",
+    "output_tokens",
+    "duration_ms",
+    "content_captured",
+    "authority_effect"
+  ],
+  "title": "DATA-222 ModelInvocationTelemetry",
+  "type": "object"
+}

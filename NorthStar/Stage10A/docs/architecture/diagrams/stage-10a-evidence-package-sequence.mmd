@@ -1,0 +1,19 @@
+sequenceDiagram
+  autonumber
+  participant A as Auditor / authorized reviewer
+  participant C7 as CMP-007 Authorization
+  participant C9 as CMP-009 Evidence Service
+  participant L as Audit Ledger
+  participant S as Artefact/Source Stores
+
+  A->>C7: request package for run_id and case_id
+  C7-->>A: scoped read grant
+  A->>C9: build package + scoped grant
+  C9->>C7: receiver-side grant verification
+  C9->>L: verify full chain and select ordered run events
+  L-->>C9: records + verification report
+  C9->>S: resolve approved artefact/source digests
+  S-->>C9: immutable references / digest confirmations
+  C9->>C9: create manifest and package digest
+  C9-->>A: evidence package
+  Note over A,S: package contains concise evidence, decisions, actions and outcomes; no hidden model chain-of-thought

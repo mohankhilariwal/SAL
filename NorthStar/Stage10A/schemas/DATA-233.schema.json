@@ -1,0 +1,35 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-233.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "audit_records": {
+      "type": "array"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "manifest": {
+      "type": "object"
+    },
+    "package_digest": {
+      "type": "string"
+    },
+    "schema_id": {
+      "const": "DATA-233"
+    },
+    "verification": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_id",
+    "manifest",
+    "audit_records",
+    "verification",
+    "package_digest",
+    "authority_effect"
+  ],
+  "title": "DATA-233 EvidencePackage",
+  "type": "object"
+}

@@ -1,0 +1,13 @@
+{
+  "audit_append_seconds": 1.5124262310000631,
+  "audit_appends_per_second": 661.1892729067315,
+  "audit_events": 1000,
+  "audit_valid": true,
+  "audit_verify_seconds": 0.031135833999996976,
+  "authority_effect": "none",
+  "local_guard_passed": true,
+  "production_benchmark": false,
+  "telemetry_events": 10000,
+  "telemetry_events_per_second": 74561.32737775767,
+  "telemetry_seconds": 0.13411778399995455
+}

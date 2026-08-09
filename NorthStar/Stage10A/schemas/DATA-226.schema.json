@@ -1,0 +1,43 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-226.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "approval_id": {
+      "type": "string"
+    },
+    "artefact_digest": {
+      "type": "string"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "decision_time": {
+      "type": "string"
+    },
+    "expired": {
+      "type": "boolean"
+    },
+    "reviewer_id": {
+      "type": "string"
+    },
+    "reviewer_role": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "approval_id",
+    "reviewer_id",
+    "reviewer_role",
+    "artefact_digest",
+    "decision",
+    "decision_time",
+    "expired",
+    "authority_effect"
+  ],
+  "title": "DATA-226 HumanApprovalTelemetry",
+  "type": "object"
+}

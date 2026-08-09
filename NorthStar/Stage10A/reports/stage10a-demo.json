@@ -1,0 +1,90 @@
+{
+  "architecture_version": "1.15.0",
+  "audit_model": "AUD-001/1.0.0",
+  "authority_effect": "none",
+  "evidence_package_digest": "b28acf28f0cacf00c06d6ce63b93c496f613f6df0fada04f2adbd6cc97914fd7",
+  "graph_version": "GRAPH-001/1.11.0",
+  "observability_model": "OBS-001/1.0.0",
+  "results": [
+    {
+      "audit_event_id": "AUD-B1594D84D779417EAD207C27B0B7DA03",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": "AUD-76C9794DD55B45C09EF1C842B04D9796",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": null,
+      "audit_recorded": false,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": "AUD-7F1C45071C9D401AB3B5B1890432DC6A",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": "AUD-FF8133394FDD49D79DA6FD5746D8C946",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": "AUD-83D8EE78EA4E4F3E8A47CA25A569F7DA",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": "AUD-DC7190070001458F9CF4DEE6C4850748",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": "AUD-940E9032297D47C0ACE88A6D2CED61E5",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": "AUD-452D4E711A4F4AC9A48A971103575F7E",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    },
+    {
+      "audit_event_id": "AUD-B1B0C3FFFCF54D6FB80768F965CF2173",
+      "audit_recorded": true,
+      "authority_effect": "none",
+      "telemetry_recorded": true
+    }
+  ],
+  "stage": "S10A",
+  "status": {
+    "audit_events": 9,
+    "audit_last_hash": "35158d43281b9297a445a8b2ba3b73bd07d16f325c2914db3eca68fa2509d235",
+    "audit_valid": true,
+    "authority_effect": "none",
+    "full_control_plane_implemented": false,
+    "kms_hsm_signing_implemented": false,
+    "production_ready": false,
+    "schema_id": "DATA-236",
+    "stage8d_resolved": false,
+    "stage9d_resolved": false,
+    "telemetry_buffer_depth": 0,
+    "telemetry_dropped": 0,
+    "telemetry_events": 10,
+    "telemetry_export_error": null,
+    "telemetry_spans": 0,
+    "worm_storage_implemented": false
+  },
+  "telemetry_exported": 10
+}

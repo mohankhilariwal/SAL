@@ -1,0 +1,11 @@
+flowchart LR
+  E1["Event 1 core"] --> P1["payload_hash_1"] --> H1["record_hash_1 = SHA256(core + genesis)"] --> S1["HMAC signature_1"]
+  H1 --> E2["Event 2 core + previous_hash = record_hash_1"]
+  E2 --> P2["payload_hash_2"] --> H2["record_hash_2"] --> S2["HMAC signature_2"]
+  H2 --> EN["... Event N ..."]
+  EN --> CP["Signed checkpoint: count + last_hash"]
+  CP --> VP["Verification report"]
+  VP --> PKG["Evidence package manifest + ordered events + artefact digests"]
+
+  T["Tamper, deletion, insertion or reordering"] -. detected by .-> VP
+  L["Local limitation: shared-key HMAC and filesystem"] -. not equivalent to .-> W["KMS/HSM asymmetric signing + trusted timestamp + WORM archive"]

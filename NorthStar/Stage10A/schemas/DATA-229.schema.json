@@ -1,0 +1,98 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-229.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "actor": {
+      "type": "object"
+    },
+    "audit_event_id": {
+      "type": "string"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "component_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "observed_timestamp": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "payload_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "previous_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "record_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "sequence": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "signer_id": {
+      "type": "string"
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "audit_event_id",
+    "sequence",
+    "event_type",
+    "timestamp",
+    "actor",
+    "tenant_id",
+    "case_id",
+    "run_id",
+    "task_id",
+    "component_id",
+    "payload",
+    "payload_hash",
+    "previous_hash",
+    "record_hash",
+    "signer_id",
+    "signature",
+    "trace_id",
+    "span_id",
+    "idempotency_key",
+    "authority_effect"
+  ],
+  "title": "DATA-229 AuditEvent",
+  "type": "object"
+}

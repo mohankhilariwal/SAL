@@ -1,0 +1,46 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-220.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "attributes": {
+      "type": "object"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "body": {},
+    "event_name": {
+      "type": "string"
+    },
+    "observed_timestamp": {
+      "type": "string"
+    },
+    "resource": {
+      "type": "object"
+    },
+    "severity_text": {
+      "type": "string"
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "timestamp",
+    "observed_timestamp",
+    "severity_text",
+    "event_name",
+    "body",
+    "attributes",
+    "authority_effect"
+  ],
+  "title": "DATA-220 StructuredLogRecord",
+  "type": "object"
+}

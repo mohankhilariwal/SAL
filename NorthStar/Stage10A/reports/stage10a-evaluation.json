@@ -1,0 +1,102 @@
+{
+  "checks": {
+    "EVAL-229": {
+      "detail": "scope is Stage 10A only",
+      "passed": true
+    },
+    "EVAL-230": {
+      "detail": "structured operational telemetry exists",
+      "passed": true
+    },
+    "EVAL-231": {
+      "detail": "material audit evidence exists",
+      "passed": true
+    },
+    "EVAL-232": {
+      "detail": "hash chain verifies",
+      "passed": true
+    },
+    "EVAL-233": {
+      "detail": "telemetry/audit do not grant authority",
+      "passed": true
+    },
+    "EVAL-234": {
+      "detail": "no false WORM claim",
+      "passed": true
+    },
+    "EVAL-235": {
+      "detail": "local HMAC is not KMS/HSM signing",
+      "passed": true
+    },
+    "EVAL-236": {
+      "detail": "S09D remains unresolved",
+      "passed": true
+    },
+    "EVAL-237": {
+      "detail": "S08D remains unresolved",
+      "passed": true
+    },
+    "EVAL-238": {
+      "detail": "sequence divergence is explicit",
+      "passed": true
+    },
+    "EVAL-239": {
+      "detail": "DATA-217..236 schemas validated",
+      "passed": true
+    },
+    "EVAL-240": {
+      "detail": "structural validation passed",
+      "passed": true
+    },
+    "EVAL-241": {
+      "detail": "local performance guards passed",
+      "passed": true
+    },
+    "EVAL-242": {
+      "detail": "performance result not represented as production benchmark",
+      "passed": true
+    },
+    "EVAL-243": {
+      "detail": "evidence package is digest-bound",
+      "passed": true
+    },
+    "EVAL-244": {
+      "detail": "telemetry export path exercised",
+      "passed": true
+    },
+    "EVAL-245": {
+      "detail": "demo did not drop telemetry",
+      "passed": true
+    },
+    "EVAL-246": {
+      "detail": "demo exporter healthy",
+      "passed": true
+    },
+    "EVAL-247": {
+      "detail": "production promotion remains denied",
+      "passed": true
+    },
+    "EVAL-248": {
+      "detail": "observability model version pinned",
+      "passed": true
+    },
+    "EVAL-249": {
+      "detail": "audit model version pinned",
+      "passed": true
+    },
+    "EVAL-250": {
+      "detail": "graph version advanced exactly once",
+      "passed": true
+    },
+    "EVAL-251": {
+      "detail": "all stage decisions remain non-authorizing",
+      "passed": true
+    },
+    "EVAL-252": {
+      "detail": "no new tool or agent activated",
+      "passed": true
+    }
+  },
+  "passed": true,
+  "stage": "S10A"
+}

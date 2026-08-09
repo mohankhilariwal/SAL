@@ -1,0 +1,53 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-234.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "always_sample_events": {
+      "type": "array"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "baggage_sensitive_identifiers_allowed": {
+      "const": false
+    },
+    "default_trace_sample_ratio": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "forbidden_metric_labels": {
+      "type": "array"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "raw_prompt_capture": {
+      "const": false
+    },
+    "raw_response_capture": {
+      "const": false
+    },
+    "schema_id": {
+      "const": "DATA-234"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_id",
+    "policy_id",
+    "version",
+    "default_trace_sample_ratio",
+    "always_sample_events",
+    "raw_prompt_capture",
+    "raw_response_capture",
+    "baggage_sensitive_identifiers_allowed",
+    "forbidden_metric_labels",
+    "authority_effect"
+  ],
+  "title": "DATA-234 TelemetrySamplingPolicy",
+  "type": "object"
+}

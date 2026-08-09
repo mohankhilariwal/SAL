@@ -1,0 +1,42 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-225.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "bundle_digest": {
+      "type": "string"
+    },
+    "decision_id": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "policy_id": {
+      "type": "string"
+    },
+    "policy_version": {
+      "type": "string"
+    },
+    "reason_codes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "decision_id",
+    "policy_id",
+    "policy_version",
+    "bundle_digest",
+    "outcome",
+    "reason_codes",
+    "authority_effect"
+  ],
+  "title": "DATA-225 PolicyDecisionTelemetry",
+  "type": "object"
+}

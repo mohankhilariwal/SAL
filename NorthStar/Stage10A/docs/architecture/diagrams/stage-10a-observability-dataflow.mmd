@@ -1,0 +1,18 @@
+flowchart LR
+  R["NorthStar runtime boundaries"] --> I["Instrumentation hooks"]
+  I --> RED["Privacy classification + redaction"]
+  RED --> T["Trace spans"]
+  RED --> L["Structured logs/events"]
+  RED --> M["Low-cardinality metrics"]
+  T & L & M --> S["Sampling and buffering"]
+  S --> X["Local JSONL exporter\nproduction adapter deferred"]
+  X --> Q["Operational query and dashboards\nnot implemented locally"]
+
+  RED -->|material event only| A["AUD-001 synchronous append"]
+  A --> H["Sequence + payload hash + previous hash + HMAC"]
+  H --> V["Verification and checkpoints"]
+  V --> E["Evidence package builder"]
+
+  note1["Trace IDs correlate; they never authorize"] -.-> I
+  note2["Raw prompt/response/tool arguments off by default"] -.-> RED
+  note3["Audit-required events are never sampled"] -.-> A

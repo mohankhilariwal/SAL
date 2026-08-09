@@ -1,0 +1,52 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-223.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "duration_ms": {
+      "minimum": 0,
+      "type": "number"
+    },
+    "freshness_status": {
+      "type": "string"
+    },
+    "query_digest": {
+      "type": "string"
+    },
+    "raw_documents_captured": {
+      "const": false
+    },
+    "result_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "source_refs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "trace_id",
+    "span_id",
+    "query_digest",
+    "result_count",
+    "source_refs",
+    "duration_ms",
+    "freshness_status",
+    "raw_documents_captured",
+    "authority_effect"
+  ],
+  "title": "DATA-223 RetrievalTelemetry",
+  "type": "object"
+}

@@ -1,0 +1,52 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-224.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "argument_digest": {
+      "type": "string"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "duration_ms": {
+      "minimum": 0,
+      "type": "number"
+    },
+    "operation": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "raw_arguments_captured": {
+      "const": false
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "tool_call_id": {
+      "type": "string"
+    },
+    "tool_id": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "trace_id",
+    "span_id",
+    "tool_id",
+    "tool_call_id",
+    "operation",
+    "argument_digest",
+    "outcome",
+    "duration_ms",
+    "raw_arguments_captured",
+    "authority_effect"
+  ],
+  "title": "DATA-224 ToolInvocationTelemetry",
+  "type": "object"
+}

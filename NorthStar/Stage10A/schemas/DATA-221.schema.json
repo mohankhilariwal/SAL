@@ -1,0 +1,38 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-221.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "attributes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "name": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "name",
+    "value",
+    "unit",
+    "attributes",
+    "timestamp",
+    "authority_effect"
+  ],
+  "title": "DATA-221 MetricPoint",
+  "type": "object"
+}

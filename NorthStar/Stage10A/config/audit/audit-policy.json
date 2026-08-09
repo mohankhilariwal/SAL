@@ -1,0 +1,24 @@
+{
+  "schema_id": "DATA-235",
+  "policy_id": "AUD-POL-001",
+  "version": "1.0.0",
+  "required_events": [
+    "task.started",
+    "authorization.decided",
+    "guardrail.decided",
+    "tool.write.requested",
+    "tool.write.completed",
+    "human.approval.requested",
+    "human.approval.decided",
+    "state.transitioned",
+    "exception.applied",
+    "task.disposed"
+  ],
+  "hash_algorithm": "SHA-256",
+  "local_signature_algorithm": "HMAC-SHA256",
+  "production_signature_requirement": "KMS/HSM-backed asymmetric signing",
+  "production_storage_requirement": "append-only tamper-evident archive with records/legal approval; WORM where required",
+  "protected_effect_fail_mode": "closed",
+  "hidden_chain_of_thought_capture": false,
+  "authority_effect": "none"
+}

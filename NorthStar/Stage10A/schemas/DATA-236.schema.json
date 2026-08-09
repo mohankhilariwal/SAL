@@ -1,0 +1,76 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-236.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "audit_events": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "audit_last_hash": {
+      "type": "string"
+    },
+    "audit_valid": {
+      "type": "boolean"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "full_control_plane_implemented": {
+      "const": false
+    },
+    "kms_hsm_signing_implemented": {
+      "const": false
+    },
+    "production_ready": {
+      "const": false
+    },
+    "schema_id": {
+      "const": "DATA-236"
+    },
+    "stage8d_resolved": {
+      "const": false
+    },
+    "stage9d_resolved": {
+      "const": false
+    },
+    "telemetry_buffer_depth": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "telemetry_dropped": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "telemetry_events": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "telemetry_spans": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "worm_storage_implemented": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema_id",
+    "telemetry_spans",
+    "telemetry_events",
+    "telemetry_buffer_depth",
+    "telemetry_dropped",
+    "audit_events",
+    "audit_valid",
+    "audit_last_hash",
+    "production_ready",
+    "worm_storage_implemented",
+    "kms_hsm_signing_implemented",
+    "full_control_plane_implemented",
+    "stage8d_resolved",
+    "stage9d_resolved",
+    "authority_effect"
+  ],
+  "title": "DATA-236 ObservabilityStatusReport",
+  "type": "object"
+}

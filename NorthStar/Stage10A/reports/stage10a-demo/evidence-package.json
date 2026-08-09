@@ -1,0 +1,354 @@
+{
+  "audit_records": [
+    {
+      "actor": {
+        "actor_id": "MAYA-CHEN",
+        "actor_type": "human",
+        "role": "Regulatory Compliance Analyst",
+        "workload_id": null
+      },
+      "audit_event_id": "AUD-B1594D84D779417EAD207C27B0B7DA03",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-003",
+      "event_type": "task.started",
+      "idempotency_key": "RUN-2026-10A-0001:start",
+      "observed_timestamp": "2026-08-01T21:59:31.054667+00:00",
+      "payload": {
+        "goal": "evidence-backed impact assessment",
+        "publication_id": "PUB-2026-081"
+      },
+      "payload_hash": "5ff7c890dc190bfbbbc46295144acbb27d24ba64a0d86af833389133308f863e",
+      "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "record_hash": "f36cfdd225a60ef64804f82194dcd1a8616700946f83467c3e5ca4d50a4ce3d6",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 1,
+      "signature": "45e0e1ccc7c0113d75ba653ea6218f883903ba1a3cc37e46352d43098a0da2c3",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.054667+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    },
+    {
+      "actor": {
+        "actor_id": "AGT-001",
+        "actor_type": "workload",
+        "role": null,
+        "workload_id": "northstar-runtime"
+      },
+      "audit_event_id": "AUD-76C9794DD55B45C09EF1C842B04D9796",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-002",
+      "event_type": "guardrail.decided",
+      "idempotency_key": "RUN-2026-10A-0001:guardrail:input",
+      "observed_timestamp": "2026-08-01T21:59:31.056693+00:00",
+      "payload": {
+        "bundle_id": "GR-BUNDLE-001",
+        "bundle_version": "1.0.0",
+        "decision_id": "GRD-10A-001",
+        "outcome": "allow",
+        "raw_prompt": "[REDACTED]",
+        "reason_codes": [
+          "INPUT_TYPE_ALLOWED",
+          "MALWARE_CLEAR"
+        ],
+        "redacted_digests": {
+          "raw_prompt": "c5170cdea1032ebdb21171a02f2c9cf44471a598482ed880b5d712f9406a5179"
+        },
+        "redacted_paths": [
+          "raw_prompt"
+        ]
+      },
+      "payload_hash": "59da9caabe0dd16e4d50387cdaf67b1c93a3f646dc85f42fedaab5197e8725aa",
+      "previous_hash": "f36cfdd225a60ef64804f82194dcd1a8616700946f83467c3e5ca4d50a4ce3d6",
+      "record_hash": "afff08f5c640ee6d7e31a8eb3ff2075812377238da98fd7c49d156ea2f7154e8",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 2,
+      "signature": "7c1f3bf91f22e52c9274aadde7e8eb844835a0ca7ed38d3bf381a5253782274f",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.056693+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    },
+    {
+      "actor": {
+        "actor_id": "AGT-001",
+        "actor_type": "workload",
+        "role": null,
+        "workload_id": "northstar-runtime"
+      },
+      "audit_event_id": "AUD-7F1C45071C9D401AB3B5B1890432DC6A",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-007",
+      "event_type": "authorization.decided",
+      "idempotency_key": "RUN-2026-10A-0001:auth:tool6",
+      "observed_timestamp": "2026-08-01T21:59:31.057824+00:00",
+      "payload": {
+        "authority_effect": "none",
+        "grant_digest": "7a260caf454a1aed73077e528a817ed7084d7841d4b238471324255a40e5d2f7",
+        "grant_id": "AUTH-GRANT-0007",
+        "operation": "create_review_request",
+        "outcome": "allow",
+        "tool_id": "TOOL-006"
+      },
+      "payload_hash": "7b73081628c3210440ab61d48c2887b02c8d4e294b3f83ab92904799124a2a29",
+      "previous_hash": "afff08f5c640ee6d7e31a8eb3ff2075812377238da98fd7c49d156ea2f7154e8",
+      "record_hash": "1aaf472c46399187172298fadd305d9ccc72be72a4979147059edf9dfdde1df2",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 3,
+      "signature": "c074ef5560c22c1f65a09f635f9c499fdf07bf7dace840ea032b857de1d74335",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.057824+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    },
+    {
+      "actor": {
+        "actor_id": "AGT-001",
+        "actor_type": "workload",
+        "role": null,
+        "workload_id": "northstar-runtime"
+      },
+      "audit_event_id": "AUD-FF8133394FDD49D79DA6FD5746D8C946",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-005",
+      "event_type": "tool.write.requested",
+      "idempotency_key": "RUN-2026-10A-0001:TOOL-006.create_review_request:intent:83dd04518c43417705c03fc4cf9990c78e55bbf6535062e6d67c30a0c989ec2d",
+      "observed_timestamp": "2026-08-01T21:59:31.058963+00:00",
+      "payload": {
+        "access_token": "[REDACTED]",
+        "action": "TOOL-006.create_review_request",
+        "approval_id": "APR-2026-0001",
+        "artefact_digest": "8685aa099bfe39b083db4c74baddc4fc477b1826f4743660292f1def14858b0f",
+        "redacted_digests": {
+          "access_token": "4bfddba6a92db060a8f772fe87a42716be093af598594ef4f4ba7b562b8060bd"
+        },
+        "redacted_paths": [
+          "access_token"
+        ],
+        "request_digest": "83dd04518c43417705c03fc4cf9990c78e55bbf6535062e6d67c30a0c989ec2d"
+      },
+      "payload_hash": "a02169bf4ff87e726f206cab2ba68ad16641313b8e79c1953d21bf32499c073d",
+      "previous_hash": "1aaf472c46399187172298fadd305d9ccc72be72a4979147059edf9dfdde1df2",
+      "record_hash": "5faeabdccf25a5e606fa1a0064a25e840bec973023ab4bee9e7db5c217ea01d6",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 4,
+      "signature": "0bfbe80a194ab3e97962a30a1afff9116f7a9d40751b842c2db63736f6900d0a",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.058963+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    },
+    {
+      "actor": {
+        "actor_id": "AGT-001",
+        "actor_type": "workload",
+        "role": null,
+        "workload_id": "northstar-runtime"
+      },
+      "audit_event_id": "AUD-83D8EE78EA4E4F3E8A47CA25A569F7DA",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-005",
+      "event_type": "tool.write.completed",
+      "idempotency_key": "RUN-2026-10A-0001:TOOL-006.create_review_request:outcome:5237403321b8479290024f7e32e6069a8f5b905d3bca4a5892791782601397f1",
+      "observed_timestamp": "2026-08-01T21:59:31.059998+00:00",
+      "payload": {
+        "action": "TOOL-006.create_review_request",
+        "external_reference": "REVIEW-QUEUE-044",
+        "outcome_digest": "5237403321b8479290024f7e32e6069a8f5b905d3bca4a5892791782601397f1",
+        "request_digest": "83dd04518c43417705c03fc4cf9990c78e55bbf6535062e6d67c30a0c989ec2d",
+        "status": "queued"
+      },
+      "payload_hash": "0e13a37f13bc14a49351529e85bd9881c110d8d0df8e277a2aeccfd7cda97979",
+      "previous_hash": "5faeabdccf25a5e606fa1a0064a25e840bec973023ab4bee9e7db5c217ea01d6",
+      "record_hash": "c21789e4d3d588c1e54fa78ca0cc7a5e63e1246524206a86167302054de00adf",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 5,
+      "signature": "0cae3f62fe977921db001c5ca08adb251664315e3d5fd728b6dce6e46ce0e9d2",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.059998+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    },
+    {
+      "actor": {
+        "actor_id": "AGT-001",
+        "actor_type": "workload",
+        "role": null,
+        "workload_id": "northstar-runtime"
+      },
+      "audit_event_id": "AUD-DC7190070001458F9CF4DEE6C4850748",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-006",
+      "event_type": "human.approval.requested",
+      "idempotency_key": "RUN-2026-10A-0001:approval:requested",
+      "observed_timestamp": "2026-08-01T21:59:31.061010+00:00",
+      "payload": {
+        "approval_id": "APR-2026-0001",
+        "artefact_digest": "8685aa099bfe39b083db4c74baddc4fc477b1826f4743660292f1def14858b0f"
+      },
+      "payload_hash": "3f3013331ae0f9f44b0b78d1d8e5db35596e0c7e09040be897ba758c206f6224",
+      "previous_hash": "c21789e4d3d588c1e54fa78ca0cc7a5e63e1246524206a86167302054de00adf",
+      "record_hash": "e526323da5f26ba02ece396a5eedc02a55e68b1e3d1aabd5a6fa7bd8d6b04ce9",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 6,
+      "signature": "3ccdcb44674dcba1fff53c62112f91b269dceff77dc6c7577f11b3a77d02b3c7",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.061010+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    },
+    {
+      "actor": {
+        "actor_id": "AISHA-RAHMAN",
+        "actor_type": "human",
+        "role": "Business Process and Controls Owner",
+        "workload_id": null
+      },
+      "audit_event_id": "AUD-940E9032297D47C0ACE88A6D2CED61E5",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-006",
+      "event_type": "human.approval.decided",
+      "idempotency_key": "RUN-2026-10A-0001:approval:decision:1",
+      "observed_timestamp": "2026-08-01T21:59:31.061871+00:00",
+      "payload": {
+        "approval_id": "APR-2026-0001",
+        "artefact_digest": "8685aa099bfe39b083db4c74baddc4fc477b1826f4743660292f1def14858b0f",
+        "decision": "request_changes",
+        "reason_codes": [
+          "CONTROL_MAPPING_INCOMPLETE"
+        ]
+      },
+      "payload_hash": "7d40b06bd8fbd4ca2bcab5a33ae6dc3737d4efae569817f5744396a0b86501bd",
+      "previous_hash": "e526323da5f26ba02ece396a5eedc02a55e68b1e3d1aabd5a6fa7bd8d6b04ce9",
+      "record_hash": "0f3e6a9eae112d154e42eb2f8f81822c6662b4862ef0de4df56593efb427b9c1",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 7,
+      "signature": "f35f5769020b5bff9330e5a87fa1dad19d6472ab28116d3950b70d9b2e62cbba",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.061871+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    },
+    {
+      "actor": {
+        "actor_id": "AGT-001",
+        "actor_type": "workload",
+        "role": null,
+        "workload_id": "northstar-runtime"
+      },
+      "audit_event_id": "AUD-452D4E711A4F4AC9A48A971103575F7E",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-003",
+      "event_type": "state.transitioned",
+      "idempotency_key": "RUN-2026-10A-0001:state:8",
+      "observed_timestamp": "2026-08-01T21:59:31.062757+00:00",
+      "payload": {
+        "from_state": "awaiting_review",
+        "from_version": 7,
+        "owner_component": "CMP-003",
+        "state_object_id": "DATA-106:CASE-2026-0001",
+        "to_state": "changes_requested",
+        "to_version": 8
+      },
+      "payload_hash": "c1eaa1c135959d5cefbc7fb290b35d9715dbb04d0e3ef83113d39eed3aabe2ae",
+      "previous_hash": "0f3e6a9eae112d154e42eb2f8f81822c6662b4862ef0de4df56593efb427b9c1",
+      "record_hash": "5433a701c39971337ee968f63b52e6c071ceaa2663a5920e9a07c24cc796e6a9",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 8,
+      "signature": "470d329e3214862bc0935f0e3acba08c24f5305b724eaab60dcf95b520e6881d",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.062757+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    },
+    {
+      "actor": {
+        "actor_id": "AGT-001",
+        "actor_type": "workload",
+        "role": null,
+        "workload_id": "northstar-runtime"
+      },
+      "audit_event_id": "AUD-B1B0C3FFFCF54D6FB80768F965CF2173",
+      "authority_effect": "none",
+      "case_id": "CASE-2026-0001",
+      "component_id": "CMP-003",
+      "event_type": "task.disposed",
+      "idempotency_key": "RUN-2026-10A-0001:disposed",
+      "observed_timestamp": "2026-08-01T21:59:31.063582+00:00",
+      "payload": {
+        "approved": false,
+        "final_disposition": "changes_requested_by_human",
+        "production_route": false
+      },
+      "payload_hash": "8350218c5e3cb78eb3b0ea3be85e8151f08795b162f4334ff32291e90a2b4f8d",
+      "previous_hash": "5433a701c39971337ee968f63b52e6c071ceaa2663a5920e9a07c24cc796e6a9",
+      "record_hash": "35158d43281b9297a445a8b2ba3b73bd07d16f325c2914db3eca68fa2509d235",
+      "run_id": "RUN-2026-10A-0001",
+      "sequence": 9,
+      "signature": "244468e7b2c9829b2f9131d9ec096b78b20890b0887e3690dbc185ff7a78223a",
+      "signer_id": "local-hmac-stage10a",
+      "span_id": "64b3d1daf3d5b396",
+      "task_id": "TASK-IMPACT-0001",
+      "tenant_id": "NORTHSTAR",
+      "timestamp": "2026-08-01T21:59:31.063582+00:00",
+      "trace_id": "d905258aebabbf1db108af69c6239b20"
+    }
+  ],
+  "authority_effect": "none",
+  "manifest": {
+    "artefact_digests": {
+      "draft_impact_assessment": "8685aa099bfe39b083db4c74baddc4fc477b1826f4743660292f1def14858b0f",
+      "source_publication": "93e27e65b68d9a71531d712dfd1251f0adb3748c8787fa2b82e29dbbccb9c4d7"
+    },
+    "authority_effect": "none",
+    "contains_hidden_chain_of_thought": false,
+    "event_count": 9,
+    "first_hash": "f36cfdd225a60ef64804f82194dcd1a8616700946f83467c3e5ca4d50a4ce3d6",
+    "first_sequence": 1,
+    "last_hash": "35158d43281b9297a445a8b2ba3b73bd07d16f325c2914db3eca68fa2509d235",
+    "last_sequence": 9,
+    "release_refs": {
+      "AUD-001": "1.0.0",
+      "AUTH-001": "1.0.0",
+      "BR-001": "1.0.0",
+      "GR-BUNDLE-001": "1.0.0",
+      "OBS-001": "1.0.0"
+    },
+    "run_id": "RUN-2026-10A-0001",
+    "schema_id": "DATA-232"
+  },
+  "package_digest": "b28acf28f0cacf00c06d6ce63b93c496f613f6df0fada04f2adbd6cc97914fd7",
+  "schema_id": "DATA-233",
+  "verification": {
+    "authority_effect": "none",
+    "errors": [],
+    "event_count": 9,
+    "last_hash": "35158d43281b9297a445a8b2ba3b73bd07d16f325c2914db3eca68fa2509d235",
+    "valid": true,
+    "verified_at": "2026-08-01T21:59:31.064859+00:00"
+  }
+}

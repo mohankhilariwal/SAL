@@ -1,0 +1,70 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-219.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "attributes": {
+      "type": "object"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "component_id": {
+      "type": "string"
+    },
+    "duration_ms": {
+      "minimum": 0,
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "end_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "events": {
+      "type": "array"
+    },
+    "name": {
+      "type": "string"
+    },
+    "parent_span_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sampled": {
+      "type": "boolean"
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "trace_id",
+    "span_id",
+    "component_id",
+    "start_time",
+    "status",
+    "attributes",
+    "events",
+    "sampled",
+    "authority_effect"
+  ],
+  "title": "DATA-219 TraceSpan",
+  "type": "object"
+}

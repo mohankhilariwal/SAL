@@ -1,0 +1,40 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-230.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "algorithm": {
+      "type": "string"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "event_count": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "last_hash": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "signer_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "event_count",
+    "last_hash",
+    "created_at",
+    "signer_id",
+    "algorithm",
+    "signature",
+    "authority_effect"
+  ],
+  "title": "DATA-230 AuditChainCheckpoint",
+  "type": "object"
+}

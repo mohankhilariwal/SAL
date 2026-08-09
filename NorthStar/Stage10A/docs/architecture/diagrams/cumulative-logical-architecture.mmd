@@ -1,0 +1,40 @@
+flowchart TB
+  classDef new fill:#e7f6ec,stroke:#1f7a3f,stroke-width:2px
+  classDef existing fill:#eef3f8,stroke:#506070
+  classDef future fill:#f5f5f5,stroke:#888,stroke-dasharray:5 5
+  classDef human fill:#fff4d6,stroke:#9b6a00
+
+  Maya["Maya Chen"]:::human --> C1["CMP-001 Analyst Experience Portal"]:::existing
+  Source["Untrusted regulatory sources"] --> C2["CMP-002 Regulatory Intake Boundary"]:::existing
+  C1 --> C3["CMP-003 Case and Workflow Orchestration Boundary"]:::existing
+  C2 --> C3
+  C3 --> A1["AGT-001 Regulatory Impact Assessment Agent\nonly active agent"]:::existing
+  C3 --> C4["CMP-004 Knowledge and Evidence Access Boundary"]:::existing
+  A1 --> C5["CMP-005 Enterprise Integration Boundary\nonly TOOL-001–006 gateway"]:::existing
+  C5 --> Tools["TOOL-001–006"]:::existing
+  C3 --> C6["CMP-006 Human Review and Approval Boundary"]:::existing
+  C7["CMP-007 Identity, Authorization and Policy Boundary\nsole AUTH-001 issuer"]:::existing --> C4
+  C7 --> C5
+  C8["CMP-008 Evaluation and Assurance Boundary"]:::existing --> C3
+  C10["CMP-010 Runtime and Deployment Boundary"]:::existing --> C3
+  C11["CMP-011 Source-of-Truth Governance Pack"]:::existing --> C7
+
+  subgraph O["CMP-009 Observability and Audit Boundary — Stage 10A"]
+    direction TB
+    OBS["OBS-001 operational telemetry\ntraces · logs · metrics · events\nsampled and privacy-filtered"]:::new
+    AUD["AUD-001 accountability audit\nmaterial events · append-only hash chain\nunsampled and fail-closed"]:::new
+    EVID["EVID-001 evidence packages\nordered records · digests · verification"]:::new
+    OBS --> EVID
+    AUD --> EVID
+  end
+
+  C1 & C2 & C3 & C4 & C5 & C6 & C7 & C8 & C10 & C11 --> OBS
+  C3 & C5 & C6 & C7 & C11 --> AUD
+  EVID --> C6
+  EVID --> C8
+  EVID --> C11
+
+  CP["CP-001/0.1.0 bounded local control-plane slice"]:::existing --> C10
+  S09D["Stage 9D enterprise control plane\nunresolved"]:::future -. future instrumentation .-> OBS
+  S08D["Stage 8D system metrics and promotion gates\nunresolved"]:::future -. blocks production .-> C10
+  Future["WP-008 · MCP · A2A · additional agents\ninactive_future"]:::future -. no activation .-> C5

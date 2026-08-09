@@ -1,0 +1,73 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-218.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "attributes": {
+      "type": "object"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "component_id": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "event_name": {
+      "type": "string"
+    },
+    "observed_timestamp": {
+      "type": "string"
+    },
+    "outcome": {
+      "type": "string"
+    },
+    "retention_class": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "span_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "event_id",
+    "event_name",
+    "timestamp",
+    "trace_id",
+    "span_id",
+    "run_id",
+    "task_id",
+    "case_id",
+    "tenant_id",
+    "component_id",
+    "severity",
+    "outcome",
+    "attributes",
+    "authority_effect"
+  ],
+  "title": "DATA-218 TelemetryEvent",
+  "type": "object"
+}
