@@ -1,0 +1,12 @@
+{
+  "python": "3.13.5",
+  "pytest": "9.0.2",
+  "jsonschema": "4.26.0",
+  "architecture_version": "1.14.0",
+  "graph_version": "GRAPH-001/1.10.0",
+  "test_count": 88,
+  "evaluation_count": 24,
+  "schema_count": 24,
+  "control_count": 59,
+  "network_required": false
+}

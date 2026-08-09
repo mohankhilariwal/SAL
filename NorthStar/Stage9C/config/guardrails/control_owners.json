@@ -1,0 +1,80 @@
+{
+  "version": "1.0.0",
+  "owners": {
+    "CMP-002": [
+      "GR-CTL-001",
+      "GR-CTL-002",
+      "GR-CTL-003",
+      "GR-CTL-004",
+      "GR-CTL-007"
+    ],
+    "CMP-003": [
+      "GR-CTL-006",
+      "GR-CTL-008",
+      "GR-CTL-009",
+      "GR-CTL-010",
+      "GR-CTL-011",
+      "GR-CTL-012",
+      "GR-CTL-018",
+      "GR-CTL-020",
+      "GR-CTL-021",
+      "GR-CTL-022",
+      "GR-CTL-030",
+      "GR-CTL-032",
+      "GR-CTL-037",
+      "GR-CTL-038",
+      "GR-CTL-039",
+      "GR-CTL-040",
+      "GR-CTL-041",
+      "GR-CTL-042",
+      "GR-CTL-043",
+      "GR-CTL-044",
+      "GR-CTL-045",
+      "GR-CTL-046",
+      "GR-CTL-047",
+      "GR-CTL-048",
+      "GR-CTL-049",
+      "GR-CTL-056"
+    ],
+    "CMP-004": [
+      "GR-CTL-013",
+      "GR-CTL-014",
+      "GR-CTL-015",
+      "GR-CTL-016",
+      "GR-CTL-017"
+    ],
+    "CMP-005": [
+      "GR-CTL-024",
+      "GR-CTL-025",
+      "GR-CTL-026",
+      "GR-CTL-027",
+      "GR-CTL-028",
+      "GR-CTL-031"
+    ],
+    "CMP-006": [
+      "GR-CTL-029",
+      "GR-CTL-033",
+      "GR-CTL-050",
+      "GR-CTL-051",
+      "GR-CTL-052",
+      "GR-CTL-053",
+      "GR-CTL-054",
+      "GR-CTL-055"
+    ],
+    "CMP-007": [
+      "GR-CTL-019",
+      "GR-CTL-023",
+      "GR-CTL-058"
+    ],
+    "CMP-008": [
+      "GR-CTL-005",
+      "GR-CTL-034",
+      "GR-CTL-035",
+      "GR-CTL-036",
+      "GR-CTL-059"
+    ],
+    "CMP-011": [
+      "GR-CTL-057"
+    ]
+  }
+}

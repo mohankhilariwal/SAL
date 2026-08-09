@@ -1,0 +1,33 @@
+{
+  "status": "passed_with_recorded_exceptions",
+  "checks": {
+    "stage_doc_exists": true,
+    "ten_source_files": true,
+    "schemas_193_216": true,
+    "adr_104_113": true,
+    "one_active_agent": true,
+    "stage8d_unresolved": true,
+    "no_new_tool_definition": true,
+    "auth_br_preserved": true,
+    "data106_boundary": true,
+    "full_control_plane_not_claimed": true
+  },
+  "exceptions": [
+    "ISS-096",
+    "ISS-131",
+    "ISS-141",
+    "ISS-147",
+    "ISS-158",
+    "ISS-159",
+    "ISS-160",
+    "ISS-161",
+    "ISS-162",
+    "ISS-163",
+    "ISS-164",
+    "ISS-165",
+    "ISS-166",
+    "ISS-167",
+    "ISS-168",
+    "ISS-169"
+  ]
+}

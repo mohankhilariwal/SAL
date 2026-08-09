@@ -1,0 +1,12 @@
+stateDiagram-v2
+  [*] --> Draft
+  Draft --> Validated: schema + invariant validation
+  Validated --> Tested: unit/negative/regression tests pass
+  Tested --> Approved: two independent human approvers
+  Approved --> Released: immutable digest + release manifest
+  Released --> Active: distributed and pinned locally
+  Active --> Deprecated: successor approved
+  Deprecated --> Retired: no active runs / retention complete
+  Active --> Suspended: incident or emergency stop
+  Suspended --> Active: authorized remediation + retest
+  Suspended --> Retired

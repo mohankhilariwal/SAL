@@ -1,0 +1,23 @@
+sequenceDiagram
+  actor Maya
+  participant C3 as CMP-003
+  participant A as AGT-001
+  participant G as Guardrail PEPs
+  participant C6 as CMP-006 Human Review
+  participant C7 as CMP-007 AUTH-001
+  participant C9 as CMP-009 Evidence
+  Maya->>C3: Start/continue CASE-2026-0001
+  C3->>A: Bounded task + pinned policy digest
+  A->>G: Proposed plan/tool/output
+  G-->>C3: allow / deny / quarantine / require_human_review
+  alt human review required
+    C3->>C6: Versioned review package + exact digest
+    C6->>C6: Authenticate reviewer, role, SoD, expiry, digest
+    C6-->>C3: Typed human decision
+    C3->>C7: Verify approval binding if action requires authority
+  else denied or quarantined
+    C3-->>Maya: Explain reason codes and safe next action
+  end
+  G->>C9: Minimized evidence; no secrets or chain-of-thought
+  C6->>C9: Human decision evidence
+  Note over A,C9: Guardrail allow is not authority; model output is never approval.

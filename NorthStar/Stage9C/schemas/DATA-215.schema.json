@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-215.schema.json",
+  "title": "DATA-215 GuardrailSnapshot",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_id",
+    "version",
+    "authority_effect"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "DATA-215"
+    },
+    "version": {
+      "type": "string"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

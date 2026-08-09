@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "northstar-stage9c-guardrails"
+version = "1.14.0"
+description = "NorthStar Stage 9C deterministic guardrails, governance lifecycle and bounded local control-plane profile"
+requires-python = ">=3.11,<3.15"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=9,<10", "jsonschema>=4.26,<5"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,25 @@
+{
+  "profile_id": "CP-001/0.1.0",
+  "mode": "bounded_local_reference",
+  "full_control_plane_implemented": false,
+  "functions": [
+    "validate_policy",
+    "test_policy",
+    "approve_release",
+    "register_release",
+    "distribute_immutable_bundle",
+    "pin_bundle_per_run",
+    "emit_receipt",
+    "report_status"
+  ],
+  "prohibited": [
+    "issue_AUTH-001_grant",
+    "change_BR-001_budget",
+    "approve_or_finalize_case",
+    "mutate_DATA-106",
+    "activate_route",
+    "create_agent",
+    "deploy_production_route"
+  ],
+  "stage8d_resolved": false
+}

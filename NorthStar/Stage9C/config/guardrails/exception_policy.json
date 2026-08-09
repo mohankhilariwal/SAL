@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0",
+  "hard_controls_exception_eligible": false,
+  "maximum_duration_days": 30,
+  "minimum_independent_approvers": 2,
+  "requester_may_approve": false,
+  "compensating_controls_required": true,
+  "scope_fields": [
+    "tenant_id",
+    "case_id",
+    "operation",
+    "control_ids",
+    "starts_at",
+    "expires_at"
+  ]
+}

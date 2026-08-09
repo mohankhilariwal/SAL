@@ -1,0 +1,20 @@
+flowchart TB
+  subgraph CP["Bounded Stage 9C governance/control-plane slice"]
+    PAP["Policy administration\nCMP-011/CMP-007"] --> VAL["Schema + invariant validation"]
+    VAL --> TEST["Policy tests\nCMP-008"]
+    TEST --> APP["Two-human approval"]
+    APP --> REL["Immutable release manifest"]
+    REL --> DIST["Bundle distribution + receipt"]
+    EXC["Scoped soft-control exceptions\nexpiry + compensating controls"] --> REL
+  end
+  subgraph DP["Runtime data plane"]
+    CACHE["Local verified bundle cache"] --> PEP2["CMP-002 input PEP"]
+    CACHE --> PEP3["CMP-003 context/plan/state/memory/runtime PEPs"]
+    CACHE --> PEP4["CMP-004 retrieval PEP"]
+    CACHE --> PEP5["CMP-005 tool PEP"]
+    CACHE --> PEP6["CMP-006 human-review validation"]
+    PEP2 & PEP3 & PEP4 & PEP5 & PEP6 --> EV["Minimized decisions/evidence"]
+  end
+  DIST --> CACHE
+  EV -. async .-> CP
+  CP -. cannot issue AUTH-001 / change BR-001 / approve case / mutate DATA-106 / activate route .-> DP
