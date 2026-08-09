@@ -1,0 +1,34 @@
+flowchart TB
+  subgraph DATA[Data and execution plane]
+    C1[CMP-001/002]
+    C3[CMP-003 / GRAPH-001]
+    A[AGT-001]
+    C4[CMP-004]
+    C5[CMP-005 / TOOL-001..006]
+    C6[CMP-006 human review]
+    C1 --> C3 --> A
+    C3 --> C4
+    A --> C5
+    C3 --> C6
+  end
+  subgraph CONTROL[Bounded control and governance plane]
+    C7[CMP-007 AUTH/BR/GR/GOV]
+    C11[CMP-011 configuration, ADR, manifest, CAPSTONE-001]
+    C7 --> C3
+    C11 --> C7
+    C11 --> C3
+  end
+  subgraph ASSURE[Assurance and operations plane]
+    C8[CMP-008 evaluation and threat evidence]
+    C9[CMP-009 observability and audit]
+    C10[CMP-010 runtime, reliability, deployment, DR]
+    FIN[FIN/CAP/SLO/PRR evidence]
+    C3 --> C9
+    C10 --> C9
+    C9 --> C8
+    FIN --> C8
+    C8 --> C11
+  end
+  PROD[Production route disabled]:::disabled
+  C11 -. no deployment authority .-> PROD
+  classDef disabled fill:#eee,stroke:#777,stroke-dasharray: 5 5

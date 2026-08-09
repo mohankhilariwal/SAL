@@ -1,0 +1,13 @@
+flowchart LR
+  EXT["TB-00 External sources and human environment"] --> EDGE["TB-01 CMP-001/002 experience and intake"]
+  EDGE --> ORCH["TB-02 CMP-003 + AGT-001 orchestration"]
+  ORCH --> KI["TB-03 CMP-004/005 knowledge and integrations"]
+  AUTH["TB-04 CMP-006/007 human authority and policy"] --> ORCH
+  AUTH --> KI
+  ORCH --> ASSURE["TB-05 CMP-008/009/010 assurance and runtime"]
+  GOV["TB-06 CMP-011 governance and configuration"] --> ORCH
+  GOV --> AUTH
+  GOV --> ASSURE
+  FUT["TB-07 future interoperability / multi-agent\ninactive_future"] -. no trust established .-> KI
+  CAP["CAPSTONE-001\nnon-authorizing evidence package"] --> GOV
+  CAP --> ASSURE

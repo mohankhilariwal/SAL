@@ -1,0 +1,18 @@
+{
+  "comparison_id": "TOPOLOGY-FINAL-001",
+  "single_agent": {
+    "active_agents": 1,
+    "handoff_edges": 0,
+    "shared_authority_boundary": true,
+    "representative_quality_evidence": false
+  },
+  "multi_agent_candidate": {
+    "active_agents": 0,
+    "candidate_agents": 7,
+    "minimum_handoff_edges": 6,
+    "status": "inactive_future",
+    "representative_quality_evidence": false
+  },
+  "selected_topology": "one_agent_specialized_graph_profiles",
+  "authority_effect": "none"
+}

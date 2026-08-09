@@ -1,0 +1,11 @@
+flowchart TD
+  START["Current NorthStar workflow"] --> SHARED{"Shared case state, authority, lifecycle, tools and approval?"}
+  SHARED -->|Yes| GRAPH["Use one AGT-001 with specialized GRAPH-001 work units and profiles"]
+  SHARED -->|No| BOUNDARY{"Independent governed identity, authority, fault or lifecycle boundary?"}
+  BOUNDARY -->|No| GRAPH
+  BOUNDARY -->|Yes| EVIDENCE{"Representative repeated-trial evidence of material value?"}
+  EVIDENCE -->|No| REVIEW["Keep WP-008 inactive; create evidence plan"]
+  EVIDENCE -->|Yes| SAFETY{"Handoff, cost, latency, security and operability gates pass?"}
+  SAFETY -->|No| REVIEW
+  SAFETY -->|Yes| FUTURE["Future ADR and controlled multi-agent implementation"]
+  GRAPH --> CURRENT["Selected final topology: one_agent_specialized_graph_profiles"]

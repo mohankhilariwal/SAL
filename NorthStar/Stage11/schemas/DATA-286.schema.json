@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-286.schema.json",
+  "title": "DATA-286 RunbookIndex",
+  "type": "object",
+  "required": [
+    "id",
+    "version",
+    "authority_effect"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\\\d+\\\\.\\\\d+\\\\.\\\\d+$"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

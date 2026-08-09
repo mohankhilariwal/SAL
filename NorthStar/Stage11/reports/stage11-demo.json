@@ -1,0 +1,10 @@
+{
+  "reconciliation_complete": true,
+  "decision": "denied",
+  "production_route_enabled": false,
+  "hard_blocker_count": 11,
+  "soft_gap_count": 1,
+  "selected_topology": "one_agent_specialized_graph_profiles",
+  "active_agent_count": 1,
+  "authority_effect": "none"
+}

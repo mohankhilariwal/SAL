@@ -1,0 +1,102 @@
+{
+  "required_evidence": [
+    "EVID-S08D-DEPLOYMENT-GATES",
+    "EVID-S09D-CONTROL-PLANE",
+    "EVID-HISTORICAL-MERGE",
+    "EVID-PRODUCTION-LOAD",
+    "EVID-APPROVED-SLO",
+    "EVID-EXERCISED-RTO-RPO",
+    "EVID-ENTERPRISE-AUDIT-DURABILITY",
+    "EVID-PRODUCTION-PROVENANCE",
+    "EVID-LIVE-QUALITY-CALIBRATION",
+    "EVID-PROVIDER-BILLING",
+    "EVID-MULTI-REGION-DR",
+    "EVID-LEGAL-COMPLIANCE-REVIEW"
+  ],
+  "items": [
+    {
+      "evidence_id": "EVID-S08D-DEPLOYMENT-GATES",
+      "title": "Stage 8D metrics, regression and deployment gates",
+      "status": "missing",
+      "source": "open programme item",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-S09D-CONTROL-PLANE",
+      "title": "Stage 9D enterprise control plane",
+      "status": "missing",
+      "source": "open programme item",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-HISTORICAL-MERGE",
+      "title": "Byte-exact cumulative repository merge and provenance",
+      "status": "missing",
+      "source": "ISS-194 and inherited merge issues",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-PRODUCTION-LOAD",
+      "title": "Representative production load and capacity evidence",
+      "status": "local_only",
+      "source": "CAP-001 local assumptions/tests",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-APPROVED-SLO",
+      "title": "Accountably approved SLO and error-budget policy",
+      "status": "proposed",
+      "source": "SLO-001/0.1.0",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-EXERCISED-RTO-RPO",
+      "title": "Approved and exercised RTO/RPO",
+      "status": "unexercised",
+      "source": "DR-001/0.2.0",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-ENTERPRISE-AUDIT-DURABILITY",
+      "title": "Enterprise WORM/KMS/HSM/trusted-time audit durability",
+      "status": "local_only",
+      "source": "AUD-001/1.0.0 local reference",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-PRODUCTION-PROVENANCE",
+      "title": "Signed production provenance and admission evidence",
+      "status": "missing",
+      "source": "DEP-001/0.1.0",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-LIVE-QUALITY-CALIBRATION",
+      "title": "Live model and human calibration evidence",
+      "status": "missing",
+      "source": "Stage 8 local synthetic evidence only",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-PROVIDER-BILLING",
+      "title": "Live provider billing or FOCUS adapter reconciliation",
+      "status": "missing",
+      "source": "FIN-001 illustrative CAD rates",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-MULTI-REGION-DR",
+      "title": "Enterprise backup and multi-region failover exercise",
+      "status": "missing",
+      "source": "DR-001 proposed only",
+      "authority_effect": "none"
+    },
+    {
+      "evidence_id": "EVID-LEGAL-COMPLIANCE-REVIEW",
+      "title": "Jurisdiction-specific legal and compliance approval",
+      "status": "missing",
+      "source": "external accountable review required",
+      "authority_effect": "none"
+    }
+  ]
+}

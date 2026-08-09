@@ -1,0 +1,48 @@
+flowchart TB
+  classDef human fill:#fff4d6,stroke:#9a6b00,color:#2b2100
+  classDef runtime fill:#e9f2ff,stroke:#245b9e,color:#102a43
+  classDef security fill:#fde8e8,stroke:#9f2f2f,color:#4a1111
+  classDef assurance fill:#f0e9ff,stroke:#6b46a1,color:#2c1645
+  classDef data fill:#e9f8ef,stroke:#2e7d4f,color:#123b25
+  classDef denied fill:#f5f5f5,stroke:#777,stroke-dasharray: 6 4,color:#333
+
+  MAYA["Maya Chen\nRegulatory Compliance Analyst"]:::human --> C1["CMP-001\nAnalyst Experience Portal"]:::runtime
+  DANIEL["Daniel Brooks\nChief Compliance Officer"]:::human --> C6["CMP-006\nHuman Review and Approval Boundary"]:::human
+  AISHA["Aisha Rahman\nBusiness Process and Controls Owner"]:::human --> C6
+
+  C1 --> C2["CMP-002\nRegulatory Intake Boundary"]:::runtime
+  C2 --> C3["CMP-003\nCase and Workflow Orchestration Boundary\nGRAPH-001/1.12.0"]:::runtime
+  C3 --> A1["AGT-001/1.1.0\nRegulatory Impact Assessment Agent\nonly active agent"]:::runtime
+  C3 --> C4["CMP-004\nKnowledge and Evidence Access Boundary"]:::data
+  A1 --> C5["CMP-005\nEnterprise Integration Boundary\nTOOL-001..006 only"]:::runtime
+  C3 --> C6
+  C6 --> C3
+
+  C7["CMP-007\nIdentity, Authorization and Policy Boundary\nAUTH-001 / BR-001 / GR-001 / GOV-001"]:::security --> C3
+  C7 --> C4
+  C7 --> C5
+  C7 --> C6
+
+  C3 --> C9["CMP-009\nObservability and Audit Boundary\nOBS-001 / AUD-001 / EVID-001"]:::assurance
+  C3 --> C10["CMP-010\nRuntime and Deployment Boundary\nREL-001 / OPS-001 / DEP-001 / DR-001"]:::runtime
+  C4 --> C9
+  C5 --> C9
+  C6 --> C9
+  C10 --> C9
+
+  C8["CMP-008\nEvaluation and Assurance Boundary\nEvaluation suites, judge-bias lab, TM-001"]:::assurance --> C11["CMP-011\nSource-of-Truth Governance Pack\nCAPSTONE-001/1.0.0"]:::assurance
+  C9 --> C8
+  C10 --> C8
+  C7 --> C8
+  C11 --> C3
+  C11 --> C7
+  C11 --> C8
+  C11 --> C9
+  C11 --> C10
+
+  FIN["FIN-001 / CAP-001\nSLO-001 proposed\nPRR-001/0.2.0 evidence only"]:::assurance --> C11
+  DATA106["DATA-106\nProtected admission/concurrency state\nsole writer CMP-003"]:::data <--> C3
+  CASE["Regulatory case, evidence, drafts, mappings\nHuman decision remains authoritative"]:::data <--> C3
+
+  FUT["WP-008 / MCP / A2A / additional agents\ninactive_future"]:::denied -. no active route .-> C3
+  PROD["Production route\nDISABLED"]:::denied -. cannot be activated by CAPSTONE-001 or PRR-001 .-> C10

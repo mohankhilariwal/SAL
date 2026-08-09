@@ -1,0 +1,27 @@
+{
+  "id": "DATA-287",
+  "version": "1.0.0",
+  "authority_effect": "none",
+  "payload": {
+    "package_id": "CAPSTONE-001",
+    "package_version": "1.0.0",
+    "architecture_version": "1.18.0",
+    "repository_version": "1.18.0",
+    "graph_version": "GRAPH-001/1.12.0",
+    "active_agent_count": 1,
+    "selected_topology": "one_agent_specialized_graph_profiles",
+    "production_readiness_decision": "denied",
+    "production_route_enabled": false,
+    "certification_claim": false,
+    "historical_merge_status": "compatible_overlay_not_byte_exact",
+    "checksum_algorithm": "SHA-256",
+    "checksum_file": "Stage11-SHA256SUMS.txt",
+    "checksummed_file_count": 57,
+    "completion_date": "2026-08-01",
+    "recorded_exceptions": [
+      "Stage 8D unresolved",
+      "Stage 9D unresolved",
+      "enterprise production evidence absent"
+    ]
+  }
+}

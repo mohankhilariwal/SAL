@@ -1,0 +1,117 @@
+{
+  "assessment_id": "PRA-FINAL-001",
+  "blockers": [
+    {
+      "blocker_id": "BLK-001",
+      "title": "Stage 8D metrics, regression and deployment gates",
+      "severity": "hard",
+      "evidence_id": "EVID-S08D-DEPLOYMENT-GATES",
+      "remediation_owner": "Sofia Alvarez",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-002",
+      "title": "Stage 9D enterprise control plane",
+      "severity": "hard",
+      "evidence_id": "EVID-S09D-CONTROL-PLANE",
+      "remediation_owner": "Priya Raman",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-003",
+      "title": "Byte-exact cumulative repository merge and provenance",
+      "severity": "hard",
+      "evidence_id": "EVID-HISTORICAL-MERGE",
+      "remediation_owner": "Priya Raman",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-004",
+      "title": "Representative production load and capacity evidence",
+      "severity": "hard",
+      "evidence_id": "EVID-PRODUCTION-LOAD",
+      "remediation_owner": "Liam O\u2019Connor",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-005",
+      "title": "Accountably approved SLO and error-budget policy",
+      "severity": "hard",
+      "evidence_id": "EVID-APPROVED-SLO",
+      "remediation_owner": "Daniel Brooks",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-006",
+      "title": "Approved and exercised RTO/RPO",
+      "severity": "hard",
+      "evidence_id": "EVID-EXERCISED-RTO-RPO",
+      "remediation_owner": "Aisha Rahman",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-007",
+      "title": "Enterprise WORM/KMS/HSM/trusted-time audit durability",
+      "severity": "hard",
+      "evidence_id": "EVID-ENTERPRISE-AUDIT-DURABILITY",
+      "remediation_owner": "Liam O\u2019Connor",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-008",
+      "title": "Signed production provenance and admission evidence",
+      "severity": "hard",
+      "evidence_id": "EVID-PRODUCTION-PROVENANCE",
+      "remediation_owner": "Elena Petrov",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-009",
+      "title": "Live model and human calibration evidence",
+      "severity": "hard",
+      "evidence_id": "EVID-LIVE-QUALITY-CALIBRATION",
+      "remediation_owner": "Sofia Alvarez",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-010",
+      "title": "Live provider billing or FOCUS adapter reconciliation",
+      "severity": "soft",
+      "evidence_id": "EVID-PROVIDER-BILLING",
+      "remediation_owner": "Elena Petrov",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-011",
+      "title": "Enterprise backup and multi-region failover exercise",
+      "severity": "hard",
+      "evidence_id": "EVID-MULTI-REGION-DR",
+      "remediation_owner": "Liam O\u2019Connor",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    },
+    {
+      "blocker_id": "BLK-012",
+      "title": "Jurisdiction-specific legal and compliance approval",
+      "severity": "hard",
+      "evidence_id": "EVID-LEGAL-COMPLIANCE-REVIEW",
+      "remediation_owner": "Daniel Brooks",
+      "rationale": "Required before any accountable production recommendation.",
+      "authority_effect": "none"
+    }
+  ],
+  "production_route_enabled": false,
+  "active_agent_count": 1,
+  "selected_topology": "one_agent_specialized_graph_profiles",
+  "authority_effect": "none"
+}

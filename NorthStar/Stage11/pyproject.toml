@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "northstar-agentic-compliance-stage11-capstone"
+version = "1.18.0"
+requires-python = ">=3.12,<3.14"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "jsonschema>=4.23,<5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

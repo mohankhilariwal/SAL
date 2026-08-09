@@ -1,0 +1,107 @@
+{
+  "records": [
+    {
+      "activity": "Business outcome and final human disposition",
+      "responsible": [
+        "Maya Chen"
+      ],
+      "accountable": [
+        "Daniel Brooks",
+        "Aisha Rahman"
+      ],
+      "consulted": [
+        "Sofia Alvarez"
+      ],
+      "informed": [
+        "Priya Raman"
+      ]
+    },
+    {
+      "activity": "Architecture package and technical exceptions",
+      "responsible": [
+        "Priya Raman"
+      ],
+      "accountable": [
+        "Priya Raman"
+      ],
+      "consulted": [
+        "Elena Petrov",
+        "Marcus Green",
+        "Sofia Alvarez",
+        "Liam O’Connor"
+      ],
+      "informed": [
+        "Daniel Brooks"
+      ]
+    },
+    {
+      "activity": "Security authorization and threat treatment",
+      "responsible": [
+        "Marcus Green"
+      ],
+      "accountable": [
+        "Marcus Green"
+      ],
+      "consulted": [
+        "Priya Raman",
+        "Sofia Alvarez"
+      ],
+      "informed": [
+        "Liam O’Connor"
+      ]
+    },
+    {
+      "activity": "Evaluation, model risk and governance release",
+      "responsible": [
+        "Sofia Alvarez"
+      ],
+      "accountable": [
+        "Sofia Alvarez"
+      ],
+      "consulted": [
+        "Maya Chen",
+        "Priya Raman",
+        "Marcus Green"
+      ],
+      "informed": [
+        "Daniel Brooks"
+      ]
+    },
+    {
+      "activity": "Reliability, observability, incident and DR exercise",
+      "responsible": [
+        "Liam O’Connor",
+        "Elena Petrov"
+      ],
+      "accountable": [
+        "Liam O’Connor"
+      ],
+      "consulted": [
+        "Marcus Green",
+        "Aisha Rahman"
+      ],
+      "informed": [
+        "Daniel Brooks"
+      ]
+    },
+    {
+      "activity": "Cost, capacity and operating budget",
+      "responsible": [
+        "Elena Petrov",
+        "Liam O’Connor"
+      ],
+      "accountable": [
+        "Daniel Brooks"
+      ],
+      "consulted": [
+        "Aisha Rahman",
+        "Priya Raman"
+      ],
+      "informed": [
+        "Sofia Alvarez"
+      ]
+    }
+  ],
+  "agent_accountable_for_any_activity": false,
+  "authority_effect": "none"
+}

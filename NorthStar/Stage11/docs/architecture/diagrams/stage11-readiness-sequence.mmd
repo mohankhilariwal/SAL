@@ -1,0 +1,19 @@
+sequenceDiagram
+  participant P as Priya / CMP-011
+  participant E as CMP-008 Assurance
+  participant F as FIN-001/CAP-001/PRR-001
+  participant S as Marcus/Sofia/Liam evidence owners
+  participant D as Daniel and Aisha
+  participant R as Deployment authority (external, not implemented)
+
+  P->>E: Build DecisionEvidenceIndex (INT-241)
+  E->>F: Collect cost, capacity, SLO, DR, readiness evidence
+  F-->>E: Proposed/local evidence with authority_effect:none
+  E->>S: Resolve evidence ownership and blocker status
+  S-->>E: Missing/local/proposed/unapproved/unexercised statuses
+  E->>E: Apply conjunctive hard-blocker assessment
+  E-->>P: DATA-283 FinalProductionReadinessAssessment = denied
+  P->>D: Present evidence, RACI, risks and remediation backlog
+  D-->>P: Accept denial and pre-production remediation plan
+  P-xR: No route activation request is issued
+  Note over P,R: A readiness assessment is evidence, not deployment authority.
