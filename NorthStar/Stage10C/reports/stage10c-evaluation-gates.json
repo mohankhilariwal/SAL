@@ -1,0 +1,15 @@
+{
+  "decision": "denied",
+  "failed_hard_gates": [
+    "PRG-001",
+    "PRG-002",
+    "PRG-003",
+    "PRG-004",
+    "PRG-005",
+    "BLOCKER-STAGE-8D",
+    "BLOCKER-STAGE-9D",
+    "BLOCKER-PRODUCTION-ROUTE-DISABLED"
+  ],
+  "production_route_enabled": false,
+  "authority_effect": "none"
+}

@@ -1,0 +1,28 @@
+{
+  "status": "proposed_not_approved",
+  "proposals": [
+    {
+      "slo_id": "SLO-PROP-001",
+      "name": "eligible interactive draft completion",
+      "sli_kind": "task_success",
+      "target": "0.980",
+      "window_days": 30
+    },
+    {
+      "slo_id": "SLO-PROP-002",
+      "name": "protected review request known disposition",
+      "sli_kind": "known_disposition",
+      "target": "0.999",
+      "window_days": 30
+    },
+    {
+      "slo_id": "SLO-PROP-003",
+      "name": "evidence package completeness",
+      "sli_kind": "evidence_completeness",
+      "target": "0.999",
+      "window_days": 30
+    }
+  ],
+  "control_failure_rule": "authorization, policy, security, audit and integrity violations have zero budget and fail the control gate",
+  "authority_effect": "none"
+}

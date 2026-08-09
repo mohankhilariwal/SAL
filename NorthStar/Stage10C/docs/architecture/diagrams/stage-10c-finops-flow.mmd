@@ -1,0 +1,11 @@
+flowchart LR
+  OBS[CMP-009 Cost Event Capture] --> LEDGER[(Usage Ledger)]
+  LEDGER --> RATE[DATA-262 Rate Card]
+  RATE --> CALC[INT-224 Unit Economics]
+  CALC --> ALLOC[INT-223 Allocation]
+  CALC --> BUDGET[INT-225 Budget Evaluation]
+  BUDGET -->|allow/warn/review/stop-before-start| ORCH[CMP-003]
+  BUDGET -->|protected effect in flight| RECON[Continue mandatory reconciliation]
+  ALLOC --> REPORT[DATA-265 Unit Economics Report]
+  REPORT --> PRR[DATA-275 Readiness Evidence]
+

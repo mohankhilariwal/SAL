@@ -1,0 +1,36 @@
+{
+  "status": "proposed_not_approved_or_tested",
+  "profiles": [
+    {
+      "profile_id": "ROP-001",
+      "impact_tier": "tier_a_critical_control",
+      "rto_minutes": 60,
+      "rpo_minutes": 0,
+      "business_owner": "Daniel Brooks / Aisha Rahman",
+      "technical_owner": "Liam O'Connor",
+      "security_reviewer": "Marcus Green",
+      "governance_reviewer": "Sofia Alvarez"
+    },
+    {
+      "profile_id": "ROP-002",
+      "impact_tier": "tier_b_case_workflow",
+      "rto_minutes": 240,
+      "rpo_minutes": 15,
+      "business_owner": "Aisha Rahman",
+      "technical_owner": "Liam O'Connor",
+      "security_reviewer": "Marcus Green",
+      "governance_reviewer": "Sofia Alvarez"
+    },
+    {
+      "profile_id": "ROP-003",
+      "impact_tier": "tier_c_derived_index",
+      "rto_minutes": 480,
+      "rpo_minutes": 1440,
+      "business_owner": "Priya Raman",
+      "technical_owner": "Elena Petrov",
+      "security_reviewer": "Marcus Green",
+      "governance_reviewer": "Sofia Alvarez"
+    }
+  ],
+  "authority_effect": "none"
+}

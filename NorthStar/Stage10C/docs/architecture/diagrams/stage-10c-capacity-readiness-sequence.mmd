@@ -1,0 +1,14 @@
+sequenceDiagram
+  actor Liam
+  participant C10 as CMP-010 Runtime
+  participant C8 as CMP-008 Assurance
+  participant C11 as CMP-011 Governance Pack
+  participant PRR as PRR-001 Evaluator
+  Liam->>C10: submit workload profile and load evidence
+  C10-->>C8: capacity envelope and test result
+  C8->>C8: calculate SLI and error budget
+  C11-->>C8: rate, budget, SLO and RTO/RPO proposals
+  C8->>PRR: build readiness evidence
+  PRR->>PRR: check hard blockers
+  PRR-->>Liam: denied: S08D, S09D, route disabled, evidence gaps
+

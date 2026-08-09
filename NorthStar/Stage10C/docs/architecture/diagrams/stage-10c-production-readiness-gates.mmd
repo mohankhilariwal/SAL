@@ -1,0 +1,16 @@
+flowchart TD
+  START[Build DATA-275 Evidence] --> S8{Stage 8D resolved?}
+  S8 -- No --> DENY[DATA-276 Denied]
+  S8 -- Yes --> S9{Stage 9D resolved?}
+  S9 -- No --> DENY
+  S9 -- Yes --> SLO{SLO and error budget approved?}
+  SLO -- No --> DENY
+  SLO -- Yes --> DR{RTO/RPO approved and exercised?}
+  DR -- No --> DENY
+  DR -- Yes --> PROV{Production provenance and audit durability proven?}
+  PROV -- No --> DENY
+  PROV -- Yes --> ROUTE{Production route enabled by separate authority?}
+  ROUTE -- No --> DENY
+  ROUTE -- Yes --> REVIEW[Separate accountable release decision]
+  REVIEW -. Stage 10C does not activate .-> DENY
+

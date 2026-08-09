@@ -1,0 +1,14 @@
+{
+  "result": "passed_with_recorded_exceptions",
+  "exceptions": [
+    "ISS-096",
+    "ISS-131",
+    "ISS-141",
+    "ISS-147",
+    "ISS-194"
+  ],
+  "production_route_enabled": false,
+  "active_agent_count": 1,
+  "tool_range": "TOOL-001..006",
+  "authority_effect_for_new_objects": "none"
+}

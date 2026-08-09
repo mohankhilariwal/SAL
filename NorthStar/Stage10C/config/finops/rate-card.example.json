@@ -1,0 +1,76 @@
+{
+  "currency": "CAD",
+  "assumption": true,
+  "rates": [
+    {
+      "category": "model_input_tokens",
+      "rate": "0.000002",
+      "unit": "token"
+    },
+    {
+      "category": "model_output_tokens",
+      "rate": "0.000008",
+      "unit": "token"
+    },
+    {
+      "category": "model_reasoning_tokens",
+      "rate": "0.000010",
+      "unit": "token"
+    },
+    {
+      "category": "embedding_tokens",
+      "rate": "0.0000002",
+      "unit": "token"
+    },
+    {
+      "category": "reranking_units",
+      "rate": "0.000150",
+      "unit": "document"
+    },
+    {
+      "category": "tool_calls",
+      "rate": "0.004000",
+      "unit": "call"
+    },
+    {
+      "category": "compute_seconds",
+      "rate": "0.000090",
+      "unit": "second"
+    },
+    {
+      "category": "storage_gb_month",
+      "rate": "0.120000",
+      "unit": "gb_month"
+    },
+    {
+      "category": "network_gb",
+      "rate": "0.080000",
+      "unit": "gb"
+    },
+    {
+      "category": "observability_gb",
+      "rate": "0.650000",
+      "unit": "gb"
+    },
+    {
+      "category": "evaluation_cases",
+      "rate": "0.035000",
+      "unit": "case"
+    },
+    {
+      "category": "human_review_minutes",
+      "rate": "1.500000",
+      "unit": "minute"
+    },
+    {
+      "category": "security_control_units",
+      "rate": "0.002000",
+      "unit": "control"
+    },
+    {
+      "category": "recovery_minutes",
+      "rate": "2.000000",
+      "unit": "minute"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "currency": "CAD",
+  "profiles": [
+    {
+      "profile_id": "WP-001-interactive-regulatory-draft",
+      "arrival_rate_rps": "0.20",
+      "peak_multiplier": "3.0",
+      "p95_service_time_seconds": "45",
+      "worker_concurrency": 4,
+      "target_utilization": "0.65",
+      "average_input_tokens": 16000,
+      "average_output_tokens": 2200,
+      "protected_write_fraction": "0.05",
+      "maximum_queue_wait_seconds": "60"
+    },
+    {
+      "profile_id": "WP-002-batch-regulatory-analysis",
+      "arrival_rate_rps": "0.05",
+      "peak_multiplier": "5.0",
+      "p95_service_time_seconds": "180",
+      "worker_concurrency": 2,
+      "target_utilization": "0.60",
+      "average_input_tokens": 48000,
+      "average_output_tokens": 4500,
+      "protected_write_fraction": "0.00",
+      "maximum_queue_wait_seconds": "900"
+    },
+    {
+      "profile_id": "WP-003-human-review-request",
+      "arrival_rate_rps": "0.02",
+      "peak_multiplier": "4.0",
+      "p95_service_time_seconds": "8",
+      "worker_concurrency": 1,
+      "target_utilization": "0.50",
+      "average_input_tokens": 0,
+      "average_output_tokens": 0,
+      "protected_write_fraction": "1.00",
+      "maximum_queue_wait_seconds": "120"
+    }
+  ],
+  "authority_effect": "none"
+}

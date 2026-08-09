@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "northstar-stage10c-finops-readiness"
+version = "1.17.0"
+description = "NorthStar Stage 10C provider-neutral FinOps, capacity and production-readiness reference"
+requires-python = ">=3.12,<3.14"
+dependencies = ["jsonschema>=4.26,<5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=9,<10"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

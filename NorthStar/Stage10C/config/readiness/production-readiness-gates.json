@@ -1,0 +1,51 @@
+{
+  "architecture_version": "1.17.0",
+  "production_route_enabled": false,
+  "stage8d_resolved": false,
+  "stage9d_resolved": false,
+  "gates": [
+    {
+      "gate_id": "PRG-001",
+      "name": "approved production SLO and error-budget policy",
+      "hard_blocker": true,
+      "status": "fail",
+      "owner": "Daniel Brooks / Liam O'Connor"
+    },
+    {
+      "gate_id": "PRG-002",
+      "name": "load and capacity evidence at target workload",
+      "hard_blocker": true,
+      "status": "fail",
+      "owner": "Elena Petrov / Liam O'Connor"
+    },
+    {
+      "gate_id": "PRG-003",
+      "name": "approved and exercised RTO/RPO",
+      "hard_blocker": true,
+      "status": "fail",
+      "owner": "Aisha Rahman / Liam O'Connor"
+    },
+    {
+      "gate_id": "PRG-004",
+      "name": "production provenance, signing and admission verification",
+      "hard_blocker": true,
+      "status": "fail",
+      "owner": "Marcus Green"
+    },
+    {
+      "gate_id": "PRG-005",
+      "name": "enterprise audit durability and retention approval",
+      "hard_blocker": true,
+      "status": "fail",
+      "owner": "Sofia Alvarez / Marcus Green"
+    },
+    {
+      "gate_id": "PRG-006",
+      "name": "FinOps attribution and budget evidence",
+      "hard_blocker": false,
+      "status": "pass",
+      "owner": "Priya Raman / NorthStar Finance"
+    }
+  ],
+  "authority_effect": "none"
+}

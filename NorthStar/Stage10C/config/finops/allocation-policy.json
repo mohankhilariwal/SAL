@@ -1,0 +1,13 @@
+{
+  "dimensions": [
+    "business_unit",
+    "jurisdiction",
+    "environment",
+    "workload_profile_id",
+    "case_id"
+  ],
+  "shared_cost_method": "proportional_to_direct_cost",
+  "unallocated_bucket": "unassigned",
+  "focus_compatible_export_target": "FOCUS-aligned internal mapping; no conformance claim",
+  "authority_effect": "none"
+}

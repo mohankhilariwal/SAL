@@ -1,0 +1,7 @@
+{
+  "currency": "CAD",
+  "soft_limit": "25.00",
+  "hard_limit": "40.00",
+  "protected_effect_in_progress_rule": "continue_reconciliation",
+  "authority_effect": "none"
+}

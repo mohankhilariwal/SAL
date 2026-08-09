@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-275.schema.json",
+  "title": "ProductionReadinessEvidence",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "authority_effect"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "DATA-275"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "version": {
+      "type": "string",
+      "default": "1.0.0"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,72 @@
+flowchart TB
+    U[Maya / NorthStar Users] --> C1[CMP-001 Analyst Experience Portal]
+    C1 --> C2[CMP-002 Regulatory Intake Boundary]
+    C2 --> C3
+
+    subgraph ORCH[CMP-003 Case and Workflow Orchestration Boundary]
+      C3[Workflow / Admission Owner]
+      BPRE[Budget Preflight]
+      CAPADM[Capacity and Queue Admission]
+      PROT[One Protected Write Maximum]
+      C3 --> BPRE
+      C3 --> CAPADM
+      C3 --> PROT
+    end
+
+    C3 --> A1[AGT-001 Regulatory Impact Assessment Agent]
+    C3 --> C4[CMP-004 Knowledge and Evidence Access Boundary]
+    C3 --> C5[CMP-005 Enterprise Integration Boundary]
+    C3 --> C6[CMP-006 Human Review and Approval Boundary]
+    C3 --> C7[CMP-007 Identity Authorization and Policy Boundary]
+
+    subgraph ASSURE[CMP-008 Evaluation and Assurance Boundary]
+      C8[Evaluation Owner]
+      SLI[SLI Measurements]
+      SLO[SLO Proposals and Error Budgets]
+      PRR[Production Readiness Evaluation]
+      C8 --> SLI --> SLO
+      C8 --> PRR
+    end
+    C3 --> C8
+
+    subgraph OBS[CMP-009 Observability and Audit Boundary]
+      C9[Telemetry / Mandatory Audit]
+      CE[Cost Event Capture]
+      UE[Usage and Unit-Economics Evidence]
+      C9 --> CE --> UE
+    end
+    C3 --> C9
+
+    subgraph RUN[CMP-010 Runtime and Deployment Boundary]
+      C10[Runtime / Non-production Deployment]
+      CAP[CAP-001 Capacity Envelope]
+      LOAD[Load and Stress Evidence]
+      DENY[Production Route Disabled]
+      C10 --> CAP --> LOAD
+      C10 --> DENY
+    end
+    C3 --> C10
+
+    subgraph GOV[CMP-011 Source-of-Truth Governance Pack]
+      C11[Governance Pack]
+      FIN[FIN-001 Rate / Allocation / Budget Policy]
+      DR[DR-001 Proposed BIA and RTO/RPO]
+      READ[PRR-001 Readiness Evidence Manifest]
+      C11 --> FIN
+      C11 --> DR
+      C11 --> READ
+    end
+
+    CE -. minimized usage references .-> FIN
+    CAP -. assumptions and results .-> READ
+    SLO -. proposed, not approved .-> READ
+    DR -. proposed, not exercised .-> READ
+    PRR --> BLOCK[Hard blockers: S08D, S09D, route disabled, production evidence gaps]
+    BLOCK -. production promotion remains denied .-> DENY
+    C7 -. authority only .-> C5
+    C6 -. human approval only .-> C5
+    C5 --> EXT[(External Enterprise Systems)]
+    C3 --> D106[(DATA-106 Business Source of Truth)]
+
+    classDef added fill:#e8f3ff,stroke:#1f5a99,stroke-width:2px;
+    class BPRE,CAPADM,SLI,SLO,PRR,CE,UE,CAP,LOAD,DENY,FIN,DR,READ,BLOCK added;

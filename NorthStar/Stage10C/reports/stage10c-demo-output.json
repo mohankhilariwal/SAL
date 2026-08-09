@@ -1,0 +1,30 @@
+{
+  "currency": "CAD",
+  "total_cost": "26.162600",
+  "cost_per_request": "8.720867",
+  "cost_per_completed_task": "13.081300",
+  "failed_run_cost": "8.018000",
+  "retry_cost": "0.018000",
+  "capacity": {
+    "required_workers": 14,
+    "peak_rps": "0.60",
+    "protected_write_limit": 1
+  },
+  "error_budget": {
+    "allowed_bad_events": "10.000",
+    "observed_bad_events": 8,
+    "exhausted": false,
+    "control_gate_passed": true
+  },
+  "budget_action": "require_review",
+  "production_readiness": "denied",
+  "failed_hard_gates": [
+    "PRG-1",
+    "PRG-2",
+    "PRG-3",
+    "BLOCKER-STAGE-8D",
+    "BLOCKER-STAGE-9D",
+    "BLOCKER-PRODUCTION-ROUTE-DISABLED"
+  ],
+  "authority_effect": "none"
+}
