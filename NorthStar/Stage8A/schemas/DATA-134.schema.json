@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-134.schema.json",
+  "title": "GroundTruthReference",
+  "type": "object",
+  "properties": {
+    "reference_id": {
+      "type": "string"
+    },
+    "source_ids": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

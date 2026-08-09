@@ -1,0 +1,23 @@
+sequenceDiagram
+  participant G as CMP-011 Registry
+  participant P as CMP-007 Policy
+  participant H as CMP-008 Eval Harness
+  participant S as Isolated SUT Adapter
+  participant D as Deterministic Graders
+  participant A as CMP-009 Evidence
+  participant R as CMP-006 Human Review
+
+  G->>H: Resolve suite, dataset version, graders
+  H->>P: Authorize split and case materialization
+  P-->>H: scoped allow/deny + obligations
+  H->>H: reset isolated environment
+  H->>S: execute one case/trial
+  S-->>H: outcome + payload-minimized trace
+  H->>D: outcome, expected facts, authorized evidence IDs
+  D-->>H: criterion findings
+  H->>A: digests, counts, findings, provenance
+  alt failed/high-risk sample
+    H->>R: DATA-142 review assignment
+  end
+  H-->>G: advisory result and quarantine/promotion recommendation
+  Note over H,G: No approval, route change or DATA-106 mutation

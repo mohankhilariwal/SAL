@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-133.schema.json",
+  "title": "EvaluationCase",
+  "type": "object",
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "split": {
+      "enum": [
+        "dev",
+        "validation",
+        "test"
+      ]
+    },
+    "expected": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

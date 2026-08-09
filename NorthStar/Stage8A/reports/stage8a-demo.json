@@ -1,0 +1,47 @@
+{
+  "run_id": "RUN-S08A-LOCAL-001",
+  "suite_id": "EVAL-SUITE-001",
+  "suite_version": "1.0.0",
+  "split": "validation",
+  "case_count": 8,
+  "trial_count": 16,
+  "passed_trials": 16,
+  "failed_trials": 0,
+  "pass_rate": 1.0,
+  "required_gate_passed": true,
+  "category_counts": {
+    "normal": 1,
+    "negative": 1,
+    "permission": 1,
+    "tool_failure": 1,
+    "adversarial": 1,
+    "temporal": 1,
+    "multilingual": 1,
+    "conflicting_evidence": 1
+  },
+  "authority_effect": "none",
+  "trial_digests": [
+    "cdc347c2412594ae4c52b89befc862648f314e1f17651544d6a4ded95e217d8c",
+    "a7d2ff676d8179252ce70eb18e8c5df1b1950ef5dd1b4a45c9e9734224c40d64",
+    "a5823014636ccb86d0a6e5aeb1c6413dd97feac3b8b807884173badc6eb30e5a",
+    "cb9e09f3d248f61158c219781befbeff6709f13b15d5ab57a11a9cc18e5867e6",
+    "b366247fa4c00043faeb6e7c1e8b34e8b2bdd1de231f015cde913751b76466ab",
+    "08eca18762d33f1baf7a43fc0ac454b2b8cac0b9f8f8a45641e51dd06bd7d8d8",
+    "6ed328354cde72c61e51dc762b955b14e9018cf924dfaf945d73069214f67d11",
+    "6705684bde4e22d79367a06825ffda9d46a26cb46836626476c3f6271044461c",
+    "e535883a66979ca924beae8f7f5b3ce9526bdfc5bce504866cc8a9a95ed519fb",
+    "e80b4bb9c17eba952e9be59eb2492b6e4f94d3d943e28600e06958d97977da58",
+    "f731c36be11645611e07059260a6ec55fdbc90bc7a74f97de3d0f3eae110a70b",
+    "8ac42d6b23d80e7ee632ee4ce3cd99f91be5be8d6e36ce6ee80182681691517d",
+    "1ceb284b4b3d55971d81d5dd9e8945fa00e6a27fb111ca275acac61f0a9714d0",
+    "4b1b3c24dcba1d85e86ea8676f1a12e700d81a2ea80735bd56d3b01709b90330",
+    "edd4018bafaa974970cbf6bd7572e4530667f20af91816e653a0c96bdd819bca",
+    "bc4d4df7cddf2215f86b1baad71ad6ce9a44c57c60cd8037d9b4e7961e841542"
+  ],
+  "human_review_sample": [
+    "CASE-S08A-015",
+    "CASE-S08A-013",
+    "CASE-S08A-018",
+    "CASE-S08A-011"
+  ]
+}

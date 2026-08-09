@@ -1,0 +1,8 @@
+{
+  "grader_id": "GRD-004",
+  "name": "permission-boundary",
+  "type": "deterministic",
+  "version": "1.0.0",
+  "enabled": true,
+  "model_based": false
+}

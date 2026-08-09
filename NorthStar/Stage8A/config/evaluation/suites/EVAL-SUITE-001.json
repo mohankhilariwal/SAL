@@ -1,0 +1,49 @@
+{
+  "suite_id": "EVAL-SUITE-001",
+  "version": "1.0.0",
+  "description": "NorthStar deterministic offline evaluation suite for the bounded AGT-001 regulatory impact workflow",
+  "target_system": "AGT-001 with GRAPH-001/1.4.0 and WP-001-WP-007; no model routing",
+  "active": true,
+  "dataset_refs": [
+    "EDS-001@1.0.0",
+    "EDS-002@1.0.0",
+    "EDS-003@1.0.0",
+    "EDS-004@1.0.0",
+    "EDS-005@1.0.0",
+    "EDS-006@1.0.0",
+    "EDS-007@1.0.0",
+    "EDS-008@1.0.0"
+  ],
+  "grader_ids": [
+    "GRD-001",
+    "GRD-002",
+    "GRD-003",
+    "GRD-004",
+    "GRD-005",
+    "GRD-006",
+    "GRD-007",
+    "GRD-008",
+    "GRD-009",
+    "GRD-010",
+    "GRD-011",
+    "GRD-012"
+  ],
+  "required_categories": [
+    "normal",
+    "negative",
+    "permission",
+    "tool_failure",
+    "adversarial",
+    "temporal",
+    "multilingual",
+    "conflicting_evidence"
+  ],
+  "allowed_splits": [
+    "dev",
+    "validation",
+    "test"
+  ],
+  "trial_count": 2,
+  "max_concurrency": 2,
+  "authority_effect": "none"
+}

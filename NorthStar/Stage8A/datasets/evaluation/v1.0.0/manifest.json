@@ -1,0 +1,54 @@
+{
+  "manifest_id": "DATASET-MANIFEST-001",
+  "dataset_version": "1.0.0",
+  "case_count": 24,
+  "split_counts": {
+    "dev": 10,
+    "validation": 8,
+    "test": 6
+  },
+  "category_counts": {
+    "normal": 4,
+    "negative": 4,
+    "permission": 3,
+    "tool_failure": 3,
+    "adversarial": 3,
+    "temporal": 3,
+    "multilingual": 2,
+    "conflicting_evidence": 2
+  },
+  "case_digests": {
+    "CASE-S08A-001": "f7bdc221c7e7433502661409f23660288ea117965c7307be5a9310ad26eda356",
+    "CASE-S08A-002": "01c3507ac6f4ec5918f0abd4946287f4f202a85e7edebc287d3529c480be1a22",
+    "CASE-S08A-003": "1cdac641f8488f55784fc740de1a079d58f5ee5aed7f06be1f52b6272c641de0",
+    "CASE-S08A-004": "c0e3cd6d509cb7cd352877854225fc5e3a48854e1ed0403056832475edcc5afc",
+    "CASE-S08A-005": "446bfe4bd52b0221d1ed8d21599165f52d64edf2ae79cfe09992d993c5a034ff",
+    "CASE-S08A-006": "01c06be7b641f8635027d8b703d1cd60db0e195cd72eb10632a9bbcc9fe3239d",
+    "CASE-S08A-007": "4e002b80a1051510b3240eaea0994dfeefc3424a4c4fac40e6b6ae4b46c1d4bb",
+    "CASE-S08A-008": "a44b565b6082d581481c469c46b6cf6b9dd352a6b2b82d059f9a83130af79c6d",
+    "CASE-S08A-009": "6b09a764fd00bee0f437d5a99e20e4a6ac6f37f719fce5c7935d2832c07748c5",
+    "CASE-S08A-010": "c303cec1d10986fc32ab5d754a09296bdc0b2606e182f86ed1a27f01b7af8301",
+    "CASE-S08A-011": "40c2cd879c10799300fd493b23ac736a43757c20bf7882b9a28fb5a496d4299c",
+    "CASE-S08A-012": "de74c90b343c308028d26eb973363bc12e600aab8d1af0b121923ba8fd81b667",
+    "CASE-S08A-013": "1935ca5dd444c25c7d3a51441292de9c6ae07c1a338f826aa6aaf9648fd571e9",
+    "CASE-S08A-014": "e8082cac557699062ba22394a4f1f1a2c633f546915cb10318212acf6d76216c",
+    "CASE-S08A-015": "ba973931c9fc404b2c2920237155870d1c9e8ae9d8721bf76caddd9839c57c32",
+    "CASE-S08A-016": "dfb5a7f1e966790cd831f189ddcc3ae926a684b4126147d00085da6df163ecc5",
+    "CASE-S08A-017": "60e029b69ed87399cc80e784c3a737ba299e33a89ac4cda30d4f38f940a7afd8",
+    "CASE-S08A-018": "c3691f9513d35b5a46bbda654fb1491a31b26478c602bf099e30a65aa9a8e254",
+    "CASE-S08A-019": "4de3e9252485bf4d5e14cff94e8acebc54667f374d0c672974a7d0826d98b47e",
+    "CASE-S08A-020": "12d00ed9d30f5a7cc891096835f593d9f8555e6c170a1a762557fb2ab4f6825e",
+    "CASE-S08A-021": "ad75a04eac1ca70cabc2319441c70ee79336202193c5feee69b29a14ed004a59",
+    "CASE-S08A-022": "79f31d8d846b400fe0603d2d3f8fee664d07888e509699bc455b791e503a32ac",
+    "CASE-S08A-023": "2ea7dc715c42ed349d6fd4899b738e9e46595dfdc344144a149102c0d31f011e",
+    "CASE-S08A-024": "2ac93722c23b06b4f4c82e10a00a6723e7f2173d44656976bfdb10b7cf969cf6"
+  },
+  "source_files": {
+    "dev.jsonl": "b670203f9355f9e4f8abf002305694d3c2ae1f28be4459dd494f826de76a75da",
+    "test.jsonl": "b8419eff414ca030b53f432cfdf15b947c930f13f54db5750d55e19dc1dd08d4",
+    "validation.jsonl": "51f30601c19d2beb05b434e3a01a18634ba8b9f8901e2f91cee72eeb2b707d4e"
+  },
+  "synthetic_only": true,
+  "test_split_logically_sealed": true,
+  "authority_effect": "none"
+}

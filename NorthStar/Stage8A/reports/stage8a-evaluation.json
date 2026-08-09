@@ -1,0 +1,121 @@
+{
+  "all_passed": true,
+  "gates": [
+    {
+      "evaluation_id": "EVAL-116",
+      "passed": true,
+      "summary": "dataset contains the declared 24 synthetic cases"
+    },
+    {
+      "evaluation_id": "EVAL-117",
+      "passed": true,
+      "summary": "dataset contains no production data"
+    },
+    {
+      "evaluation_id": "EVAL-118",
+      "passed": true,
+      "summary": "test split is logically sealed"
+    },
+    {
+      "evaluation_id": "EVAL-119",
+      "passed": true,
+      "summary": "no exact or near cross-split duplicates"
+    },
+    {
+      "evaluation_id": "EVAL-120",
+      "passed": true,
+      "summary": "case identifiers and digests are unique"
+    },
+    {
+      "evaluation_id": "EVAL-121",
+      "passed": true,
+      "summary": "every case has source provenance"
+    },
+    {
+      "evaluation_id": "EVAL-122",
+      "passed": true,
+      "summary": "every case has an authorization scope"
+    },
+    {
+      "evaluation_id": "EVAL-123",
+      "passed": true,
+      "summary": "all cases bind to the declared suite"
+    },
+    {
+      "evaluation_id": "EVAL-124",
+      "passed": true,
+      "summary": "validation coverage includes all required categories"
+    },
+    {
+      "evaluation_id": "EVAL-125",
+      "passed": true,
+      "summary": "all required deterministic validation gates pass"
+    },
+    {
+      "evaluation_id": "EVAL-126",
+      "passed": true,
+      "summary": "evaluation result has no authority effect"
+    },
+    {
+      "evaluation_id": "EVAL-127",
+      "passed": true,
+      "summary": "evidence exports contain digests, not raw payloads"
+    },
+    {
+      "evaluation_id": "EVAL-128",
+      "passed": true,
+      "summary": "inactive future workload is absent"
+    },
+    {
+      "evaluation_id": "EVAL-129",
+      "passed": true,
+      "summary": "local candidate passes every validation trial"
+    },
+    {
+      "evaluation_id": "EVAL-130",
+      "passed": true,
+      "summary": "default execution uses validation, not sealed test"
+    }
+  ],
+  "result": {
+    "run_id": "RUN-S08A-GATES-001",
+    "suite_id": "EVAL-SUITE-001",
+    "suite_version": "1.0.0",
+    "split": "validation",
+    "case_count": 8,
+    "trial_count": 16,
+    "passed_trials": 16,
+    "failed_trials": 0,
+    "pass_rate": 1.0,
+    "required_gate_passed": true,
+    "category_counts": {
+      "normal": 1,
+      "negative": 1,
+      "permission": 1,
+      "tool_failure": 1,
+      "adversarial": 1,
+      "temporal": 1,
+      "multilingual": 1,
+      "conflicting_evidence": 1
+    },
+    "authority_effect": "none",
+    "trial_digests": [
+      "b8d5e417988651fa3a10a7f9b41426acc45ef7ea2f2ec5f60f25cf4d0a157e2b",
+      "28980d1f2aa8d63a437e231f64eeb9890aee9f2466e1a601dfcd88c89596aa9c",
+      "45b5e65c6b660370091d8973b0cc60499419bc23408c467fdf1b8d6a56c4a72a",
+      "37c4f02c5cfdb549bbd75ce1a04eaf5860974ccfe6ef7b0439d790fe873c5d73",
+      "f33d1f5b6f1c47ef23bc0375af992bee6342bcba19b88819e3d4e5402783686a",
+      "ce1b70a83d02d2118b58dff8deef174fcfe1e6f191ab996362303d532c494cbf",
+      "7548efe9e16da3326a8443ace59955a69ac823ed5a90782f7a8a60b014ed0747",
+      "f61f59599ec2381b8ff7be5b032313f123599a76dd529fc28f940130d836f9a8",
+      "e59bd1dc6fcf5faccff379fa3b7d1576209bc062d463ba9ec3f042e652b880b7",
+      "954a94b31ae4789994e0b4943accb678b75e824426ccac0e4e10cedc088bedaf",
+      "38b6dd6a9772eaf0cfe0d365094778411238e5e45c22702f2e4cf5a5aa55cec0",
+      "6fa15a0df5ea672a0675a7c245dd74398e839c9bb63ac8069ee4df9460e5ad84",
+      "67d365392d4fa8e9504f606590b9f34ab317ed4575222722d62e0585bb56bae3",
+      "a28899f3093ec4033e15bfa4667e1ee15076d826586300653487fa68771f4808",
+      "270f95b456071f51cec248052066b4418165e0f277caa944f01995a2958ca024",
+      "d3fd876b7e2f42924a74be88c7c8b43ff60ac53ea813f7c570ff6f1edbf94e31"
+    ]
+  }
+}

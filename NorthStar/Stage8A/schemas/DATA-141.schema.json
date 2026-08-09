@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-141.schema.json",
+  "title": "ContaminationAssessment",
+  "type": "object",
+  "properties": {
+    "threshold": {
+      "type": "number"
+    },
+    "passed": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

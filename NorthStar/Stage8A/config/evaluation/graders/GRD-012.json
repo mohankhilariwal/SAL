@@ -1,0 +1,8 @@
+{
+  "grader_id": "GRD-012",
+  "name": "payload-minimization",
+  "type": "deterministic",
+  "version": "1.0.0",
+  "enabled": true,
+  "model_based": false
+}

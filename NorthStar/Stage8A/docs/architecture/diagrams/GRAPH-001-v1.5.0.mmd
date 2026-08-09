@@ -1,0 +1,42 @@
+flowchart TB
+  subgraph GOV["Governance and Assurance Plane"]
+    C11["CMP-011 Source-of-Truth Governance Pack"]
+    REG["INT-103/104 Suite and Dataset Registry<br/>DATA-131/132/140/141"]
+    C8["CMP-008 Evaluation and Assurance Boundary"]
+    C6["CMP-006 Human Review and Approval Boundary"]
+  end
+
+  subgraph EVAL["Isolated Evaluation Plane - Stage 8A"]
+    MAT["INT-105 Authorized Case Materialization<br/>DATA-133/134/135"]
+    HAR["INT-106 Bounded Evaluation Harness<br/>DATA-137/138"]
+    GRD["INT-107 Deterministic Graders<br/>DATA-136"]
+    AGG["INT-109 Result Aggregation<br/>DATA-139"]
+    QUAR["INT-110 Dataset Promotion or Quarantine"]
+  end
+
+  subgraph RUN["Existing NorthStar Runtime"]
+    C1["CMP-001 Analyst Experience Portal"]
+    C2["CMP-002 Regulatory Intake Boundary"]
+    C3["CMP-003 Case and Workflow Orchestration Boundary"]
+    C4["CMP-004 Knowledge and Evidence Access Boundary"]
+    C5["CMP-005 Enterprise Integration Boundary<br/>TOOL-001..006 only"]
+    C7["CMP-007 Identity, Authorization and Policy Boundary"]
+    C9["CMP-009 Observability and Audit Boundary"]
+    C10["CMP-010 Runtime and Deployment Boundary"]
+    A1["AGT-001 Regulatory Impact Assessment Agent<br/>only active agent"]
+  end
+
+  C11 --> REG --> C8
+  C7 --> MAT
+  C2 -. "synthetic or approved samples" .-> MAT
+  C4 -. "authorized evidence references" .-> MAT
+  MAT --> HAR
+  HAR -. "same contracts; isolated environment" .-> C3
+  C3 --> A1 --> C5
+  HAR --> GRD --> AGG
+  C9 -. "payload-minimized trace evidence" .-> AGG
+  AGG --> QUAR --> C11
+  AGG -->|"INT-108 risk-based human sample"| C6
+  AGG --> OUT["INT-111 Advisory Evaluation Evidence Export"]
+  OUT -. "no authority; no DATA-106 mutation" .-> C3
+  W8["WP-008 inactive_future"] -. "blocked" .-> HAR

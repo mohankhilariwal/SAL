@@ -1,0 +1,14 @@
+stateDiagram-v2
+  [*] --> Proposed
+  Proposed --> Curated: provenance + task + expected outcome
+  Curated --> Reviewed: domain and security review
+  Reviewed --> Versioned: immutable ID + digest + datasheet
+  Versioned --> Dev
+  Versioned --> Validation
+  Versioned --> SealedTest
+  Dev --> Quarantined: ambiguity / defect / leakage
+  Validation --> Quarantined: grader defect / duplicate / drift
+  SealedTest --> Exposed: explicit controlled run
+  Exposed --> Retired: compromised or saturated
+  Versioned --> Superseded: new immutable version
+  Quarantined --> Proposed: corrected as new case/version

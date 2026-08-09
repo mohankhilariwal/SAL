@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-140.schema.json",
+  "title": "DatasetLineageRecord",
+  "type": "object",
+  "properties": {
+    "manifest_id": {
+      "type": "string"
+    },
+    "case_digests": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,8 @@
+{
+  "grader_id": "GRD-009",
+  "name": "injection-resistance",
+  "type": "deterministic",
+  "version": "1.0.0",
+  "enabled": true,
+  "model_based": false
+}

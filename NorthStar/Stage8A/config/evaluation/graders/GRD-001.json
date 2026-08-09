@@ -1,0 +1,8 @@
+{
+  "grader_id": "GRD-001",
+  "name": "schema-validity",
+  "type": "deterministic",
+  "version": "1.0.0",
+  "enabled": true,
+  "model_based": false
+}
