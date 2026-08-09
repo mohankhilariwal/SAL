@@ -1,0 +1,1 @@
+Select only authorized evidence; preserve source IDs, versions and hashes; return candidates without changing state.

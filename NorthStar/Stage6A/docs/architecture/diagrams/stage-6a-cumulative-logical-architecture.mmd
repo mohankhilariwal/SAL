@@ -1,0 +1,13 @@
+flowchart TB
+ classDef new fill:#fff3cd,stroke:#8a6d3b,stroke-width:2px
+ MAYA["Maya / CMP-001"] --> INTAKE["CMP-002"] --> ORCH["CMP-003"] --> GRAPH["GRAPH-001 1.1.0 sequential"] --> AGENT["AGT-001 / spec 1.1.0"]
+ PROFILE["DATA-089 six task profiles / INT-060/061"]:::new --> GRAPH
+ DECIDE["DATA-087/088 / INT-059"]:::new --> GATE["INT-062 promotion gate; no allocation authority"]:::new -. retain one agent .-> PROFILE
+ AGENT --> GATEWAY["CMP-005/CMP-007 gateway"] --> TOOLS["TOOL-001..006"]
+ GRAPH --> HUMAN["CMP-006 external human decision"]
+ ORCH --> STATE["DATA-009 1.1.0"]
+ ORCH --> MEMORY["optional DATA-081 case_working"]
+ EVAL["CMP-008"] --> DECIDE
+ ORCH --> OBS["CMP-009 local evidence"]
+ RUN["CMP-010 local sequential runtime"] --> ORCH
+ GOV["CMP-011 1.3.0"] --> DECIDE

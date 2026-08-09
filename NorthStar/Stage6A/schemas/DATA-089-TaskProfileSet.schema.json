@@ -1,0 +1,29 @@
+{
+  "$id": "urn:northstar:DATA-089:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "agent_id": {
+      "const": "AGT-001"
+    },
+    "graph_id": {
+      "const": "GRAPH-001"
+    },
+    "graph_version": {
+      "const": "1.1.0"
+    },
+    "profiles": {
+      "maxItems": 6,
+      "minItems": 6,
+      "type": "array"
+    }
+  },
+  "required": [
+    "agent_id",
+    "graph_id",
+    "graph_version",
+    "profiles"
+  ],
+  "title": "DATA-089 TaskProfileSet",
+  "type": "object"
+}

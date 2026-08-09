@@ -1,0 +1,7 @@
+flowchart TD
+ Q["DATA-087 questionnaire"] --> B{Independent identity, authority, lifecycle, fault or termination boundary?}
+ B -- Yes --> R["Eligible for controlled multi-agent architecture review"]
+ B -- No --> M{Representative measured gain after prompt/node remediation with low handoff error?}
+ M -- Yes --> R
+ M -- No --> S["Retain one AGT-001"] --> P["Use GRAPH-001 nodes + DATA-089 profiles"]
+ R --> A["New requirements, ADR, threat/privacy/evaluation review"] --> X["S06A still allocates no agent"]

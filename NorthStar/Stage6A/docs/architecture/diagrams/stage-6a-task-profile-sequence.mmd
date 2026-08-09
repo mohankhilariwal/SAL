@@ -1,0 +1,20 @@
+sequenceDiagram
+ actor Maya
+ participant Portal as CMP-001
+ participant Orch as CMP-003
+ participant Graph as GRAPH-001
+ participant Profiles as INT-060/061
+ participant Agent as AGT-001
+ participant Gateway as CMP-005
+ participant Human as CMP-006
+ Maya->>Portal: start/resume case
+ Portal->>Orch: case request
+ Orch->>Graph: load DATA-009 and compatible graph
+ Graph->>Profiles: bind node to task profile
+ Profiles-->>Graph: DATA-090 binding + digest
+ Graph->>Agent: bounded instruction/context/output contract
+ Agent-->>Graph: proposal or candidate output
+ Graph->>Gateway: validated TOOL-001..006 request
+ Gateway-->>Graph: typed observation
+ Graph->>Human: review package when required
+ Note over Agent,Human: no delegation, handoff, second identity, shared-agent memory or concurrent branch

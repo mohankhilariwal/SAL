@@ -1,0 +1,176 @@
+{
+  "agent_id": "AGT-001",
+  "data_object": "DATA-089",
+  "graph_id": "GRAPH-001",
+  "graph_version": "1.1.0",
+  "profiles": [
+    {
+      "agent_id": "AGT-001",
+      "can_approve": false,
+      "can_delegate": false,
+      "can_finalize": false,
+      "can_handoff": false,
+      "can_write_memory": false,
+      "concurrent_execution": false,
+      "context_kinds": [
+        "publication",
+        "authorized_evidence",
+        "run_state"
+      ],
+      "exposed_tools": [
+        "TOOL-001",
+        "TOOL-002",
+        "TOOL-003"
+      ],
+      "graph_id": "GRAPH-001",
+      "graph_version": "1.1.0",
+      "instruction_ref": "config/prompts/AGT-001-regulatory-research-v1.txt",
+      "memory_access": "via_harness_context_only",
+      "node_key": "regulatory_research",
+      "output_contract": "CandidateResearchEvidence.v1",
+      "profile_id": "TPR-001",
+      "profile_version": "1.0.0",
+      "purpose": "Collect authorized regulatory and internal evidence for the current case."
+    },
+    {
+      "agent_id": "AGT-001",
+      "can_approve": false,
+      "can_delegate": false,
+      "can_finalize": false,
+      "can_handoff": false,
+      "can_write_memory": false,
+      "concurrent_execution": false,
+      "context_kinds": [
+        "publication",
+        "authorized_evidence",
+        "run_state"
+      ],
+      "exposed_tools": [
+        "TOOL-001",
+        "TOOL-003"
+      ],
+      "graph_id": "GRAPH-001",
+      "graph_version": "1.1.0",
+      "instruction_ref": "config/prompts/AGT-001-obligation-extraction-v1.txt",
+      "memory_access": "none",
+      "node_key": "obligation_extraction",
+      "output_contract": "CandidateObligationSet.v1",
+      "profile_id": "TPR-002",
+      "profile_version": "1.0.0",
+      "purpose": "Extract candidate obligations and uncertainty from source-cited content."
+    },
+    {
+      "agent_id": "AGT-001",
+      "can_approve": false,
+      "can_delegate": false,
+      "can_finalize": false,
+      "can_handoff": false,
+      "can_write_memory": false,
+      "concurrent_execution": false,
+      "context_kinds": [
+        "authorized_evidence",
+        "run_state",
+        "policy_context"
+      ],
+      "exposed_tools": [
+        "TOOL-002",
+        "TOOL-003",
+        "TOOL-005"
+      ],
+      "graph_id": "GRAPH-001",
+      "graph_version": "1.1.0",
+      "instruction_ref": "config/prompts/AGT-001-policy-control-mapping-v1.txt",
+      "memory_access": "via_harness_context_only",
+      "node_key": "policy_control_mapping",
+      "output_contract": "CandidatePolicyControlMapping.v1",
+      "profile_id": "TPR-003",
+      "profile_version": "1.0.0",
+      "purpose": "Propose source-linked policy and control mappings for analyst review."
+    },
+    {
+      "agent_id": "AGT-001",
+      "can_approve": false,
+      "can_delegate": false,
+      "can_finalize": false,
+      "can_handoff": false,
+      "can_write_memory": false,
+      "concurrent_execution": false,
+      "context_kinds": [
+        "authorized_evidence",
+        "run_state",
+        "policy_context"
+      ],
+      "exposed_tools": [
+        "TOOL-002",
+        "TOOL-003"
+      ],
+      "graph_id": "GRAPH-001",
+      "graph_version": "1.1.0",
+      "instruction_ref": "config/prompts/AGT-001-risk-assessment-v1.txt",
+      "memory_access": "via_harness_context_only",
+      "node_key": "risk_assessment",
+      "output_contract": "PreliminaryRiskRecommendation.v1",
+      "profile_id": "TPR-004",
+      "profile_version": "1.0.0",
+      "purpose": "Produce a preliminary evidence-linked risk recommendation and uncertainties."
+    },
+    {
+      "agent_id": "AGT-001",
+      "can_approve": false,
+      "can_delegate": false,
+      "can_finalize": false,
+      "can_handoff": false,
+      "can_write_memory": false,
+      "concurrent_execution": false,
+      "context_kinds": [
+        "publication",
+        "authorized_evidence",
+        "run_state",
+        "policy_context"
+      ],
+      "exposed_tools": [
+        "TOOL-001",
+        "TOOL-002",
+        "TOOL-003"
+      ],
+      "graph_id": "GRAPH-001",
+      "graph_version": "1.1.0",
+      "instruction_ref": "config/prompts/AGT-001-evidence-verification-v1.txt",
+      "memory_access": "none",
+      "node_key": "evidence_verification",
+      "output_contract": "EvidenceVerificationFinding.v1",
+      "profile_id": "TPR-005",
+      "profile_version": "1.0.0",
+      "purpose": "Verify citation, provenance, freshness and internal consistency of candidate artefacts."
+    },
+    {
+      "agent_id": "AGT-001",
+      "can_approve": false,
+      "can_delegate": false,
+      "can_finalize": false,
+      "can_handoff": false,
+      "can_write_memory": false,
+      "concurrent_execution": false,
+      "context_kinds": [
+        "authorized_evidence",
+        "run_state",
+        "policy_context"
+      ],
+      "exposed_tools": [
+        "TOOL-004",
+        "TOOL-005",
+        "TOOL-006"
+      ],
+      "graph_id": "GRAPH-001",
+      "graph_version": "1.1.0",
+      "instruction_ref": "config/prompts/AGT-001-report-generation-v1.txt",
+      "memory_access": "via_harness_context_only",
+      "node_key": "report_generation",
+      "output_contract": "PreliminaryAssessmentPackage.v1",
+      "profile_id": "TPR-006",
+      "profile_version": "1.0.0",
+      "purpose": "Assemble the preliminary evidence-backed package and review request."
+    }
+  ],
+  "version": "1.0.0"
+}

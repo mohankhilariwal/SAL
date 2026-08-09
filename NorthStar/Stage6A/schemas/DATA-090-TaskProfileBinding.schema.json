@@ -1,0 +1,32 @@
+{
+  "$id": "urn:northstar:DATA-090:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "agent_id": {
+      "const": "AGT-001"
+    },
+    "agent_spec_version": {
+      "const": "1.1.0"
+    },
+    "graph_id": {
+      "const": "GRAPH-001"
+    },
+    "graph_version": {
+      "const": "1.1.0"
+    }
+  },
+  "required": [
+    "binding_id",
+    "run_id",
+    "agent_id",
+    "agent_spec_version",
+    "graph_id",
+    "graph_version",
+    "profile_id",
+    "profile_sha256",
+    "binding_sha256"
+  ],
+  "title": "DATA-090 TaskProfileBinding",
+  "type": "object"
+}

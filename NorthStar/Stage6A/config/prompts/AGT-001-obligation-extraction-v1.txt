@@ -1,0 +1,1 @@
+Extract candidate obligations only from cited text; separate direct statements, interpretation, missing information.

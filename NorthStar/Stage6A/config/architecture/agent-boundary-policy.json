@@ -1,0 +1,29 @@
+{
+  "allowed_agent_ids": [
+    "AGT-001"
+  ],
+  "allowed_tool_ids": [
+    "TOOL-001",
+    "TOOL-002",
+    "TOOL-003",
+    "TOOL-004",
+    "TOOL-005",
+    "TOOL-006"
+  ],
+  "maximum_handoff_error_pct": 2.0,
+  "minimum_measured_quality_gain_pct": 10.0,
+  "policy_id": "ABP-001",
+  "prohibited_capabilities": [
+    "new_agent_allocation",
+    "delegation",
+    "handoff",
+    "shared_agent_memory",
+    "concurrent_graph_branch",
+    "mcp",
+    "a2a",
+    "self_approval",
+    "final_closure"
+  ],
+  "require_representative_evidence": true,
+  "version": "1.0.0"
+}

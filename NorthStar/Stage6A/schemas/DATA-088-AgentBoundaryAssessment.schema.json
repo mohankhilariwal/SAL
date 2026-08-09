@@ -1,0 +1,22 @@
+{
+  "$id": "urn:northstar:DATA-088:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "selected_agent_count": {
+      "const": 1
+    },
+    "selected_option": {
+      "const": "one_agent_specialized_graph_profiles"
+    }
+  },
+  "required": [
+    "assessment_id",
+    "selected_option",
+    "selected_agent_count",
+    "multi_agent_promotion_allowed",
+    "assessment_sha256"
+  ],
+  "title": "DATA-088 AgentBoundaryAssessment",
+  "type": "object"
+}

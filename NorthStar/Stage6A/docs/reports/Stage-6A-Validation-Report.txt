@@ -1,0 +1,5 @@
+PASSED WITH RECORDED EXCEPTIONS
+- required artefacts and stable IDs present
+- exactly one AGT-001 in profiles
+- no AGT-002 in JSON configuration
+- Mermaid structurally checked, not CLI-rendered

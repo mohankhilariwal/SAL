@@ -1,0 +1,12 @@
+flowchart LR
+ subgraph Design["Design/governance"]
+  Q["DATA-087/088"] --> G["INT-062 gate"]
+  P["DATA-089 profiles"]
+ end
+ subgraph Runtime["Existing runtime trust boundary"]
+  O["CMP-003/GRAPH-001"] --> A["AGT-001"] --> W["CMP-005/CMP-007 tool authority"]
+  O --> H["CMP-006 human authority"]
+  O --> M["Harness-owned case-local memory"]
+ end
+ P --> O
+ G -. block/request review only; no authority .-> O

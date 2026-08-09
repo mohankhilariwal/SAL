@@ -1,0 +1,33 @@
+{
+  "$id": "urn:northstar:DATA-087:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "current_agent_id": {
+      "const": "AGT-001"
+    },
+    "evidence_status": {
+      "enum": [
+        "not_measured",
+        "synthetic",
+        "representative"
+      ]
+    },
+    "graph_id": {
+      "const": "GRAPH-001"
+    },
+    "graph_version": {
+      "const": "1.1.0"
+    }
+  },
+  "required": [
+    "assessment_id",
+    "case_family",
+    "current_agent_id",
+    "graph_id",
+    "graph_version",
+    "evidence_status"
+  ],
+  "title": "DATA-087 AgentBoundaryQuestionnaire",
+  "type": "object"
+}

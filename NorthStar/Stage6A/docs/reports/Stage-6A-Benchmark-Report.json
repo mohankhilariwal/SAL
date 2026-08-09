@@ -1,0 +1,18 @@
+{
+  "environment": {
+    "python": "3.13.5",
+    "runtime_dependencies": "standard_library_only"
+  },
+  "latency_ms": {
+    "assessment_p50": 0.049571,
+    "assessment_p95": 0.071545,
+    "profile_validation_p50": 0.178718,
+    "profile_validation_p95": 0.324396
+  },
+  "stage": "S06A",
+  "warning": "Local architecture-decision microbenchmark only; not model, workflow, quality, production SLO, concurrency or cost evidence.",
+  "workload": {
+    "iterations": 500,
+    "profiles_per_validation": 6
+  }
+}

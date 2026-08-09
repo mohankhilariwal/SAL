@@ -1,0 +1,22 @@
+{
+  "evaluation_ids": [
+    "EVAL-055",
+    "EVAL-056",
+    "EVAL-057",
+    "EVAL-058",
+    "EVAL-059",
+    "EVAL-060",
+    "EVAL-061"
+  ],
+  "prohibited_markers": [
+    "AGT-002",
+    "delegation_enabled",
+    "handoff_enabled",
+    "shared_agent_memory",
+    "concurrent_branches",
+    "mcp_enabled",
+    "a2a_enabled"
+  ],
+  "required_agent_count": 1,
+  "stage": "S06A"
+}
