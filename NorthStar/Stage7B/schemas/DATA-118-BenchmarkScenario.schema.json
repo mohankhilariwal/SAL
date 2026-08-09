@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:DATA-118:1.0.0",
+  "title": "DATA-118 BenchmarkScenario",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "profile_id",
+    "profile_digest",
+    "service_model_id",
+    "request_count",
+    "seed",
+    "evidence_kind"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "profile_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "request_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "evidence_kind": {
+      "enum": [
+        "simulated",
+        "synthetic_endpoint",
+        "trace_replay",
+        "production"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

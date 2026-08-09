@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:DATA-116:1.0.0",
+  "title": "DATA-116 ArrivalPattern",
+  "type": "object",
+  "required": [
+    "kind"
+  ],
+  "properties": {
+    "kind": {
+      "enum": [
+        "closed_loop",
+        "constant",
+        "poisson",
+        "burst",
+        "batch"
+      ]
+    },
+    "request_rate_per_s": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "exclusiveMinimum": 0
+    },
+    "max_concurrency": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "burst_multiplier": {
+      "type": "number",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": true
+}

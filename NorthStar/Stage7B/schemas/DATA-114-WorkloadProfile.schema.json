@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:DATA-114:1.0.0",
+  "title": "DATA-114 WorkloadProfile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "version",
+    "tokenizer_id",
+    "status",
+    "buckets",
+    "arrival",
+    "slo",
+    "capture_payloads"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string",
+      "pattern": "^WP-[0-9]{3}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string"
+    },
+    "tokenizer_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "bootstrap_assumption",
+        "measured",
+        "inactive_future"
+      ]
+    },
+    "buckets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "urn:northstar:DATA-115:1.0.0"
+      }
+    },
+    "arrival": {
+      "$ref": "urn:northstar:DATA-116:1.0.0"
+    },
+    "slo": {
+      "$ref": "urn:northstar:DATA-121:1.0.0"
+    },
+    "capture_payloads": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

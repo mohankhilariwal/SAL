@@ -1,0 +1,90 @@
+{
+  "profile_id": "WP-002",
+  "name": "Long-document analysis",
+  "version": "1.0.0",
+  "tokenizer_id": "northstar-placeholder-tokenizer-v1",
+  "status": "bootstrap_assumption",
+  "description": "One long regulatory publication with extraction, grounding and structured synthesis.",
+  "buckets": [
+    {
+      "bucket_id": "typical",
+      "weight": 0.6,
+      "isl_min": 8000,
+      "isl_mode": 24000,
+      "isl_max": 48000,
+      "osl_min": 800,
+      "osl_mode": 2000,
+      "osl_max": 4000,
+      "model_calls_min": 3,
+      "model_calls_mode": 5,
+      "model_calls_max": 7,
+      "tool_calls_min": 1,
+      "tool_calls_mode": 2,
+      "tool_calls_max": 4,
+      "retrieval_calls_min": 2,
+      "retrieval_calls_mode": 4,
+      "retrieval_calls_max": 6
+    },
+    {
+      "bucket_id": "large",
+      "weight": 0.3,
+      "isl_min": 40000,
+      "isl_mode": 65000,
+      "isl_max": 90000,
+      "osl_min": 2500,
+      "osl_mode": 5000,
+      "osl_max": 8000,
+      "model_calls_min": 5,
+      "model_calls_mode": 7,
+      "model_calls_max": 10,
+      "tool_calls_min": 2,
+      "tool_calls_mode": 4,
+      "tool_calls_max": 6,
+      "retrieval_calls_min": 4,
+      "retrieval_calls_mode": 6,
+      "retrieval_calls_max": 8
+    },
+    {
+      "bucket_id": "tail",
+      "weight": 0.1,
+      "isl_min": 80000,
+      "isl_mode": 105000,
+      "isl_max": 128000,
+      "osl_min": 5000,
+      "osl_mode": 9000,
+      "osl_max": 14000,
+      "model_calls_min": 7,
+      "model_calls_mode": 10,
+      "model_calls_max": 14,
+      "tool_calls_min": 3,
+      "tool_calls_mode": 5,
+      "tool_calls_max": 8,
+      "retrieval_calls_min": 5,
+      "retrieval_calls_mode": 8,
+      "retrieval_calls_max": 12
+    }
+  ],
+  "arrival": {
+    "kind": "poisson",
+    "request_rate_per_s": 0.05,
+    "max_concurrency": 4
+  },
+  "slo": {
+    "ttft_p95_ms": 30000,
+    "itl_p95_ms": 180,
+    "e2e_p95_ms": 900000,
+    "queue_p95_ms": 30000,
+    "success_rate_min": 0.98,
+    "rationale": "bootstrap asynchronous analysis hypothesis; not a production SLO"
+  },
+  "turns_min": 1,
+  "turns_mode": 1,
+  "turns_max": 1,
+  "context_growth_per_turn": 0.0,
+  "capture_payloads": false,
+  "metadata": {
+    "owner": "CMP-008",
+    "use": "asynchronous",
+    "evidence": "synthetic bootstrap"
+  }
+}

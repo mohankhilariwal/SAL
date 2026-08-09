@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:DATA-119:1.0.0",
+  "title": "DATA-119 BenchmarkObservation",
+  "type": "object",
+  "required": [
+    "request_id",
+    "profile_id",
+    "queue_ms",
+    "ttft_ms",
+    "itl_ms",
+    "e2e_ms",
+    "isl_tokens",
+    "osl_tokens",
+    "success"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "queue_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "ttft_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "itl_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "e2e_ms": {
+      "type": "number",
+      "minimum": 0
+    },
+    "isl_tokens": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "osl_tokens": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "success": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,17 @@
+stateDiagram-v2
+    [*] --> DraftProfile
+    DraftProfile --> ValidatedProfile: schema + privacy + tokenizer checks
+    ValidatedProfile --> SyntheticBootstrap: no measured trace yet
+    ValidatedProfile --> TraceReplay: representative trace available
+    SyntheticBootstrap --> EndpointBenchmark: smoke test passed
+    TraceReplay --> EndpointBenchmark: replay adapter ready
+    EndpointBenchmark --> EvidenceReview: observations normalized
+    EvidenceReview --> Rejected: missing telemetry / invalid quality / cache contamination
+    EvidenceReview --> ProvisionalEnvelope: sufficient non-production evidence
+    EvidenceReview --> ProductionEnvelope: representative production or approved pre-prod evidence
+    ProvisionalEnvelope --> Rebenchmark: model, tokenizer, graph, prompt or traffic changes
+    ProductionEnvelope --> Rebenchmark: drift, SLO breach or scale change
+    Rejected --> DraftProfile
+    Rebenchmark --> DraftProfile
+    ProvisionalEnvelope --> [*]
+    ProductionEnvelope --> [*]

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:DATA-120:1.0.0",
+  "title": "DATA-120 CapacityEnvelope",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "max_sustainable_request_rate_per_s",
+    "max_tested_concurrency",
+    "slo_attainment",
+    "evidence_kind",
+    "recommendation"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "max_sustainable_request_rate_per_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "max_tested_concurrency": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "slo_attainment": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_kind": {
+      "enum": [
+        "simulated",
+        "synthetic_endpoint",
+        "trace_replay",
+        "production"
+      ]
+    },
+    "recommendation": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

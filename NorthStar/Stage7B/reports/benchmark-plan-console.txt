@@ -1,0 +1,70 @@
+{
+  "profile_id": "WP-005",
+  "profile_digest": "7f255adc7012926fb6d8af11adfa04ec26eac208585a938953e4933c0495ea92",
+  "warning": "Commands are generated, not executed. Fixed-length CLI parameters are smoke-tests only.",
+  "plans": [
+    {
+      "tool": "NVIDIA AIPerf",
+      "command": [
+        "aiperf",
+        "profile",
+        "--model",
+        "replace-with-served-model",
+        "--endpoint-type",
+        "chat",
+        "--endpoint",
+        "/v1/chat/completions",
+        "--url",
+        "http://localhost:8000",
+        "--streaming",
+        "--concurrency",
+        "8",
+        "--request-count",
+        "200",
+        "--synthetic-input-tokens-mean",
+        "12250",
+        "--output-tokens-mean",
+        "853",
+        "--request-rate",
+        "0.15",
+        "--request-rate-mode",
+        "poisson"
+      ],
+      "notes": [
+        "Smoke-test only; use a trace or sequence-length distribution for decision evidence.",
+        "Record tokenizer identity and actual observed input/output token counts.",
+        "Do not change DATA-106 automatically from this command's result."
+      ]
+    },
+    {
+      "tool": "vLLM bench serve",
+      "command": [
+        "vllm",
+        "bench",
+        "serve",
+        "--backend",
+        "openai-chat",
+        "--base-url",
+        "http://localhost:8000",
+        "--model",
+        "replace-with-served-model",
+        "--dataset-name",
+        "random",
+        "--num-prompts",
+        "200",
+        "--input-len",
+        "12250",
+        "--output-len",
+        "853",
+        "--max-concurrency",
+        "8",
+        "--request-rate",
+        "0.15"
+      ],
+      "notes": [
+        "Smoke-test only; fixed lengths do not replace the joint ISL/OSL profile.",
+        "Run a rate/concurrency sweep and retain per-request results."
+      ]
+    }
+  ]
+}

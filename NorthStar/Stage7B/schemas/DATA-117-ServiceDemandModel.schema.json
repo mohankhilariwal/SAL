@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:DATA-117:1.0.0",
+  "title": "DATA-117 ServiceDemandModel",
+  "type": "object",
+  "required": [
+    "model_id",
+    "prefill_tokens_per_s",
+    "decode_tokens_per_s",
+    "fixed_model_overhead_ms",
+    "retrieval_latency_p50_ms",
+    "tool_latency_p50_ms",
+    "network_latency_p50_ms",
+    "workflow_slots"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string"
+    },
+    "prefill_tokens_per_s": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "decode_tokens_per_s": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "workflow_slots": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": true
+}

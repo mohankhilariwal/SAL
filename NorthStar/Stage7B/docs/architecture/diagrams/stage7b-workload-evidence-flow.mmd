@@ -1,0 +1,19 @@
+sequenceDiagram
+    autonumber
+    participant GOV as CMP-011 Governance Pack
+    participant EVAL as CMP-008 Evaluation
+    participant RUN as CMP-010 Benchmark Runner
+    participant OBS as CMP-009 Observability
+    participant DEP as Model/Retrieval/Tool Endpoint
+    participant ORCH as CMP-003 Orchestrator
+
+    GOV->>EVAL: Approve DATA-114 profile version + tokenizer identity
+    EVAL->>RUN: INT-089 BenchmarkScenario (profile digest, seed, load pattern)
+    RUN->>DEP: Synthetic or trace-replay requests
+    DEP-->>RUN: Streaming tokens / tool and retrieval timings
+    RUN->>OBS: INT-090 normalized per-request observations
+    OBS-->>EVAL: DATA-119 observations + telemetry completeness
+    EVAL->>EVAL: Percentiles, SLO-hypothesis attainment, cost and saturation analysis
+    EVAL->>GOV: DATA-120 capacity envelope + evidence kind
+    EVAL-->>ORCH: INT-093 advisory admission recommendation
+    Note over ORCH: No automatic change to DATA-106. CMP-003 remains admission owner.

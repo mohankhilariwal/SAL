@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:DATA-115:1.0.0",
+  "title": "DATA-115 SequenceLengthDistribution",
+  "type": "object",
+  "required": [
+    "bucket_id",
+    "weight",
+    "isl_min",
+    "isl_mode",
+    "isl_max",
+    "osl_min",
+    "osl_mode",
+    "osl_max"
+  ],
+  "properties": {
+    "bucket_id": {
+      "type": "string"
+    },
+    "weight": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "isl_min": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "isl_mode": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "isl_max": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "osl_min": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "osl_mode": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "osl_max": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "additionalProperties": true
+}

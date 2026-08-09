@@ -1,0 +1,11 @@
+{
+  "model_id": "SIM-MODEL-001-local-planning-proxy",
+  "prefill_tokens_per_s": 6000.0,
+  "decode_tokens_per_s": 160.0,
+  "fixed_model_overhead_ms": 35.0,
+  "retrieval_latency_p50_ms": 80.0,
+  "tool_latency_p50_ms": 120.0,
+  "network_latency_p50_ms": 25.0,
+  "contention_penalty_per_active_request": 0.02,
+  "workflow_slots": 8
+}

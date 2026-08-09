@@ -1,0 +1,13 @@
+{
+  "e2e_p95_ms": 23545.608999999997,
+  "evidence_kind": "simulated",
+  "itl_p95_ms": 6.7843022806339395,
+  "max_sustainable_request_rate_per_s": 0.2,
+  "max_tested_concurrency": 8,
+  "profile_id": "WP-001",
+  "queue_p95_ms": 0.0,
+  "recommendation": "Use only as a lower-confidence planning envelope. Replace with tokenizer-accurate trace replay and endpoint measurements before changing DATA-106 admission limits.",
+  "slo_attainment": 0.9530612244897959,
+  "throughput_output_tokens_per_s": 197.62080479723227,
+  "ttft_p95_ms": 1028.2860000000003
+}

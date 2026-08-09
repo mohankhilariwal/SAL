@@ -1,0 +1,90 @@
+{
+  "profile_id": "WP-007",
+  "name": "Interactive analyst session",
+  "version": "1.0.0",
+  "tokenizer_id": "northstar-placeholder-tokenizer-v1",
+  "status": "bootstrap_assumption",
+  "description": "Closed-loop multi-turn analyst session with growing retained context and compact answers/tool calls.",
+  "buckets": [
+    {
+      "bucket_id": "early-turns",
+      "weight": 0.55,
+      "isl_min": 400,
+      "isl_mode": 1200,
+      "isl_max": 3500,
+      "osl_min": 50,
+      "osl_mode": 180,
+      "osl_max": 450,
+      "model_calls_min": 1,
+      "model_calls_mode": 2,
+      "model_calls_max": 3,
+      "tool_calls_min": 0,
+      "tool_calls_mode": 1,
+      "tool_calls_max": 2,
+      "retrieval_calls_min": 1,
+      "retrieval_calls_mode": 1,
+      "retrieval_calls_max": 2
+    },
+    {
+      "bucket_id": "mid-session",
+      "weight": 0.35,
+      "isl_min": 2500,
+      "isl_mode": 7000,
+      "isl_max": 16000,
+      "osl_min": 120,
+      "osl_mode": 350,
+      "osl_max": 800,
+      "model_calls_min": 2,
+      "model_calls_mode": 3,
+      "model_calls_max": 5,
+      "tool_calls_min": 1,
+      "tool_calls_mode": 2,
+      "tool_calls_max": 4,
+      "retrieval_calls_min": 1,
+      "retrieval_calls_mode": 2,
+      "retrieval_calls_max": 4
+    },
+    {
+      "bucket_id": "long-session-tail",
+      "weight": 0.1,
+      "isl_min": 12000,
+      "isl_mode": 24000,
+      "isl_max": 48000,
+      "osl_min": 300,
+      "osl_mode": 700,
+      "osl_max": 1500,
+      "model_calls_min": 3,
+      "model_calls_mode": 5,
+      "model_calls_max": 7,
+      "tool_calls_min": 2,
+      "tool_calls_mode": 3,
+      "tool_calls_max": 5,
+      "retrieval_calls_min": 2,
+      "retrieval_calls_mode": 3,
+      "retrieval_calls_max": 5
+    }
+  ],
+  "arrival": {
+    "kind": "closed_loop",
+    "request_rate_per_s": null,
+    "max_concurrency": 4
+  },
+  "slo": {
+    "ttft_p95_ms": 4000,
+    "itl_p95_ms": 80,
+    "e2e_p95_ms": 45000,
+    "queue_p95_ms": 2000,
+    "success_rate_min": 0.99,
+    "rationale": "bootstrap interactive-session hypothesis; not a production SLO"
+  },
+  "turns_min": 2,
+  "turns_mode": 5,
+  "turns_max": 12,
+  "context_growth_per_turn": 0.12,
+  "capture_payloads": false,
+  "metadata": {
+    "owner": "CMP-001",
+    "use": "interactive-closed-loop",
+    "evidence": "synthetic bootstrap"
+  }
+}

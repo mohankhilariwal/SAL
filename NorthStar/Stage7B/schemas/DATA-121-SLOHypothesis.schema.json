@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:DATA-121:1.0.0",
+  "title": "DATA-121 SLOHypothesis",
+  "type": "object",
+  "required": [
+    "e2e_p95_ms",
+    "queue_p95_ms",
+    "success_rate_min",
+    "rationale"
+  ],
+  "properties": {
+    "ttft_p95_ms": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "exclusiveMinimum": 0
+    },
+    "itl_p95_ms": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "exclusiveMinimum": 0
+    },
+    "e2e_p95_ms": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "queue_p95_ms": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "success_rate_min": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 1
+    },
+    "rationale": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

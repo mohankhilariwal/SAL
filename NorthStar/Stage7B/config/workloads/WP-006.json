@@ -1,0 +1,90 @@
+{
+  "profile_id": "WP-006",
+  "name": "Batch regulatory processing",
+  "version": "1.0.0",
+  "tokenizer_id": "northstar-placeholder-tokenizer-v1",
+  "status": "bootstrap_assumption",
+  "description": "Scheduled batch intake where throughput and completion window dominate interactive TTFT.",
+  "buckets": [
+    {
+      "bucket_id": "mixed-small",
+      "weight": 0.45,
+      "isl_min": 1000,
+      "isl_mode": 6000,
+      "isl_max": 18000,
+      "osl_min": 200,
+      "osl_mode": 800,
+      "osl_max": 2000,
+      "model_calls_min": 2,
+      "model_calls_mode": 4,
+      "model_calls_max": 7,
+      "tool_calls_min": 1,
+      "tool_calls_mode": 2,
+      "tool_calls_max": 4,
+      "retrieval_calls_min": 1,
+      "retrieval_calls_mode": 3,
+      "retrieval_calls_max": 5
+    },
+    {
+      "bucket_id": "mixed-medium",
+      "weight": 0.4,
+      "isl_min": 12000,
+      "isl_mode": 35000,
+      "isl_max": 70000,
+      "osl_min": 900,
+      "osl_mode": 3000,
+      "osl_max": 7000,
+      "model_calls_min": 4,
+      "model_calls_mode": 7,
+      "model_calls_max": 12,
+      "tool_calls_min": 2,
+      "tool_calls_mode": 4,
+      "tool_calls_max": 7,
+      "retrieval_calls_min": 3,
+      "retrieval_calls_mode": 6,
+      "retrieval_calls_max": 10
+    },
+    {
+      "bucket_id": "mixed-large",
+      "weight": 0.15,
+      "isl_min": 50000,
+      "isl_mode": 90000,
+      "isl_max": 140000,
+      "osl_min": 3500,
+      "osl_mode": 8000,
+      "osl_max": 15000,
+      "model_calls_min": 7,
+      "model_calls_mode": 12,
+      "model_calls_max": 20,
+      "tool_calls_min": 4,
+      "tool_calls_mode": 7,
+      "tool_calls_max": 12,
+      "retrieval_calls_min": 6,
+      "retrieval_calls_mode": 10,
+      "retrieval_calls_max": 16
+    }
+  ],
+  "arrival": {
+    "kind": "batch",
+    "request_rate_per_s": null,
+    "max_concurrency": 8
+  },
+  "slo": {
+    "ttft_p95_ms": null,
+    "itl_p95_ms": null,
+    "e2e_p95_ms": 3600000,
+    "queue_p95_ms": 1800000,
+    "success_rate_min": 0.97,
+    "rationale": "bootstrap batch completion hypothesis; not a production SLO"
+  },
+  "turns_min": 1,
+  "turns_mode": 1,
+  "turns_max": 2,
+  "context_growth_per_turn": 0.05,
+  "capture_payloads": false,
+  "metadata": {
+    "owner": "CMP-003",
+    "use": "batch",
+    "evidence": "synthetic bootstrap"
+  }
+}

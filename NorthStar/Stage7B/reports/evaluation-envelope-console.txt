@@ -1,0 +1,67 @@
+{
+  "profile_id": "WP-001",
+  "request_rate_per_s": 0.2,
+  "results": [
+    {
+      "evaluation_id": "EVAL-089",
+      "passed": true,
+      "detail": "distribution weights are positive"
+    },
+    {
+      "evaluation_id": "EVAL-090",
+      "passed": true,
+      "detail": "all sampled sequence lengths are positive"
+    },
+    {
+      "evaluation_id": "EVAL-091",
+      "passed": true,
+      "detail": "end-to-end latency contains TTFT"
+    },
+    {
+      "evaluation_id": "EVAL-092",
+      "passed": true,
+      "detail": "success-rate hypothesis"
+    },
+    {
+      "evaluation_id": "EVAL-093",
+      "passed": true,
+      "detail": "queue-delay hypothesis"
+    },
+    {
+      "evaluation_id": "EVAL-094",
+      "passed": true,
+      "detail": "end-to-end latency hypothesis"
+    },
+    {
+      "evaluation_id": "EVAL-095",
+      "passed": true,
+      "detail": "TTFT hypothesis"
+    },
+    {
+      "evaluation_id": "EVAL-096",
+      "passed": true,
+      "detail": "ITL hypothesis"
+    },
+    {
+      "evaluation_id": "EVAL-097",
+      "passed": true,
+      "detail": "workflow call-count integrity"
+    },
+    {
+      "evaluation_id": "EVAL-098",
+      "passed": true,
+      "detail": "raw prompt/response capture is disabled"
+    },
+    {
+      "evaluation_id": "EVAL-099",
+      "passed": true,
+      "detail": "only active profile states execute"
+    },
+    {
+      "evaluation_id": "EVAL-100",
+      "passed": true,
+      "detail": "request identities are unique"
+    }
+  ],
+  "passed": true
+}
