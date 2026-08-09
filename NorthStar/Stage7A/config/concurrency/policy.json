@@ -1,0 +1,33 @@
+{
+  "policy_id": "CONC-POL-001",
+  "version": "1.0.0",
+  "enabled": true,
+  "default_mode": "sequential_unless_independence_proven",
+  "global_limit": 8,
+  "per_case_limit": 4,
+  "queue_capacity": 32,
+  "admission_timeout_seconds": 0.25,
+  "branch_timeout_seconds": 2.0,
+  "max_attempts": 3,
+  "base_backoff_seconds": 0.01,
+  "max_backoff_seconds": 0.1,
+  "jitter_ratio": 0.1,
+  "allowed_work_kinds": ["read_only", "pure_compute"],
+  "prohibited_concurrent_claims": [
+    "approve",
+    "finalize",
+    "route_case",
+    "mutate_protected_state",
+    "grant_authority",
+    "create_agent",
+    "terminate_system",
+    "write_shared_memory"
+  ],
+  "owners": {
+    "orchestration": "CMP-003",
+    "runtime": "CMP-010",
+    "authority": "CMP-007",
+    "evaluation": "CMP-008",
+    "telemetry": "CMP-009"
+  }
+}

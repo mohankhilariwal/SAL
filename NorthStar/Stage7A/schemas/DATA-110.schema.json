@@ -1,0 +1,86 @@
+{
+  "$id": "urn:northstar:DATA-110:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "aggregate_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "cancelled_branch_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "created_epoch_s": {
+      "type": "number"
+    },
+    "failed_branch_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "ordered_branch_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "partial": {
+      "type": "boolean"
+    },
+    "policy": {
+      "enum": [
+        "all_required",
+        "minimum_successes",
+        "first_satisfactory"
+      ]
+    },
+    "required_successes": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "successful_branch_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "winner_branch_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "case_id",
+    "run_id",
+    "task_id",
+    "policy",
+    "required_successes",
+    "ordered_branch_ids",
+    "successful_branch_ids",
+    "failed_branch_ids",
+    "cancelled_branch_ids",
+    "complete",
+    "partial",
+    "aggregate_digest"
+  ],
+  "title": "FanInAggregationRecord",
+  "type": "object"
+}

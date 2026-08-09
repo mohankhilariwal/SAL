@@ -1,0 +1,43 @@
+{
+  "$id": "urn:northstar:DATA-111:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approval_effect": {
+      "const": "none"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "requested_by": {
+      "type": "string"
+    },
+    "requested_epoch_s": {
+      "type": "number"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "scope": {
+      "const": "workflow_branches_only"
+    },
+    "termination_owner": {
+      "const": "CMP-003"
+    }
+  },
+  "required": [
+    "case_id",
+    "run_id",
+    "requested_by",
+    "reason",
+    "requested_epoch_s",
+    "scope",
+    "approval_effect",
+    "termination_owner"
+  ],
+  "title": "CancellationRecord",
+  "type": "object"
+}

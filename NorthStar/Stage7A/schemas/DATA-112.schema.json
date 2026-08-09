@@ -1,0 +1,39 @@
+{
+  "$id": "urn:northstar:DATA-112:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "checkpoint_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "graph_version": {
+      "const": "GRAPH-001/1.2.0"
+    },
+    "records": {
+      "items": {
+        "$ref": "urn:northstar:DATA-108:1.0.0"
+      },
+      "type": "array"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "written_epoch_s": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "case_id",
+    "run_id",
+    "graph_version",
+    "records",
+    "checkpoint_digest",
+    "written_epoch_s"
+  ],
+  "title": "ResumptionCheckpoint",
+  "type": "object"
+}

@@ -1,0 +1,154 @@
+{
+  "aggregation": {
+    "aggregate_digest": "0b7d74aef8356e4f71fd4abb5212939b4818f62aa82e9188adc2464ddb8865b7",
+    "cancelled_branch_ids": [],
+    "case_id": "CASE-2026-0801-001",
+    "complete": true,
+    "created_epoch_s": 1785611304.1008673,
+    "failed_branch_ids": [],
+    "ordered_branch_ids": [
+      "jurisdiction-ca",
+      "jurisdiction-us",
+      "evidence-policies",
+      "mapping-lending"
+    ],
+    "partial": false,
+    "policy": "all_required",
+    "required_successes": 4,
+    "run_id": "RUN-S07A-DEMO",
+    "successful_branch_ids": [
+      "jurisdiction-ca",
+      "jurisdiction-us",
+      "evidence-policies",
+      "mapping-lending"
+    ],
+    "task_id": "TASK-INDEPENDENT-ANALYSIS",
+    "winner_branch_id": null
+  },
+  "invariants": {
+    "active_agents": [
+      "AGT-001"
+    ],
+    "authority_issuer": "CMP-007",
+    "concurrent_protected_writes": false,
+    "orchestration_owner": "CMP-003"
+  },
+  "queue_health": {
+    "active_workers": 0,
+    "admitted_total": 4,
+    "captured_epoch_s": 1785611304.1009176,
+    "completed_total": 4,
+    "duplicate_total": 0,
+    "queue_capacity": 8,
+    "queued": 0,
+    "rejected_total": 0,
+    "worker_limit": 4
+  },
+  "records": [
+    {
+      "attempts": 1,
+      "branch_id": "jurisdiction-ca",
+      "case_id": "CASE-2026-0801-001",
+      "completed_epoch_s": 1785611304.0889084,
+      "duplicate_of": null,
+      "error_code": null,
+      "error_message": null,
+      "idempotency_key": "6ce7b4c163e8443b2477afc81f405b88fb1869dd96cee1a7545c7a01b202f8f5",
+      "input_digest": "e715727cb7bd48d02a5ab8b2ee88cc7edbcfd1e47244c4b9799edfeaa8c86eb1",
+      "latency_ms": 41.862,
+      "ordinal": 1,
+      "output": {
+        "applicable": true,
+        "evidence_ids": [],
+        "jurisdiction": "CA",
+        "worker_id": "worker-00"
+      },
+      "run_id": "RUN-S07A-DEMO",
+      "started_epoch_s": 1785611304.0470462,
+      "status": "succeeded",
+      "task_id": "TASK-INDEPENDENT-ANALYSIS",
+      "warnings": [],
+      "worker_id": "worker-00"
+    },
+    {
+      "attempts": 1,
+      "branch_id": "jurisdiction-us",
+      "case_id": "CASE-2026-0801-001",
+      "completed_epoch_s": 1785611304.0679736,
+      "duplicate_of": null,
+      "error_code": null,
+      "error_message": null,
+      "idempotency_key": "fdbf56d81d4f0938eb5c272521bb94090396f71d8f3827e9d38f1a79f5329862",
+      "input_digest": "119bd4b24f0ba12d819098ed09c2486b95f1a3fbf9528607be73ccbb39d28d7c",
+      "latency_ms": 20.57,
+      "ordinal": 2,
+      "output": {
+        "applicable": true,
+        "evidence_ids": [],
+        "jurisdiction": "US",
+        "worker_id": "worker-01"
+      },
+      "run_id": "RUN-S07A-DEMO",
+      "started_epoch_s": 1785611304.0474038,
+      "status": "succeeded",
+      "task_id": "TASK-INDEPENDENT-ANALYSIS",
+      "warnings": [],
+      "worker_id": "worker-01"
+    },
+    {
+      "attempts": 1,
+      "branch_id": "evidence-policies",
+      "case_id": "CASE-2026-0801-001",
+      "completed_epoch_s": 1785611304.0999396,
+      "duplicate_of": null,
+      "error_code": null,
+      "error_message": null,
+      "idempotency_key": "c67523fb40170581b81401a02b5502e06e0d8996d463f26f9ff7b659d31e3e60",
+      "input_digest": "34fde37fca3f2c5d58de2782dae440a2acabafd1c876f021257caff60dd2a44b",
+      "latency_ms": 31.579,
+      "ordinal": 3,
+      "output": {
+        "artefacts": [
+          "policy-library:POL-14",
+          "policy-library:POL-29"
+        ],
+        "immutable_snapshot": true,
+        "source": "policy-library",
+        "worker_id": "worker-02"
+      },
+      "run_id": "RUN-S07A-DEMO",
+      "started_epoch_s": 1785611304.06836,
+      "status": "succeeded",
+      "task_id": "TASK-INDEPENDENT-ANALYSIS",
+      "warnings": [],
+      "worker_id": "worker-02"
+    },
+    {
+      "attempts": 1,
+      "branch_id": "mapping-lending",
+      "case_id": "CASE-2026-0801-001",
+      "completed_epoch_s": 1785611304.1003373,
+      "duplicate_of": null,
+      "error_code": null,
+      "error_message": null,
+      "idempotency_key": "927ce9b52dd5229c508e136c7e67c628d9fbf9f348d7f8d896a0500ceaa28bd0",
+      "input_digest": "201e58e52847421f2321543ce2d85dddb9ad01fb064243fd6d7facfa2751c138",
+      "latency_ms": 10.911,
+      "ordinal": 4,
+      "output": {
+        "business_unit": "Lending",
+        "candidate_policies": [
+          "POL-14"
+        ],
+        "proposal_only": true,
+        "worker_id": "worker-03"
+      },
+      "run_id": "RUN-S07A-DEMO",
+      "started_epoch_s": 1785611304.0894265,
+      "status": "succeeded",
+      "task_id": "TASK-INDEPENDENT-ANALYSIS",
+      "warnings": [],
+      "worker_id": "worker-03"
+    }
+  ]
+}

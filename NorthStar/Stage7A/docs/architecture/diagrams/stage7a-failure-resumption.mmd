@@ -1,0 +1,25 @@
+sequenceDiagram
+    autonumber
+    participant Orch as CMP-003
+    participant Queue as Bounded Queue
+    participant Worker as CMP-010 Worker
+    participant CP as DATA-112 Checkpoint
+    participant Idem as DATA-109 Idempotency
+    participant Audit as CMP-009
+
+    Orch->>Queue: Submit branch B with key K
+    Queue->>Worker: Deliver B
+    Worker->>CP: B = running
+    Worker->>Idem: Reserve K
+    Worker-xWorker: Simulated crash / lost completion
+    Note over Orch,Worker: Reference detects incomplete branch from checkpoint; production requires lease/heartbeat
+    Orch->>CP: Load run checkpoint
+    CP-->>Orch: A succeeded; B running/incomplete; C succeeded
+    Orch->>Queue: Resubmit only B with same key K
+    Queue->>Worker: Redeliver B
+    Worker->>Idem: K state checked
+    Worker->>Worker: Execute or reuse recorded terminal result
+    Worker->>CP: B = succeeded / duplicate
+    Worker->>Audit: Attempt and recovery evidence
+    Worker-->>Orch: Terminal DATA-108
+    Orch->>Orch: Deterministic fan-in; one authoritative state transition

@@ -1,0 +1,14 @@
+flowchart TD
+    S[Candidate workflow work] --> I{Inputs immutable and complete?}
+    I -- No --> SEQ[Keep sequential]
+    I -- Yes --> D{No dependency on another branch result?}
+    D -- No --> SEQ
+    D -- Yes --> K{Read-only or pure compute?}
+    K -- No --> SEQ
+    K -- Yes --> A{No approval, route, authority, finalization, protected-state or shared-memory claim?}
+    A -- No --> DENY[Reject concurrency request]
+    A -- Yes --> P{Deterministic fan-in policy defined?}
+    P -- No --> SEQ
+    P -- Yes --> B{Budget, deadline and idempotency key defined?}
+    B -- No --> SEQ
+    B -- Yes --> CONC[Admit to bounded concurrent execution]

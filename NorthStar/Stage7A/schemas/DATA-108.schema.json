@@ -1,0 +1,105 @@
+{
+  "$id": "urn:northstar:DATA-108:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "attempts": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "branch_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "completed_epoch_s": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "duplicate_of": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "error_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "error_message": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "idempotency_key": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "input_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ordinal": {
+      "type": "integer"
+    },
+    "output": {},
+    "run_id": {
+      "type": "string"
+    },
+    "started_epoch_s": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "admitted",
+        "running",
+        "succeeded",
+        "duplicate",
+        "failed",
+        "timed_out",
+        "cancelled",
+        "rejected"
+      ]
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "worker_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "case_id",
+    "run_id",
+    "task_id",
+    "branch_id",
+    "ordinal",
+    "status",
+    "attempts"
+  ],
+  "title": "BranchExecutionRecord",
+  "type": "object"
+}

@@ -1,0 +1,16 @@
+stateDiagram-v2
+    [*] --> Pending
+    Pending --> Admitted: bounded admission succeeds
+    Pending --> Rejected: queue timeout / policy denial
+    Admitted --> Running: worker acquires per-case slot
+    Running --> Succeeded: handler completes
+    Running --> Duplicate: same key + same digest already completed
+    Running --> Failed: permanent failure / retries exhausted
+    Running --> TimedOut: propagated deadline exceeded
+    Running --> Cancelled: cooperative cancellation observed
+    Succeeded --> [*]
+    Duplicate --> [*]
+    Failed --> [*]
+    TimedOut --> [*]
+    Cancelled --> [*]
+    Rejected --> [*]

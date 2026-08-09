@@ -1,0 +1,55 @@
+{
+  "$id": "urn:northstar:DATA-113:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "active_workers": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "admitted_total": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "captured_epoch_s": {
+      "type": "number"
+    },
+    "completed_total": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "duplicate_total": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "queue_capacity": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "queued": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "rejected_total": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "worker_limit": {
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "queue_capacity",
+    "queued",
+    "active_workers",
+    "worker_limit",
+    "admitted_total",
+    "rejected_total",
+    "completed_total",
+    "duplicate_total",
+    "captured_epoch_s"
+  ],
+  "title": "QueueHealthSnapshot",
+  "type": "object"
+}

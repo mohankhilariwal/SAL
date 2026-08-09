@@ -1,0 +1,93 @@
+{
+  "$id": "urn:northstar:DATA-107:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "agent_id": {
+      "const": "AGT-001"
+    },
+    "authority_claims": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "authority_issuer": {
+      "const": "CMP-007"
+    },
+    "branch_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "case_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "deadline_epoch_s": {
+      "type": "number"
+    },
+    "graph_version": {
+      "const": "GRAPH-001/1.2.0"
+    },
+    "handler": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "idempotency_key": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "input_digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "orchestrator_component": {
+      "const": "CMP-003"
+    },
+    "ordinal": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "run_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "runtime_component": {
+      "const": "CMP-010"
+    },
+    "task_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "work_kind": {
+      "enum": [
+        "read_only",
+        "pure_compute"
+      ]
+    }
+  },
+  "required": [
+    "case_id",
+    "run_id",
+    "task_id",
+    "branch_id",
+    "ordinal",
+    "handler",
+    "work_kind",
+    "input_digest",
+    "idempotency_key",
+    "deadline_epoch_s",
+    "graph_version",
+    "agent_id",
+    "orchestrator_component",
+    "authority_issuer"
+  ],
+  "title": "WorkItemEnvelope",
+  "type": "object"
+}

@@ -1,0 +1,45 @@
+sequenceDiagram
+    autonumber
+    participant Maya as CMP-001 / Maya
+    participant Orch as CMP-003 Orchestrator
+    participant Policy as CMP-007 Policy Boundary
+    participant Admit as Admission Controller
+    participant Queue as Bounded Queue
+    participant W1 as CMP-010 Worker 1
+    participant W2 as CMP-010 Worker 2
+    participant Know as CMP-004/CMP-005 Read Boundaries
+    participant Idem as DATA-109 Idempotency Store
+    participant CP as DATA-112 Checkpoint Store
+    participant FanIn as Fan-in Controller
+    participant Audit as CMP-009
+
+    Maya->>Orch: Resume CASE / run GRAPH-001 1.2.0
+    Orch->>Orch: Prove branch independence and immutable inputs
+    Orch->>Policy: Validate grant, work kind and prohibited claims
+    Policy-->>Orch: Allowed: read_only / pure_compute
+    Orch->>Admit: Submit DATA-107 work envelopes
+    Admit->>Queue: Timed bounded admission
+    par Independent branch A
+      Queue->>W1: Deliver work item
+      W1->>Idem: Reserve idempotency key
+      W1->>CP: Record running state
+      W1->>Know: Read immutable evidence snapshot
+      Know-->>W1: Typed result
+      W1->>Idem: Complete result
+      W1->>CP: Record terminal state
+      W1-->>FanIn: DATA-108 result
+    and Independent branch B
+      Queue->>W2: Deliver work item
+      W2->>Idem: Reserve idempotency key
+      W2->>CP: Record running state
+      W2->>Know: Read immutable policy/control snapshot
+      Know-->>W2: Typed result
+      W2->>Idem: Complete result
+      W2->>CP: Record terminal state
+      W2-->>FanIn: DATA-108 result
+    end
+    FanIn->>FanIn: Sort by declared ordinal, apply aggregation policy
+    FanIn->>Audit: Emit DATA-110 aggregate and queue metrics
+    FanIn-->>Orch: Deterministic aggregate; no protected-state mutation
+    Orch->>Orch: Single authoritative state transition
+    Orch-->>Maya: Preliminary evidence-backed assessment

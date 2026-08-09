@@ -1,0 +1,57 @@
+{
+  "$id": "urn:northstar:DATA-106:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "admission_timeout_seconds": {
+      "exclusiveMinimum": 0,
+      "type": "number"
+    },
+    "allowed_work_kinds": {
+      "items": {
+        "enum": [
+          "read_only",
+          "pure_compute"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "branch_timeout_seconds": {
+      "exclusiveMinimum": 0,
+      "type": "number"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "global_limit": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "max_attempts": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "per_case_limit": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "policy_id": {
+      "const": "CONC-POL-001"
+    },
+    "queue_capacity": {
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "policy_id",
+    "enabled",
+    "global_limit",
+    "per_case_limit",
+    "queue_capacity",
+    "allowed_work_kinds"
+  ],
+  "title": "ConcurrencyExecutionPolicy",
+  "type": "object"
+}

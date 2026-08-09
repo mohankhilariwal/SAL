@@ -1,0 +1,17 @@
+{
+  "assertions": {
+    "adrs_056_to_061": true,
+    "architecture_version_1_6_0": true,
+    "cmp003_orchestration_owner": true,
+    "cmp007_authority_owner": true,
+    "data_106_to_113": true,
+    "exactly_one_active_agent": true,
+    "graph_001_1_2_0": true,
+    "interfaces_079_to_086": true,
+    "no_agt002_activation": true,
+    "no_concurrent_protected_writes": true,
+    "reconstruction_exception_recorded": true
+  },
+  "result": "Passed with recorded reconstruction and production exceptions",
+  "stage": "S07A"
+}

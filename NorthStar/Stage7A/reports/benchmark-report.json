@@ -1,0 +1,6 @@
+{
+  "concurrent_seconds": 0.054131,
+  "note": "Local deterministic I/O-wait simulation; not a production SLO or cost benchmark.",
+  "observed_speedup": 3.826,
+  "sequential_seconds": 0.207123
+}
