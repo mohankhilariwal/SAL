@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-128",
+  "title": "DATA-128 InferenceBenchmarkObservation",
+  "type": "object",
+  "required": [
+    "observation_id",
+    "scenario_digest",
+    "profile_id",
+    "evidence_kind",
+    "baseline_ttft_ms",
+    "candidate_ttft_ms",
+    "baseline_itl_ms",
+    "candidate_itl_ms",
+    "baseline_e2e_ms",
+    "candidate_e2e_ms",
+    "quality_parity_record_id",
+    "success"
+  ],
+  "properties": {
+    "observation_id": {},
+    "scenario_digest": {},
+    "profile_id": {},
+    "evidence_kind": {},
+    "baseline_ttft_ms": {},
+    "candidate_ttft_ms": {},
+    "baseline_itl_ms": {},
+    "candidate_itl_ms": {},
+    "baseline_e2e_ms": {},
+    "candidate_e2e_ms": {},
+    "quality_parity_record_id": {},
+    "success": {}
+  },
+  "additionalProperties": true
+}

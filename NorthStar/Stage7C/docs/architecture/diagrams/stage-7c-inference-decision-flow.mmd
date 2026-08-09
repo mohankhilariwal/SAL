@@ -1,0 +1,20 @@
+flowchart TD
+    W["Load active WP-001..007"] --> D{"Managed or self-hosted candidate?"}
+    D -->|Managed default| M["Record provider capabilities and residency"]
+    D -->|Self-hosted lane| S["Pin runtime/model/tokenizer/hardware"]
+    M --> C["Reduce duplicate context and cap outputs"]
+    S --> C
+    C --> K{"Exact reusable prefix?"}
+    K -->|Yes| P["Bind cache to tenant/auth/model/tokenizer/prompt version"]
+    K -->|No| N["No cache assumption"]
+    P --> B{"Self-hosted and concurrency warrants batching?"}
+    N --> B
+    B -->|Yes| BT["Benchmark continuous batching/chunked prefill"]
+    B -->|No| SD
+    BT --> SD{"Decode-heavy, long output, low/moderate concurrency, not tool dominated?"}
+    SD -->|No| X["Speculation disabled"]
+    SD -->|Yes| E["Benchmark prompt lookup or compatible method"]
+    E --> G{"Quality, acceptance, decode, E2E, memory gates pass?"}
+    G -->|No| X
+    G -->|Yes| R["Advisory profile-specific recommendation"]
+    R -. "governed change only" .-> A["CMP-003 admission unchanged"]

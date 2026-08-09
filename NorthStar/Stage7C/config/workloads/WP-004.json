@@ -1,0 +1,16 @@
+{
+  "profile_id": "WP-004",
+  "name": "Multi-document impact assessment",
+  "status": "active",
+  "median_isl_tokens": 48000,
+  "median_osl_tokens": 4800,
+  "p95_isl_tokens": 160000,
+  "p95_osl_tokens": 18000,
+  "expected_concurrency": 4,
+  "repeated_prefix_ratio": 0.58,
+  "input_output_overlap": 0.36,
+  "external_latency_fraction": 0.32,
+  "interactive": false,
+  "batch": false,
+  "context_growth": false
+}

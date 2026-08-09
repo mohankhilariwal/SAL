@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-122",
+  "title": "DATA-122 InferenceDeploymentProfile",
+  "type": "object",
+  "required": [
+    "deployment_id",
+    "name",
+    "version",
+    "kind",
+    "provider_or_runtime",
+    "model_id",
+    "tokenizer_id"
+  ],
+  "properties": {
+    "deployment_id": {},
+    "name": {},
+    "version": {},
+    "kind": {},
+    "provider_or_runtime": {},
+    "model_id": {},
+    "tokenizer_id": {}
+  },
+  "additionalProperties": true
+}

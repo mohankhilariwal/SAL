@@ -1,0 +1,51 @@
+flowchart TB
+    classDef new fill:#fff3cd,stroke:#9a6700,stroke-width:2px;
+    classDef existing fill:#eef4ff,stroke:#355070;
+    classDef boundary fill:#f5f5f5,stroke:#666,stroke-dasharray: 5 5;
+
+    Maya["Maya Chen"] --> C1["CMP-001 Analyst Experience Portal"]:::existing
+    C1 --> C2["CMP-002 Regulatory Intake Boundary"]:::existing
+    C2 --> C3["CMP-003 Case and Workflow Orchestration Boundary\nroute/state/admission/cancellation/termination owner"]:::existing
+    C3 --> A1["AGT-001 Regulatory Impact Assessment Agent\nonly active agent"]:::existing
+    A1 --> C4["CMP-004 Knowledge and Evidence Access"]:::existing
+    A1 --> C5["CMP-005 Enterprise Integration Gateway\nTOOL-001..006 only"]:::existing
+    C3 --> C6["CMP-006 Human Review and Approval"]:::existing
+    C7["CMP-007 Identity, Authorization and Policy\nsole grant issuer"]:::existing --> C3
+    C7 --> C4
+    C7 --> C5
+
+    subgraph Runtime["CMP-010 Runtime and Deployment Boundary"]
+      MG["INF-001 Managed inference default class"]:::new
+      SH["INF-002 Self-hosted benchmark lane"]:::new
+      LS["INF-003 Local simulated reference"]:::new
+      BP["DATA-125 Batching Policy"]:::new
+      CP["DATA-124 Cache Policy"]:::new
+      SD["DATA-126 Speculative Plan\ndisabled unless profile gates pass"]:::new
+      MG --- BP
+      SH --- BP
+      SH --- CP
+      SH --- SD
+      LS --- CP
+      LS --- SD
+    end
+
+    A1 --> MG
+    A1 -. "governed candidate only" .-> SH
+    C3 --> LS
+
+    C11["CMP-011 Source-of-Truth Governance Pack"]:::existing --> D122["DATA-122 Deployment Profiles"]:::new
+    C11 --> D123["DATA-123 Optimization Policies"]:::new
+    W["DATA-114..121 Workload Profiles and Capacity Evidence"]:::existing --> P["INT-095 Optimization Planning"]:::new
+    D122 --> P
+    D123 --> P
+    P --> C8["CMP-008 Evaluation and Assurance"]:::existing
+    C8 --> S["INT-098 Speculative/Inference Benchmark"]:::new
+    S --> Runtime
+    Runtime --> O["CMP-009 DATA-128 Observations"]:::new
+    O --> Q["INT-100 Quality-Parity Gate"]:::new
+    Q --> REC["DATA-130 Advisory Optimization Recommendation"]:::new
+    REC -. "cannot mutate DATA-106 or grant authority" .-> C3
+
+    C9["CMP-009 Observability and Audit Boundary"]:::existing --> O
+    C6 -. "human authority remains external" .-> REC
+    W8["WP-008 inactive_future"]:::boundary -. "blocked" .-> P

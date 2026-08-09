@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-126",
+  "title": "DATA-126 SpeculativeDecodingPlan",
+  "type": "object",
+  "required": [
+    "method",
+    "enabled",
+    "num_speculative_tokens",
+    "minimum_acceptance_rate",
+    "minimum_decode_improvement",
+    "minimum_e2e_improvement",
+    "maximum_memory_overhead_ratio",
+    "profile_allowlist"
+  ],
+  "properties": {
+    "method": {},
+    "enabled": {},
+    "num_speculative_tokens": {},
+    "minimum_acceptance_rate": {},
+    "minimum_decode_improvement": {},
+    "minimum_e2e_improvement": {},
+    "maximum_memory_overhead_ratio": {},
+    "profile_allowlist": {}
+  },
+  "additionalProperties": true
+}

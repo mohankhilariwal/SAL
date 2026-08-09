@@ -1,0 +1,21 @@
+{
+  "deployment_id": "INF-002",
+  "name": "Self-hosted serving candidate",
+  "version": "1.0.0",
+  "kind": "self_hosted",
+  "provider_or_runtime": "version-pinned-open-serving-runtime",
+  "model_id": "unselected-open-weight-target",
+  "tokenizer_id": "target-model-tokenizer",
+  "server_version": "candidate-not-deployed",
+  "hardware": "candidate-accelerator-topology",
+  "region_or_location": "NorthStar-controlled-region",
+  "data_residency": "NorthStar-controlled",
+  "supports_streaming": true,
+  "supports_prefix_cache": true,
+  "supports_continuous_batching": true,
+  "supports_chunked_prefill": true,
+  "supports_quantization": true,
+  "supports_speculative_decoding": true,
+  "supports_parallelism": true,
+  "raw_payload_capture": false
+}

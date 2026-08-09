@@ -1,0 +1,16 @@
+{
+  "profile_id": "WP-006",
+  "name": "Batch regulatory processing",
+  "status": "active",
+  "median_isl_tokens": 18000,
+  "median_osl_tokens": 1800,
+  "p95_isl_tokens": 140000,
+  "p95_osl_tokens": 15000,
+  "expected_concurrency": 32,
+  "repeated_prefix_ratio": 0.5,
+  "input_output_overlap": 0.35,
+  "external_latency_fraction": 0.18,
+  "interactive": false,
+  "batch": true,
+  "context_growth": false
+}

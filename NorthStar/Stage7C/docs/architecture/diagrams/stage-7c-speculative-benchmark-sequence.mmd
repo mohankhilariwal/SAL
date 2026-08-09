@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant GOV as CMP-011 Governance
+    participant EVAL as CMP-008 Evaluation
+    participant RUN as CMP-010 Benchmark Runner
+    participant TGT as Target Inference Endpoint
+    participant OBS as CMP-009 Observation
+    participant ORCH as CMP-003 Orchestration
+
+    GOV->>EVAL: Approved WP profile + INF profile + policy digest
+    EVAL->>RUN: DATA-127 scenario, quality dataset, cache state
+    RUN->>TGT: Baseline requests (speculation disabled)
+    TGT-->>RUN: TTFT, ITL, E2E, tokens, memory, outcomes
+    RUN->>TGT: Candidate requests with declared speculative method
+    TGT-->>RUN: Metrics + acceptance + verification evidence
+    RUN->>OBS: DATA-128 observations (no raw payload)
+    OBS->>EVAL: Normalized baseline/candidate evidence
+    EVAL->>EVAL: Quality parity + lossless claim + acceptance + latency + memory gates
+    alt Any gate fails
+        EVAL-->>GOV: Disable recommendation for profile
+    else All gates pass
+        EVAL-->>GOV: DATA-130 advisory recommendation
+    end
+    GOV-->>ORCH: No automatic DATA-106 change

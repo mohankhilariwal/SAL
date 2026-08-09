@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-130",
+  "title": "DATA-130 OptimizationRecommendation",
+  "type": "object",
+  "required": [
+    "recommendation_id",
+    "profile_id",
+    "deployment_id",
+    "assessments",
+    "selected_policy_id",
+    "advisory_only",
+    "may_mutate_admission",
+    "may_grant_authority"
+  ],
+  "properties": {
+    "recommendation_id": {},
+    "profile_id": {},
+    "deployment_id": {},
+    "assessments": {},
+    "selected_policy_id": {},
+    "advisory_only": {},
+    "may_mutate_admission": {},
+    "may_grant_authority": {}
+  },
+  "additionalProperties": true
+}

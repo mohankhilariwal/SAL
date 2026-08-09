@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-124",
+  "title": "DATA-124 CachePolicy",
+  "type": "object",
+  "required": [
+    "enabled",
+    "cache_type",
+    "scope",
+    "tenant_isolated",
+    "model_bound",
+    "tokenizer_bound",
+    "prompt_version_bound",
+    "authorization_scope_bound"
+  ],
+  "properties": {
+    "enabled": {},
+    "cache_type": {},
+    "scope": {},
+    "tenant_isolated": {},
+    "model_bound": {},
+    "tokenizer_bound": {},
+    "prompt_version_bound": {},
+    "authorization_scope_bound": {}
+  },
+  "additionalProperties": true
+}

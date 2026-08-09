@@ -1,0 +1,372 @@
+{
+  "recommendation": {
+    "recommendation_id": "IOR-002-003",
+    "profile_id": "WP-002",
+    "deployment_id": "INF-003",
+    "assessments": [
+      {
+        "technique": "context_reduction",
+        "suitability_score": 5,
+        "decision": "select",
+        "rationale": "Reduce duplicated or low-value context before buying inference capacity; authoritative evidence and required state cannot be removed.",
+        "required_gates": [
+          "citation-coverage parity",
+          "required-state retention",
+          "task-success non-regression"
+        ]
+      },
+      {
+        "technique": "output_length_control",
+        "suitability_score": 4,
+        "decision": "select",
+        "rationale": "Bounded structured outputs reduce decode work, but truncation must fail closed rather than appear complete.",
+        "required_gates": [
+          "schema completeness",
+          "no truncation of required findings"
+        ]
+      },
+      {
+        "technique": "streaming",
+        "suitability_score": 1,
+        "decision": "not_applicable",
+        "rationale": "Streaming improves perceived responsiveness but does not reduce total compute or authorize partial output.",
+        "required_gates": [
+          "partial-output labelling",
+          "final-schema validation"
+        ]
+      },
+      {
+        "technique": "prefix_caching",
+        "suitability_score": 5,
+        "decision": "select",
+        "rationale": "Reuse only exact immutable prompt prefixes bound to tenant, authorization scope, model, tokenizer and prompt version.",
+        "required_gates": [
+          "representative cache-hit rate",
+          "tenant isolation",
+          "cache invalidation"
+        ]
+      },
+      {
+        "technique": "exact_response_caching",
+        "suitability_score": 1,
+        "decision": "defer",
+        "rationale": "Only immutable deterministic metadata may be cached; regulatory assessments and approval-sensitive outputs remain uncached.",
+        "required_gates": [
+          "content classification",
+          "freshness and authorization binding"
+        ]
+      },
+      {
+        "technique": "semantic_response_caching",
+        "suitability_score": 0,
+        "decision": "prohibit",
+        "rationale": "Semantic similarity is not sufficient to reuse a regulatory conclusion across documents, jurisdictions, users or evidence versions.",
+        "required_gates": [
+          "not permitted"
+        ]
+      },
+      {
+        "technique": "continuous_batching",
+        "suitability_score": 1,
+        "decision": "defer",
+        "rationale": "Continuous batching is a serving-runtime concern; it is valuable for throughput but can increase queueing and TTFT if poorly tuned.",
+        "required_gates": [
+          "p95 TTFT",
+          "success and rejection rate",
+          "fairness by workload class"
+        ]
+      },
+      {
+        "technique": "chunked_prefill",
+        "suitability_score": 5,
+        "decision": "benchmark",
+        "rationale": "Chunked prefill can improve scheduler fairness for long prompts but must be measured with interactive and long-document traffic together.",
+        "required_gates": [
+          "TTFT fairness",
+          "prefill throughput",
+          "no starvation"
+        ]
+      },
+      {
+        "technique": "quantization",
+        "suitability_score": 1,
+        "decision": "defer",
+        "rationale": "Quantization can reduce weight or KV-cache memory and change throughput, but NorthStar requires quality and numerical-stability evidence.",
+        "required_gates": [
+          "structured-output validity",
+          "groundedness parity",
+          "memory and throughput measurement"
+        ]
+      },
+      {
+        "technique": "tensor_parallelism",
+        "suitability_score": 1,
+        "decision": "defer",
+        "rationale": "Tensor parallelism is a model-fit and latency trade-off, not a default. Communication overhead must be included.",
+        "required_gates": [
+          "hardware topology",
+          "collective-communication profile",
+          "latency/throughput crossover"
+        ]
+      },
+      {
+        "technique": "pipeline_parallelism",
+        "suitability_score": 0,
+        "decision": "defer",
+        "rationale": "Pipeline parallelism is mainly a model-fit option and may add bubbles and complexity for online latency-sensitive work.",
+        "required_gates": [
+          "model-fit necessity",
+          "pipeline-bubble measurement"
+        ]
+      },
+      {
+        "technique": "data_parallelism",
+        "suitability_score": 1,
+        "decision": "defer",
+        "rationale": "Data-parallel replicas can scale independent requests but require routing, cache locality and failure-domain design.",
+        "required_gates": [
+          "load balancing",
+          "cache locality",
+          "replica failure test"
+        ]
+      },
+      {
+        "technique": "speculative_prompt_lookup",
+        "suitability_score": 4,
+        "decision": "benchmark",
+        "rationale": "Prompt-lookup speculation is most plausible for input-grounded outputs with repeated phrases; it is not assumed beneficial for short or tool-dominated workflows.",
+        "required_gates": [
+          "lossless parity",
+          "acceptance rate",
+          "decode and end-to-end improvement",
+          "memory overhead"
+        ]
+      },
+      {
+        "technique": "speculative_draft_model",
+        "suitability_score": 4,
+        "decision": "benchmark",
+        "rationale": "A draft model adds compute and memory. It is a profile-specific experiment, especially at low-to-moderate concurrency and sufficiently long decode.",
+        "required_gates": [
+          "draft-target tokenizer compatibility",
+          "lossless sampling verification",
+          "acceptance distribution",
+          "high-concurrency regression test"
+        ]
+      },
+      {
+        "technique": "self_speculative",
+        "suitability_score": 2,
+        "decision": "defer",
+        "rationale": "Self-speculative methods depend on model/runtime support and are not selected without a compatible model and endpoint.",
+        "required_gates": [
+          "runtime support",
+          "quality parity"
+        ]
+      },
+      {
+        "technique": "multi_token_prediction",
+        "suitability_score": 2,
+        "decision": "defer",
+        "rationale": "MTP is available only for models with native support; NorthStar has not selected such a model.",
+        "required_gates": [
+          "native model support",
+          "quality and latency benchmark"
+        ]
+      },
+      {
+        "technique": "model_routing",
+        "suitability_score": 2,
+        "decision": "defer",
+        "rationale": "Model routing is architecturally relevant but belongs to the next explicit model-selection stage; no automatic route changes are introduced here.",
+        "required_gates": [
+          "model catalogue",
+          "risk and residency policy",
+          "cross-model quality evaluation"
+        ]
+      }
+    ],
+    "selected_policy_id": "IOP-002-003",
+    "advisory_only": true,
+    "may_mutate_admission": false,
+    "may_grant_authority": false
+  },
+  "policy": {
+    "policy_id": "IOP-002-003",
+    "version": "1.0.0",
+    "context_reduction_ratio": 0.15,
+    "output_token_cap": 6400,
+    "streaming_enabled": false,
+    "quantization": "provider_managed",
+    "tensor_parallel_size": 1,
+    "pipeline_parallel_size": 1,
+    "data_parallel_size": 1,
+    "cache_policy": {
+      "enabled": true,
+      "cache_type": "prefix_kv",
+      "scope": "tenant_authorization_model_tokenizer_prompt",
+      "tenant_isolated": true,
+      "model_bound": true,
+      "tokenizer_bound": true,
+      "prompt_version_bound": true,
+      "authorization_scope_bound": true,
+      "ttl_seconds": 300,
+      "minimum_prefix_tokens": 1024,
+      "allow_regulatory_answer_cache": false
+    },
+    "batching_policy": {
+      "mode": "none",
+      "max_batch_tokens": 0,
+      "max_concurrent_requests": 4,
+      "max_wait_ms": 40.0,
+      "chunked_prefill": false,
+      "priority_aware": false
+    },
+    "speculative_plan": {
+      "method": "prompt_lookup",
+      "enabled": true,
+      "draft_model_id": null,
+      "num_speculative_tokens": 4,
+      "minimum_acceptance_rate": 0.55,
+      "minimum_decode_improvement": 0.1,
+      "minimum_e2e_improvement": 0.05,
+      "maximum_memory_overhead_ratio": 0.2,
+      "require_lossless_distribution": true,
+      "profile_allowlist": [
+        "WP-002"
+      ]
+    },
+    "semantic_response_cache_enabled": false,
+    "automatic_model_routing_enabled": false,
+    "automatic_admission_mutation_enabled": false
+  },
+  "observation": {
+    "observation_id": "IBO-DEMO",
+    "scenario_digest": "f22bef3c70301e99752b47c346ca123242444537cb8643ebb9fcaf86985be3ca",
+    "profile_id": "WP-002",
+    "evidence_kind": "simulated",
+    "baseline_ttft_ms": 5403.333333333333,
+    "candidate_ttft_ms": 2604.1333333333337,
+    "baseline_itl_ms": 11.11111111111111,
+    "candidate_itl_ms": 5.17873052910993,
+    "baseline_e2e_ms": 49934.49864498645,
+    "candidate_e2e_ms": 28146.50205205356,
+    "baseline_output_tps": 90.0,
+    "candidate_output_tps": 193.15787760416669,
+    "acceptance_rate": 0.85,
+    "mean_accepted_tokens": 2.70863125,
+    "kv_cache_mb": 21407.727616,
+    "candidate_memory_overhead_ratio": 0.16,
+    "cache_hit_rate": 0.7,
+    "quality_parity_record_id": "QPR-DEMO",
+    "success": true,
+    "raw_payload_captured": false
+  },
+  "evaluations": [
+    {
+      "evaluation_id": "EVAL-101",
+      "passed": true,
+      "observed": false,
+      "threshold": false,
+      "message": "Raw payload capture remains disabled."
+    },
+    {
+      "evaluation_id": "EVAL-102",
+      "passed": true,
+      "observed": true,
+      "threshold": true,
+      "message": "Quality parity gate."
+    },
+    {
+      "evaluation_id": "EVAL-103",
+      "passed": true,
+      "observed": 1.0,
+      "threshold": 0.99,
+      "message": "Structured output validity gate."
+    },
+    {
+      "evaluation_id": "EVAL-104",
+      "passed": true,
+      "observed": 0.0,
+      "threshold": -0.01,
+      "message": "Groundedness regression tolerance."
+    },
+    {
+      "evaluation_id": "EVAL-105",
+      "passed": true,
+      "observed": 0.0,
+      "threshold": -0.01,
+      "message": "Task-success regression tolerance."
+    },
+    {
+      "evaluation_id": "EVAL-106",
+      "passed": true,
+      "observed": 0.85,
+      "threshold": 0.55,
+      "message": "Speculative acceptance-rate gate."
+    },
+    {
+      "evaluation_id": "EVAL-107",
+      "passed": true,
+      "observed": 0.5339142523801063,
+      "threshold": 0.1,
+      "message": "Decode improvement gate."
+    },
+    {
+      "evaluation_id": "EVAL-108",
+      "passed": true,
+      "observed": 0.4363315379981383,
+      "threshold": 0.05,
+      "message": "End-to-end improvement gate."
+    },
+    {
+      "evaluation_id": "EVAL-109",
+      "passed": true,
+      "observed": 0.16,
+      "threshold": 0.2,
+      "message": "Memory overhead gate."
+    },
+    {
+      "evaluation_id": "EVAL-110",
+      "passed": true,
+      "observed": true,
+      "threshold": true,
+      "message": "Lossless-distribution verification gate."
+    },
+    {
+      "evaluation_id": "EVAL-111",
+      "passed": true,
+      "observed": 2604.1333333333337,
+      "threshold": 0.0,
+      "message": "TTFT is present and non-negative."
+    },
+    {
+      "evaluation_id": "EVAL-112",
+      "passed": true,
+      "observed": 5.17873052910993,
+      "threshold": 0.0,
+      "message": "ITL is present and non-negative."
+    },
+    {
+      "evaluation_id": "EVAL-113",
+      "passed": true,
+      "observed": 28146.50205205356,
+      "threshold": 2604.1333333333337,
+      "message": "End-to-end latency contains TTFT."
+    },
+    {
+      "evaluation_id": "EVAL-114",
+      "passed": true,
+      "observed": 0.7,
+      "threshold": 1.0,
+      "message": "Cache-hit rate is bounded and declared."
+    },
+    {
+      "evaluation_id": "EVAL-115",
+      "passed": true,
+      "observed": true,
+      "threshold": true,
+      "message": "Overall candidate gate."
+    }
+  ]
+}

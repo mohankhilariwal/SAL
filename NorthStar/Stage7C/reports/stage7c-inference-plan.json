@@ -1,0 +1,1708 @@
+[
+  {
+    "profile_id": "WP-001",
+    "deployment_id": "INF-001",
+    "policy": {
+      "policy_id": "IOP-001-001",
+      "version": "1.0.0",
+      "context_reduction_ratio": 0.05,
+      "output_token_cap": 520,
+      "streaming_enabled": true,
+      "quantization": "provider_managed",
+      "tensor_parallel_size": 1,
+      "pipeline_parallel_size": 1,
+      "data_parallel_size": 1,
+      "cache_policy": {
+        "enabled": true,
+        "cache_type": "provider_prompt",
+        "scope": "tenant_authorization_model_tokenizer_prompt",
+        "tenant_isolated": true,
+        "model_bound": true,
+        "tokenizer_bound": true,
+        "prompt_version_bound": true,
+        "authorization_scope_bound": true,
+        "ttl_seconds": 300,
+        "minimum_prefix_tokens": 1024,
+        "allow_regulatory_answer_cache": false
+      },
+      "batching_policy": {
+        "mode": "none",
+        "max_batch_tokens": 0,
+        "max_concurrent_requests": 12,
+        "max_wait_ms": 8.0,
+        "chunked_prefill": false,
+        "priority_aware": false
+      },
+      "speculative_plan": {
+        "method": "disabled",
+        "enabled": false,
+        "draft_model_id": null,
+        "num_speculative_tokens": 0,
+        "minimum_acceptance_rate": 0.55,
+        "minimum_decode_improvement": 0.1,
+        "minimum_e2e_improvement": 0.05,
+        "maximum_memory_overhead_ratio": 0.2,
+        "require_lossless_distribution": true,
+        "profile_allowlist": []
+      },
+      "semantic_response_cache_enabled": false,
+      "automatic_model_routing_enabled": false,
+      "automatic_admission_mutation_enabled": false
+    },
+    "recommendation": {
+      "recommendation_id": "IOR-001-001",
+      "profile_id": "WP-001",
+      "deployment_id": "INF-001",
+      "assessments": [
+        {
+          "technique": "context_reduction",
+          "suitability_score": 2,
+          "decision": "benchmark",
+          "rationale": "Reduce duplicated or low-value context before buying inference capacity; authoritative evidence and required state cannot be removed.",
+          "required_gates": [
+            "citation-coverage parity",
+            "required-state retention",
+            "task-success non-regression"
+          ]
+        },
+        {
+          "technique": "output_length_control",
+          "suitability_score": 3,
+          "decision": "select",
+          "rationale": "Bounded structured outputs reduce decode work, but truncation must fail closed rather than appear complete.",
+          "required_gates": [
+            "schema completeness",
+            "no truncation of required findings"
+          ]
+        },
+        {
+          "technique": "streaming",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Streaming improves perceived responsiveness but does not reduce total compute or authorize partial output.",
+          "required_gates": [
+            "partial-output labelling",
+            "final-schema validation"
+          ]
+        },
+        {
+          "technique": "prefix_caching",
+          "suitability_score": 4,
+          "decision": "select",
+          "rationale": "Reuse only exact immutable prompt prefixes bound to tenant, authorization scope, model, tokenizer and prompt version.",
+          "required_gates": [
+            "representative cache-hit rate",
+            "tenant isolation",
+            "cache invalidation"
+          ]
+        },
+        {
+          "technique": "exact_response_caching",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Only immutable deterministic metadata may be cached; regulatory assessments and approval-sensitive outputs remain uncached.",
+          "required_gates": [
+            "content classification",
+            "freshness and authorization binding"
+          ]
+        },
+        {
+          "technique": "semantic_response_caching",
+          "suitability_score": 0,
+          "decision": "prohibit",
+          "rationale": "Semantic similarity is not sufficient to reuse a regulatory conclusion across documents, jurisdictions, users or evidence versions.",
+          "required_gates": [
+            "not permitted"
+          ]
+        },
+        {
+          "technique": "continuous_batching",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Continuous batching is a serving-runtime concern; it is valuable for throughput but can increase queueing and TTFT if poorly tuned.",
+          "required_gates": [
+            "p95 TTFT",
+            "success and rejection rate",
+            "fairness by workload class"
+          ]
+        },
+        {
+          "technique": "chunked_prefill",
+          "suitability_score": 2,
+          "decision": "defer",
+          "rationale": "Chunked prefill can improve scheduler fairness for long prompts but must be measured with interactive and long-document traffic together.",
+          "required_gates": [
+            "TTFT fairness",
+            "prefill throughput",
+            "no starvation"
+          ]
+        },
+        {
+          "technique": "quantization",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Quantization can reduce weight or KV-cache memory and change throughput, but NorthStar requires quality and numerical-stability evidence.",
+          "required_gates": [
+            "structured-output validity",
+            "groundedness parity",
+            "memory and throughput measurement"
+          ]
+        },
+        {
+          "technique": "tensor_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Tensor parallelism is a model-fit and latency trade-off, not a default. Communication overhead must be included.",
+          "required_gates": [
+            "hardware topology",
+            "collective-communication profile",
+            "latency/throughput crossover"
+          ]
+        },
+        {
+          "technique": "pipeline_parallelism",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Pipeline parallelism is mainly a model-fit option and may add bubbles and complexity for online latency-sensitive work.",
+          "required_gates": [
+            "model-fit necessity",
+            "pipeline-bubble measurement"
+          ]
+        },
+        {
+          "technique": "data_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Data-parallel replicas can scale independent requests but require routing, cache locality and failure-domain design.",
+          "required_gates": [
+            "load balancing",
+            "cache locality",
+            "replica failure test"
+          ]
+        },
+        {
+          "technique": "speculative_prompt_lookup",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Prompt-lookup speculation is most plausible for input-grounded outputs with repeated phrases; it is not assumed beneficial for short or tool-dominated workflows.",
+          "required_gates": [
+            "lossless parity",
+            "acceptance rate",
+            "decode and end-to-end improvement",
+            "memory overhead"
+          ]
+        },
+        {
+          "technique": "speculative_draft_model",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "A draft model adds compute and memory. It is a profile-specific experiment, especially at low-to-moderate concurrency and sufficiently long decode.",
+          "required_gates": [
+            "draft-target tokenizer compatibility",
+            "lossless sampling verification",
+            "acceptance distribution",
+            "high-concurrency regression test"
+          ]
+        },
+        {
+          "technique": "self_speculative",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Self-speculative methods depend on model/runtime support and are not selected without a compatible model and endpoint.",
+          "required_gates": [
+            "runtime support",
+            "quality parity"
+          ]
+        },
+        {
+          "technique": "multi_token_prediction",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "MTP is available only for models with native support; NorthStar has not selected such a model.",
+          "required_gates": [
+            "native model support",
+            "quality and latency benchmark"
+          ]
+        },
+        {
+          "technique": "model_routing",
+          "suitability_score": 2,
+          "decision": "defer",
+          "rationale": "Model routing is architecturally relevant but belongs to the next explicit model-selection stage; no automatic route changes are introduced here.",
+          "required_gates": [
+            "model catalogue",
+            "risk and residency policy",
+            "cross-model quality evaluation"
+          ]
+        }
+      ],
+      "selected_policy_id": "IOP-001-001",
+      "advisory_only": true,
+      "may_mutate_admission": false,
+      "may_grant_authority": false
+    }
+  },
+  {
+    "profile_id": "WP-002",
+    "deployment_id": "INF-001",
+    "policy": {
+      "policy_id": "IOP-002-001",
+      "version": "1.0.0",
+      "context_reduction_ratio": 0.15,
+      "output_token_cap": 6400,
+      "streaming_enabled": false,
+      "quantization": "provider_managed",
+      "tensor_parallel_size": 1,
+      "pipeline_parallel_size": 1,
+      "data_parallel_size": 1,
+      "cache_policy": {
+        "enabled": true,
+        "cache_type": "provider_prompt",
+        "scope": "tenant_authorization_model_tokenizer_prompt",
+        "tenant_isolated": true,
+        "model_bound": true,
+        "tokenizer_bound": true,
+        "prompt_version_bound": true,
+        "authorization_scope_bound": true,
+        "ttl_seconds": 300,
+        "minimum_prefix_tokens": 1024,
+        "allow_regulatory_answer_cache": false
+      },
+      "batching_policy": {
+        "mode": "none",
+        "max_batch_tokens": 0,
+        "max_concurrent_requests": 4,
+        "max_wait_ms": 40.0,
+        "chunked_prefill": false,
+        "priority_aware": false
+      },
+      "speculative_plan": {
+        "method": "disabled",
+        "enabled": false,
+        "draft_model_id": null,
+        "num_speculative_tokens": 0,
+        "minimum_acceptance_rate": 0.55,
+        "minimum_decode_improvement": 0.1,
+        "minimum_e2e_improvement": 0.05,
+        "maximum_memory_overhead_ratio": 0.2,
+        "require_lossless_distribution": true,
+        "profile_allowlist": []
+      },
+      "semantic_response_cache_enabled": false,
+      "automatic_model_routing_enabled": false,
+      "automatic_admission_mutation_enabled": false
+    },
+    "recommendation": {
+      "recommendation_id": "IOR-002-001",
+      "profile_id": "WP-002",
+      "deployment_id": "INF-001",
+      "assessments": [
+        {
+          "technique": "context_reduction",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reduce duplicated or low-value context before buying inference capacity; authoritative evidence and required state cannot be removed.",
+          "required_gates": [
+            "citation-coverage parity",
+            "required-state retention",
+            "task-success non-regression"
+          ]
+        },
+        {
+          "technique": "output_length_control",
+          "suitability_score": 4,
+          "decision": "select",
+          "rationale": "Bounded structured outputs reduce decode work, but truncation must fail closed rather than appear complete.",
+          "required_gates": [
+            "schema completeness",
+            "no truncation of required findings"
+          ]
+        },
+        {
+          "technique": "streaming",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Streaming improves perceived responsiveness but does not reduce total compute or authorize partial output.",
+          "required_gates": [
+            "partial-output labelling",
+            "final-schema validation"
+          ]
+        },
+        {
+          "technique": "prefix_caching",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reuse only exact immutable prompt prefixes bound to tenant, authorization scope, model, tokenizer and prompt version.",
+          "required_gates": [
+            "representative cache-hit rate",
+            "tenant isolation",
+            "cache invalidation"
+          ]
+        },
+        {
+          "technique": "exact_response_caching",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Only immutable deterministic metadata may be cached; regulatory assessments and approval-sensitive outputs remain uncached.",
+          "required_gates": [
+            "content classification",
+            "freshness and authorization binding"
+          ]
+        },
+        {
+          "technique": "semantic_response_caching",
+          "suitability_score": 0,
+          "decision": "prohibit",
+          "rationale": "Semantic similarity is not sufficient to reuse a regulatory conclusion across documents, jurisdictions, users or evidence versions.",
+          "required_gates": [
+            "not permitted"
+          ]
+        },
+        {
+          "technique": "continuous_batching",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Continuous batching is a serving-runtime concern; it is valuable for throughput but can increase queueing and TTFT if poorly tuned.",
+          "required_gates": [
+            "p95 TTFT",
+            "success and rejection rate",
+            "fairness by workload class"
+          ]
+        },
+        {
+          "technique": "chunked_prefill",
+          "suitability_score": 2,
+          "decision": "benchmark",
+          "rationale": "Chunked prefill can improve scheduler fairness for long prompts but must be measured with interactive and long-document traffic together.",
+          "required_gates": [
+            "TTFT fairness",
+            "prefill throughput",
+            "no starvation"
+          ]
+        },
+        {
+          "technique": "quantization",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Quantization can reduce weight or KV-cache memory and change throughput, but NorthStar requires quality and numerical-stability evidence.",
+          "required_gates": [
+            "structured-output validity",
+            "groundedness parity",
+            "memory and throughput measurement"
+          ]
+        },
+        {
+          "technique": "tensor_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Tensor parallelism is a model-fit and latency trade-off, not a default. Communication overhead must be included.",
+          "required_gates": [
+            "hardware topology",
+            "collective-communication profile",
+            "latency/throughput crossover"
+          ]
+        },
+        {
+          "technique": "pipeline_parallelism",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Pipeline parallelism is mainly a model-fit option and may add bubbles and complexity for online latency-sensitive work.",
+          "required_gates": [
+            "model-fit necessity",
+            "pipeline-bubble measurement"
+          ]
+        },
+        {
+          "technique": "data_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Data-parallel replicas can scale independent requests but require routing, cache locality and failure-domain design.",
+          "required_gates": [
+            "load balancing",
+            "cache locality",
+            "replica failure test"
+          ]
+        },
+        {
+          "technique": "speculative_prompt_lookup",
+          "suitability_score": 4,
+          "decision": "benchmark",
+          "rationale": "Prompt-lookup speculation is most plausible for input-grounded outputs with repeated phrases; it is not assumed beneficial for short or tool-dominated workflows.",
+          "required_gates": [
+            "lossless parity",
+            "acceptance rate",
+            "decode and end-to-end improvement",
+            "memory overhead"
+          ]
+        },
+        {
+          "technique": "speculative_draft_model",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "A draft model adds compute and memory. It is a profile-specific experiment, especially at low-to-moderate concurrency and sufficiently long decode.",
+          "required_gates": [
+            "draft-target tokenizer compatibility",
+            "lossless sampling verification",
+            "acceptance distribution",
+            "high-concurrency regression test"
+          ]
+        },
+        {
+          "technique": "self_speculative",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Self-speculative methods depend on model/runtime support and are not selected without a compatible model and endpoint.",
+          "required_gates": [
+            "runtime support",
+            "quality parity"
+          ]
+        },
+        {
+          "technique": "multi_token_prediction",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "MTP is available only for models with native support; NorthStar has not selected such a model.",
+          "required_gates": [
+            "native model support",
+            "quality and latency benchmark"
+          ]
+        },
+        {
+          "technique": "model_routing",
+          "suitability_score": 2,
+          "decision": "defer",
+          "rationale": "Model routing is architecturally relevant but belongs to the next explicit model-selection stage; no automatic route changes are introduced here.",
+          "required_gates": [
+            "model catalogue",
+            "risk and residency policy",
+            "cross-model quality evaluation"
+          ]
+        }
+      ],
+      "selected_policy_id": "IOP-002-001",
+      "advisory_only": true,
+      "may_mutate_admission": false,
+      "may_grant_authority": false
+    }
+  },
+  {
+    "profile_id": "WP-003",
+    "deployment_id": "INF-001",
+    "policy": {
+      "policy_id": "IOP-003-001",
+      "version": "1.0.0",
+      "context_reduction_ratio": 0.15,
+      "output_token_cap": 4800,
+      "streaming_enabled": false,
+      "quantization": "provider_managed",
+      "tensor_parallel_size": 1,
+      "pipeline_parallel_size": 1,
+      "data_parallel_size": 1,
+      "cache_policy": {
+        "enabled": true,
+        "cache_type": "provider_prompt",
+        "scope": "tenant_authorization_model_tokenizer_prompt",
+        "tenant_isolated": true,
+        "model_bound": true,
+        "tokenizer_bound": true,
+        "prompt_version_bound": true,
+        "authorization_scope_bound": true,
+        "ttl_seconds": 300,
+        "minimum_prefix_tokens": 1024,
+        "allow_regulatory_answer_cache": false
+      },
+      "batching_policy": {
+        "mode": "none",
+        "max_batch_tokens": 0,
+        "max_concurrent_requests": 6,
+        "max_wait_ms": 40.0,
+        "chunked_prefill": false,
+        "priority_aware": false
+      },
+      "speculative_plan": {
+        "method": "disabled",
+        "enabled": false,
+        "draft_model_id": null,
+        "num_speculative_tokens": 0,
+        "minimum_acceptance_rate": 0.55,
+        "minimum_decode_improvement": 0.1,
+        "minimum_e2e_improvement": 0.05,
+        "maximum_memory_overhead_ratio": 0.2,
+        "require_lossless_distribution": true,
+        "profile_allowlist": []
+      },
+      "semantic_response_cache_enabled": false,
+      "automatic_model_routing_enabled": false,
+      "automatic_admission_mutation_enabled": false
+    },
+    "recommendation": {
+      "recommendation_id": "IOR-003-001",
+      "profile_id": "WP-003",
+      "deployment_id": "INF-001",
+      "assessments": [
+        {
+          "technique": "context_reduction",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reduce duplicated or low-value context before buying inference capacity; authoritative evidence and required state cannot be removed.",
+          "required_gates": [
+            "citation-coverage parity",
+            "required-state retention",
+            "task-success non-regression"
+          ]
+        },
+        {
+          "technique": "output_length_control",
+          "suitability_score": 4,
+          "decision": "select",
+          "rationale": "Bounded structured outputs reduce decode work, but truncation must fail closed rather than appear complete.",
+          "required_gates": [
+            "schema completeness",
+            "no truncation of required findings"
+          ]
+        },
+        {
+          "technique": "streaming",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Streaming improves perceived responsiveness but does not reduce total compute or authorize partial output.",
+          "required_gates": [
+            "partial-output labelling",
+            "final-schema validation"
+          ]
+        },
+        {
+          "technique": "prefix_caching",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reuse only exact immutable prompt prefixes bound to tenant, authorization scope, model, tokenizer and prompt version.",
+          "required_gates": [
+            "representative cache-hit rate",
+            "tenant isolation",
+            "cache invalidation"
+          ]
+        },
+        {
+          "technique": "exact_response_caching",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Only immutable deterministic metadata may be cached; regulatory assessments and approval-sensitive outputs remain uncached.",
+          "required_gates": [
+            "content classification",
+            "freshness and authorization binding"
+          ]
+        },
+        {
+          "technique": "semantic_response_caching",
+          "suitability_score": 0,
+          "decision": "prohibit",
+          "rationale": "Semantic similarity is not sufficient to reuse a regulatory conclusion across documents, jurisdictions, users or evidence versions.",
+          "required_gates": [
+            "not permitted"
+          ]
+        },
+        {
+          "technique": "continuous_batching",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Continuous batching is a serving-runtime concern; it is valuable for throughput but can increase queueing and TTFT if poorly tuned.",
+          "required_gates": [
+            "p95 TTFT",
+            "success and rejection rate",
+            "fairness by workload class"
+          ]
+        },
+        {
+          "technique": "chunked_prefill",
+          "suitability_score": 2,
+          "decision": "benchmark",
+          "rationale": "Chunked prefill can improve scheduler fairness for long prompts but must be measured with interactive and long-document traffic together.",
+          "required_gates": [
+            "TTFT fairness",
+            "prefill throughput",
+            "no starvation"
+          ]
+        },
+        {
+          "technique": "quantization",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Quantization can reduce weight or KV-cache memory and change throughput, but NorthStar requires quality and numerical-stability evidence.",
+          "required_gates": [
+            "structured-output validity",
+            "groundedness parity",
+            "memory and throughput measurement"
+          ]
+        },
+        {
+          "technique": "tensor_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Tensor parallelism is a model-fit and latency trade-off, not a default. Communication overhead must be included.",
+          "required_gates": [
+            "hardware topology",
+            "collective-communication profile",
+            "latency/throughput crossover"
+          ]
+        },
+        {
+          "technique": "pipeline_parallelism",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Pipeline parallelism is mainly a model-fit option and may add bubbles and complexity for online latency-sensitive work.",
+          "required_gates": [
+            "model-fit necessity",
+            "pipeline-bubble measurement"
+          ]
+        },
+        {
+          "technique": "data_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Data-parallel replicas can scale independent requests but require routing, cache locality and failure-domain design.",
+          "required_gates": [
+            "load balancing",
+            "cache locality",
+            "replica failure test"
+          ]
+        },
+        {
+          "technique": "speculative_prompt_lookup",
+          "suitability_score": 4,
+          "decision": "benchmark",
+          "rationale": "Prompt-lookup speculation is most plausible for input-grounded outputs with repeated phrases; it is not assumed beneficial for short or tool-dominated workflows.",
+          "required_gates": [
+            "lossless parity",
+            "acceptance rate",
+            "decode and end-to-end improvement",
+            "memory overhead"
+          ]
+        },
+        {
+          "technique": "speculative_draft_model",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "A draft model adds compute and memory. It is a profile-specific experiment, especially at low-to-moderate concurrency and sufficiently long decode.",
+          "required_gates": [
+            "draft-target tokenizer compatibility",
+            "lossless sampling verification",
+            "acceptance distribution",
+            "high-concurrency regression test"
+          ]
+        },
+        {
+          "technique": "self_speculative",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Self-speculative methods depend on model/runtime support and are not selected without a compatible model and endpoint.",
+          "required_gates": [
+            "runtime support",
+            "quality parity"
+          ]
+        },
+        {
+          "technique": "multi_token_prediction",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "MTP is available only for models with native support; NorthStar has not selected such a model.",
+          "required_gates": [
+            "native model support",
+            "quality and latency benchmark"
+          ]
+        },
+        {
+          "technique": "model_routing",
+          "suitability_score": 2,
+          "decision": "defer",
+          "rationale": "Model routing is architecturally relevant but belongs to the next explicit model-selection stage; no automatic route changes are introduced here.",
+          "required_gates": [
+            "model catalogue",
+            "risk and residency policy",
+            "cross-model quality evaluation"
+          ]
+        }
+      ],
+      "selected_policy_id": "IOP-003-001",
+      "advisory_only": true,
+      "may_mutate_admission": false,
+      "may_grant_authority": false
+    }
+  },
+  {
+    "profile_id": "WP-004",
+    "deployment_id": "INF-001",
+    "policy": {
+      "policy_id": "IOP-004-001",
+      "version": "1.0.0",
+      "context_reduction_ratio": 0.15,
+      "output_token_cap": 9600,
+      "streaming_enabled": false,
+      "quantization": "provider_managed",
+      "tensor_parallel_size": 1,
+      "pipeline_parallel_size": 1,
+      "data_parallel_size": 1,
+      "cache_policy": {
+        "enabled": true,
+        "cache_type": "provider_prompt",
+        "scope": "tenant_authorization_model_tokenizer_prompt",
+        "tenant_isolated": true,
+        "model_bound": true,
+        "tokenizer_bound": true,
+        "prompt_version_bound": true,
+        "authorization_scope_bound": true,
+        "ttl_seconds": 300,
+        "minimum_prefix_tokens": 1024,
+        "allow_regulatory_answer_cache": false
+      },
+      "batching_policy": {
+        "mode": "none",
+        "max_batch_tokens": 0,
+        "max_concurrent_requests": 4,
+        "max_wait_ms": 40.0,
+        "chunked_prefill": false,
+        "priority_aware": false
+      },
+      "speculative_plan": {
+        "method": "disabled",
+        "enabled": false,
+        "draft_model_id": null,
+        "num_speculative_tokens": 0,
+        "minimum_acceptance_rate": 0.55,
+        "minimum_decode_improvement": 0.1,
+        "minimum_e2e_improvement": 0.05,
+        "maximum_memory_overhead_ratio": 0.2,
+        "require_lossless_distribution": true,
+        "profile_allowlist": []
+      },
+      "semantic_response_cache_enabled": false,
+      "automatic_model_routing_enabled": false,
+      "automatic_admission_mutation_enabled": false
+    },
+    "recommendation": {
+      "recommendation_id": "IOR-004-001",
+      "profile_id": "WP-004",
+      "deployment_id": "INF-001",
+      "assessments": [
+        {
+          "technique": "context_reduction",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reduce duplicated or low-value context before buying inference capacity; authoritative evidence and required state cannot be removed.",
+          "required_gates": [
+            "citation-coverage parity",
+            "required-state retention",
+            "task-success non-regression"
+          ]
+        },
+        {
+          "technique": "output_length_control",
+          "suitability_score": 4,
+          "decision": "select",
+          "rationale": "Bounded structured outputs reduce decode work, but truncation must fail closed rather than appear complete.",
+          "required_gates": [
+            "schema completeness",
+            "no truncation of required findings"
+          ]
+        },
+        {
+          "technique": "streaming",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Streaming improves perceived responsiveness but does not reduce total compute or authorize partial output.",
+          "required_gates": [
+            "partial-output labelling",
+            "final-schema validation"
+          ]
+        },
+        {
+          "technique": "prefix_caching",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reuse only exact immutable prompt prefixes bound to tenant, authorization scope, model, tokenizer and prompt version.",
+          "required_gates": [
+            "representative cache-hit rate",
+            "tenant isolation",
+            "cache invalidation"
+          ]
+        },
+        {
+          "technique": "exact_response_caching",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Only immutable deterministic metadata may be cached; regulatory assessments and approval-sensitive outputs remain uncached.",
+          "required_gates": [
+            "content classification",
+            "freshness and authorization binding"
+          ]
+        },
+        {
+          "technique": "semantic_response_caching",
+          "suitability_score": 0,
+          "decision": "prohibit",
+          "rationale": "Semantic similarity is not sufficient to reuse a regulatory conclusion across documents, jurisdictions, users or evidence versions.",
+          "required_gates": [
+            "not permitted"
+          ]
+        },
+        {
+          "technique": "continuous_batching",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Continuous batching is a serving-runtime concern; it is valuable for throughput but can increase queueing and TTFT if poorly tuned.",
+          "required_gates": [
+            "p95 TTFT",
+            "success and rejection rate",
+            "fairness by workload class"
+          ]
+        },
+        {
+          "technique": "chunked_prefill",
+          "suitability_score": 2,
+          "decision": "benchmark",
+          "rationale": "Chunked prefill can improve scheduler fairness for long prompts but must be measured with interactive and long-document traffic together.",
+          "required_gates": [
+            "TTFT fairness",
+            "prefill throughput",
+            "no starvation"
+          ]
+        },
+        {
+          "technique": "quantization",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Quantization can reduce weight or KV-cache memory and change throughput, but NorthStar requires quality and numerical-stability evidence.",
+          "required_gates": [
+            "structured-output validity",
+            "groundedness parity",
+            "memory and throughput measurement"
+          ]
+        },
+        {
+          "technique": "tensor_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Tensor parallelism is a model-fit and latency trade-off, not a default. Communication overhead must be included.",
+          "required_gates": [
+            "hardware topology",
+            "collective-communication profile",
+            "latency/throughput crossover"
+          ]
+        },
+        {
+          "technique": "pipeline_parallelism",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Pipeline parallelism is mainly a model-fit option and may add bubbles and complexity for online latency-sensitive work.",
+          "required_gates": [
+            "model-fit necessity",
+            "pipeline-bubble measurement"
+          ]
+        },
+        {
+          "technique": "data_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Data-parallel replicas can scale independent requests but require routing, cache locality and failure-domain design.",
+          "required_gates": [
+            "load balancing",
+            "cache locality",
+            "replica failure test"
+          ]
+        },
+        {
+          "technique": "speculative_prompt_lookup",
+          "suitability_score": 4,
+          "decision": "benchmark",
+          "rationale": "Prompt-lookup speculation is most plausible for input-grounded outputs with repeated phrases; it is not assumed beneficial for short or tool-dominated workflows.",
+          "required_gates": [
+            "lossless parity",
+            "acceptance rate",
+            "decode and end-to-end improvement",
+            "memory overhead"
+          ]
+        },
+        {
+          "technique": "speculative_draft_model",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "A draft model adds compute and memory. It is a profile-specific experiment, especially at low-to-moderate concurrency and sufficiently long decode.",
+          "required_gates": [
+            "draft-target tokenizer compatibility",
+            "lossless sampling verification",
+            "acceptance distribution",
+            "high-concurrency regression test"
+          ]
+        },
+        {
+          "technique": "self_speculative",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Self-speculative methods depend on model/runtime support and are not selected without a compatible model and endpoint.",
+          "required_gates": [
+            "runtime support",
+            "quality parity"
+          ]
+        },
+        {
+          "technique": "multi_token_prediction",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "MTP is available only for models with native support; NorthStar has not selected such a model.",
+          "required_gates": [
+            "native model support",
+            "quality and latency benchmark"
+          ]
+        },
+        {
+          "technique": "model_routing",
+          "suitability_score": 2,
+          "decision": "defer",
+          "rationale": "Model routing is architecturally relevant but belongs to the next explicit model-selection stage; no automatic route changes are introduced here.",
+          "required_gates": [
+            "model catalogue",
+            "risk and residency policy",
+            "cross-model quality evaluation"
+          ]
+        }
+      ],
+      "selected_policy_id": "IOP-004-001",
+      "advisory_only": true,
+      "may_mutate_admission": false,
+      "may_grant_authority": false
+    }
+  },
+  {
+    "profile_id": "WP-005",
+    "deployment_id": "INF-001",
+    "policy": {
+      "policy_id": "IOP-005-001",
+      "version": "1.0.0",
+      "context_reduction_ratio": 0.15,
+      "output_token_cap": 1600,
+      "streaming_enabled": false,
+      "quantization": "provider_managed",
+      "tensor_parallel_size": 1,
+      "pipeline_parallel_size": 1,
+      "data_parallel_size": 1,
+      "cache_policy": {
+        "enabled": true,
+        "cache_type": "provider_prompt",
+        "scope": "tenant_authorization_model_tokenizer_prompt",
+        "tenant_isolated": true,
+        "model_bound": true,
+        "tokenizer_bound": true,
+        "prompt_version_bound": true,
+        "authorization_scope_bound": true,
+        "ttl_seconds": 300,
+        "minimum_prefix_tokens": 1024,
+        "allow_regulatory_answer_cache": false
+      },
+      "batching_policy": {
+        "mode": "none",
+        "max_batch_tokens": 0,
+        "max_concurrent_requests": 8,
+        "max_wait_ms": 40.0,
+        "chunked_prefill": false,
+        "priority_aware": false
+      },
+      "speculative_plan": {
+        "method": "disabled",
+        "enabled": false,
+        "draft_model_id": null,
+        "num_speculative_tokens": 0,
+        "minimum_acceptance_rate": 0.55,
+        "minimum_decode_improvement": 0.1,
+        "minimum_e2e_improvement": 0.05,
+        "maximum_memory_overhead_ratio": 0.2,
+        "require_lossless_distribution": true,
+        "profile_allowlist": []
+      },
+      "semantic_response_cache_enabled": false,
+      "automatic_model_routing_enabled": false,
+      "automatic_admission_mutation_enabled": false
+    },
+    "recommendation": {
+      "recommendation_id": "IOR-005-001",
+      "profile_id": "WP-005",
+      "deployment_id": "INF-001",
+      "assessments": [
+        {
+          "technique": "context_reduction",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reduce duplicated or low-value context before buying inference capacity; authoritative evidence and required state cannot be removed.",
+          "required_gates": [
+            "citation-coverage parity",
+            "required-state retention",
+            "task-success non-regression"
+          ]
+        },
+        {
+          "technique": "output_length_control",
+          "suitability_score": 4,
+          "decision": "select",
+          "rationale": "Bounded structured outputs reduce decode work, but truncation must fail closed rather than appear complete.",
+          "required_gates": [
+            "schema completeness",
+            "no truncation of required findings"
+          ]
+        },
+        {
+          "technique": "streaming",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Streaming improves perceived responsiveness but does not reduce total compute or authorize partial output.",
+          "required_gates": [
+            "partial-output labelling",
+            "final-schema validation"
+          ]
+        },
+        {
+          "technique": "prefix_caching",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reuse only exact immutable prompt prefixes bound to tenant, authorization scope, model, tokenizer and prompt version.",
+          "required_gates": [
+            "representative cache-hit rate",
+            "tenant isolation",
+            "cache invalidation"
+          ]
+        },
+        {
+          "technique": "exact_response_caching",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Only immutable deterministic metadata may be cached; regulatory assessments and approval-sensitive outputs remain uncached.",
+          "required_gates": [
+            "content classification",
+            "freshness and authorization binding"
+          ]
+        },
+        {
+          "technique": "semantic_response_caching",
+          "suitability_score": 0,
+          "decision": "prohibit",
+          "rationale": "Semantic similarity is not sufficient to reuse a regulatory conclusion across documents, jurisdictions, users or evidence versions.",
+          "required_gates": [
+            "not permitted"
+          ]
+        },
+        {
+          "technique": "continuous_batching",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Continuous batching is a serving-runtime concern; it is valuable for throughput but can increase queueing and TTFT if poorly tuned.",
+          "required_gates": [
+            "p95 TTFT",
+            "success and rejection rate",
+            "fairness by workload class"
+          ]
+        },
+        {
+          "technique": "chunked_prefill",
+          "suitability_score": 2,
+          "decision": "benchmark",
+          "rationale": "Chunked prefill can improve scheduler fairness for long prompts but must be measured with interactive and long-document traffic together.",
+          "required_gates": [
+            "TTFT fairness",
+            "prefill throughput",
+            "no starvation"
+          ]
+        },
+        {
+          "technique": "quantization",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Quantization can reduce weight or KV-cache memory and change throughput, but NorthStar requires quality and numerical-stability evidence.",
+          "required_gates": [
+            "structured-output validity",
+            "groundedness parity",
+            "memory and throughput measurement"
+          ]
+        },
+        {
+          "technique": "tensor_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Tensor parallelism is a model-fit and latency trade-off, not a default. Communication overhead must be included.",
+          "required_gates": [
+            "hardware topology",
+            "collective-communication profile",
+            "latency/throughput crossover"
+          ]
+        },
+        {
+          "technique": "pipeline_parallelism",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Pipeline parallelism is mainly a model-fit option and may add bubbles and complexity for online latency-sensitive work.",
+          "required_gates": [
+            "model-fit necessity",
+            "pipeline-bubble measurement"
+          ]
+        },
+        {
+          "technique": "data_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Data-parallel replicas can scale independent requests but require routing, cache locality and failure-domain design.",
+          "required_gates": [
+            "load balancing",
+            "cache locality",
+            "replica failure test"
+          ]
+        },
+        {
+          "technique": "speculative_prompt_lookup",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Prompt-lookup speculation is most plausible for input-grounded outputs with repeated phrases; it is not assumed beneficial for short or tool-dominated workflows.",
+          "required_gates": [
+            "lossless parity",
+            "acceptance rate",
+            "decode and end-to-end improvement",
+            "memory overhead"
+          ]
+        },
+        {
+          "technique": "speculative_draft_model",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "A draft model adds compute and memory. It is a profile-specific experiment, especially at low-to-moderate concurrency and sufficiently long decode.",
+          "required_gates": [
+            "draft-target tokenizer compatibility",
+            "lossless sampling verification",
+            "acceptance distribution",
+            "high-concurrency regression test"
+          ]
+        },
+        {
+          "technique": "self_speculative",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Self-speculative methods depend on model/runtime support and are not selected without a compatible model and endpoint.",
+          "required_gates": [
+            "runtime support",
+            "quality parity"
+          ]
+        },
+        {
+          "technique": "multi_token_prediction",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "MTP is available only for models with native support; NorthStar has not selected such a model.",
+          "required_gates": [
+            "native model support",
+            "quality and latency benchmark"
+          ]
+        },
+        {
+          "technique": "model_routing",
+          "suitability_score": 2,
+          "decision": "defer",
+          "rationale": "Model routing is architecturally relevant but belongs to the next explicit model-selection stage; no automatic route changes are introduced here.",
+          "required_gates": [
+            "model catalogue",
+            "risk and residency policy",
+            "cross-model quality evaluation"
+          ]
+        }
+      ],
+      "selected_policy_id": "IOP-005-001",
+      "advisory_only": true,
+      "may_mutate_admission": false,
+      "may_grant_authority": false
+    }
+  },
+  {
+    "profile_id": "WP-006",
+    "deployment_id": "INF-001",
+    "policy": {
+      "policy_id": "IOP-006-001",
+      "version": "1.0.0",
+      "context_reduction_ratio": 0.15,
+      "output_token_cap": 3600,
+      "streaming_enabled": false,
+      "quantization": "provider_managed",
+      "tensor_parallel_size": 1,
+      "pipeline_parallel_size": 1,
+      "data_parallel_size": 1,
+      "cache_policy": {
+        "enabled": true,
+        "cache_type": "provider_prompt",
+        "scope": "tenant_authorization_model_tokenizer_prompt",
+        "tenant_isolated": true,
+        "model_bound": true,
+        "tokenizer_bound": true,
+        "prompt_version_bound": true,
+        "authorization_scope_bound": true,
+        "ttl_seconds": 300,
+        "minimum_prefix_tokens": 1024,
+        "allow_regulatory_answer_cache": false
+      },
+      "batching_policy": {
+        "mode": "none",
+        "max_batch_tokens": 0,
+        "max_concurrent_requests": 32,
+        "max_wait_ms": 40.0,
+        "chunked_prefill": false,
+        "priority_aware": false
+      },
+      "speculative_plan": {
+        "method": "disabled",
+        "enabled": false,
+        "draft_model_id": null,
+        "num_speculative_tokens": 0,
+        "minimum_acceptance_rate": 0.55,
+        "minimum_decode_improvement": 0.1,
+        "minimum_e2e_improvement": 0.05,
+        "maximum_memory_overhead_ratio": 0.2,
+        "require_lossless_distribution": true,
+        "profile_allowlist": []
+      },
+      "semantic_response_cache_enabled": false,
+      "automatic_model_routing_enabled": false,
+      "automatic_admission_mutation_enabled": false
+    },
+    "recommendation": {
+      "recommendation_id": "IOR-006-001",
+      "profile_id": "WP-006",
+      "deployment_id": "INF-001",
+      "assessments": [
+        {
+          "technique": "context_reduction",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reduce duplicated or low-value context before buying inference capacity; authoritative evidence and required state cannot be removed.",
+          "required_gates": [
+            "citation-coverage parity",
+            "required-state retention",
+            "task-success non-regression"
+          ]
+        },
+        {
+          "technique": "output_length_control",
+          "suitability_score": 4,
+          "decision": "select",
+          "rationale": "Bounded structured outputs reduce decode work, but truncation must fail closed rather than appear complete.",
+          "required_gates": [
+            "schema completeness",
+            "no truncation of required findings"
+          ]
+        },
+        {
+          "technique": "streaming",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Streaming improves perceived responsiveness but does not reduce total compute or authorize partial output.",
+          "required_gates": [
+            "partial-output labelling",
+            "final-schema validation"
+          ]
+        },
+        {
+          "technique": "prefix_caching",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reuse only exact immutable prompt prefixes bound to tenant, authorization scope, model, tokenizer and prompt version.",
+          "required_gates": [
+            "representative cache-hit rate",
+            "tenant isolation",
+            "cache invalidation"
+          ]
+        },
+        {
+          "technique": "exact_response_caching",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Only immutable deterministic metadata may be cached; regulatory assessments and approval-sensitive outputs remain uncached.",
+          "required_gates": [
+            "content classification",
+            "freshness and authorization binding"
+          ]
+        },
+        {
+          "technique": "semantic_response_caching",
+          "suitability_score": 0,
+          "decision": "prohibit",
+          "rationale": "Semantic similarity is not sufficient to reuse a regulatory conclusion across documents, jurisdictions, users or evidence versions.",
+          "required_gates": [
+            "not permitted"
+          ]
+        },
+        {
+          "technique": "continuous_batching",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Continuous batching is a serving-runtime concern; it is valuable for throughput but can increase queueing and TTFT if poorly tuned.",
+          "required_gates": [
+            "p95 TTFT",
+            "success and rejection rate",
+            "fairness by workload class"
+          ]
+        },
+        {
+          "technique": "chunked_prefill",
+          "suitability_score": 2,
+          "decision": "benchmark",
+          "rationale": "Chunked prefill can improve scheduler fairness for long prompts but must be measured with interactive and long-document traffic together.",
+          "required_gates": [
+            "TTFT fairness",
+            "prefill throughput",
+            "no starvation"
+          ]
+        },
+        {
+          "technique": "quantization",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Quantization can reduce weight or KV-cache memory and change throughput, but NorthStar requires quality and numerical-stability evidence.",
+          "required_gates": [
+            "structured-output validity",
+            "groundedness parity",
+            "memory and throughput measurement"
+          ]
+        },
+        {
+          "technique": "tensor_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Tensor parallelism is a model-fit and latency trade-off, not a default. Communication overhead must be included.",
+          "required_gates": [
+            "hardware topology",
+            "collective-communication profile",
+            "latency/throughput crossover"
+          ]
+        },
+        {
+          "technique": "pipeline_parallelism",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Pipeline parallelism is mainly a model-fit option and may add bubbles and complexity for online latency-sensitive work.",
+          "required_gates": [
+            "model-fit necessity",
+            "pipeline-bubble measurement"
+          ]
+        },
+        {
+          "technique": "data_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Data-parallel replicas can scale independent requests but require routing, cache locality and failure-domain design.",
+          "required_gates": [
+            "load balancing",
+            "cache locality",
+            "replica failure test"
+          ]
+        },
+        {
+          "technique": "speculative_prompt_lookup",
+          "suitability_score": 4,
+          "decision": "benchmark",
+          "rationale": "Prompt-lookup speculation is most plausible for input-grounded outputs with repeated phrases; it is not assumed beneficial for short or tool-dominated workflows.",
+          "required_gates": [
+            "lossless parity",
+            "acceptance rate",
+            "decode and end-to-end improvement",
+            "memory overhead"
+          ]
+        },
+        {
+          "technique": "speculative_draft_model",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "A draft model adds compute and memory. It is a profile-specific experiment, especially at low-to-moderate concurrency and sufficiently long decode.",
+          "required_gates": [
+            "draft-target tokenizer compatibility",
+            "lossless sampling verification",
+            "acceptance distribution",
+            "high-concurrency regression test"
+          ]
+        },
+        {
+          "technique": "self_speculative",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Self-speculative methods depend on model/runtime support and are not selected without a compatible model and endpoint.",
+          "required_gates": [
+            "runtime support",
+            "quality parity"
+          ]
+        },
+        {
+          "technique": "multi_token_prediction",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "MTP is available only for models with native support; NorthStar has not selected such a model.",
+          "required_gates": [
+            "native model support",
+            "quality and latency benchmark"
+          ]
+        },
+        {
+          "technique": "model_routing",
+          "suitability_score": 2,
+          "decision": "defer",
+          "rationale": "Model routing is architecturally relevant but belongs to the next explicit model-selection stage; no automatic route changes are introduced here.",
+          "required_gates": [
+            "model catalogue",
+            "risk and residency policy",
+            "cross-model quality evaluation"
+          ]
+        }
+      ],
+      "selected_policy_id": "IOP-006-001",
+      "advisory_only": true,
+      "may_mutate_admission": false,
+      "may_grant_authority": false
+    }
+  },
+  {
+    "profile_id": "WP-007",
+    "deployment_id": "INF-001",
+    "policy": {
+      "policy_id": "IOP-007-001",
+      "version": "1.0.0",
+      "context_reduction_ratio": 0.15,
+      "output_token_cap": 840,
+      "streaming_enabled": true,
+      "quantization": "provider_managed",
+      "tensor_parallel_size": 1,
+      "pipeline_parallel_size": 1,
+      "data_parallel_size": 1,
+      "cache_policy": {
+        "enabled": true,
+        "cache_type": "provider_prompt",
+        "scope": "tenant_authorization_model_tokenizer_prompt",
+        "tenant_isolated": true,
+        "model_bound": true,
+        "tokenizer_bound": true,
+        "prompt_version_bound": true,
+        "authorization_scope_bound": true,
+        "ttl_seconds": 300,
+        "minimum_prefix_tokens": 1024,
+        "allow_regulatory_answer_cache": false
+      },
+      "batching_policy": {
+        "mode": "none",
+        "max_batch_tokens": 0,
+        "max_concurrent_requests": 10,
+        "max_wait_ms": 8.0,
+        "chunked_prefill": false,
+        "priority_aware": false
+      },
+      "speculative_plan": {
+        "method": "disabled",
+        "enabled": false,
+        "draft_model_id": null,
+        "num_speculative_tokens": 0,
+        "minimum_acceptance_rate": 0.55,
+        "minimum_decode_improvement": 0.1,
+        "minimum_e2e_improvement": 0.05,
+        "maximum_memory_overhead_ratio": 0.2,
+        "require_lossless_distribution": true,
+        "profile_allowlist": []
+      },
+      "semantic_response_cache_enabled": false,
+      "automatic_model_routing_enabled": false,
+      "automatic_admission_mutation_enabled": false
+    },
+    "recommendation": {
+      "recommendation_id": "IOR-007-001",
+      "profile_id": "WP-007",
+      "deployment_id": "INF-001",
+      "assessments": [
+        {
+          "technique": "context_reduction",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reduce duplicated or low-value context before buying inference capacity; authoritative evidence and required state cannot be removed.",
+          "required_gates": [
+            "citation-coverage parity",
+            "required-state retention",
+            "task-success non-regression"
+          ]
+        },
+        {
+          "technique": "output_length_control",
+          "suitability_score": 3,
+          "decision": "select",
+          "rationale": "Bounded structured outputs reduce decode work, but truncation must fail closed rather than appear complete.",
+          "required_gates": [
+            "schema completeness",
+            "no truncation of required findings"
+          ]
+        },
+        {
+          "technique": "streaming",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Streaming improves perceived responsiveness but does not reduce total compute or authorize partial output.",
+          "required_gates": [
+            "partial-output labelling",
+            "final-schema validation"
+          ]
+        },
+        {
+          "technique": "prefix_caching",
+          "suitability_score": 5,
+          "decision": "select",
+          "rationale": "Reuse only exact immutable prompt prefixes bound to tenant, authorization scope, model, tokenizer and prompt version.",
+          "required_gates": [
+            "representative cache-hit rate",
+            "tenant isolation",
+            "cache invalidation"
+          ]
+        },
+        {
+          "technique": "exact_response_caching",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Only immutable deterministic metadata may be cached; regulatory assessments and approval-sensitive outputs remain uncached.",
+          "required_gates": [
+            "content classification",
+            "freshness and authorization binding"
+          ]
+        },
+        {
+          "technique": "semantic_response_caching",
+          "suitability_score": 0,
+          "decision": "prohibit",
+          "rationale": "Semantic similarity is not sufficient to reuse a regulatory conclusion across documents, jurisdictions, users or evidence versions.",
+          "required_gates": [
+            "not permitted"
+          ]
+        },
+        {
+          "technique": "continuous_batching",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Continuous batching is a serving-runtime concern; it is valuable for throughput but can increase queueing and TTFT if poorly tuned.",
+          "required_gates": [
+            "p95 TTFT",
+            "success and rejection rate",
+            "fairness by workload class"
+          ]
+        },
+        {
+          "technique": "chunked_prefill",
+          "suitability_score": 2,
+          "decision": "benchmark",
+          "rationale": "Chunked prefill can improve scheduler fairness for long prompts but must be measured with interactive and long-document traffic together.",
+          "required_gates": [
+            "TTFT fairness",
+            "prefill throughput",
+            "no starvation"
+          ]
+        },
+        {
+          "technique": "quantization",
+          "suitability_score": 1,
+          "decision": "not_applicable",
+          "rationale": "Quantization can reduce weight or KV-cache memory and change throughput, but NorthStar requires quality and numerical-stability evidence.",
+          "required_gates": [
+            "structured-output validity",
+            "groundedness parity",
+            "memory and throughput measurement"
+          ]
+        },
+        {
+          "technique": "tensor_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Tensor parallelism is a model-fit and latency trade-off, not a default. Communication overhead must be included.",
+          "required_gates": [
+            "hardware topology",
+            "collective-communication profile",
+            "latency/throughput crossover"
+          ]
+        },
+        {
+          "technique": "pipeline_parallelism",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Pipeline parallelism is mainly a model-fit option and may add bubbles and complexity for online latency-sensitive work.",
+          "required_gates": [
+            "model-fit necessity",
+            "pipeline-bubble measurement"
+          ]
+        },
+        {
+          "technique": "data_parallelism",
+          "suitability_score": 1,
+          "decision": "defer",
+          "rationale": "Data-parallel replicas can scale independent requests but require routing, cache locality and failure-domain design.",
+          "required_gates": [
+            "load balancing",
+            "cache locality",
+            "replica failure test"
+          ]
+        },
+        {
+          "technique": "speculative_prompt_lookup",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Prompt-lookup speculation is most plausible for input-grounded outputs with repeated phrases; it is not assumed beneficial for short or tool-dominated workflows.",
+          "required_gates": [
+            "lossless parity",
+            "acceptance rate",
+            "decode and end-to-end improvement",
+            "memory overhead"
+          ]
+        },
+        {
+          "technique": "speculative_draft_model",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "A draft model adds compute and memory. It is a profile-specific experiment, especially at low-to-moderate concurrency and sufficiently long decode.",
+          "required_gates": [
+            "draft-target tokenizer compatibility",
+            "lossless sampling verification",
+            "acceptance distribution",
+            "high-concurrency regression test"
+          ]
+        },
+        {
+          "technique": "self_speculative",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "Self-speculative methods depend on model/runtime support and are not selected without a compatible model and endpoint.",
+          "required_gates": [
+            "runtime support",
+            "quality parity"
+          ]
+        },
+        {
+          "technique": "multi_token_prediction",
+          "suitability_score": 0,
+          "decision": "defer",
+          "rationale": "MTP is available only for models with native support; NorthStar has not selected such a model.",
+          "required_gates": [
+            "native model support",
+            "quality and latency benchmark"
+          ]
+        },
+        {
+          "technique": "model_routing",
+          "suitability_score": 2,
+          "decision": "defer",
+          "rationale": "Model routing is architecturally relevant but belongs to the next explicit model-selection stage; no automatic route changes are introduced here.",
+          "required_gates": [
+            "model catalogue",
+            "risk and residency policy",
+            "cross-model quality evaluation"
+          ]
+        }
+      ],
+      "selected_policy_id": "IOP-007-001",
+      "advisory_only": true,
+      "may_mutate_admission": false,
+      "may_grant_authority": false
+    }
+  },
+  {
+    "profile_id": "WP-008",
+    "status": "inactive_future",
+    "decision": "blocked"
+  }
+]

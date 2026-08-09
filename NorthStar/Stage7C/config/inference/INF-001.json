@@ -1,0 +1,21 @@
+{
+  "deployment_id": "INF-001",
+  "name": "Managed provider-neutral baseline",
+  "version": "1.0.0",
+  "kind": "managed_api",
+  "provider_or_runtime": "provider-neutral-managed-api",
+  "model_id": "unselected-managed-model",
+  "tokenizer_id": "provider-reported-tokenizer",
+  "server_version": "provider-managed-unpinned",
+  "hardware": "provider-managed-undisclosed",
+  "region_or_location": "Canada-or-approved-region",
+  "data_residency": "policy-selected",
+  "supports_streaming": true,
+  "supports_prefix_cache": true,
+  "supports_continuous_batching": false,
+  "supports_chunked_prefill": false,
+  "supports_quantization": false,
+  "supports_speculative_decoding": false,
+  "supports_parallelism": false,
+  "raw_payload_capture": false
+}

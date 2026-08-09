@@ -1,0 +1,16 @@
+{
+  "profile_id": "WP-003",
+  "name": "Policy comparison",
+  "status": "active",
+  "median_isl_tokens": 24000,
+  "median_osl_tokens": 2400,
+  "p95_isl_tokens": 120000,
+  "p95_osl_tokens": 10000,
+  "expected_concurrency": 6,
+  "repeated_prefix_ratio": 0.62,
+  "input_output_overlap": 0.42,
+  "external_latency_fraction": 0.28,
+  "interactive": false,
+  "batch": false,
+  "context_growth": false
+}

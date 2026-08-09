@@ -1,0 +1,16 @@
+{
+  "profile_id": "WP-002",
+  "name": "Long-document analysis",
+  "status": "active",
+  "median_isl_tokens": 32000,
+  "median_osl_tokens": 3200,
+  "p95_isl_tokens": 128000,
+  "p95_osl_tokens": 14000,
+  "expected_concurrency": 4,
+  "repeated_prefix_ratio": 0.7,
+  "input_output_overlap": 0.48,
+  "external_latency_fraction": 0.18,
+  "interactive": false,
+  "batch": false,
+  "context_growth": false
+}

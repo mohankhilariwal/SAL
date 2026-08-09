@@ -1,0 +1,8 @@
+flowchart LR
+    C11["CMP-011 Governance Pack"] --> W["DATA-114..121 Workload Evidence"]
+    W --> B["CMP-010 Local Benchmark Proxy"]
+    B --> O["CMP-009 Observations"]
+    O --> C8["CMP-008 Capacity Analysis"]
+    C8 --> R["INT-093 Advisory Capacity Recommendation"]
+    R -. "no automatic mutation" .-> C3["CMP-003 / DATA-106 Admission Owner"]
+    L["Limitation: no inference deployment or optimization policy"] -.-> B

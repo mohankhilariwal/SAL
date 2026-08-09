@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-123",
+  "title": "DATA-123 InferenceOptimizationPolicy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "version",
+    "cache_policy",
+    "batching_policy",
+    "speculative_plan"
+  ],
+  "properties": {
+    "policy_id": {},
+    "version": {},
+    "cache_policy": {},
+    "batching_policy": {},
+    "speculative_plan": {}
+  },
+  "additionalProperties": true
+}

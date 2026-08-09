@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-127",
+  "title": "DATA-127 InferenceBenchmarkScenario",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "workload",
+    "deployment",
+    "policy",
+    "evidence_kind",
+    "request_count",
+    "seed",
+    "cache_state",
+    "quality_dataset_id"
+  ],
+  "properties": {
+    "scenario_id": {},
+    "workload": {},
+    "deployment": {},
+    "policy": {},
+    "evidence_kind": {},
+    "request_count": {},
+    "seed": {},
+    "cache_state": {},
+    "quality_dataset_id": {}
+  },
+  "additionalProperties": true
+}

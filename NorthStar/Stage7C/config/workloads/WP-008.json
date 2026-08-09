@@ -1,0 +1,16 @@
+{
+  "profile_id": "WP-008",
+  "name": "Future multi-agent investigation",
+  "status": "inactive_future",
+  "median_isl_tokens": 0,
+  "median_osl_tokens": 0,
+  "p95_isl_tokens": 0,
+  "p95_osl_tokens": 0,
+  "expected_concurrency": 0,
+  "repeated_prefix_ratio": 0,
+  "input_output_overlap": 0,
+  "external_latency_fraction": 0,
+  "interactive": false,
+  "batch": false,
+  "context_growth": false
+}

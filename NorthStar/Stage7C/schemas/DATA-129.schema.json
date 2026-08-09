@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-129",
+  "title": "DATA-129 QualityParityRecord",
+  "type": "object",
+  "required": [
+    "record_id",
+    "dataset_id",
+    "baseline_digest",
+    "candidate_digest",
+    "structured_validity_rate",
+    "groundedness_delta",
+    "task_success_delta",
+    "lossless_distribution_verified",
+    "passed"
+  ],
+  "properties": {
+    "record_id": {},
+    "dataset_id": {},
+    "baseline_digest": {},
+    "candidate_digest": {},
+    "structured_validity_rate": {},
+    "groundedness_delta": {},
+    "task_success_delta": {},
+    "lossless_distribution_verified": {},
+    "passed": {}
+  },
+  "additionalProperties": true
+}

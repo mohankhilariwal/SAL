@@ -1,0 +1,107 @@
+[
+  {
+    "evaluation_id": "EVAL-101",
+    "passed": true,
+    "observed": false,
+    "threshold": false,
+    "message": "Raw payload capture remains disabled."
+  },
+  {
+    "evaluation_id": "EVAL-102",
+    "passed": true,
+    "observed": true,
+    "threshold": true,
+    "message": "Quality parity gate."
+  },
+  {
+    "evaluation_id": "EVAL-103",
+    "passed": true,
+    "observed": 1,
+    "threshold": 0.99,
+    "message": "Structured output validity gate."
+  },
+  {
+    "evaluation_id": "EVAL-104",
+    "passed": true,
+    "observed": 0,
+    "threshold": -0.01,
+    "message": "Groundedness regression tolerance."
+  },
+  {
+    "evaluation_id": "EVAL-105",
+    "passed": true,
+    "observed": 0,
+    "threshold": -0.01,
+    "message": "Task-success regression tolerance."
+  },
+  {
+    "evaluation_id": "EVAL-106",
+    "passed": true,
+    "observed": 0.85,
+    "threshold": 0.55,
+    "message": "Speculative acceptance-rate gate."
+  },
+  {
+    "evaluation_id": "EVAL-107",
+    "passed": true,
+    "observed": 0.5339142523801063,
+    "threshold": 0.1,
+    "message": "Decode improvement gate."
+  },
+  {
+    "evaluation_id": "EVAL-108",
+    "passed": true,
+    "observed": 0.4363315379981383,
+    "threshold": 0.05,
+    "message": "End-to-end improvement gate."
+  },
+  {
+    "evaluation_id": "EVAL-109",
+    "passed": true,
+    "observed": 0.16,
+    "threshold": 0.2,
+    "message": "Memory overhead gate."
+  },
+  {
+    "evaluation_id": "EVAL-110",
+    "passed": true,
+    "observed": true,
+    "threshold": true,
+    "message": "Lossless-distribution verification gate."
+  },
+  {
+    "evaluation_id": "EVAL-111",
+    "passed": true,
+    "observed": 2604.1333333333337,
+    "threshold": 0.0,
+    "message": "TTFT is present and non-negative."
+  },
+  {
+    "evaluation_id": "EVAL-112",
+    "passed": true,
+    "observed": 5.17873052910993,
+    "threshold": 0.0,
+    "message": "ITL is present and non-negative."
+  },
+  {
+    "evaluation_id": "EVAL-113",
+    "passed": true,
+    "observed": 28146.50205205356,
+    "threshold": 2604.1333333333337,
+    "message": "End-to-end latency contains TTFT."
+  },
+  {
+    "evaluation_id": "EVAL-114",
+    "passed": true,
+    "observed": 0.7,
+    "threshold": 1.0,
+    "message": "Cache-hit rate is bounded and declared."
+  },
+  {
+    "evaluation_id": "EVAL-115",
+    "passed": true,
+    "observed": true,
+    "threshold": true,
+    "message": "Overall candidate gate."
+  }
+]

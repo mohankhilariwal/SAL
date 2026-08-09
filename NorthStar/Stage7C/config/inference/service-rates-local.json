@@ -1,0 +1,8 @@
+{
+  "prefill_tokens_per_second": 6000.0,
+  "decode_tokens_per_second": 90.0,
+  "fixed_request_ms": 45.0,
+  "network_ms": 25.0,
+  "bytes_per_kv_token": 131072,
+  "note": "Synthetic local planning assumptions only; not a production benchmark."
+}

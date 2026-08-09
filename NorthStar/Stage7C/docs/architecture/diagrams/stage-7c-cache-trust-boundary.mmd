@@ -1,0 +1,15 @@
+flowchart LR
+    R["Inference request"] --> K["Cache key builder"]
+    A["Authorization scope"] --> K
+    T["Tenant/case scope"] --> K
+    M["Model + tokenizer"] --> K
+    P["Prompt/graph version"] --> K
+    E["Evidence version"] --> K
+    K --> H{"Complete exact binding?"}
+    H -->|No| MISS["Fail closed: cache miss"]
+    H -->|Yes| C["Tenant-isolated exact prefix cache"]
+    C --> V["Validate TTL and invalidation epoch"]
+    V -->|Valid| USE["Reuse prefill/KV work only"]
+    V -->|Stale| MISS
+    S["Semantic regulatory answer cache"] -. "prohibited" .-> MISS
+    USE -. "does not confer authority or approval" .-> O["Normal inference and output validation"]

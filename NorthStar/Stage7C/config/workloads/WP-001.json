@@ -1,0 +1,16 @@
+{
+  "profile_id": "WP-001",
+  "name": "Short regulatory query",
+  "status": "active",
+  "median_isl_tokens": 1800,
+  "median_osl_tokens": 260,
+  "p95_isl_tokens": 8000,
+  "p95_osl_tokens": 1400,
+  "expected_concurrency": 12,
+  "repeated_prefix_ratio": 0.55,
+  "input_output_overlap": 0.15,
+  "external_latency_fraction": 0.2,
+  "interactive": true,
+  "batch": false,
+  "context_growth": false
+}

@@ -1,0 +1,21 @@
+{
+  "deployment_id": "INF-003",
+  "name": "Local standard-library simulator",
+  "version": "1.0.0",
+  "kind": "local_simulated",
+  "provider_or_runtime": "northstar-stage7c-simulator",
+  "model_id": "synthetic-service-model",
+  "tokenizer_id": "profile-placeholder",
+  "server_version": "1.8.0",
+  "hardware": "CPU-only-development-machine",
+  "region_or_location": "local-development",
+  "data_residency": "local-synthetic-only",
+  "supports_streaming": true,
+  "supports_prefix_cache": true,
+  "supports_continuous_batching": true,
+  "supports_chunked_prefill": true,
+  "supports_quantization": true,
+  "supports_speculative_decoding": true,
+  "supports_parallelism": true,
+  "raw_payload_capture": false
+}

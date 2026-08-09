@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:northstar:data-125",
+  "title": "DATA-125 BatchingPolicy",
+  "type": "object",
+  "required": [
+    "mode",
+    "max_batch_tokens",
+    "max_concurrent_requests",
+    "max_wait_ms",
+    "chunked_prefill",
+    "priority_aware"
+  ],
+  "properties": {
+    "mode": {},
+    "max_batch_tokens": {},
+    "max_concurrent_requests": {},
+    "max_wait_ms": {},
+    "chunked_prefill": {},
+    "priority_aware": {}
+  },
+  "additionalProperties": true
+}
