@@ -1,0 +1,26 @@
+{
+  "assertions": {
+    "authority_effect_none": true,
+    "authority_issuer_preserved": true,
+    "critical_non_overridable": true,
+    "evaluations": true,
+    "no_route_activation": true,
+    "one_active_agent": true,
+    "threat_count": true,
+    "tool_gateway_preserved": true,
+    "wp008_inactive": true
+  },
+  "exceptions": [
+    "ISS-096",
+    "ISS-131",
+    "ISS-140",
+    "ISS-141",
+    "ISS-142",
+    "ISS-143",
+    "ISS-144",
+    "ISS-145",
+    "ISS-146"
+  ],
+  "failed": [],
+  "result": "passed_with_recorded_exceptions"
+}

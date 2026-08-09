@@ -1,0 +1,38 @@
+flowchart TB
+ classDef existing fill:#eef3f8,stroke:#506070,stroke-width:1px
+ classDef new fill:#e9f7ef,stroke:#247a45,stroke-width:2px
+ classDef advisory fill:#f4ecf7,stroke:#7d3c98,stroke-width:2px
+ classDef disabled fill:#fff3e0,stroke:#ef6c00,stroke-dasharray:5 5
+ U["Maya Chen"]:::existing --> C1["CMP-001 Analyst Experience Portal"]:::existing
+ C1 --> C2["CMP-002 Regulatory Intake Boundary"]:::existing
+ C1 --> C3["CMP-003 Case and Workflow Orchestration
+GRAPH-001 runtime unchanged"]:::existing
+ C2 --> C3
+ C3 --> A1["AGT-001 Regulatory Impact Assessment Agent
+only active agent"]:::existing
+ C3 --> C4["CMP-004 Knowledge and Evidence Access"]:::existing
+ A1 --> C5["CMP-005 Enterprise Integration Boundary
+TOOL-001..006 gateway only"]:::existing
+ C7["CMP-007 Identity Authorization and Policy
+sole authority issuer"]:::existing --> C5
+ C3 --> C6["CMP-006 Human Review and Approval
+humans own approval/finalization"]:::existing
+ C3 --> C10["CMP-010 Runtime and Deployment
+bounded local reference"]:::existing
+ C3 --> C9["CMP-009 Observability and Audit
+local, not WORM"]:::existing
+ C8["CMP-008 Evaluation and Assurance"]:::existing --> TM["TM-001 Threat-Modelling Laboratory
+DATA-165..176 / INT-130..139"]:::new
+ C11["CMP-011 Source-of-Truth Governance
+1.12.0"]:::existing --> SNAP["Immutable Architecture Snapshot
+trust boundaries, assets and flows"]:::new
+ SNAP --> TM
+ TM --> STRIDE["STRIDE + DFD analysis"]:::advisory
+ TM --> AT["Attack trees + misuse cases"]:::advisory
+ TM --> CROSS["OWASP Agentic Top 10 crosswalk"]:::advisory
+ TM --> RISK["Ordinal inherent/residual prioritization"]:::advisory
+ RISK --> REC["Advisory treatment recommendation
+authority_effect: none"]:::advisory
+ REC -. no route/state/approval mutation .-> C11
+ FUT["WP-008 / MCP / A2A / multiple agents
+inactive future threat scope only"]:::disabled -. modelled, not activated .-> TM

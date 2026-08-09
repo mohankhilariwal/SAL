@@ -1,0 +1,1040 @@
+{
+  "catalogue_id": "TMC-001/1.0.0",
+  "scenarios": [
+    {
+      "actor_id": "ACT-001",
+      "authority_effect": "none",
+      "controls": [
+        "Reject instruction-like data outside trusted instruction envelope",
+        "goal/spec binding",
+        "output/tool policy checks."
+      ],
+      "entry_flows": [
+        "DF-001",
+        "DF-005"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI01",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-310",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "goal_hijack",
+      "title": "Direct prompt injection changes the task goal"
+    },
+    {
+      "actor_id": "ACT-002",
+      "authority_effect": "none",
+      "controls": [
+        "Treat source text as data",
+        "content provenance",
+        "instruction boundary",
+        "sandboxed parsing",
+        "adversarial tests."
+      ],
+      "entry_flows": [
+        "DF-002",
+        "DF-004",
+        "DF-005"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 5,
+      "owasp_agentic_top10": "ASI01",
+      "residual_impact": 4,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-311",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "goal_hijack",
+      "title": "Indirect prompt injection embedded in regulatory publication"
+    },
+    {
+      "actor_id": "ACT-001",
+      "authority_effect": "none",
+      "controls": [
+        "Critical controls outside model",
+        "constrained schemas",
+        "allowlists",
+        "deterministic completion and tool enforcement."
+      ],
+      "entry_flows": [
+        "DF-001",
+        "DF-005"
+      ],
+      "inherent_impact": 4,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI01",
+      "residual_impact": 3,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-312",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "goal_hijack",
+      "title": "Jailbreak defeats model behavioural constraints"
+    },
+    {
+      "actor_id": "ACT-002",
+      "authority_effect": "none",
+      "controls": [
+        "Source authority/freshness",
+        "immutable provenance",
+        "access-aware retrieval",
+        "conflict detection",
+        "human review."
+      ],
+      "entry_flows": [
+        "DF-010",
+        "DF-011"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI06",
+      "residual_impact": 4,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-313",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Information Disclosure"
+      ],
+      "threat_family": "memory_context_poisoning",
+      "title": "Retrieval poisoning supplies false or malicious evidence"
+    },
+    {
+      "actor_id": "ACT-005",
+      "authority_effect": "none",
+      "controls": [
+        "Versioned registry",
+        "signed/controlled manifests in production",
+        "exact tool IDs/schemas",
+        "gateway validation."
+      ],
+      "entry_flows": [
+        "DF-006",
+        "DF-016"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI02",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-314",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "tool_misuse",
+      "title": "Tool description or schema poisoning redirects capability use"
+    },
+    {
+      "actor_id": "ACT-004",
+      "authority_effect": "none",
+      "controls": [
+        "Typed result envelope",
+        "source/tool identity",
+        "result validation",
+        "reconciliation",
+        "never treat prose as authority."
+      ],
+      "entry_flows": [
+        "DF-009"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI02",
+      "residual_impact": 4,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-315",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Spoofing",
+        "Tampering"
+      ],
+      "threat_family": "tool_misuse",
+      "title": "Compromised tool returns hostile instructions or forged success"
+    },
+    {
+      "actor_id": "ACT-001",
+      "authority_effect": "none",
+      "controls": [
+        "One bounded agent",
+        "exact allowlist",
+        "gateway-only tools",
+        "human approval",
+        "no route/protected-state authority."
+      ],
+      "entry_flows": [
+        "DF-005",
+        "DF-006"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI02",
+      "residual_impact": 4,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-316",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Elevation of Privilege"
+      ],
+      "threat_family": "tool_misuse",
+      "title": "Excessive agency causes unauthorized action"
+    },
+    {
+      "actor_id": "ACT-004",
+      "authority_effect": "none",
+      "controls": [
+        "Per-client consent",
+        "audience-bound grants",
+        "no token passthrough",
+        "resource/scope binding",
+        "policy recheck."
+      ],
+      "entry_flows": [
+        "DF-007",
+        "DF-008"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI03",
+      "residual_impact": 4,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-317",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Spoofing",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "identity_privilege_abuse",
+      "title": "Confused-deputy abuse of integration proxy"
+    },
+    {
+      "actor_id": "ACT-001",
+      "authority_effect": "none",
+      "controls": [
+        "Nonce/expiry/audience",
+        "proof-of-possession future",
+        "replay cache",
+        "token exchange",
+        "deny token passthrough."
+      ],
+      "entry_flows": [
+        "DF-007",
+        "DF-008",
+        "DF-018"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI03",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-318",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Spoofing",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "identity_privilege_abuse",
+      "title": "Authorization token replay or audience confusion"
+    },
+    {
+      "actor_id": "ACT-005",
+      "authority_effect": "none",
+      "controls": [
+        "Workload identity required in production",
+        "signed messages",
+        "mTLS/PoP",
+        "exact component/profile binding."
+      ],
+      "entry_flows": [
+        "DF-018",
+        "DF-019"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI03",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-319",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Spoofing"
+      ],
+      "threat_family": "identity_privilege_abuse",
+      "title": "Agent, worker or service impersonation"
+    },
+    {
+      "actor_id": "ACT-006",
+      "authority_effect": "none",
+      "controls": [
+        "Authorization before retrieval/context",
+        "case/tenant scope",
+        "private memory",
+        "negative permission tests."
+      ],
+      "entry_flows": [
+        "DF-010",
+        "DF-011",
+        "DF-005"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI03",
+      "residual_impact": 5,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-320",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Information Disclosure"
+      ],
+      "threat_family": "identity_privilege_abuse",
+      "title": "Cross-tenant or cross-case evidence leakage"
+    },
+    {
+      "actor_id": "ACT-005",
+      "authority_effect": "none",
+      "controls": [
+        "Secrets stay outside prompts",
+        "redaction",
+        "secret scanning",
+        "short-lived credentials",
+        "minimized telemetry."
+      ],
+      "entry_flows": [
+        "DF-005",
+        "DF-008",
+        "DF-014"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI03",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-321",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Information Disclosure"
+      ],
+      "threat_family": "identity_privilege_abuse",
+      "title": "Secrets or credentials exposed to model/context/logs"
+    },
+    {
+      "actor_id": "ACT-005",
+      "authority_effect": "none",
+      "controls": [
+        "Pinning/SBOM/signatures in production",
+        "change control",
+        "reproducible hashes",
+        "isolated evaluation",
+        "rollback."
+      ],
+      "entry_flows": [
+        "DF-016",
+        "DF-017"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI04",
+      "residual_impact": 4,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-322",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "agentic_supply_chain",
+      "title": "Dependency, model, prompt or configuration supply-chain compromise"
+    },
+    {
+      "actor_id": "ACT-008",
+      "authority_effect": "none",
+      "controls": [
+        "Registry allowlist",
+        "server identity",
+        "capability review",
+        "audience-bound authorization",
+        "sandbox",
+        "no activation today."
+      ],
+      "entry_flows": [
+        "DF-020"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI04",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-323",
+      "schema_id": "DATA-169",
+      "scope": "future",
+      "status": "future_not_active",
+      "stride": [
+        "Spoofing",
+        "Tampering",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "agentic_supply_chain",
+      "title": "Malicious MCP server or dynamic capability poisoning"
+    },
+    {
+      "actor_id": "ACT-001",
+      "authority_effect": "none",
+      "controls": [
+        "No code-exec tool",
+        "strict typed arguments",
+        "sandbox future",
+        "egress controls",
+        "command allowlists",
+        "reject shell strings."
+      ],
+      "entry_flows": [
+        "DF-006",
+        "DF-008"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI05",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-324",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "unexpected_code_execution",
+      "title": "Unexpected code execution from natural-language or tool arguments"
+    },
+    {
+      "actor_id": "ACT-001",
+      "authority_effect": "none",
+      "controls": [
+        "Capability absent",
+        "future isolation, ephemeral workspaces, network deny, file allowlists and kill switch required."
+      ],
+      "entry_flows": [
+        "DF-008"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 2,
+      "owasp_agentic_top10": "ASI05",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-325",
+      "schema_id": "DATA-169",
+      "scope": "future",
+      "status": "future_not_active",
+      "stride": [
+        "Elevation of Privilege",
+        "Information Disclosure"
+      ],
+      "threat_family": "unexpected_code_execution",
+      "title": "Sandbox escape or browser/computer-use compromise"
+    },
+    {
+      "actor_id": "ACT-002",
+      "authority_effect": "none",
+      "controls": [
+        "Explicit write policy",
+        "case scope",
+        "provenance/expiry",
+        "reject instructions/secrets/final decisions",
+        "integrity digests."
+      ],
+      "entry_flows": [
+        "DF-005"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI06",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-326",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering"
+      ],
+      "threat_family": "memory_context_poisoning",
+      "title": "Case-working memory poisoning changes later behaviour"
+    },
+    {
+      "actor_id": "ACT-006",
+      "authority_effect": "none",
+      "controls": [
+        "Only optional case-working memory",
+        "no shared memory",
+        "authorization on read",
+        "deletion/expiry",
+        "negative tests."
+      ],
+      "entry_flows": [
+        "DF-005"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI06",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-327",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Information Disclosure"
+      ],
+      "threat_family": "memory_context_poisoning",
+      "title": "Cross-case memory leakage or unauthorized recall"
+    },
+    {
+      "actor_id": "ACT-003",
+      "authority_effect": "none",
+      "controls": [
+        "Canonical digests",
+        "sequence/version checks",
+        "atomic local writes",
+        "future signatures/WORM",
+        "fail closed on corruption."
+      ],
+      "entry_flows": [
+        "DF-018",
+        "DF-019"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI08",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-328",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Repudiation"
+      ],
+      "threat_family": "cascading_failures",
+      "title": "Checkpoint or protected state tampering"
+    },
+    {
+      "actor_id": "ACT-007",
+      "authority_effect": "none",
+      "controls": [
+        "Idempotency keys",
+        "duplicate suppression",
+        "reconciliation",
+        "read-only concurrent eligibility",
+        "no retry of ambiguous writes."
+      ],
+      "entry_flows": [
+        "DF-018",
+        "DF-019",
+        "DF-008"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI08",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-329",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Denial of Service"
+      ],
+      "threat_family": "cascading_failures",
+      "title": "Duplicate or replayed work causes repeated side effects"
+    },
+    {
+      "actor_id": "ACT-003",
+      "authority_effect": "none",
+      "controls": [
+        "Append-only/WORM future",
+        "hash chaining/signatures",
+        "role separation",
+        "minimized immutable evidence packages."
+      ],
+      "entry_flows": [
+        "DF-014",
+        "DF-015"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI08",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-330",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Repudiation"
+      ],
+      "threat_family": "cascading_failures",
+      "title": "Audit or trace tampering enables repudiation"
+    },
+    {
+      "actor_id": "ACT-002",
+      "authority_effect": "none",
+      "controls": [
+        "Candidate data isolation",
+        "deterministic-first",
+        "critical failures non-overridable",
+        "bias lab",
+        "quarantine recommendation."
+      ],
+      "entry_flows": [
+        "DF-015",
+        "DF-017"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI09",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-331",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering"
+      ],
+      "threat_family": "human_agent_trust_exploitation",
+      "title": "Judge manipulation or instruction contamination hides unsafe output"
+    },
+    {
+      "actor_id": "ACT-003",
+      "authority_effect": "none",
+      "controls": [
+        "Immutable manifests/splits",
+        "exposure ledger future",
+        "digest checks",
+        "separation of calibration and sealed test."
+      ],
+      "entry_flows": [
+        "DF-017"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI04",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-332",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering",
+        "Repudiation"
+      ],
+      "threat_family": "agentic_supply_chain",
+      "title": "Evaluation dataset poisoning or sealed-test contamination"
+    },
+    {
+      "actor_id": "ACT-007",
+      "authority_effect": "none",
+      "controls": [
+        "Input limits",
+        "token/time/tool budgets",
+        "bounded queues/concurrency",
+        "load shedding",
+        "cancellation and deadlines."
+      ],
+      "entry_flows": [
+        "DF-001",
+        "DF-002",
+        "DF-018"
+      ],
+      "inherent_impact": 4,
+      "inherent_likelihood": 5,
+      "owasp_agentic_top10": "ASI08",
+      "residual_impact": 3,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-333",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Denial of Service"
+      ],
+      "threat_family": "cascading_failures",
+      "title": "Resource exhaustion through oversized context or repeated calls"
+    },
+    {
+      "actor_id": "ACT-007",
+      "authority_effect": "none",
+      "controls": [
+        "Iteration/retry/replan/cost budgets",
+        "repetition/no-progress detection",
+        "bounded fallback",
+        "circuit breaker future."
+      ],
+      "entry_flows": [
+        "DF-005",
+        "DF-006",
+        "DF-018"
+      ],
+      "inherent_impact": 4,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI08",
+      "residual_impact": 3,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-334",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Denial of Service"
+      ],
+      "threat_family": "cascading_failures",
+      "title": "Infinite loop, retry amplification or cost attack"
+    },
+    {
+      "actor_id": "ACT-007",
+      "authority_effect": "none",
+      "controls": [
+        "Global/per-case limits",
+        "finite queue",
+        "fairness policy future",
+        "authenticated cancellation",
+        "deadline propagation."
+      ],
+      "entry_flows": [
+        "DF-018",
+        "DF-019"
+      ],
+      "inherent_impact": 4,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI08",
+      "residual_impact": 3,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-335",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Denial of Service"
+      ],
+      "threat_family": "cascading_failures",
+      "title": "Queue flooding, starvation or cancellation abuse"
+    },
+    {
+      "actor_id": "ACT-004",
+      "authority_effect": "none",
+      "controls": [
+        "Provenance, conflict checks, independent verification profile, partial outcome semantics and human review."
+      ],
+      "entry_flows": [
+        "DF-009",
+        "DF-011",
+        "DF-005"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI08",
+      "residual_impact": 4,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-336",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Tampering"
+      ],
+      "threat_family": "cascading_failures",
+      "title": "False evidence or tool failure cascades into incorrect assessment"
+    },
+    {
+      "actor_id": "ACT-002",
+      "authority_effect": "none",
+      "controls": [
+        "Evidence-first review packages",
+        "uncertainty",
+        "reviewer training",
+        "forced checks",
+        "separation of correctness and style."
+      ],
+      "entry_flows": [
+        "DF-012",
+        "DF-013"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI09",
+      "residual_impact": 4,
+      "residual_likelihood": 3,
+      "risk_id": "RSK-337",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Spoofing",
+        "Repudiation"
+      ],
+      "threat_family": "human_agent_trust_exploitation",
+      "title": "Polished explanation exploits reviewer trust or automation bias"
+    },
+    {
+      "actor_id": "ACT-003",
+      "authority_effect": "none",
+      "controls": [
+        "Strong human authentication",
+        "SoD",
+        "single-use/expiry",
+        "signed decision future",
+        "timeout never approves."
+      ],
+      "entry_flows": [
+        "DF-013"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI03",
+      "residual_impact": 5,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-338",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Spoofing",
+        "Elevation of Privilege",
+        "Repudiation"
+      ],
+      "threat_family": "identity_privilege_abuse",
+      "title": "Reviewer account compromise or approval forgery"
+    },
+    {
+      "actor_id": "ACT-008",
+      "authority_effect": "none",
+      "controls": [
+        "Trusted discovery",
+        "exact version/profile",
+        "signed metadata future",
+        "capability is non-authoritative",
+        "no activation today."
+      ],
+      "entry_flows": [
+        "DF-020"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI07",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-339",
+      "schema_id": "DATA-169",
+      "scope": "future",
+      "status": "future_not_active",
+      "stride": [
+        "Spoofing",
+        "Tampering"
+      ],
+      "threat_family": "insecure_inter_agent_communication",
+      "title": "Future Agent Card or capability advertisement spoofing"
+    },
+    {
+      "actor_id": "ACT-008",
+      "authority_effect": "none",
+      "controls": [
+        "Authenticated channels, message signatures, correlation/causation, nonce/expiry, receiver authorization."
+      ],
+      "entry_flows": [
+        "DF-020"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI07",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-340",
+      "schema_id": "DATA-169",
+      "scope": "future",
+      "status": "future_not_active",
+      "stride": [
+        "Spoofing",
+        "Tampering",
+        "Repudiation"
+      ],
+      "threat_family": "insecure_inter_agent_communication",
+      "title": "Future inter-agent message spoofing, tampering or replay"
+    },
+    {
+      "actor_id": "ACT-008",
+      "authority_effect": "none",
+      "controls": [
+        "No shared memory today",
+        "future ownership, ACL, provenance, conflict and quarantine required."
+      ],
+      "entry_flows": [
+        "DF-020"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI06",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-341",
+      "schema_id": "DATA-169",
+      "scope": "future",
+      "status": "future_not_active",
+      "stride": [
+        "Tampering",
+        "Information Disclosure"
+      ],
+      "threat_family": "memory_context_poisoning",
+      "title": "Future shared-memory poisoning across agents"
+    },
+    {
+      "actor_id": "ACT-008",
+      "authority_effect": "none",
+      "controls": [
+        "Independent evidence, bounded fan-out, deterministic aggregation, verifier limits, human escalation and kill switch."
+      ],
+      "entry_flows": [
+        "DF-020"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI08",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-342",
+      "schema_id": "DATA-169",
+      "scope": "future",
+      "status": "future_not_active",
+      "stride": [
+        "Tampering"
+      ],
+      "threat_family": "cascading_failures",
+      "title": "Future multi-agent cascading hallucination or error amplification"
+    },
+    {
+      "actor_id": "ACT-008",
+      "authority_effect": "none",
+      "controls": [
+        "No voting/consensus today",
+        "future diversity evidence, hard-gate veto, provenance, anti-collusion tests and human control."
+      ],
+      "entry_flows": [
+        "DF-020"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI10",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-343",
+      "schema_id": "DATA-169",
+      "scope": "future",
+      "status": "future_not_active",
+      "stride": [
+        "Tampering",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "rogue_agents",
+      "title": "Future agent collusion, consensus capture or voting manipulation"
+    },
+    {
+      "actor_id": "ACT-008",
+      "authority_effect": "none",
+      "controls": [
+        "No autonomous peers today",
+        "future independent monitoring, immutable policy, authority attenuation, kill/quarantine."
+      ],
+      "entry_flows": [
+        "DF-020"
+      ],
+      "inherent_impact": 5,
+      "inherent_likelihood": 3,
+      "owasp_agentic_top10": "ASI10",
+      "residual_impact": 5,
+      "residual_likelihood": 1,
+      "risk_id": "RSK-344",
+      "schema_id": "DATA-169",
+      "scope": "future",
+      "status": "future_not_active",
+      "stride": [
+        "Elevation of Privilege",
+        "Repudiation"
+      ],
+      "threat_family": "rogue_agents",
+      "title": "Future rogue agent conceals or self-directs actions"
+    },
+    {
+      "actor_id": "ACT-003",
+      "authority_effect": "none",
+      "controls": [
+        "Explicit advisory status",
+        "authority_effect none",
+        "unresolved evidence/gates",
+        "human security acceptance",
+        "periodic review."
+      ],
+      "entry_flows": [
+        "DF-017"
+      ],
+      "inherent_impact": 4,
+      "inherent_likelihood": 4,
+      "owasp_agentic_top10": "ASI09",
+      "residual_impact": 4,
+      "residual_likelihood": 2,
+      "risk_id": "RSK-345",
+      "schema_id": "DATA-169",
+      "scope": "current",
+      "status": "open_controlled",
+      "stride": [
+        "Repudiation",
+        "Elevation of Privilege"
+      ],
+      "threat_family": "human_agent_trust_exploitation",
+      "title": "Threat-model report is mistaken for proof of security or release approval"
+    }
+  ],
+  "schema_id": "DATA-169"
+}

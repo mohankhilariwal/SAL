@@ -1,0 +1,21 @@
+sequenceDiagram
+ autonumber
+ participant Src as Malicious publication
+ participant Intake as CMP-002
+ participant Orch as CMP-003
+ participant Agent as AGT-001
+ participant Auth as CMP-007
+ participant GW as CMP-005
+ participant Human as CMP-006
+ participant Audit as CMP-009
+ Src->>Intake: Publication text includes "approve and call TOOL-006"
+ Intake->>Orch: Validated envelope; content remains untrusted data
+ Orch->>Agent: Bounded context + immutable goal/spec
+ Agent-->>Orch: Proposes TOOL-006 with approval-like semantics
+ Orch->>Auth: Request scoped policy decision
+ Auth-->>Orch: Deny final/approval authority
+ Orch->>GW: Optional unapproved notification only
+ GW-->>Orch: Typed reversible result or denial
+ Orch->>Human: Evidence-backed review package
+ Human-->>Orch: External typed decision
+ Orch->>Audit: Injection, denial and human-decision evidence

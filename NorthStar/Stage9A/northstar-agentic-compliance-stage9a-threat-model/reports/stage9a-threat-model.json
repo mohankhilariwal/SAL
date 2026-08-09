@@ -1,0 +1,349 @@
+{
+  "architecture_snapshot": "ARCH-SNAPSHOT-1.11.0-S09A",
+  "architecture_version": "1.12.0",
+  "authority_effect": "none",
+  "boundary_exposure": {
+    "TB-00->TB-01": [
+      "RSK-310",
+      "RSK-311",
+      "RSK-312",
+      "RSK-333"
+    ],
+    "TB-00->TB-03": [
+      "RSK-315",
+      "RSK-336"
+    ],
+    "TB-01->TB-02": [
+      "RSK-311"
+    ],
+    "TB-02->TB-03": [
+      "RSK-313",
+      "RSK-314",
+      "RSK-316",
+      "RSK-320",
+      "RSK-324",
+      "RSK-334"
+    ],
+    "TB-02->TB-04": [
+      "RSK-337"
+    ],
+    "TB-02->TB-05": [
+      "RSK-318",
+      "RSK-319",
+      "RSK-321",
+      "RSK-328",
+      "RSK-329",
+      "RSK-330",
+      "RSK-333",
+      "RSK-334",
+      "RSK-335"
+    ],
+    "TB-03->TB-00": [
+      "RSK-317",
+      "RSK-318",
+      "RSK-321",
+      "RSK-324",
+      "RSK-325",
+      "RSK-329"
+    ],
+    "TB-03->TB-02": [
+      "RSK-313",
+      "RSK-320",
+      "RSK-336"
+    ],
+    "TB-04->TB-02": [
+      "RSK-337",
+      "RSK-338"
+    ],
+    "TB-04->TB-03": [
+      "RSK-317",
+      "RSK-318"
+    ],
+    "TB-05->TB-02": [
+      "RSK-319",
+      "RSK-328",
+      "RSK-329",
+      "RSK-335"
+    ],
+    "TB-06->TB-02": [
+      "RSK-314",
+      "RSK-322"
+    ],
+    "TB-06->TB-05": [
+      "RSK-322",
+      "RSK-331",
+      "RSK-332",
+      "RSK-345"
+    ],
+    "TB-07->TB-03": [
+      "RSK-323",
+      "RSK-339",
+      "RSK-340",
+      "RSK-341",
+      "RSK-342",
+      "RSK-343",
+      "RSK-344"
+    ]
+  },
+  "catalogue_digest": "7dc27ca77fc3ed2f6fe2ea7ba13a03b47990c52983ac133e45f3e64e82eff4cb",
+  "catalogue_id": "TMC-001/1.0.0",
+  "counts": {
+    "assets": 12,
+    "attack_trees": 3,
+    "boundaries": 8,
+    "flows": 20,
+    "misuse_cases": 6,
+    "threats": 36
+  },
+  "graph_version": "GRAPH-001/1.8.0",
+  "hard_control_attention": [
+    "RSK-311",
+    "RSK-317",
+    "RSK-318",
+    "RSK-319",
+    "RSK-320",
+    "RSK-321",
+    "RSK-324",
+    "RSK-325",
+    "RSK-331",
+    "RSK-338"
+  ],
+  "inherent_risk_bands": {
+    "critical": 21,
+    "high": 15
+  },
+  "invariants": [
+    "exactly_one_active_agent_AGT-001",
+    "CMP-003_sole_route_and_protected_state_owner",
+    "CMP-005_only_tool_gateway",
+    "CMP-007_only_authority_issuer",
+    "humans_own_approval_and_finalization",
+    "no_concurrent_protected_state_writes",
+    "evaluation_authority_effect_none",
+    "critical_deterministic_and_bias_failures_non_overridable",
+    "WP-008_inactive",
+    "semantic_regulatory_answer_cache_prohibited",
+    "no_model_provider_or_route_activated"
+  ],
+  "limitations": [
+    "ordinal tutorial scoring",
+    "local static model",
+    "no adaptive red team",
+    "no live identity or production deployment evidence",
+    "Stage 8D gates remain unresolved"
+  ],
+  "owasp_counts": {
+    "ASI01": 3,
+    "ASI02": 3,
+    "ASI03": 6,
+    "ASI04": 3,
+    "ASI05": 2,
+    "ASI06": 4,
+    "ASI07": 2,
+    "ASI08": 8,
+    "ASI09": 3,
+    "ASI10": 2
+  },
+  "recommendations": [
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-310"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-311"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-312"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-313"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-314"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-315"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-316"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-317"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-318"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-319"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-320"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-321"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-322"
+    },
+    {
+      "action": "design_gate_before_activation",
+      "authority_effect": "none",
+      "risk_id": "RSK-323"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-324"
+    },
+    {
+      "action": "design_gate_before_activation",
+      "authority_effect": "none",
+      "risk_id": "RSK-325"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-326"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-327"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-328"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-329"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-330"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-331"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-332"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-333"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-334"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-335"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-336"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-337"
+    },
+    {
+      "action": "treat_before_production",
+      "authority_effect": "none",
+      "risk_id": "RSK-338"
+    },
+    {
+      "action": "design_gate_before_activation",
+      "authority_effect": "none",
+      "risk_id": "RSK-339"
+    },
+    {
+      "action": "design_gate_before_activation",
+      "authority_effect": "none",
+      "risk_id": "RSK-340"
+    },
+    {
+      "action": "design_gate_before_activation",
+      "authority_effect": "none",
+      "risk_id": "RSK-341"
+    },
+    {
+      "action": "design_gate_before_activation",
+      "authority_effect": "none",
+      "risk_id": "RSK-342"
+    },
+    {
+      "action": "design_gate_before_activation",
+      "authority_effect": "none",
+      "risk_id": "RSK-343"
+    },
+    {
+      "action": "design_gate_before_activation",
+      "authority_effect": "none",
+      "risk_id": "RSK-344"
+    },
+    {
+      "action": "monitor_and_test",
+      "authority_effect": "none",
+      "risk_id": "RSK-345"
+    }
+  ],
+  "report_id": "TM-001/1.0.0",
+  "residual_risk_bands": {
+    "high": 9,
+    "low": 1,
+    "moderate": 26
+  },
+  "schema_id": "DATA-175",
+  "scope_counts": {
+    "current": 28,
+    "future": 8
+  },
+  "snapshot_digest": "2875638b46410273e0a86a880055cfcde4029bb14c4f7d03035bc6fc2ae0663c",
+  "stride_counts": {
+    "Denial of Service": 4,
+    "Elevation of Privilege": 15,
+    "Information Disclosure": 6,
+    "Repudiation": 8,
+    "Spoofing": 9,
+    "Tampering": 21
+  }
+}

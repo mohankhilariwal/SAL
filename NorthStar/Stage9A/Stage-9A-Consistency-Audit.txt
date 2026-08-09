@@ -1,0 +1,13 @@
+NorthStar Stage 9A Consistency Audit
+
+Result: PASSED WITH RECORDED EXCEPTIONS.
+Assertions passed:
+- exactly one active AGT-001;
+- CMP-003/CMP-005/CMP-007 ownership preserved;
+- all recommendations authority_effect none;
+- hard failures non-overridable;
+- no DATA-106 or route mutation;
+- WP-008/MCP/A2A/additional agents inactive;
+- 36 threats and 16 evaluation gates present;
+- repository/schema/version references consistent.
+Exceptions: ISS-096, ISS-131, ISS-140-146.

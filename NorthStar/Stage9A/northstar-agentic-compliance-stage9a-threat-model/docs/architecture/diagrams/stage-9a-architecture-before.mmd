@@ -1,0 +1,17 @@
+flowchart TB
+ classDef existing fill:#eef3f8,stroke:#506070
+ classDef disabled fill:#fff3e0,stroke:#ef6c00,stroke-dasharray:5 5
+ MAYA["Maya / CMP-001"] --> C3["CMP-003 Orchestration
+GRAPH-001/1.7.0"]
+ C3 --> AGT["AGT-001 only active agent
+spec 1.1.0"]
+ AGT --> C5["CMP-005 Tool Gateway
+TOOL-001..006"]
+ C7["CMP-007 Authority Issuer"] --> C5
+ C3 --> C4["CMP-004 Knowledge/Evidence"]
+ C3 --> C6["CMP-006 Human Review"]
+ C3 --> C10["CMP-010 bounded runtime"]
+ C8["CMP-008 Evaluation + Judge Bias Lab"] --> C9["CMP-009 minimized evidence"]
+ C11["CMP-011 Source-of-Truth 1.11.0"] -. constrains .-> C3
+ WP["WP-008 / MCP / A2A
+inactive future"]:::disabled -. no activation .-> C5

@@ -1,0 +1,18 @@
+NorthStar Stage 9A Validation Report
+Date: 2026-08-01
+Architecture: 1.12.0
+Repository: 1.12.0
+Graph: GRAPH-001/1.8.0
+Threat model: TM-001/1.0.0
+Python: 3.13.5
+
+Executed:
+- python scripts/validate_stage9a.py: PASSED
+- python scripts/run_stage9a_threat_model.py: PASSED; 36 threats, 3 attack trees, 6 misuse cases
+- python scripts/run_stage9a_evaluation_gates.py: PASSED; 16/16
+- pytest -q: PASSED; 62 cases
+- python -m compileall -q src scripts: PASSED
+- python scripts/consistency_audit_stage9a.py: PASSED WITH RECORDED EXCEPTIONS
+
+Recorded exceptions: ISS-096, ISS-131, ISS-140-146.
+No live provider, route, production identity, red-team or security certification is claimed.

@@ -1,0 +1,43 @@
+{
+  "authority_effect": "none",
+  "details": {
+    "EVAL-169": "architecture snapshot is versioned and digestible",
+    "EVAL-170": "exactly one active AGT-001 is preserved",
+    "EVAL-171": "CMP-003/CMP-005/CMP-007 authority boundaries are preserved",
+    "EVAL-172": "all 20 flows reference known assets and endpoints",
+    "EVAL-173": "all current threats map to STRIDE and OWASP ASI",
+    "EVAL-174": "future multi-agent threats are marked inactive_future",
+    "EVAL-175": "all threats have inherent and residual ordinal scores",
+    "EVAL-176": "hard control failures are not averaged into a universal score",
+    "EVAL-177": "attack-tree leaves resolve to threat risks",
+    "EVAL-178": "misuse cases map to controls and risks",
+    "EVAL-179": "MCP token passthrough/confused-deputy scenario is present",
+    "EVAL-180": "judge manipulation and sealed-test contamination are present",
+    "EVAL-181": "memory, concurrency and replay threats are present",
+    "EVAL-182": "tool, supply-chain and code-execution threats are present",
+    "EVAL-183": "all treatment recommendations have authority_effect none",
+    "EVAL-184": "no model route, new agent or automatic DATA-106 mutation is introduced"
+  },
+  "evaluation_id": "STAGE9A-EVAL/1.0.0",
+  "failed": [],
+  "passed": [
+    "EVAL-169",
+    "EVAL-170",
+    "EVAL-171",
+    "EVAL-172",
+    "EVAL-173",
+    "EVAL-174",
+    "EVAL-175",
+    "EVAL-176",
+    "EVAL-177",
+    "EVAL-178",
+    "EVAL-179",
+    "EVAL-180",
+    "EVAL-181",
+    "EVAL-182",
+    "EVAL-183",
+    "EVAL-184"
+  ],
+  "report_digest": "fae2e98ae25158cd83997997ffb1ced36c36f270bdf0b731a4ea00c0588eedbd",
+  "schema_id": "DATA-176"
+}

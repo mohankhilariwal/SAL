@@ -1,0 +1,456 @@
+{
+  "active_agents": [
+    "AGT-001"
+  ],
+  "agent_spec_version": "AGT-001-spec/1.1.0",
+  "architecture_version": "1.11.0",
+  "assets": [
+    {
+      "classification": "confidential_or_public_mixed",
+      "id": "AST-001",
+      "name": "Regulatory publications and evidence"
+    },
+    {
+      "classification": "confidential",
+      "id": "AST-002",
+      "name": "Internal policies, controls and business-process metadata"
+    },
+    {
+      "classification": "confidential_integrity_critical",
+      "id": "AST-003",
+      "name": "DATA-009 AgentRunState and checkpoints"
+    },
+    {
+      "classification": "integrity_critical",
+      "id": "AST-004",
+      "name": "DATA-106 protected concurrency/admission state"
+    },
+    {
+      "classification": "restricted_integrity_critical",
+      "id": "AST-005",
+      "name": "DATA-007 human review decisions"
+    },
+    {
+      "classification": "restricted_security",
+      "id": "AST-006",
+      "name": "DATA-010 authorization grants and policy decisions"
+    },
+    {
+      "classification": "mixed_high_impact",
+      "id": "AST-007",
+      "name": "TOOL-001..006 capability contracts and results"
+    },
+    {
+      "classification": "confidential_case_scoped",
+      "id": "AST-008",
+      "name": "Case-working memory DATA-081"
+    },
+    {
+      "classification": "restricted_assurance",
+      "id": "AST-009",
+      "name": "Evaluation suites, sealed cases and judge-bias datasets"
+    },
+    {
+      "classification": "restricted_forensic",
+      "id": "AST-010",
+      "name": "Audit, trace and minimized evidence records"
+    },
+    {
+      "classification": "controlled_configuration",
+      "id": "AST-011",
+      "name": "Prompts, graph, agent spec, policies and manifests"
+    },
+    {
+      "classification": "secret",
+      "id": "AST-012",
+      "name": "Model/tool credentials and secrets"
+    }
+  ],
+  "boundaries": [
+    {
+      "id": "TB-00",
+      "name": "External and Human Environment",
+      "trust": "untrusted_or_human"
+    },
+    {
+      "id": "TB-01",
+      "name": "Experience and Intake Trust Boundary",
+      "trust": "authenticated_application_edge"
+    },
+    {
+      "id": "TB-02",
+      "name": "Application Orchestration Trust Boundary",
+      "trust": "application_controlled"
+    },
+    {
+      "id": "TB-03",
+      "name": "Knowledge and Integration Trust Boundary",
+      "trust": "authorized_data_and_tool_access"
+    },
+    {
+      "id": "TB-04",
+      "name": "Human and Authority Trust Boundary",
+      "trust": "privileged_human_and_policy"
+    },
+    {
+      "id": "TB-05",
+      "name": "Assurance and Runtime Trust Boundary",
+      "trust": "internal_runtime_and_assurance"
+    },
+    {
+      "id": "TB-06",
+      "name": "Governance and Configuration Trust Boundary",
+      "trust": "controlled_change"
+    },
+    {
+      "id": "TB-07",
+      "name": "Future Interoperability and Multi-Agent Boundary",
+      "trust": "inactive_future"
+    }
+  ],
+  "components": [
+    {
+      "boundary": "TB-01",
+      "id": "CMP-001",
+      "name": "Analyst Experience Portal",
+      "status": "active"
+    },
+    {
+      "boundary": "TB-01",
+      "id": "CMP-002",
+      "name": "Regulatory Intake Boundary",
+      "status": "active"
+    },
+    {
+      "boundary": "TB-02",
+      "id": "CMP-003",
+      "name": "Case and Workflow Orchestration Boundary",
+      "status": "active"
+    },
+    {
+      "boundary": "TB-03",
+      "id": "CMP-004",
+      "name": "Knowledge and Evidence Access Boundary",
+      "status": "active"
+    },
+    {
+      "boundary": "TB-03",
+      "id": "CMP-005",
+      "name": "Enterprise Integration Boundary",
+      "status": "active"
+    },
+    {
+      "boundary": "TB-04",
+      "id": "CMP-006",
+      "name": "Human Review and Approval Boundary",
+      "status": "active"
+    },
+    {
+      "boundary": "TB-04",
+      "id": "CMP-007",
+      "name": "Identity, Authorization and Policy Boundary",
+      "status": "partial_local"
+    },
+    {
+      "boundary": "TB-05",
+      "id": "CMP-008",
+      "name": "Evaluation and Assurance Boundary",
+      "status": "active_local"
+    },
+    {
+      "boundary": "TB-05",
+      "id": "CMP-009",
+      "name": "Observability and Audit Boundary",
+      "status": "local_not_worm"
+    },
+    {
+      "boundary": "TB-05",
+      "id": "CMP-010",
+      "name": "Runtime and Deployment Boundary",
+      "status": "local_reference"
+    },
+    {
+      "boundary": "TB-06",
+      "id": "CMP-011",
+      "name": "Source-of-Truth Governance Pack",
+      "status": "active"
+    }
+  ],
+  "flows": [
+    {
+      "boundary_crossings": [
+        "TB-00->TB-01"
+      ],
+      "data": [
+        "AST-001"
+      ],
+      "id": "DF-001",
+      "name": "Analyst request and case interaction",
+      "source": "EXT-USER",
+      "target": "CMP-001"
+    },
+    {
+      "boundary_crossings": [
+        "TB-00->TB-01"
+      ],
+      "data": [
+        "AST-001"
+      ],
+      "id": "DF-002",
+      "name": "Regulatory publication intake",
+      "source": "EXT-SOURCE",
+      "target": "CMP-002"
+    },
+    {
+      "boundary_crossings": [
+        "TB-01->TB-02"
+      ],
+      "data": [
+        "AST-003"
+      ],
+      "id": "DF-003",
+      "name": "Authenticated case command",
+      "source": "CMP-001",
+      "target": "CMP-003"
+    },
+    {
+      "boundary_crossings": [
+        "TB-01->TB-02"
+      ],
+      "data": [
+        "AST-001"
+      ],
+      "id": "DF-004",
+      "name": "Validated publication envelope",
+      "source": "CMP-002",
+      "target": "CMP-003"
+    },
+    {
+      "boundary_crossings": [],
+      "data": [
+        "AST-001",
+        "AST-002",
+        "AST-003",
+        "AST-008"
+      ],
+      "id": "DF-005",
+      "name": "Bounded task profile and context",
+      "source": "CMP-003",
+      "target": "AGT-001"
+    },
+    {
+      "boundary_crossings": [
+        "TB-02->TB-03"
+      ],
+      "data": [
+        "AST-007"
+      ],
+      "id": "DF-006",
+      "name": "Proposed typed tool invocation",
+      "source": "AGT-001",
+      "target": "CMP-005"
+    },
+    {
+      "boundary_crossings": [
+        "TB-04->TB-03"
+      ],
+      "data": [
+        "AST-006"
+      ],
+      "id": "DF-007",
+      "name": "Scoped authorization/policy decision",
+      "source": "CMP-007",
+      "target": "CMP-005"
+    },
+    {
+      "boundary_crossings": [
+        "TB-03->TB-00"
+      ],
+      "data": [
+        "AST-006",
+        "AST-007",
+        "AST-012"
+      ],
+      "id": "DF-008",
+      "name": "Authorized tool call",
+      "source": "CMP-005",
+      "target": "EXT-TOOLS"
+    },
+    {
+      "boundary_crossings": [
+        "TB-00->TB-03"
+      ],
+      "data": [
+        "AST-007"
+      ],
+      "id": "DF-009",
+      "name": "Tool result envelope",
+      "source": "EXT-TOOLS",
+      "target": "CMP-005"
+    },
+    {
+      "boundary_crossings": [
+        "TB-02->TB-03"
+      ],
+      "data": [
+        "AST-001",
+        "AST-002",
+        "AST-006"
+      ],
+      "id": "DF-010",
+      "name": "Authorized evidence query",
+      "source": "CMP-003",
+      "target": "CMP-004"
+    },
+    {
+      "boundary_crossings": [
+        "TB-03->TB-02"
+      ],
+      "data": [
+        "AST-001",
+        "AST-002"
+      ],
+      "id": "DF-011",
+      "name": "Cited evidence and provenance",
+      "source": "CMP-004",
+      "target": "CMP-003"
+    },
+    {
+      "boundary_crossings": [
+        "TB-02->TB-04"
+      ],
+      "data": [
+        "AST-001",
+        "AST-002",
+        "AST-003"
+      ],
+      "id": "DF-012",
+      "name": "Human review package",
+      "source": "CMP-003",
+      "target": "CMP-006"
+    },
+    {
+      "boundary_crossings": [
+        "TB-04->TB-02"
+      ],
+      "data": [
+        "AST-005"
+      ],
+      "id": "DF-013",
+      "name": "Typed human decision",
+      "source": "CMP-006",
+      "target": "CMP-003"
+    },
+    {
+      "boundary_crossings": [
+        "TB-02->TB-05"
+      ],
+      "data": [
+        "AST-010"
+      ],
+      "id": "DF-014",
+      "name": "Trace and evidence events",
+      "source": "CMP-003",
+      "target": "CMP-009"
+    },
+    {
+      "boundary_crossings": [],
+      "data": [
+        "AST-009",
+        "AST-010"
+      ],
+      "id": "DF-015",
+      "name": "Evaluation and bias evidence",
+      "source": "CMP-008",
+      "target": "CMP-009"
+    },
+    {
+      "boundary_crossings": [
+        "TB-06->TB-02"
+      ],
+      "data": [
+        "AST-011"
+      ],
+      "id": "DF-016",
+      "name": "Versioned graph/spec/configuration",
+      "source": "CMP-011",
+      "target": "CMP-003"
+    },
+    {
+      "boundary_crossings": [
+        "TB-06->TB-05"
+      ],
+      "data": [
+        "AST-009",
+        "AST-011"
+      ],
+      "id": "DF-017",
+      "name": "Versioned datasets/rubrics/manifests",
+      "source": "CMP-011",
+      "target": "CMP-008"
+    },
+    {
+      "boundary_crossings": [
+        "TB-02->TB-05"
+      ],
+      "data": [
+        "AST-003",
+        "AST-004",
+        "AST-006"
+      ],
+      "id": "DF-018",
+      "name": "Bounded work item and deadline",
+      "source": "CMP-003",
+      "target": "CMP-010"
+    },
+    {
+      "boundary_crossings": [
+        "TB-05->TB-02"
+      ],
+      "data": [
+        "AST-003",
+        "AST-004"
+      ],
+      "id": "DF-019",
+      "name": "Terminal branch result/checkpoint",
+      "source": "CMP-010",
+      "target": "CMP-003"
+    },
+    {
+      "boundary_crossings": [
+        "TB-07->TB-03"
+      ],
+      "data": [
+        "AST-006",
+        "AST-007",
+        "AST-011"
+      ],
+      "id": "DF-020",
+      "name": "Inactive MCP/A2A conformance mapping",
+      "source": "FUTURE-MCP-A2A",
+      "status": "inactive_future",
+      "target": "CMP-005"
+    }
+  ],
+  "graph_version": "GRAPH-001/1.7.0",
+  "inactive_future": [
+    "WP-008",
+    "FUTURE-MCP-A2A",
+    "CAND-EVIDENCE-VERIFIER-001"
+  ],
+  "invariants": [
+    "exactly_one_active_agent_AGT-001",
+    "CMP-003_sole_route_and_protected_state_owner",
+    "CMP-005_only_tool_gateway",
+    "CMP-007_only_authority_issuer",
+    "humans_own_approval_and_finalization",
+    "no_concurrent_protected_state_writes",
+    "evaluation_authority_effect_none",
+    "critical_deterministic_and_bias_failures_non_overridable",
+    "WP-008_inactive",
+    "semantic_regulatory_answer_cache_prohibited",
+    "no_model_provider_or_route_activated"
+  ],
+  "schema_id": "DATA-165",
+  "snapshot_id": "ARCH-SNAPSHOT-1.11.0-S09A"
+}

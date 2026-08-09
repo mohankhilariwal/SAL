@@ -1,0 +1,30 @@
+flowchart LR
+ classDef ext fill:#fff3e0,stroke:#ef6c00
+ classDef app fill:#eef3f8,stroke:#506070
+ classDef auth fill:#fdebd0,stroke:#b9770e
+ classDef assurance fill:#f4ecf7,stroke:#7d3c98
+ EXT1["External user/source
+untrusted content"]:::ext -->|DF-001/002| EDGE["TB-01
+CMP-001/002"]:::app
+ EDGE -->|DF-003/004| ORCH["TB-02
+CMP-003 + AGT-001"]:::app
+ ORCH -->|DF-010| KNOW["TB-03
+CMP-004 evidence"]:::app
+ KNOW -->|DF-011 cited evidence| ORCH
+ ORCH -->|DF-006 proposed tool| GW["TB-03
+CMP-005 gateway"]:::app
+ AUTH["TB-04
+CMP-007 authority"]:::auth -->|DF-007 scoped grant| GW
+ GW -->|DF-008| EXT2["External tools/SaaS"]:::ext
+ EXT2 -->|DF-009 hostile result possible| GW
+ ORCH -->|DF-012| HUMAN["TB-04
+CMP-006 human review"]:::auth
+ HUMAN -->|DF-013 typed decision| ORCH
+ ORCH -->|DF-014/018| RUN["TB-05
+CMP-009/010"]:::assurance
+ GOV["TB-06
+CMP-011 configs"]:::assurance -->|DF-016/017| ORCH
+ GOV --> EVAL["TB-05
+CMP-008 + TM-001"]:::assurance
+ FUT["TB-07 future MCP/A2A
+inactive"]:::ext -. DF-020 .-> GW

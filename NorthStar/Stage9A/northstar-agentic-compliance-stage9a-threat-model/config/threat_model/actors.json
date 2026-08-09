@@ -1,0 +1,46 @@
+{
+  "actors": [
+    {
+      "capability": "supplies crafted user input or publication content",
+      "id": "ACT-001",
+      "name": "External prompt attacker"
+    },
+    {
+      "capability": "plants indirect instructions or poisoned evidence",
+      "id": "ACT-002",
+      "name": "Malicious or compromised content publisher"
+    },
+    {
+      "capability": "has legitimate access and can manipulate decisions or evidence",
+      "id": "ACT-003",
+      "name": "Compromised insider or reviewer"
+    },
+    {
+      "capability": "returns hostile data or abuses delegated access",
+      "id": "ACT-004",
+      "name": "Compromised tool or SaaS integration"
+    },
+    {
+      "capability": "compromises packages, model artifacts, prompts, schemas or manifests",
+      "id": "ACT-005",
+      "name": "Supply-chain adversary"
+    },
+    {
+      "capability": "attempts unauthorized access across case or tenant boundaries",
+      "id": "ACT-006",
+      "name": "Cross-tenant adversary"
+    },
+    {
+      "capability": "drives loops, tokens, queue depth or expensive tool calls",
+      "id": "ACT-007",
+      "name": "Resource-abuse attacker"
+    },
+    {
+      "capability": "spoofs Agent Cards/messages or abuses MCP/A2A endpoints",
+      "id": "ACT-008",
+      "name": "Future malicious agent or protocol peer",
+      "status": "inactive_future"
+    }
+  ],
+  "schema_id": "DATA-168"
+}

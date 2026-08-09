@@ -1,0 +1,8 @@
+NorthStar Stage 9A Test Report
+
+Pytest result: 62 passed.
+- TEST-685-699: models/schemas/digests/boundaries/flows/actors/catalogue.
+- TEST-700-712: STRIDE, OWASP ASI, attack trees, misuse cases, report.
+- TEST-713-731: authority, injection, tenant, tool, MCP/A2A, memory, replay, judge, supply chain and future scope.
+- TEST-732-736: deterministic bounded local performance.
+Evaluation result: EVAL-169-184, 16/16 passed.

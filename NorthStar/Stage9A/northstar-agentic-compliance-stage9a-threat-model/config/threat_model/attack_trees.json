@@ -1,0 +1,144 @@
+{
+  "schema_id": "DATA-171",
+  "trees": [
+    {
+      "children": [
+        {
+          "children": [
+            "RSK-311",
+            "RSK-321"
+          ],
+          "label": "Poison source/context to request disclosure",
+          "node_id": "AT-001-A",
+          "operator": "AND"
+        },
+        {
+          "children": [
+            "RSK-317",
+            "RSK-318",
+            "RSK-320"
+          ],
+          "label": "Exploit identity or confused deputy",
+          "node_id": "AT-001-B",
+          "operator": "OR"
+        },
+        {
+          "children": [
+            "RSK-315",
+            "RSK-322",
+            "RSK-323"
+          ],
+          "label": "Compromise tool or supply chain",
+          "node_id": "AT-001-C",
+          "operator": "OR"
+        },
+        {
+          "children": [
+            "RSK-324",
+            "RSK-325"
+          ],
+          "label": "Escape future sandbox/browser boundary",
+          "node_id": "AT-001-D",
+          "operator": "OR"
+        }
+      ],
+      "goal": "Exfiltrate restricted NorthStar evidence or secrets",
+      "operator": "OR",
+      "tree_id": "AT-001"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            "RSK-310",
+            "RSK-316"
+          ],
+          "label": "Hijack goal and select tool",
+          "node_id": "AT-002-A",
+          "operator": "AND"
+        },
+        {
+          "children": [
+            "RSK-317",
+            "RSK-318",
+            "RSK-319"
+          ],
+          "label": "Exploit gateway identity/privilege",
+          "node_id": "AT-002-B",
+          "operator": "OR"
+        },
+        {
+          "children": [
+            "RSK-337",
+            "RSK-338"
+          ],
+          "label": "Forge or exploit human approval",
+          "node_id": "AT-002-C",
+          "operator": "OR"
+        },
+        {
+          "children": [
+            "RSK-339",
+            "RSK-340",
+            "RSK-344"
+          ],
+          "label": "Future rogue or spoofed agent",
+          "node_id": "AT-002-D",
+          "operator": "OR"
+        }
+      ],
+      "goal": "Cause an unauthorized enterprise or approval action",
+      "operator": "OR",
+      "tree_id": "AT-002"
+    },
+    {
+      "children": [
+        {
+          "children": [
+            "RSK-313",
+            "RSK-326",
+            "RSK-327"
+          ],
+          "label": "Poison evidence or memory",
+          "node_id": "AT-003-A",
+          "operator": "OR"
+        },
+        {
+          "children": [
+            "RSK-328",
+            "RSK-329",
+            "RSK-330"
+          ],
+          "label": "Tamper state, replay work or audit",
+          "node_id": "AT-003-B",
+          "operator": "OR"
+        },
+        {
+          "children": [
+            "RSK-331",
+            "RSK-332",
+            "RSK-337"
+          ],
+          "label": "Manipulate evaluation or reviewer",
+          "node_id": "AT-003-C",
+          "operator": "OR"
+        },
+        {
+          "children": [
+            "RSK-333",
+            "RSK-334",
+            "RSK-335",
+            "RSK-336",
+            "RSK-342"
+          ],
+          "label": "Amplify failures across execution",
+          "node_id": "AT-003-D",
+          "operator": "OR"
+        }
+      ],
+      "goal": "Corrupt the regulatory assessment or its forensic record",
+      "operator": "OR",
+      "tree_id": "AT-003"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "authority_effect": "none",
+  "bands": [
+    {
+      "max": 4,
+      "min": 1,
+      "name": "low"
+    },
+    {
+      "max": 9,
+      "min": 5,
+      "name": "moderate"
+    },
+    {
+      "max": 15,
+      "min": 10,
+      "name": "high"
+    },
+    {
+      "max": 25,
+      "min": 16,
+      "name": "critical"
+    }
+  ],
+  "critical_override": [
+    "authority_bypass",
+    "approval_forgery",
+    "secret_exfiltration",
+    "cross_tenant_exposure",
+    "arbitrary_code_execution",
+    "mandatory_gate_override"
+  ],
+  "disclaimer": "Ordinal tutorial prioritization only; not actuarial probability, legal conclusion, or deployment gate.",
+  "impact_scale": {
+    "1": "negligible",
+    "2": "minor",
+    "3": "material",
+    "4": "severe",
+    "5": "critical_regulatory_security_or_systemic"
+  },
+  "likelihood_scale": {
+    "1": "rare_in_current_reference",
+    "2": "unlikely",
+    "3": "plausible",
+    "4": "likely_under_attack",
+    "5": "expected_or_trivial"
+  },
+  "policy_id": "THREAT-RISK-POLICY-001",
+  "residual_rule": "residual_likelihood * residual_impact; do not average away hard-invariant failures",
+  "version": "1.0.0"
+}
