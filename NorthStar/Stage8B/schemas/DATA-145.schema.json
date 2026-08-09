@@ -1,0 +1,71 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-145.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "candidate_text": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "case_id": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "envelope_id": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "rubric_id": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "envelope_id",
+    "case_id",
+    "candidate_text",
+    "rubric_id",
+    "authority_effect"
+  ],
+  "title": "JudgeEvaluationEnvelope",
+  "type": "object"
+}

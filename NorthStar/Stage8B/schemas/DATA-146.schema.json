@@ -1,0 +1,59 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-146.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "confidence": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "criterion_id": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "evidence_refs": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "status": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "criterion_id",
+    "status",
+    "evidence_refs",
+    "confidence"
+  ],
+  "title": "CriterionFinding",
+  "type": "object"
+}

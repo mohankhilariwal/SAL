@@ -1,0 +1,20 @@
+NorthStar Agentic AI Architecture Playbook — Stage 8B Test Report
+Date: 2026-08-01
+Architecture/repository version: 1.10.0
+
+Pytest result: 56 passed
+Stage evaluation gates: 20/20 passed
+Consistency audit: passed with recorded exceptions ISS-096, ISS-114-130
+
+Test groups:
+- TEST-563-570: policy, envelope, authority and anonymization guards — passed
+- TEST-571-578: prompt separation, score-last schema, injection and mandatory-failure enforcement — passed
+- TEST-579-594: agreement, coverage, score-error and bias metric primitives — passed
+- TEST-595-604: calibration eligibility and bias detection — passed
+- TEST-605-608: qualified panel, disagreement, mandatory failure and minimum membership — passed
+- TEST-609-616: security and data-boundary controls — passed
+- TEST-617-618: bounded local performance — passed
+- EVAL-131-150: stage contract, calibration, bias, authority, data and audit gates — 20/20 passed
+
+Important interpretation:
+JUDGE-A/B/C are synthetic replay fixtures. JUDGE-A is intentionally unsafe and is quarantined. JUDGE-B/C are intentionally consistent controls used only to exercise the eligible and panel paths. No live-model benchmark or production claim is made.

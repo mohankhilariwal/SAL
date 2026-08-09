@@ -1,0 +1,47 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-150.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "bias_type": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "probe_id": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "variants": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "probe_id",
+    "bias_type",
+    "variants"
+  ],
+  "title": "JudgeBiasProbe",
+  "type": "object"
+}

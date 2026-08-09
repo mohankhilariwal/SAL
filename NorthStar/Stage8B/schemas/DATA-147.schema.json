@@ -1,0 +1,71 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-147.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "case_id": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "criterion_findings": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "judge_id": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    },
+    "verdict": {
+      "type": [
+        "string",
+        "number",
+        "integer",
+        "boolean",
+        "array",
+        "object",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "judge_id",
+    "case_id",
+    "criterion_findings",
+    "verdict",
+    "authority_effect"
+  ],
+  "title": "JudgeVerdict",
+  "type": "object"
+}

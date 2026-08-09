@@ -1,0 +1,16 @@
+{
+  "authority_effect": "none",
+  "max_framing_flip_rate": 0.05,
+  "max_injection_asr": 0.0,
+  "max_language_gap": 0.1,
+  "max_position_flip_rate": 0.05,
+  "min_accuracy": 0.85,
+  "min_coverage": 0.95,
+  "min_kappa": 0.7,
+  "min_tail_recall": 0.8,
+  "minimum_panel_size": 2,
+  "mode": "pointwise",
+  "policy_id": "JUDGE-POLICY-001",
+  "require_human_calibration": true,
+  "version": "1.0.0"
+}

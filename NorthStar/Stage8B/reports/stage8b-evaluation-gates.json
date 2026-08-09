@@ -1,0 +1,150 @@
+{
+  "all_passed": true,
+  "architecture_version": "1.10.0",
+  "authority_effect": "none",
+  "gates": [
+    {
+      "authority_effect": "none",
+      "evidence": "prompt.py + validation.py",
+      "gate_id": "EVAL-131",
+      "name": "Evidence-first score-last contract",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "validation.py",
+      "gate_id": "EVAL-132",
+      "name": "Mandatory failures cannot be overruled",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "validation.py + stage8b-bias.json",
+      "gate_id": "EVAL-133",
+      "name": "Known prompt injection is detected",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "JDS-001/1.0.0",
+      "gate_id": "EVAL-134",
+      "name": "Human-label coverage is complete",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-calibration.json",
+      "gate_id": "EVAL-135",
+      "name": "Deliberately biased judge is quarantined",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-calibration.json",
+      "gate_id": "EVAL-136",
+      "name": "Control replay JUDGE-B exercises eligible path",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-calibration.json",
+      "gate_id": "EVAL-137",
+      "name": "Control replay JUDGE-C exercises eligible path",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-bias.json",
+      "gate_id": "EVAL-138",
+      "name": "Position sensitivity probe discriminates biased/control paths",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-bias.json",
+      "gate_id": "EVAL-139",
+      "name": "Framing and acquiescence probes discriminate paths",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-bias.json",
+      "gate_id": "EVAL-140",
+      "name": "Central tendency and tail metrics are present",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-bias.json",
+      "gate_id": "EVAL-141",
+      "name": "Language disparity probe discriminates paths",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-bias.json",
+      "gate_id": "EVAL-142",
+      "name": "Surface and self-preference probes discriminate paths",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "Stage Handoff Pack",
+      "gate_id": "EVAL-143",
+      "name": "Abstention and human-review panel semantics are documented",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "calibration + demo reports",
+      "gate_id": "EVAL-144",
+      "name": "All judge artefacts remain authority-neutral",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "demo + calibration reports",
+      "gate_id": "EVAL-145",
+      "name": "No live judge model was called",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "stage8b-demo.json",
+      "gate_id": "EVAL-146",
+      "name": "No model route was activated",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "calibration_cases.jsonl",
+      "gate_id": "EVAL-147",
+      "name": "Stage 8A sealed-test material is excluded",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "calibration_cases.jsonl",
+      "gate_id": "EVAL-148",
+      "name": "Calibration dataset is synthetic-only",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "docs/source-of-truth",
+      "gate_id": "EVAL-149",
+      "name": "Ten source-of-truth artefacts are present",
+      "passed": true
+    },
+    {
+      "authority_effect": "none",
+      "evidence": "Stage-8B-Consistency-Audit.txt",
+      "gate_id": "EVAL-150",
+      "name": "Stage consistency audit passed",
+      "passed": true
+    }
+  ],
+  "passed": 20,
+  "stage": "S08B",
+  "total": 20
+}

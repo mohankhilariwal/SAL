@@ -1,0 +1,53 @@
+NorthStar Agentic AI Architecture Playbook — Stage 8B Validation Report
+Date: 2026-08-01
+Stage: S08B — LLM-as-a-Judge
+Architecture version: 1.10.0
+Repository version: 1.10.0
+Handoff version: 1.10.0
+Graph version: GRAPH-001/1.6.0
+Python: 3.13.5
+pytest: 9.0.2
+
+FINAL RESULT: PASSED WITH RECORDED EXCEPTIONS
+Recorded exceptions: ISS-096, ISS-114-130
+
+Executed validation:
+- PYTHONPATH=src python scripts/validate_stage8b.py
+  Result: PASSED
+- PYTHONPATH=src python scripts/run_stage8b_demo.py
+  Result: PASSED; live_model_called=false; model_route_activated=false; authority_effect=none
+- PYTHONPATH=src python scripts/run_stage8b_bias_lab.py
+  Result: PASSED; deliberately biased and control replay paths distinguished
+- PYTHONPATH=src python scripts/run_stage8b_calibration.py
+  Result: PASSED; JUDGE-A quarantined; JUDGE-B/C exercise replay-only eligible path
+- python -m compileall -q src scripts
+  Result: PASSED
+- PYTHONPATH=src pytest -q
+  Result: 56 passed
+- PYTHONPATH=src python scripts/consistency_audit_stage8b.py
+  Result: PASSED WITH RECORDED EXCEPTIONS
+- PYTHONPATH=src python scripts/run_stage8b_evaluation_gates.py
+  Result: 20/20 passed
+
+Calibration replay evidence:
+- JUDGE-A: coverage=0.833; accuracy=0.800; Cohen kappa=0.588; eligible=false; invalid mandatory-override outputs=4.
+- JUDGE-B: coverage=1.000; accuracy=1.000; Cohen kappa=1.000; eligible=true for replay plumbing only.
+- JUDGE-C: coverage=1.000; accuracy=1.000; Cohen kappa=1.000; eligible=true for replay plumbing only.
+
+Consistency assertions verified:
+- exactly one active AGT-001;
+- all CMP-001-011 remain represented;
+- no judge is represented as an agent;
+- no protected-state, route, approval, finalization, agent-creation or authority writer was added;
+- deterministic mandatory failures cannot be overruled or outvoted;
+- Stage 8A sealed-test material is excluded from calibration;
+- 24 synthetic cases, 24 human-label fixtures and 72 replay outputs align;
+- DATA-143-154, INT-112-120, ADR-077-082 and S08B-REQ-001-025 are present;
+- 12 JSON schemas use JSON Schema Draft 2020-12;
+- no external/live model provider calls exist in executable code;
+- semantic regulatory-answer caching remains prohibited;
+- Stage 7D model selection/routing remains unresolved; and
+- judge/evaluation artifacts have authority_effect=none.
+
+Limitations:
+No live judge model, real independent human calibration, production-derived data, statistical power analysis, multilingual expert study, adaptive red-team, online evaluation, deployment gate or model route is implemented. Replay scores are contract/plumbing evidence, not production quality or fairness evidence.

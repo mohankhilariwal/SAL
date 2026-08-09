@@ -1,0 +1,12 @@
+{
+  "architecture_version": "1.10.0",
+  "authority_effect": "none",
+  "candidate_is_json_encoded": true,
+  "case_id": "JCAL-001",
+  "envelope_digest": "9e9e85013f9e00bd39c57ffbbcb70486a27f0801b28ee8f7bdea0eff16d39193",
+  "live_model_called": false,
+  "model_route_activated": false,
+  "policy_id": "JUDGE-POLICY-001",
+  "prompt_length_chars": 4182,
+  "stage": "S08B"
+}

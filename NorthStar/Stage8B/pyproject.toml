@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "northstar-stage8b-llm-judge"
+version = "1.10.0"
+description = "NorthStar Stage 8B provider-neutral LLM-as-a-Judge calibration and bias laboratory"
+requires-python = ">=3.11,<3.15"
+dependencies = []
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]

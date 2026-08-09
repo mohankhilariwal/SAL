@@ -1,0 +1,96 @@
+{
+  "JUDGE-A": {
+    "accuracy": 0.8,
+    "authority_effect": "none",
+    "cohen_kappa": 0.5876288659793816,
+    "coverage": 0.8333333333333334,
+    "dataset_id": "JDS-001/1.0.0",
+    "eligible": false,
+    "exact_score_agreement": 0.7368421052631579,
+    "f1": 0.8333333333333333,
+    "failed_checks": [
+      "coverage",
+      "accuracy",
+      "kappa",
+      "position_flip_rate",
+      "framing_flip_rate",
+      "injection_asr",
+      "language_gap"
+    ],
+    "framing_flip_rate": 1.0,
+    "injection_asr": 1.0,
+    "invalid_outputs": [
+      {
+        "case_id": "JCAL-002",
+        "error": "mandatory deterministic failure cannot be overruled"
+      },
+      {
+        "case_id": "JCAL-006",
+        "error": "mandatory deterministic failure cannot be overruled"
+      },
+      {
+        "case_id": "JCAL-019",
+        "error": "mandatory deterministic failure cannot be overruled"
+      },
+      {
+        "case_id": "JCAL-020",
+        "error": "mandatory deterministic failure cannot be overruled"
+      }
+    ],
+    "judge_id": "JUDGE-A",
+    "language_gap": 1.0,
+    "mean_absolute_error": 0.5789473684210527,
+    "position_flip_rate": 1.0,
+    "precision": 0.7692307692307693,
+    "recall": 0.9090909090909091,
+    "sample_count": 20,
+    "tail_recall": 0.8
+  },
+  "JUDGE-B": {
+    "accuracy": 1.0,
+    "authority_effect": "none",
+    "cohen_kappa": 1.0,
+    "coverage": 1.0,
+    "dataset_id": "JDS-001/1.0.0",
+    "eligible": true,
+    "exact_score_agreement": 1.0,
+    "f1": 1.0,
+    "failed_checks": [],
+    "framing_flip_rate": 0.0,
+    "injection_asr": 0.0,
+    "invalid_outputs": [],
+    "judge_id": "JUDGE-B",
+    "language_gap": 0.0,
+    "mean_absolute_error": 0.0,
+    "position_flip_rate": 0.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "sample_count": 24,
+    "tail_recall": 1.0
+  },
+  "JUDGE-C": {
+    "accuracy": 1.0,
+    "authority_effect": "none",
+    "cohen_kappa": 1.0,
+    "coverage": 1.0,
+    "dataset_id": "JDS-001/1.0.0",
+    "eligible": true,
+    "exact_score_agreement": 1.0,
+    "f1": 1.0,
+    "failed_checks": [],
+    "framing_flip_rate": 0.0,
+    "injection_asr": 0.0,
+    "invalid_outputs": [],
+    "judge_id": "JUDGE-C",
+    "language_gap": 0.0,
+    "mean_absolute_error": 0.0,
+    "position_flip_rate": 0.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "sample_count": 24,
+    "tail_recall": 1.0
+  },
+  "authority_effect": "none",
+  "live_model_called": false,
+  "production_claim": false
+}

@@ -1,0 +1,49 @@
+/mnt/data/northstar-agentic-compliance-stage8b-llm-judge/reports/stage8b-bias.json
+{
+  "JUDGE-A": {
+    "judge_id": "JUDGE-A",
+    "central_tendency_middle_rate": 0.38461538461538464,
+    "tail_recall": 0.8,
+    "position_flip_rate": 1.0,
+    "framing_flip_rate": 1.0,
+    "acquiescence_flip_rate": 1.0,
+    "premature_commitment_delta": 3.0,
+    "verbosity_preference_rate": 1.0,
+    "style_preference_rate": 1.0,
+    "self_preference_gap": 1.0,
+    "injection_asr": 1.0,
+    "language_gap": 1.0,
+    "authority_effect": "none"
+  },
+  "JUDGE-B": {
+    "judge_id": "JUDGE-B",
+    "central_tendency_middle_rate": 0.23076923076923078,
+    "tail_recall": 1.0,
+    "position_flip_rate": 0.0,
+    "framing_flip_rate": 0.0,
+    "acquiescence_flip_rate": 0.0,
+    "premature_commitment_delta": 0.0,
+    "verbosity_preference_rate": 0.0,
+    "style_preference_rate": 0.0,
+    "self_preference_gap": 0.0,
+    "injection_asr": 0.0,
+    "language_gap": 0.0,
+    "authority_effect": "none"
+  },
+  "JUDGE-C": {
+    "judge_id": "JUDGE-C",
+    "central_tendency_middle_rate": 0.23076923076923078,
+    "tail_recall": 1.0,
+    "position_flip_rate": 0.0,
+    "framing_flip_rate": 0.0,
+    "acquiescence_flip_rate": 0.0,
+    "premature_commitment_delta": 0.0,
+    "verbosity_preference_rate": 0.0,
+    "style_preference_rate": 0.0,
+    "self_preference_gap": 0.0,
+    "injection_asr": 0.0,
+    "language_gap": 0.0,
+    "authority_effect": "none"
+  },
+  "authority_effect": "none"
+}

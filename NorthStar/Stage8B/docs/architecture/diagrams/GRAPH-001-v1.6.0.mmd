@@ -1,0 +1,28 @@
+flowchart LR
+  Maya[Maya Chen] --> CMP001[CMP-001 Analyst Experience Portal]
+  CMP001 --> CMP002[CMP-002 Regulatory Intake Boundary]
+  CMP002 --> CMP003[CMP-003 Case and Workflow Orchestration Boundary]
+  CMP003 --> AGT001[AGT-001 Regulatory Impact Assessment Agent]
+  CMP003 --> CMP004[CMP-004 Knowledge and Evidence Access Boundary]
+  CMP003 --> CMP005[CMP-005 Enterprise Integration Boundary]
+  CMP003 --> CMP006[CMP-006 Human Review and Approval Boundary]
+  CMP003 --> CMP007[CMP-007 Identity, Authorization and Policy Boundary]
+  CMP003 --> CMP009[CMP-009 Observability and Audit Boundary]
+  CMP003 --> CMP010[CMP-010 Runtime and Deployment Boundary]
+
+  CMP008[CMP-008 Evaluation and Assurance Boundary] --> REG[Suite / Dataset / Rubric Registry]
+  CMP008 --> DET[Deterministic Graders GRD-001..012]
+  CMP008 --> JUDGE[Advisory Judge Pipeline]
+  JUDGE --> ENV[DATA-145 Evaluation Envelope]
+  ENV --> ADAPT[INT-114 Provider-neutral Judge Adapter]
+  ADAPT -. no live route in S08B .-> CMP010
+  JUDGE --> BIAS[INT-116 Bias Probe Runner]
+  JUDGE --> CAL[INT-117 Human-Judge Calibration]
+  CAL --> CMP006
+  JUDGE --> PANEL[INT-118 Qualified Panel Aggregation]
+  PANEL --> CMP006
+  CMP008 --> CMP009
+  CMP011[CMP-011 Source-of-Truth Governance Pack] --> CMP008
+
+  classDef new fill:#fff3cd,stroke:#856404,stroke-width:2px;
+  class JUDGE,ENV,ADAPT,BIAS,CAL,PANEL new;

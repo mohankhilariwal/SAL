@@ -1,0 +1,17 @@
+NorthStar Stage 8B Consistency Audit
+Date: 2026-08-01
+Result: PASSED WITH RECORDED EXCEPTIONS
+Exceptions: ISS-096, ISS-114-130
+
+Verified:
+- ten source-of-truth artefacts and cumulative graph exist;
+- stable new ID ranges and twelve JSON schemas are complete;
+- exactly one active AGT-001 and all CMP-001-011 appear in the architecture;
+- 24 synthetic cases, 24 labels and 72 replay outputs align;
+- no sealed test material, routes, tools or authority-bearing fields are introduced;
+- reports make no live-model or production claim;
+- biased/control calibration paths behave as intended;
+- Python sources parse and contain no live provider/network calls;
+- Mermaid sources pass static structural checks;
+- TEST-563-618 are represented; and
+- deterministic, human, authority, routing, cache and DATA-106 invariants are preserved.

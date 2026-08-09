@@ -1,0 +1,17 @@
+flowchart TD
+  C[DATA-148 Calibration Case] --> V{Generate controlled variants}
+  V --> P1[Position swap]
+  V --> P2[Framing polarity]
+  V --> P3[Verbose vs concise]
+  V --> P4[Authority / bandwagon]
+  V --> P5[Language / cultural]
+  V --> P6[Prompt injection]
+  V --> P7[Score-first vs evidence-first]
+  P1 & P2 & P3 & P4 & P5 & P6 & P7 --> J[Judge Adapter]
+  J --> M[DATA-151 Bias Measurements]
+  H[Human labels] --> CAL[DATA-152 Calibration Report]
+  M --> CAL
+  CAL --> Q{Eligible?}
+  Q -- no --> X[Quarantine judge configuration]
+  Q -- yes --> E[Advisory semantic grader only]
+  E --> HR[Human-review sampling]

@@ -1,0 +1,2 @@
+See `src/northstar_compliance/evaluation/judge/prompt.py` for the executable prompt template.
+The template is evidence-first, criterion-isolated, score-last, JSON-only, injection-aware and authority-neutral.

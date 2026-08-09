@@ -1,0 +1,24 @@
+sequenceDiagram
+  participant H as Evaluation Harness
+  participant P as CMP-007 Policy Boundary
+  participant D as Deterministic Graders
+  participant J as CMP-008 Judge Pipeline
+  participant R as Replay/Approved Judge Adapter
+  participant A as CMP-009 Audit Boundary
+  participant U as Human Reviewer
+
+  H->>P: authorize dataset/case/rubric access
+  P-->>H: scoped decision
+  H->>D: run mandatory checks
+  D-->>H: immutable findings
+  alt mandatory failure
+    H->>A: record blocked evaluation evidence
+    H-->>U: human/security review required
+  else semantic grading allowed
+    H->>J: build anonymized DATA-145 envelope
+    J->>R: INT-114 score using evidence-first prompt
+    R-->>J: structured DATA-147 verdict
+    J->>J: validate schema, score-last order, injection flags
+    J->>A: export payload-minimized DATA-154 evidence
+    J-->>U: advisory finding / calibration sample
+  end
