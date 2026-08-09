@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-101.schema.json",
+  "title": "ProtocolBindingManifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "binding_id",
+    "profile_id",
+    "endpoint_id",
+    "schema_digests",
+    "security_target",
+    "status"
+  ],
+  "properties": {
+    "binding_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "endpoint_id": {
+      "type": "string"
+    },
+    "schema_digests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "security_target": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

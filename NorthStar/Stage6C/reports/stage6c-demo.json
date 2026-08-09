@@ -1,0 +1,448 @@
+{
+  "a2aAgentCard": {
+    "capabilities": {
+      "extendedAgentCard": false,
+      "extensions": [
+        {
+          "description": "Preserves authority, deadline, correlation and termination-owner semantics.",
+          "required": true,
+          "uri": "https://northstar.example/extensions/handoff-contract/v1"
+        }
+      ],
+      "pushNotifications": false,
+      "streaming": false
+    },
+    "defaultInputModes": [
+      "application/json"
+    ],
+    "defaultOutputModes": [
+      "application/json"
+    ],
+    "description": "Sandbox-only evidence verification endpoint; not an allocated production agent.",
+    "metadata": {
+      "northstarEndpointDigest": "4b434afb8d0f045cace318082e5af74f8bf715439a8333f0a6eca2ff9aa8ea59",
+      "northstarNoAgentAllocation": true,
+      "northstarRuntimeStatus": "candidate_sandbox_only"
+    },
+    "name": "Candidate Evidence Verification Endpoint",
+    "securityRequirements": [
+      {
+        "schemes": {
+          "northstarMtls": {
+            "list": []
+          },
+          "northstarOAuth": {
+            "list": []
+          }
+        }
+      }
+    ],
+    "securitySchemes": {
+      "northstarMtls": {
+        "mtlsSecurityScheme": {
+          "description": "Production target."
+        }
+      },
+      "northstarOAuth": {
+        "oauth2SecurityScheme": {
+          "description": "Production target. Not implemented by the local reference sandbox.",
+          "flows": {}
+        }
+      }
+    },
+    "skills": [
+      {
+        "description": "Validates one authorized DATA-095 artefact and emits DATA-096; never approves or finalizes.",
+        "id": "verify-supplied-evidence",
+        "inputModes": [
+          "application/json"
+        ],
+        "name": "Verify supplied immutable evidence",
+        "outputModes": [
+          "application/json"
+        ],
+        "tags": [
+          "evidence",
+          "integrity",
+          "compliance"
+        ]
+      }
+    ],
+    "supportedInterfaces": [
+      {
+        "protocolBinding": "HTTP+JSON",
+        "protocolVersion": "1.0",
+        "url": "https://candidate.invalid/a2a/v1"
+      }
+    ],
+    "version": "0.1.0"
+  },
+  "a2aTaskMessage": {
+    "message": {
+      "contextId": "CORR-060C-001",
+      "messageId": "ENV-060C-001",
+      "metadata": {
+        "extensions": [
+          "https://northstar.example/extensions/handoff-contract/v1"
+        ],
+        "northstarCaseId": "CASE-NS-060C-001",
+        "northstarCausationId": "EVT-060C-START",
+        "northstarDeadlineAt": "2026-08-01T18:05:00Z",
+        "northstarEnvelopeDigest": "a4de9c7db54b2917fee4d905bc84ed392aaa462fea9f63f8d2c3b6b7ce0c492d",
+        "northstarGrantDigest": "78931367557742a065db1c8584b11cc80d422ba103c503163b8bb991e15231b0",
+        "northstarNotApproval": true,
+        "northstarRunId": "RUN-060C-001",
+        "northstarTerminationOwner": "CMP-003"
+      },
+      "parts": [
+        {
+          "data": {
+            "artifacts": [
+              {
+                "artifactId": "ART-EVID-001",
+                "contentSha256": "9c5292a42514c079d3b203c006784be2164564c2179615e2606c4b038af43827",
+                "schemaId": "DATA-095"
+              }
+            ],
+            "expectedOutputSchema": "DATA-096",
+            "goal": "Verify the supplied immutable evidence artefact and return DATA-096.",
+            "nonGoals": [
+              "Do not approve",
+              "Do not mutate case state",
+              "Do not call tools",
+              "Do not write memory"
+            ],
+            "purpose": "verify_supplied_evidence"
+          },
+          "mediaType": "application/json"
+        }
+      ],
+      "role": "ROLE_USER",
+      "taskId": "TASK-VERIFY-001"
+    }
+  },
+  "activeAgent": "AGT-001",
+  "architectureVersion": "1.5.0",
+  "candidateEndpoint": "CAND-EVIDENCE-VERIFIER-001",
+  "claims": {
+    "a2aEndpointActivated": false,
+    "concurrencyEnabled": false,
+    "httpReferenceBoundaryImplemented": true,
+    "mcpServerActivated": false,
+    "secondAgentActivated": false
+  },
+  "directReferenceReceipt": {
+    "binding": "python-call",
+    "correlation_id": "CORR-060C-001",
+    "delivered_at": "2026-08-01 18:00:00+00:00",
+    "envelope_digest": "a4de9c7db54b2917fee4d905bc84ed392aaa462fea9f63f8d2c3b6b7ce0c492d",
+    "grant_digest": "78931367557742a065db1c8584b11cc80d422ba103c503163b8bb991e15231b0",
+    "protocol_profile_id": "PRF-DIRECT-1",
+    "receipt_id": "RCP-DIRECT-001",
+    "remote_endpoint_id": "CAND-EVIDENCE-VERIFIER-001",
+    "request_content_digest": "9c5292a42514c079d3b203c006784be2164564c2179615e2606c4b038af43827",
+    "response_content_digest": "1169ca5990a3d6d77a9ef1d3a4bd4d36d45eea147e774a7b780ae60e80a3c87a",
+    "semantic_loss": [],
+    "task_id": "TASK-VERIFY-001",
+    "terminal_status": "completed",
+    "warnings": []
+  },
+  "mcpMapping": {
+    "capabilities": {
+      "logging": {},
+      "resources": {
+        "listChanged": false,
+        "subscribe": false
+      },
+      "tools": {
+        "listChanged": false
+      }
+    },
+    "northstar": {
+      "authorityIssuer": "CMP-007",
+      "notAgentTaskLifecycle": true,
+      "semanticDomain": "tool-resource-interoperability",
+      "toolGateway": "CMP-005"
+    },
+    "protocolVersion": "2026-07-28",
+    "resources": [
+      {
+        "metadata": {
+          "classification": "northstar-confidential",
+          "contentSha256": "9c5292a42514c079d3b203c006784be2164564c2179615e2606c4b038af43827",
+          "schemaId": "DATA-095"
+        },
+        "mimeType": "application/json",
+        "name": "ART-EVID-001",
+        "uri": "northstar://cases/CASE-NS-060C-001/artifacts/ART-EVID-001"
+      }
+    ],
+    "serverInfo": {
+      "name": "northstar-cmp005-reference",
+      "version": "1.5.0"
+    },
+    "tools": [
+      {
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "description": "NorthStar gateway capability; authorization remains at CMP-005/CMP-007.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "type": "object"
+        },
+        "name": "tool_001",
+        "title": "TOOL-001"
+      },
+      {
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "description": "NorthStar gateway capability; authorization remains at CMP-005/CMP-007.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "type": "object"
+        },
+        "name": "tool_002",
+        "title": "TOOL-002"
+      },
+      {
+        "annotations": {
+          "readOnlyHint": true
+        },
+        "description": "NorthStar gateway capability; authorization remains at CMP-005/CMP-007.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "type": "object"
+        },
+        "name": "tool_003",
+        "title": "TOOL-003"
+      },
+      {
+        "annotations": {
+          "readOnlyHint": false
+        },
+        "description": "NorthStar gateway capability; authorization remains at CMP-005/CMP-007.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "type": "object"
+        },
+        "name": "tool_004",
+        "title": "TOOL-004"
+      },
+      {
+        "annotations": {
+          "readOnlyHint": false
+        },
+        "description": "NorthStar gateway capability; authorization remains at CMP-005/CMP-007.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "type": "object"
+        },
+        "name": "tool_005",
+        "title": "TOOL-005"
+      },
+      {
+        "annotations": {
+          "readOnlyHint": false
+        },
+        "description": "NorthStar gateway capability; authorization remains at CMP-005/CMP-007.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "type": "object"
+        },
+        "name": "tool_006",
+        "title": "TOOL-006"
+      }
+    ]
+  },
+  "protocolProfiles": [
+    {
+      "binding": "python-call",
+      "canonical_contract_version": "1.0.0",
+      "implementation_status": "local_test_only",
+      "notes": "Fast local reference; not an interoperability boundary.",
+      "profile_id": "PRF-DIRECT-1",
+      "prohibited_features": [
+        "remote_agent_activation",
+        "concurrency",
+        "peer_delegation"
+      ],
+      "protocol_name": "northstar-direct",
+      "protocol_version": "1.0",
+      "security_target": [
+        "process-local-integrity"
+      ],
+      "semantic_domain": "canonical-contract-test",
+      "supported_features": [
+        "envelope",
+        "authority",
+        "artifact",
+        "receipt",
+        "status",
+        "cancellation"
+      ]
+    },
+    {
+      "binding": "HTTP+JSON",
+      "canonical_contract_version": "1.0.0",
+      "implementation_status": "selected_reference_boundary",
+      "notes": "Serialized reference transport proving a real process boundary without selecting a production topology.",
+      "profile_id": "PRF-HTTP-JSON-1",
+      "prohibited_features": [
+        "concurrent_task_execution",
+        "automatic_retry",
+        "peer_delegation",
+        "agent_promotion"
+      ],
+      "protocol_name": "northstar-http-json",
+      "protocol_version": "1.0",
+      "security_target": [
+        "HTTPS",
+        "mTLS-or-OAuth2",
+        "sender-constrained-grant",
+        "receiver-PEP"
+      ],
+      "semantic_domain": "canonical-handoff-delivery",
+      "supported_features": [
+        "synchronous_offer",
+        "exact_version",
+        "content_digest",
+        "correlation",
+        "deadline",
+        "typed_error"
+      ]
+    },
+    {
+      "binding": "Streamable HTTP or stdio",
+      "canonical_contract_version": "1.0.0",
+      "implementation_status": "legacy_compatibility_profile",
+      "notes": "Prior stable MCP revision retained only for compatibility analysis.",
+      "profile_id": "PRF-MCP-2025-11-25",
+      "prohibited_features": [
+        "agent_task_authority",
+        "case_termination_ownership",
+        "agent_promotion"
+      ],
+      "protocol_name": "MCP",
+      "protocol_version": "2025-11-25",
+      "security_target": [
+        "OAuth-based-authorization-for-HTTP",
+        "consent",
+        "resource-server-enforcement"
+      ],
+      "semantic_domain": "tool-resource-interoperability",
+      "supported_features": [
+        "tools",
+        "resources",
+        "prompts",
+        "capability_negotiation",
+        "progress",
+        "cancellation"
+      ]
+    },
+    {
+      "binding": "HTTP",
+      "canonical_contract_version": "1.0.0",
+      "implementation_status": "current_conformance_profile",
+      "notes": "Current MCP revision selected for conformance mapping only; no MCP server is activated.",
+      "profile_id": "PRF-MCP-2026-07-28",
+      "prohibited_features": [
+        "agent_task_authority",
+        "case_termination_ownership",
+        "agent_promotion"
+      ],
+      "protocol_name": "MCP",
+      "protocol_version": "2026-07-28",
+      "security_target": [
+        "OAuth-and-OIDC-aligned"
+      ],
+      "semantic_domain": "tool-resource-interoperability",
+      "supported_features": [
+        "stateless_core",
+        "extensions",
+        "versioning",
+        "authorization_hardening",
+        "tools",
+        "resources"
+      ]
+    },
+    {
+      "binding": "HTTP+JSON",
+      "canonical_contract_version": "1.0.0",
+      "implementation_status": "conformance_only_candidate_profile",
+      "notes": "A2A core plus a required NorthStar extension preserves authority/deadline/trace/termination semantics.",
+      "profile_id": "PRF-A2A-1.0",
+      "prohibited_features": [
+        "activate_AGT-002",
+        "shared_state",
+        "shared_memory",
+        "concurrent_execution"
+      ],
+      "protocol_name": "A2A",
+      "protocol_version": "1.0",
+      "security_target": [
+        "HTTPS",
+        "OAuth2-or-mTLS",
+        "signed-agent-card",
+        "receiver-authorization"
+      ],
+      "semantic_domain": "agent-task-lifecycle",
+      "supported_features": [
+        "agent_card",
+        "task",
+        "message",
+        "artifact",
+        "status",
+        "cancellation",
+        "version_negotiation"
+      ]
+    },
+    {
+      "binding": "HTTP/2+protobuf",
+      "canonical_contract_version": "1.0.0",
+      "implementation_status": "deferred",
+      "notes": "Strong option for internal typed services; not selected for this local minimal boundary.",
+      "profile_id": "PRF-GRPC-DEFERRED",
+      "prohibited_features": [
+        "selected_without-protobuf-and-runtime-evidence"
+      ],
+      "protocol_name": "gRPC",
+      "protocol_version": "deferred",
+      "security_target": [
+        "TLS",
+        "workload-identity"
+      ],
+      "semantic_domain": "service-rpc",
+      "supported_features": [
+        "typed_rpc",
+        "deadlines",
+        "cancellation",
+        "streaming"
+      ]
+    },
+    {
+      "binding": "broker",
+      "canonical_contract_version": "1.0.0",
+      "implementation_status": "deferred_to_S06D",
+      "notes": "Requires delivery, ordering, deduplication, dead-letter and backpressure architecture.",
+      "profile_id": "PRF-EVENT-DEFERRED",
+      "prohibited_features": [
+        "concurrency-before-S06D"
+      ],
+      "protocol_name": "queue-event-bus",
+      "protocol_version": "deferred",
+      "security_target": [
+        "broker-ACL",
+        "encryption",
+        "dedupe-ledger"
+      ],
+      "semantic_domain": "asynchronous-distributed-delivery",
+      "supported_features": [
+        "durability",
+        "buffering",
+        "fanout"
+      ]
+    }
+  ]
+}

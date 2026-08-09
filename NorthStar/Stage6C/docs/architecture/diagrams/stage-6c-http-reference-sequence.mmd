@@ -1,0 +1,16 @@
+sequenceDiagram
+  participant C3 as CMP-003 Orchestrator
+  participant C7 as CMP-007 Authority
+  participant AD as HTTP/JSON Adapter
+  participant EP as Candidate Endpoint Process
+  C3->>C7: obtain DATA-093 one-use attenuated grant
+  C7-->>C3: signed grant bound to audience/case/run/task/resource
+  C3->>AD: DATA-092 envelope + DATA-095 manifest + content
+  AD->>AD: canonicalize; add content/grant/correlation/version headers
+  AD->>EP: POST /handoffs/verify (one synchronous request)
+  EP->>EP: exact version and header checks
+  EP->>EP: verify grant before artefact load
+  EP->>EP: verify envelope, case/task/deadline and content hash
+  EP-->>AD: typed result + DATA-105 delivery receipt fields
+  AD-->>C3: receipt with zero semantic loss
+  Note over C3,EP: No retry, concurrency, peer delegation, approval or finalization

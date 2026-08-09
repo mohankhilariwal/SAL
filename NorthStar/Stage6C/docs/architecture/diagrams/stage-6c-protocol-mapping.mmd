@@ -1,0 +1,29 @@
+flowchart LR
+  subgraph NorthStar[NorthStar canonical semantic layer]
+    E["DATA-092 TaskEnvelope"]
+    G["DATA-093 AuthorityGrant"]
+    A["DATA-095 ArtefactManifest"]
+    S["DATA-097 Status"]
+    T["DATA-099 TerminationRecord"]
+  end
+  subgraph MCP["MCP 2026-07-28 mapping"]
+    MT[Tools]
+    MR[Resources]
+    MC[Capabilities / version]
+  end
+  subgraph A2A["A2A 1.0 mapping"]
+    AC[AgentCard]
+    AM[Message / Task]
+    AA[Artifact]
+    AS[TaskStatus / cancellation]
+    NX["Required NorthStar extension"]
+  end
+  G -. remains NorthStar / CMP-007 .-> MT
+  A --> MR
+  E -. not a native MCP agent task .-> MC
+  E --> AM
+  A --> AA
+  S --> AS
+  G --> NX
+  T --> NX
+  AC --> NX

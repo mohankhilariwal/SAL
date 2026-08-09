@@ -1,0 +1,29 @@
+{
+  "policyId": "INT-POL-001",
+  "version": "1.0.0",
+  "architectureVersion": "1.5.0",
+  "activeAgentCount": 1,
+  "activeAgentId": "AGT-001",
+  "candidateEndpointId": "CAND-EVIDENCE-VERIFIER-001",
+  "selectedReferenceTransport": "PRF-HTTP-JSON-1",
+  "mcpProfile": "PRF-MCP-2026-07-28",
+  "a2aProfile": "PRF-A2A-1.0",
+  "concurrencyEnabled": false,
+  "sharedMutableStateEnabled": false,
+  "sharedAgentMemoryEnabled": false,
+  "peerDelegationEnabled": false,
+  "automaticProtocolDowngradeEnabled": false,
+  "requiredNorthStarA2AExtension": "https://northstar.example/extensions/handoff-contract/v1",
+  "authorityIssuer": "CMP-007",
+  "handoffLifecycleOwner": "CMP-003",
+  "toolResourceGateway": "CMP-005",
+  "humanDecisionOwner": "CMP-006",
+  "rules": [
+    "Canonical DATA-091..099 semantics remain authoritative.",
+    "HTTP/JSON is a serialized local reference boundary only.",
+    "MCP maps tools/resources; it does not own NorthStar agent task lifecycle.",
+    "A2A task mapping requires the NorthStar extension and does not allocate AGT-002.",
+    "Unknown protocol versions or bindings fail closed.",
+    "Authorization is enforced before data load/action at the receiver boundary."
+  ]
+}

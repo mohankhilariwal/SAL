@@ -1,0 +1,189 @@
+[
+  {
+    "binding": "python-call",
+    "canonical_contract_version": "1.0.0",
+    "implementation_status": "local_test_only",
+    "notes": "Fast local reference; not an interoperability boundary.",
+    "profile_id": "PRF-DIRECT-1",
+    "prohibited_features": [
+      "remote_agent_activation",
+      "concurrency",
+      "peer_delegation"
+    ],
+    "protocol_name": "northstar-direct",
+    "protocol_version": "1.0",
+    "security_target": [
+      "process-local-integrity"
+    ],
+    "semantic_domain": "canonical-contract-test",
+    "supported_features": [
+      "envelope",
+      "authority",
+      "artifact",
+      "receipt",
+      "status",
+      "cancellation"
+    ]
+  },
+  {
+    "binding": "HTTP+JSON",
+    "canonical_contract_version": "1.0.0",
+    "implementation_status": "selected_reference_boundary",
+    "notes": "Serialized reference transport proving a real process boundary without selecting a production topology.",
+    "profile_id": "PRF-HTTP-JSON-1",
+    "prohibited_features": [
+      "concurrent_task_execution",
+      "automatic_retry",
+      "peer_delegation",
+      "agent_promotion"
+    ],
+    "protocol_name": "northstar-http-json",
+    "protocol_version": "1.0",
+    "security_target": [
+      "HTTPS",
+      "mTLS-or-OAuth2",
+      "sender-constrained-grant",
+      "receiver-PEP"
+    ],
+    "semantic_domain": "canonical-handoff-delivery",
+    "supported_features": [
+      "synchronous_offer",
+      "exact_version",
+      "content_digest",
+      "correlation",
+      "deadline",
+      "typed_error"
+    ]
+  },
+  {
+    "binding": "Streamable HTTP or stdio",
+    "canonical_contract_version": "1.0.0",
+    "implementation_status": "legacy_compatibility_profile",
+    "notes": "Prior stable MCP revision retained only for compatibility analysis.",
+    "profile_id": "PRF-MCP-2025-11-25",
+    "prohibited_features": [
+      "agent_task_authority",
+      "case_termination_ownership",
+      "agent_promotion"
+    ],
+    "protocol_name": "MCP",
+    "protocol_version": "2025-11-25",
+    "security_target": [
+      "OAuth-based-authorization-for-HTTP",
+      "consent",
+      "resource-server-enforcement"
+    ],
+    "semantic_domain": "tool-resource-interoperability",
+    "supported_features": [
+      "tools",
+      "resources",
+      "prompts",
+      "capability_negotiation",
+      "progress",
+      "cancellation"
+    ]
+  },
+  {
+    "binding": "HTTP",
+    "canonical_contract_version": "1.0.0",
+    "implementation_status": "current_conformance_profile",
+    "notes": "Current MCP revision selected for conformance mapping only; no MCP server is activated.",
+    "profile_id": "PRF-MCP-2026-07-28",
+    "prohibited_features": [
+      "agent_task_authority",
+      "case_termination_ownership",
+      "agent_promotion"
+    ],
+    "protocol_name": "MCP",
+    "protocol_version": "2026-07-28",
+    "security_target": [
+      "OAuth-and-OIDC-aligned"
+    ],
+    "semantic_domain": "tool-resource-interoperability",
+    "supported_features": [
+      "stateless_core",
+      "extensions",
+      "versioning",
+      "authorization_hardening",
+      "tools",
+      "resources"
+    ]
+  },
+  {
+    "binding": "HTTP+JSON",
+    "canonical_contract_version": "1.0.0",
+    "implementation_status": "conformance_only_candidate_profile",
+    "notes": "A2A core plus a required NorthStar extension preserves authority/deadline/trace/termination semantics.",
+    "profile_id": "PRF-A2A-1.0",
+    "prohibited_features": [
+      "activate_AGT-002",
+      "shared_state",
+      "shared_memory",
+      "concurrent_execution"
+    ],
+    "protocol_name": "A2A",
+    "protocol_version": "1.0",
+    "security_target": [
+      "HTTPS",
+      "OAuth2-or-mTLS",
+      "signed-agent-card",
+      "receiver-authorization"
+    ],
+    "semantic_domain": "agent-task-lifecycle",
+    "supported_features": [
+      "agent_card",
+      "task",
+      "message",
+      "artifact",
+      "status",
+      "cancellation",
+      "version_negotiation"
+    ]
+  },
+  {
+    "binding": "HTTP/2+protobuf",
+    "canonical_contract_version": "1.0.0",
+    "implementation_status": "deferred",
+    "notes": "Strong option for internal typed services; not selected for this local minimal boundary.",
+    "profile_id": "PRF-GRPC-DEFERRED",
+    "prohibited_features": [
+      "selected_without-protobuf-and-runtime-evidence"
+    ],
+    "protocol_name": "gRPC",
+    "protocol_version": "deferred",
+    "security_target": [
+      "TLS",
+      "workload-identity"
+    ],
+    "semantic_domain": "service-rpc",
+    "supported_features": [
+      "typed_rpc",
+      "deadlines",
+      "cancellation",
+      "streaming"
+    ]
+  },
+  {
+    "binding": "broker",
+    "canonical_contract_version": "1.0.0",
+    "implementation_status": "deferred_to_S06D",
+    "notes": "Requires delivery, ordering, deduplication, dead-letter and backpressure architecture.",
+    "profile_id": "PRF-EVENT-DEFERRED",
+    "prohibited_features": [
+      "concurrency-before-S06D"
+    ],
+    "protocol_name": "queue-event-bus",
+    "protocol_version": "deferred",
+    "security_target": [
+      "broker-ACL",
+      "encryption",
+      "dedupe-ledger"
+    ],
+    "semantic_domain": "asynchronous-distributed-delivery",
+    "supported_features": [
+      "durability",
+      "buffering",
+      "fanout"
+    ]
+  }
+]

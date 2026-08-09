@@ -1,0 +1,79 @@
+{
+  "architectureVersion": "1.5.0",
+  "evaluations": [
+    {
+      "evaluation_id": "EVAL-070",
+      "evidence": "3902397c0716ebe15157a20cdec6a0d9f8c8f75e98ebe80cad30c752874de5af",
+      "name": "canonical_contract_preservation",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-071",
+      "evidence": "A2A 1.0 exact match",
+      "name": "exact_version_negotiation",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-072",
+      "evidence": "no silent MCP downgrade/upgrade",
+      "name": "version_mismatch_fails_closed",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-073",
+      "evidence": [
+        "orchestrator-owned task acceptance lifecycle",
+        "case/run/task-bound attenuated authority semantics",
+        "system termination ownership",
+        "human approval non-transfer invariant"
+      ],
+      "name": "mcp_domain_separation",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-074",
+      "evidence": "142981a88ae9d9dadc7984894759435c5124f1fbbb7b48c8b30ef2a5009350cf",
+      "name": "a2a_extension_preserves_semantics",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-075",
+      "evidence": [
+        "required_northstar_extension_declaration"
+      ],
+      "name": "a2a_without_extension_fails",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-076",
+      "evidence": [
+        "AGT-001",
+        "CAND-EVIDENCE-VERIFIER-001"
+      ],
+      "name": "one_active_agent_preserved",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-077",
+      "evidence": "4b434afb8d0f045cace318082e5af74f8bf715439a8333f0a6eca2ff9aa8ea59",
+      "name": "no_concurrency_or_peer_delegation",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-078",
+      "evidence": [
+        "PRF-DIRECT-1",
+        "PRF-HTTP-JSON-1",
+        "PRF-MCP-2025-11-25",
+        "PRF-MCP-2026-07-28",
+        "PRF-A2A-1.0",
+        "PRF-GRPC-DEFERRED",
+        "PRF-EVENT-DEFERRED"
+      ],
+      "name": "protocol_profiles_have_explicit_status",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "stage": "S06C"
+}

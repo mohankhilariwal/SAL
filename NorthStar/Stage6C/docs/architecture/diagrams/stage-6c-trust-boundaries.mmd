@@ -1,0 +1,22 @@
+flowchart LR
+  subgraph TB1["Trust Boundary A — Orchestration"]
+    C3["CMP-003"]
+    A1["AGT-001"]
+  end
+  subgraph TB2["Trust Boundary B — Identity/Policy"]
+    C7["CMP-007"]
+  end
+  subgraph TB3["Trust Boundary C — Serialized Transport"]
+    AD["HTTP/JSON Adapter"]
+  end
+  subgraph TB4["Trust Boundary D — Candidate Process"]
+    PEP["Receiver validation / PEP"]
+    CAND["Candidate deterministic verifier"]
+  end
+  C3 --> C7
+  C7 --> C3
+  C3 --> AD
+  AD --> PEP
+  PEP --> CAND
+  CAND --> AD
+  NOTE["Production target: HTTPS, workload identity, mTLS or OAuth, sender constraint, trusted time, durable replay/revocation"] -. not implemented .-> AD

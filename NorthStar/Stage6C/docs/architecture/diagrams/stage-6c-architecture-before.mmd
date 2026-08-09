@@ -1,0 +1,14 @@
+flowchart TB
+  MAYA["Maya / CMP-001"] --> C3["CMP-003 Orchestration
+GRAPH-001 1.1.0 / DATA-009 1.1.0"]
+  C3 --> A1["AGT-001 active
+spec 1.1.0"]
+  A1 --> C5["CMP-005 Gateway
+TOOL-001..006"]
+  C7["CMP-007 Authority"] --> CANON["DATA-091..099
+INT-063..070"]
+  C3 --> CANON
+  CANON -. local direct sandbox .-> CAND["CAND-EVIDENCE-VERIFIER-001
+candidate_sandbox_only"]
+  GAP["No real process boundary, discovery, version negotiation, MCP/A2A mapping or adapter conformance"] -. unresolved .-> CANON
+  C3 --> C6["CMP-006 Human Review"]

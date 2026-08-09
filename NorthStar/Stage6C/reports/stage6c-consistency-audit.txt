@@ -1,0 +1,26 @@
+{
+  "stage": "S06C",
+  "result": "Passed with recorded reconstruction and production exceptions",
+  "checks": {
+    "narrative_matches_architecture": true,
+    "diagrams_match_selected_reference_transport": true,
+    "code_matches_protocol_profiles": true,
+    "components_preserved": true,
+    "schemas_registered": true,
+    "requirements_traceable": true,
+    "adrs_reflect_decisions": true,
+    "security_matches_authority": true,
+    "evaluations_match_objectives": true,
+    "repository_paths_consistent": true,
+    "one_active_agent": true,
+    "no_concurrency": true
+  },
+  "recorded_exceptions": [
+    "ISS-080 compatible reconstruction overlay",
+    "ISS-081 local HTTP is cleartext loopback, not production HTTPS/mTLS/OAuth",
+    "ISS-082 MCP and A2A mappings are conformance-only",
+    "ISS-083 no CLI Mermaid rendering",
+    "ISS-084 no live remote agent/model/connectors",
+    "ISS-085 no concurrency/distributed delivery benchmark"
+  ]
+}

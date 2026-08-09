@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-105.schema.json",
+  "title": "TransportDeliveryReceipt",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "receipt_id",
+    "protocol_profile_id",
+    "binding",
+    "envelope_digest",
+    "grant_digest",
+    "correlation_id",
+    "task_id",
+    "terminal_status"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "protocol_profile_id": {
+      "type": "string"
+    },
+    "binding": {
+      "type": "string"
+    },
+    "envelope_digest": {
+      "type": "string"
+    },
+    "grant_digest": {
+      "type": "string"
+    },
+    "correlation_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "terminal_status": {
+      "type": "string"
+    }
+  }
+}

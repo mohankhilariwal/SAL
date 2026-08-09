@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "activeAgents": [
+    {
+      "endpointId": "AGT-001",
+      "name": "Regulatory Impact Assessment Agent",
+      "status": "active_one_agent_runtime",
+      "specVersion": "1.1.0"
+    }
+  ],
+  "candidateEndpoints": [
+    {
+      "endpointId": "CAND-EVIDENCE-VERIFIER-001",
+      "name": "Candidate Evidence Verification Endpoint",
+      "status": "candidate_sandbox_only",
+      "allocatedAgentId": null,
+      "allowedPurposes": ["verify_supplied_evidence"],
+      "allowedTools": [],
+      "canDelegate": false,
+      "canWriteMemory": false,
+      "canRoute": false,
+      "canApprove": false,
+      "canFinalize": false,
+      "canRunConcurrently": false
+    }
+  ]
+}

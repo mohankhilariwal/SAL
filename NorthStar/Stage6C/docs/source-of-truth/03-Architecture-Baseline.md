@@ -1,0 +1,41 @@
+# 03 — Architecture Baseline
+
+**Version:** 1.5.0
+
+The accepted architecture remains a single active agent executing an application-owned graph. S06C adds an interoperability adapter boundary subordinate to `CMP-003`, `CMP-005`, `CMP-006` and `CMP-007`.
+
+```mermaid
+flowchart TB
+  classDef new fill:#e8f4ff,stroke:#1769aa,stroke-width:2px
+  classDef unchanged fill:#f6f6f6,stroke:#555
+  classDef disabled fill:#fff3e0,stroke:#ef6c00,stroke-dasharray: 5 5
+
+  MAYA["Maya / CMP-001"]:::unchanged --> C3["CMP-003 Orchestration
+GRAPH-001 1.1.0 / DATA-009 1.1.0"]:::unchanged
+  C3 --> A1["AGT-001 — only active agent
+spec 1.1.0"]:::unchanged
+  A1 --> C5["CMP-005 Tool Gateway
+TOOL-001..006"]:::unchanged
+  C7["CMP-007 Authority Issuer"]:::unchanged --> CANON["Canonical Handoff Contracts
+DATA-091..099 / INT-063..070"]:::unchanged
+  C3 --> CANON
+  CANON --> ADAPT["Interoperability Adapter Boundary
+DATA-100..105 / INT-071..078"]:::new
+  ADAPT --> HTTP["PRF-HTTP-JSON-1
+serialized sequential reference boundary"]:::new
+  ADAPT -. conformance mapping .-> MCP["MCP 2026-07-28
+tools/resources at CMP-005"]:::new
+  ADAPT -. conformance mapping .-> A2A["A2A 1.0
+task lifecycle + required NorthStar extension"]:::new
+  HTTP --> CAND["CAND-EVIDENCE-VERIFIER-001
+separate process, sandbox only"]:::disabled
+  MCP -. no server activated .-> C5
+  A2A -. no endpoint or AGT-002 activated .-> CAND
+  C3 --> C6["CMP-006 Human Review"]:::unchanged
+  DIS["Still disabled: concurrency, peer delegation, shared state/memory, automatic retry, production protocol deployment"]:::disabled
+  DIS -. constrains .-> ADAPT
+```
+
+Implemented: direct adapter, protocol registry/negotiation, one serialized loopback HTTP/JSON receiver process, receiver validation, delivery receipt and MCP/A2A conformance mappings.
+
+Not implemented: production protocol endpoints, a second agent, concurrency, broker, gRPC runtime, framework adapter, live identity or deployment.

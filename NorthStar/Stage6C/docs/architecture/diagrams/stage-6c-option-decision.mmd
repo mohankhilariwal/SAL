@@ -1,0 +1,9 @@
+flowchart TD
+  R["Need to carry DATA-091..099 across a real boundary"] --> Q1{"Independent long-running agent task now?"}
+  Q1 -- No --> Q2{"Need only local proof?"}
+  Q2 -- Yes --> DIRECT["Direct adapter — tests only"]
+  Q2 -- No --> HTTP["HTTP/JSON sequential reference boundary — selected"]
+  Q1 -- Yes, future --> Q3{"Tool/resource interop or agent task lifecycle?"}
+  Q3 -- Tool/resource --> MCP["MCP mapping through CMP-005"]
+  Q3 -- Agent task --> A2A["A2A mapping + NorthStar extension"]
+  R --> DEFER["gRPC, queues/event bus, framework handoffs deferred until deployment/concurrency evidence"]

@@ -1,0 +1,24 @@
+{
+  "a2a_mapping": {
+    "iterations": 2000,
+    "max_ms": 0.481795,
+    "mean_ms": 0.0642682355,
+    "p50_ms": 0.062613,
+    "p95_ms": 0.068952
+  },
+  "direct_contract_validation": {
+    "iterations": 500,
+    "max_ms": 0.727181,
+    "mean_ms": 0.276020818,
+    "p50_ms": 0.267647,
+    "p95_ms": 0.305684
+  },
+  "environment": "local deterministic microbenchmark; excludes network, TLS, IAM, model and storage latency",
+  "mcp_catalog_mapping": {
+    "iterations": 2000,
+    "max_ms": 0.02007,
+    "mean_ms": 0.002060508,
+    "p50_ms": 0.002023,
+    "p95_ms": 0.002133
+  }
+}

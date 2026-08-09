@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-100.schema.json",
+  "title": "InteroperabilityProtocolProfile",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "profile_id",
+    "protocol_name",
+    "protocol_version",
+    "binding",
+    "semantic_domain",
+    "implementation_status",
+    "canonical_contract_version"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "protocol_name": {
+      "type": "string"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "binding": {
+      "type": "string"
+    },
+    "semantic_domain": {
+      "type": "string"
+    },
+    "implementation_status": {
+      "type": "string"
+    },
+    "canonical_contract_version": {
+      "type": "string"
+    }
+  }
+}

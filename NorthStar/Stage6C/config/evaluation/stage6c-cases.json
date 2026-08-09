@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "cases": [
+    {"id": "EVAL-070", "objective": "Preserve canonical semantics across adapters"},
+    {"id": "EVAL-071", "objective": "Select exact approved version and binding"},
+    {"id": "EVAL-072", "objective": "Fail closed on version mismatch"},
+    {"id": "EVAL-073", "objective": "Keep MCP in the tool/resource domain"},
+    {"id": "EVAL-074", "objective": "Preserve A2A task semantics with required extension"},
+    {"id": "EVAL-075", "objective": "Reject A2A mapping that omits extension semantics"},
+    {"id": "EVAL-076", "objective": "Preserve one active agent"},
+    {"id": "EVAL-077", "objective": "Preserve no concurrency and no peer delegation"},
+    {"id": "EVAL-078", "objective": "Make implementation status explicit for every profile"}
+  ]
+}
