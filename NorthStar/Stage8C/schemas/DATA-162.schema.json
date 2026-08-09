@@ -1,0 +1,23 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-162.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "metrics": {},
+    "report_id": {},
+    "sample_count": {},
+    "slice_key": {}
+  },
+  "required": [
+    "report_id",
+    "slice_key",
+    "metrics",
+    "sample_count",
+    "authority_effect"
+  ],
+  "title": "DATA-162 BiasSliceReport",
+  "type": "object"
+}

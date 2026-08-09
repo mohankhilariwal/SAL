@@ -1,0 +1,25 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-163.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "evidence_kind": {},
+    "observation_count": {},
+    "probe_count": {},
+    "recommendations": {},
+    "stage": {}
+  },
+  "required": [
+    "stage",
+    "evidence_kind",
+    "probe_count",
+    "observation_count",
+    "recommendations",
+    "authority_effect"
+  ],
+  "title": "DATA-163 LabRunReport",
+  "type": "object"
+}

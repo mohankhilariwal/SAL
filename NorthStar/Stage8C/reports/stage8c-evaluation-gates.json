@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "EVAL-151-probe-catalogue": true,
+    "EVAL-152-repeated-pairs": true,
+    "EVAL-153-no-live-model": true,
+    "EVAL-154-no-route": true,
+    "EVAL-155-advisory-only": true,
+    "EVAL-156-production-thresholds-absent": true,
+    "EVAL-157-control-not-production": true,
+    "EVAL-158-biased-quarantined": true,
+    "EVAL-159-critical-probes": true,
+    "EVAL-160-hard-gates-not-averaged": true,
+    "EVAL-161-paired-ci": true,
+    "EVAL-162-multiple-testing": true,
+    "EVAL-163-sealed-excluded": true,
+    "EVAL-164-language-slices": true,
+    "EVAL-165-self-preference": true,
+    "EVAL-166-injection": true,
+    "EVAL-167-score-last": true,
+    "EVAL-168-deterministic-replay": true
+  },
+  "failed": [],
+  "passed": 18,
+  "total": 18
+}

@@ -1,0 +1,17 @@
+flowchart TD
+  R[Rubric + Evidence + Candidate Base Case] --> C[Content-equivalent control]
+  R --> T[Single-factor treatment perturbation]
+  C --> P[Pair ID + immutable digests]
+  T --> P
+  P --> B[Block by task, language, risk and expected label]
+  B --> L[Counterbalanced order / Latin square]
+  L --> S[Fixed seeds and >=3 repetitions]
+  S --> V[Strict observation validation]
+  V --> E[Paired estimand]
+  E --> U[Bootstrap CI + exact McNemar]
+  U --> H[Holm correction across probe family]
+  H --> Q{Critical violation?}
+  Q -- yes --> X[Quarantine recommendation]
+  Q -- no --> D[Diagnostic signal / watch / no material signal]
+  X --> A[Advisory evidence only]
+  D --> A

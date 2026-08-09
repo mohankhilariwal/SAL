@@ -1,0 +1,29 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-161.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "ci_high": {},
+    "ci_low": {},
+    "flip_rate": {},
+    "judge_id": {},
+    "n_pairs": {},
+    "paired_delta": {},
+    "probe_id": {}
+  },
+  "required": [
+    "judge_id",
+    "probe_id",
+    "n_pairs",
+    "paired_delta",
+    "flip_rate",
+    "ci_low",
+    "ci_high",
+    "authority_effect"
+  ],
+  "title": "DATA-161 PairedBiasEstimate",
+  "type": "object"
+}

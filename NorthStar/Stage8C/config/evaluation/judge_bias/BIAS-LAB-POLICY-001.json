@@ -1,0 +1,20 @@
+{
+  "authority_effect": "none",
+  "evidence_kind": "synthetic_replay",
+  "live_model_allowed": false,
+  "policy_id": "BIAS-LAB-POLICY-001",
+  "production_eligibility_allowed": false,
+  "requirements": {
+    "candidate_identity_anonymized_by_default": true,
+    "counterbalancing": true,
+    "critical_injection_or_override_quarantines": true,
+    "deterministic_hard_gates_non_overridable": true,
+    "matched_pairs": true,
+    "multiple_testing_correction": "holm_bonferroni",
+    "repetitions_min": 3,
+    "sealed_stage8a_cases_prohibited": true,
+    "uncertainty": "paired bootstrap and exact McNemar"
+  },
+  "stage": "S08C",
+  "version": "1.0.0"
+}

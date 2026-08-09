@@ -1,0 +1,21 @@
+sequenceDiagram
+  participant GOV as CMP-011 Governance
+  participant IAM as CMP-007 Policy
+  participant LAB as CMP-008 Bias Lab
+  participant ADP as Replay Adapter
+  participant HUM as CMP-006 Human Review
+  participant AUD as CMP-009 Audit
+  GOV->>LAB: Resolve immutable taxonomy, probes, dataset and policy
+  LAB->>IAM: Authorize rubric/probe/evidence access
+  IAM-->>LAB: Permit with minimized scope
+  LAB->>LAB: Randomize, block, counterbalance and seed trials
+  loop repetitions
+    LAB->>ADP: Invoke replay fixture (candidate is inert data)
+    ADP-->>LAB: Structured advisory observation
+    LAB->>LAB: Validate schema, digests and hard-gate acknowledgement
+  end
+  LAB->>LAB: Compute paired effects, uncertainty and corrected p-values
+  LAB->>LAB: Apply critical-failure quarantine semantics
+  LAB-->>HUM: Advisory report / disputed or unsafe configuration
+  LAB->>AUD: Minimized report, manifest and digests
+  Note over LAB,HUM: No approval, DATA-106 mutation or model-route activation

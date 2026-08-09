@@ -1,0 +1,27 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-159.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "order": {},
+    "pair_id": {},
+    "probe_id": {},
+    "seed": {},
+    "trial_id": {},
+    "variant": {}
+  },
+  "required": [
+    "trial_id",
+    "probe_id",
+    "pair_id",
+    "variant",
+    "order",
+    "seed",
+    "authority_effect"
+  ],
+  "title": "DATA-159 TrialPlan",
+  "type": "object"
+}

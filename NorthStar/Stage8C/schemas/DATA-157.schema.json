@@ -1,0 +1,23 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-157.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "changed_factor": {},
+    "content_digest": {},
+    "probe_id": {},
+    "variant_id": {}
+  },
+  "required": [
+    "probe_id",
+    "variant_id",
+    "changed_factor",
+    "content_digest",
+    "authority_effect"
+  ],
+  "title": "DATA-157 PerturbationVariant",
+  "type": "object"
+}

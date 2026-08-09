@@ -1,0 +1,25 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-158.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "dataset_version": {},
+    "judge_config_digest": {},
+    "manifest_id": {},
+    "repetitions": {},
+    "seed": {}
+  },
+  "required": [
+    "manifest_id",
+    "dataset_version",
+    "judge_config_digest",
+    "seed",
+    "repetitions",
+    "authority_effect"
+  ],
+  "title": "DATA-158 ExperimentManifest",
+  "type": "object"
+}

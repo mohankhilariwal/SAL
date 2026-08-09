@@ -1,0 +1,21 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-155.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "bias_type": {},
+    "criticality": {},
+    "probe_id": {}
+  },
+  "required": [
+    "probe_id",
+    "bias_type",
+    "criticality",
+    "authority_effect"
+  ],
+  "title": "DATA-155 BiasTaxonomyEntry",
+  "type": "object"
+}

@@ -1,0 +1,23 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-164.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "critical_probe_count": {},
+    "judge_id": {},
+    "production_eligible": {},
+    "status": {}
+  },
+  "required": [
+    "judge_id",
+    "status",
+    "critical_probe_count",
+    "production_eligible",
+    "authority_effect"
+  ],
+  "title": "DATA-164 QuarantineRecommendation",
+  "type": "object"
+}

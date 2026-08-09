@@ -1,0 +1,27 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-160.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "expected_label": {},
+    "judge_id": {},
+    "observed_label": {},
+    "probe_id": {},
+    "trial_id": {},
+    "variant": {}
+  },
+  "required": [
+    "trial_id",
+    "judge_id",
+    "probe_id",
+    "variant",
+    "expected_label",
+    "observed_label",
+    "authority_effect"
+  ],
+  "title": "DATA-160 TrialObservation",
+  "type": "object"
+}

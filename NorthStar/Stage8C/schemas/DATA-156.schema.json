@@ -1,0 +1,23 @@
+{
+  "$id": "https://northstar.example/schemas/DATA-156.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {
+      "const": "none"
+    },
+    "expected_invariance": {},
+    "hypothesis": {},
+    "perturbation": {},
+    "probe_id": {}
+  },
+  "required": [
+    "probe_id",
+    "perturbation",
+    "expected_invariance",
+    "hypothesis",
+    "authority_effect"
+  ],
+  "title": "DATA-156 ProbeFamily",
+  "type": "object"
+}

@@ -1,0 +1,27 @@
+flowchart LR
+  classDef new fill:#eef6ff,stroke:#245,stroke-width:2px;
+  classDef boundary fill:#f7f7f7,stroke:#555;
+  classDef human fill:#fff4d6,stroke:#8a6d1d;
+  classDef blocked fill:#ffe8e8,stroke:#8a1d1d,stroke-dasharray: 5 5;
+
+  U[Maya Chen / CMP-001] --> O[CMP-003 Orchestration Boundary]
+  O --> A[AGT-001 Regulatory Impact Assessment Agent]
+  A --> K[CMP-004 Knowledge and Evidence]
+  A --> G[CMP-005 Tool Gateway]
+  O --> H[CMP-006 Human Review and Approval]
+  O --> P[CMP-007 Identity, Authorization and Policy]
+  O --> E[CMP-008 Evaluation and Assurance]
+  E --> J[Stage 8B Judge Contracts and Calibration]
+  J --> B[Stage 8C Judge-Bias Laboratory]:::new
+  B --> T[Matched Probe Catalogue DATA-155..157]:::new
+  B --> X[Counterbalanced Trial Planner DATA-158..160]:::new
+  B --> M[Paired Estimators and Uncertainty DATA-161..163]:::new
+  B --> Q[Quarantine Recommendation DATA-164]:::new
+  B --> AUD[CMP-009 Minimized Audit Evidence]
+  Q -. advisory only .-> H
+  Q -. no route mutation .-> D[CMP-010 Runtime and Deployment]:::blocked
+  C[CMP-011 Source-of-Truth Governance] --> B
+  D -. WP-008 inactive .-> W[Future Multi-Agent Workload]:::blocked
+
+  class O,K,G,P,E,AUD,D,C boundary;
+  class H human;
