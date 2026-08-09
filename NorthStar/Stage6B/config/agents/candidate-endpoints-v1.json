@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "active_agents": [
+    {
+      "endpoint_id": "AGT-001",
+      "status": "active_one_agent_runtime",
+      "version": "1.1.0"
+    }
+  ],
+  "candidate_endpoints": [
+    {
+      "endpoint_id": "CAND-EVIDENCE-VERIFIER-001",
+      "status": "candidate_sandbox_only",
+      "version": "0.1.0",
+      "purpose": "evidence_verification",
+      "tools": [],
+      "memory_write": false,
+      "routing": false,
+      "approval": false,
+      "finalization": false,
+      "delegation": false,
+      "concurrency": false
+    }
+  ]
+}

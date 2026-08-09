@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "title": "DATA-098 HandoffFailureEnvelope",
+  "type": "object",
+  "required": [
+    "failure_id",
+    "task_id",
+    "failure_class",
+    "retryable",
+    "commit_state",
+    "safe_summary",
+    "occurred_at"
+  ],
+  "properties": {
+    "failure_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "failure_class": {
+      "enum": [
+        "validation",
+        "authorization",
+        "timeout",
+        "cancellation",
+        "artifact_integrity",
+        "recipient",
+        "transport",
+        "unknown"
+      ]
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "commit_state": {
+      "enum": [
+        "not_started",
+        "not_committed",
+        "committed",
+        "ambiguous"
+      ]
+    },
+    "safe_summary": {
+      "type": "string"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sensitive_details_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

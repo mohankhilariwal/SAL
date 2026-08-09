@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "title": "DATA-095 HandoffArtifactManifest",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "schema_id",
+    "schema_version",
+    "media_type",
+    "content_sha256",
+    "classification",
+    "provenance_source_ids",
+    "authorized_subjects",
+    "case_id",
+    "created_by",
+    "immutable"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "schema_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "media_type": {
+      "type": "string"
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "classification": {
+      "type": "string"
+    },
+    "provenance_source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authorized_subjects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "immutable": {
+      "const": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+flowchart TB
+  subgraph TB1["Existing trusted orchestration boundary"]
+    O["CMP-003 / GRAPH-001"]
+    ST["DATA-009 owner"]
+    O --> ST
+  end
+  subgraph TB2["Authorization boundary"]
+    PDP["CMP-007 issuer/verifier"]
+    USE["nonce/use/revocation ledger"]
+    PDP --> USE
+  end
+  subgraph TB3["Candidate sandbox boundary - disabled for production"]
+    C["CAND-EVIDENCE-VERIFIER-001"]
+    SCR["ephemeral private scratch only"]
+    C --> SCR
+  end
+  subgraph TB4["Immutable artefact exchange"]
+    M["DATA-095 manifest"]
+    R["DATA-094 receipt"]
+  end
+  O -->|signed DATA-092| C
+  PDP -->|audience-bound DATA-093| C
+  C -->|authorization before load| M
+  C -->|signed receipt/result ref| R --> O
+  C -. prohibited .-> ST
+  C -. prohibited .-> PDP

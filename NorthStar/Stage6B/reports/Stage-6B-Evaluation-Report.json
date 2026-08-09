@@ -1,0 +1,39 @@
+{
+  "architecture_version": "1.4.0",
+  "results": [
+    {
+      "evaluation_id": "EVAL-062",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-063",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-064",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-065",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-066",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-067",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-068",
+      "passed": true
+    },
+    {
+      "evaluation_id": "EVAL-069",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "scope": "deterministic local contract evaluation; no model-quality or production identity claim"
+}

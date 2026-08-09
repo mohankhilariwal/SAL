@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "title": "DATA-091 AgentEndpointDescriptor",
+  "type": "object",
+  "required": [
+    "endpoint_id",
+    "runtime_status",
+    "version",
+    "allowed_purposes"
+  ],
+  "properties": {
+    "endpoint_id": {
+      "type": "string"
+    },
+    "runtime_status": {
+      "enum": [
+        "active_one_agent_runtime",
+        "candidate_sandbox_only",
+        "disabled"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "allowed_purposes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "may_delegate": {
+      "type": "boolean"
+    },
+    "may_write_memory": {
+      "type": "boolean"
+    },
+    "may_route": {
+      "type": "boolean"
+    },
+    "may_approve": {
+      "type": "boolean"
+    },
+    "may_finalize": {
+      "type": "boolean"
+    },
+    "may_run_concurrently": {
+      "type": "boolean"
+    }
+  }
+}

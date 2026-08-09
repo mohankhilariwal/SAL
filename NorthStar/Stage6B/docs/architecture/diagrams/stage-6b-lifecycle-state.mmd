@@ -1,0 +1,21 @@
+stateDiagram-v2
+    [*] --> Offered
+    Offered --> Accepted: verified receipt
+    Offered --> Rejected: unsupported/invalid
+    Offered --> Expired: deadline
+    Offered --> CancelRequested: orchestrator cancellation
+    Accepted --> Running: recipient starts
+    Accepted --> CancelRequested
+    Accepted --> Expired
+    Running --> Completed: result artefact verified
+    Running --> Failed: typed failure
+    Running --> CancelRequested
+    Running --> Expired
+    CancelRequested --> Cancelled: cancel acknowledgement
+    CancelRequested --> Failed: cancellation failure
+    CancelRequested --> Expired: no acknowledgement before deadline
+    Completed --> [*]
+    Rejected --> [*]
+    Failed --> [*]
+    Cancelled --> [*]
+    Expired --> [*]

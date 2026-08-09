@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "title": "DATA-096 VerificationResultArtifact",
+  "type": "object",
+  "required": [
+    "result_id",
+    "task_id",
+    "case_id",
+    "verdict",
+    "evidence_artifact_ids",
+    "limitations"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "supported",
+        "unsupported",
+        "insufficient_evidence"
+      ]
+    },
+    "evidence_artifact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approval_status": {
+      "const": "not_an_approval"
+    }
+  }
+}

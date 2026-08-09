@@ -1,0 +1,27 @@
+flowchart TB
+  classDef new fill:#fff4cc,stroke:#8a6d00,stroke-width:2px
+  classDef existing fill:#eef4ff,stroke:#345995
+  classDef disabled fill:#f4f4f4,stroke:#777,stroke-dasharray:5 5
+
+  MAYA["Maya Chen"] --> C1["CMP-001 Analyst Experience Portal"]:::existing
+  C1 --> C3["CMP-003 Case and Workflow Orchestration Boundary"]:::existing
+  C3 --> G["GRAPH-001 1.1.0 sequential / DATA-009 1.1.0"]:::existing
+  G --> A1["AGT-001 Regulatory Impact Assessment Agent / spec 1.1.0"]:::existing
+  P["DATA-089 task profiles"] --> G
+  A1 --> C5["CMP-005 Enterprise Integration Boundary"]:::existing --> T["TOOL-001..006 gateway-only"]:::existing
+  G --> C6["CMP-006 Human Review and Approval Boundary"]:::existing
+  C7["CMP-007 Identity Authorization and Policy Boundary"]:::existing --> C5
+  C7 --> AUTH["INT-064 / DATA-093 attenuated authority reference"]:::new
+  C3 --> MSG["INT-063/065 / DATA-092 signed task envelope"]:::new
+  MSG --> ART["INT-066 / DATA-095 immutable artefact manifest"]:::new
+  ART --> RECEIPT["DATA-094 signed receipt"]:::new
+  MSG --> LIFE["INT-067/068 / DATA-097 lifecycle, timeout and cancellation"]:::new
+  LIFE --> TERM["INT-070 / DATA-099 system termination record"]:::new
+  MSG -. sandbox only .-> CAND["CAND-EVIDENCE-VERIFIER-001 candidate endpoint"]:::disabled
+  CAND -. deterministic contract lab .-> RECEIPT
+  C8["CMP-008 Evaluation and Assurance"]:::existing --> MSG
+  C9["CMP-009 Observability / local evidence"]:::existing --> LIFE
+  C10["CMP-010 local sequential Python runtime"]:::existing --> CAND
+  C11["CMP-011 Source-of-Truth Pack 1.4.0"]:::new --> C3
+  NOPROTO["No MCP/A2A/REST/gRPC/queue selection; no concurrent execution"]:::disabled
+  NOPROTO -. constrains .-> MSG

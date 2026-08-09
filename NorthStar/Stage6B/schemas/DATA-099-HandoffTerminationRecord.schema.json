@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "title": "DATA-099 HandoffTerminationRecord",
+  "type": "object",
+  "required": [
+    "termination_id",
+    "case_id",
+    "run_id",
+    "task_ids",
+    "terminal_statuses",
+    "all_grants_revoked_or_exhausted",
+    "all_artifacts_verified",
+    "human_decision_owner",
+    "final_closure_authority",
+    "terminated_at"
+  ],
+  "properties": {
+    "termination_id": {
+      "type": "string"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "task_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "terminal_statuses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "all_grants_revoked_or_exhausted": {
+      "type": "boolean"
+    },
+    "all_artifacts_verified": {
+      "type": "boolean"
+    },
+    "human_decision_owner": {
+      "const": "CMP-006"
+    },
+    "final_closure_authority": {
+      "const": "external_to_agent_runtime"
+    },
+    "terminated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+sequenceDiagram
+    actor Maya
+    participant O as CMP-003 Orchestrator
+    participant I as CMP-007 Authority
+    participant A as AGT-001
+    participant V as Candidate verifier endpoint
+    participant S as Immutable artifact store
+
+    Maya->>O: Continue CASE-001
+    O->>A: Execute bounded verification work unit
+    A->>O: Proposed handoff request (no authority)
+    O->>I: Request child grant bound to case/run/task/audience
+    I-->>O: DATA-093 attenuated one-use grant
+    O->>O: Build and sign DATA-092 task envelope
+    O->>V: Offer task (sandbox-only, sequential)
+    V->>I: Verify grant, audience, expiry, nonce and scope
+    V->>S: Load immutable DATA-095 artefact after authorization
+    V-->>O: Signed DATA-094 acceptance receipt
+    O->>V: Mark accepted then running
+    V->>V: Deterministic verification fixture
+    V->>S: Persist immutable DATA-096 result artefact
+    V-->>O: Completed status + signed receipt + result reference
+    O->>I: Exhaust/revoke child grant
+    O->>O: Validate all terminal / artefacts verified
+    O-->>Maya: Preliminary verification evidence; not approval or final closure

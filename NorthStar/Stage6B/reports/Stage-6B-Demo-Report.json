@@ -1,0 +1,103 @@
+{
+  "architecture_version": "1.4.0",
+  "runtime_mode": "contract_sandbox_only",
+  "active_agents": [
+    "AGT-001"
+  ],
+  "candidate_endpoint": "CAND-EVIDENCE-VERIFIER-001",
+  "envelope_digest": "b2db88801b9683be5c43151c8f7138f7ca9c46d041c7d333b4ca223acd124e3a",
+  "grant_digest": "4b059772829aca9dce819788f1812ddeace53eab5f91706fcf4ae3c4754e0249",
+  "receipt": {
+    "receipt_id": "RCP-4AE60BEE19FA4BA9",
+    "envelope_id": "ENV-001",
+    "envelope_digest": "b2db88801b9683be5c43151c8f7138f7ca9c46d041c7d333b4ca223acd124e3a",
+    "grant_digest": "4b059772829aca9dce819788f1812ddeace53eab5f91706fcf4ae3c4754e0249",
+    "recipient_id": "CAND-EVIDENCE-VERIFIER-001",
+    "received_at": "2026-08-01T18:30:00+00:00",
+    "accepted": true,
+    "reason_code": "completed",
+    "verified_artifact_digests": [
+      "adf1b0dbe17556faea3621b34612ea321251dba1aebaecd022b61ca11c9f17ab"
+    ],
+    "digest_sha256": "7f0e26b4bca12b8ca0832f58a39cbd708f5726142799edac074d6e50fda2ebb2",
+    "signature": "78a4c48ce30c16c69796b1eb70a57b82431e86a277d3ed7542c524b2a83d16da"
+  },
+  "output_artifact": {
+    "artifact_id": "ART-VERIFY-5D86B456149C",
+    "schema_id": "DATA-096",
+    "schema_version": "1.0.0",
+    "media_type": "application/json",
+    "content_sha256": "746eb1dea863dde3cf93c655ef84abe2cf56663070caf90d7200d445816e409a",
+    "classification": "internal",
+    "provenance_source_ids": [
+      "ART-EVIDENCE-001"
+    ],
+    "authorized_subjects": [
+      "AGT-001",
+      "CAND-EVIDENCE-VERIFIER-001"
+    ],
+    "case_id": "CASE-001",
+    "created_by": "CAND-EVIDENCE-VERIFIER-001",
+    "immutable": true
+  },
+  "status_events": [
+    {
+      "event_id": "EVT-E913C264391444BD",
+      "envelope_id": "ENV-001",
+      "task_id": "TASK-VERIFY-001",
+      "actor_id": "AGT-001",
+      "previous_status": null,
+      "status": "offered",
+      "occurred_at": "2026-08-01T18:38:32.673163+00:00",
+      "reason_code": "registered",
+      "details": {},
+      "digest_sha256": "b7142de01129d92ccf9a7fd59d842fe132bc40055d5c43bb8085b00037e2d9c3"
+    },
+    {
+      "event_id": "EVT-6C7F0C6DA5124E2F",
+      "envelope_id": "ENV-001",
+      "task_id": "TASK-VERIFY-001",
+      "actor_id": "CAND-EVIDENCE-VERIFIER-001",
+      "previous_status": "offered",
+      "status": "accepted",
+      "occurred_at": "2026-08-01T18:30:00+00:00",
+      "reason_code": "contract_accepted",
+      "details": {},
+      "digest_sha256": "aecf1d43782223c5a6b2a6934bad7f5e0f43ca354bf76d591b4a01762c371fb8"
+    },
+    {
+      "event_id": "EVT-01CCCD90869B41F8",
+      "envelope_id": "ENV-001",
+      "task_id": "TASK-VERIFY-001",
+      "actor_id": "CAND-EVIDENCE-VERIFIER-001",
+      "previous_status": "accepted",
+      "status": "running",
+      "occurred_at": "2026-08-01T18:30:00+00:00",
+      "reason_code": "verification_started",
+      "details": {},
+      "digest_sha256": "733f15eeb748c87ad6cc1372de89dc20678635e9d57b0d9ef8bdabfd27be6404"
+    },
+    {
+      "event_id": "EVT-95B28FDE23604128",
+      "envelope_id": "ENV-001",
+      "task_id": "TASK-VERIFY-001",
+      "actor_id": "CAND-EVIDENCE-VERIFIER-001",
+      "previous_status": "running",
+      "status": "completed",
+      "occurred_at": "2026-08-01T18:30:00+00:00",
+      "reason_code": "verification_completed",
+      "details": {
+        "output_artifact_id": "ART-VERIFY-5D86B456149C"
+      },
+      "digest_sha256": "0ea388c10627f31092ba27248470fd0702987a8127a38a7acbb7da875e00524a"
+    }
+  ],
+  "system_termination_ready": true,
+  "limitations": [
+    "candidate endpoint is sandbox-only",
+    "no second active agent",
+    "no concurrency",
+    "no MCP or A2A protocol selected",
+    "local HMAC is a tutorial reference, not production OAuth/DPoP"
+  ]
+}

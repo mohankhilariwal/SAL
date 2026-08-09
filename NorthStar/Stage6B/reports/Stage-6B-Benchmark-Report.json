@@ -1,0 +1,9 @@
+{
+  "loops": 2000,
+  "mean_ms": 0.3167210915,
+  "p50_ms": 0.302659,
+  "p95_ms": 0.368578,
+  "p99_ms": 0.52542,
+  "environment": "local Python 3.13.5, HMAC/SHA-256, no network/model/database",
+  "warning": "This microbenchmark measures only local serialization and validation overhead, not multi-agent latency or production capacity."
+}

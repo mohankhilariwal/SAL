@@ -1,0 +1,10 @@
+[project]
+name = "northstar-agentic-compliance"
+version = "1.4.0"
+description = "NorthStar Stage 6B bounded handoff and attenuated-authority contract overlay"
+requires-python = ">=3.11,<3.15"
+dependencies = []
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"

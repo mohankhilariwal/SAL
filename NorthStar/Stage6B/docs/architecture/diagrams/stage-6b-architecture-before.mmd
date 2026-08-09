@@ -1,0 +1,9 @@
+flowchart LR
+    MAYA["Maya / CMP-001"] --> ORCH["CMP-003 / GRAPH-001 1.1.0"]
+    ORCH --> AGT["AGT-001 / spec 1.1.0"]
+    PROF["DATA-089 profiles TPR-001..006"] --> ORCH
+    ORCH --> STATE["DATA-009 1.1.0"]
+    AGT --> GW["CMP-005 gateway"] --> TOOLS["TOOL-001..006"]
+    ORCH --> HUMAN["CMP-006 external human decision"]
+    MEM["optional DATA-081 via harness"] --> ORCH
+    GAP["No task envelope, authority attenuation, artefact receipt, cancellation propagation or system termination contract"] -. limitation .-> ORCH

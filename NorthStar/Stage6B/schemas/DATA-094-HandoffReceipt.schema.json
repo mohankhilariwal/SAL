@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "title": "DATA-094 HandoffReceipt",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "envelope_id",
+    "envelope_digest",
+    "grant_digest",
+    "recipient_id",
+    "received_at",
+    "accepted",
+    "reason_code",
+    "verified_artifact_digests",
+    "digest_sha256",
+    "signature"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "envelope_id": {
+      "type": "string"
+    },
+    "envelope_digest": {
+      "type": "string"
+    },
+    "grant_digest": {
+      "type": "string"
+    },
+    "recipient_id": {
+      "type": "string"
+    },
+    "received_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "accepted": {
+      "type": "boolean"
+    },
+    "reason_code": {
+      "type": "string"
+    },
+    "verified_artifact_digests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "digest_sha256": {
+      "type": "string"
+    },
+    "signature": {
+      "type": "string"
+    }
+  }
+}

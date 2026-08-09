@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "title": "DATA-093 AttenuatedAuthorityGrant",
+  "type": "object",
+  "required": [
+    "grant_id",
+    "issuer",
+    "subject_id",
+    "case_id",
+    "run_id",
+    "task_id",
+    "audience",
+    "purpose",
+    "allowed_tools",
+    "allowed_operations",
+    "allowed_resources",
+    "allowed_data_scopes",
+    "max_uses",
+    "delegation_depth_remaining",
+    "not_before",
+    "expires_at",
+    "nonce",
+    "proof_key_id",
+    "digest_sha256",
+    "signature"
+  ],
+  "properties": {
+    "grant_id": {
+      "type": "string"
+    },
+    "issuer": {
+      "const": "CMP-007"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "parent_subject_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "audience": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "allowed_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_operations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_resources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_data_scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "max_uses": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "delegation_depth_remaining": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "not_before": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "nonce": {
+      "type": "string"
+    },
+    "proof_key_id": {
+      "type": "string"
+    },
+    "parent_grant_digest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "digest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "signature": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

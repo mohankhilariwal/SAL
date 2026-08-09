@@ -1,0 +1,21 @@
+{
+  "policy_id": "HOF-POL-001",
+  "schema_version": "1.0.0",
+  "architecture_version": "1.4.0",
+  "graph_version": "1.1.0",
+  "mode": "contract_sandbox_only",
+  "active_agent_ids": ["AGT-001"],
+  "candidate_endpoint_ids": ["CAND-EVIDENCE-VERIFIER-001"],
+  "max_hops": 1,
+  "max_attempts": 1,
+  "max_ttl_seconds": 600,
+  "max_deadline_seconds": 300,
+  "max_grant_uses": 1,
+  "max_delegation_depth": 1,
+  "shared_mutable_state": false,
+  "shared_agent_memory": false,
+  "concurrent_execution": false,
+  "protocol_selected": false,
+  "mcp_enabled": false,
+  "a2a_enabled": false
+}

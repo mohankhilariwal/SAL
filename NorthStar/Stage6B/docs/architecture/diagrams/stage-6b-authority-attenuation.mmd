@@ -1,0 +1,7 @@
+flowchart LR
+  ROOT["CMP-007 parent grant\nsubject AGT-001\ncase/run/task bound\noperation verify_artifact\nresource ART-EVIDENCE-001\nuse 1 / depth 1"]
+  CHECK["Deterministic attenuation checks\nsubset tools/operations/resources/data\nexpiry not later\nrisk not higher\ndepth decremented\nparent digest bound"]
+  CHILD["Candidate child grant\naudience CAND-EVIDENCE-VERIFIER-001\nno tools\nverify_artifact only\nresource ART-EVIDENCE-001\nuse 1 / depth 0"]
+  DENY["Reject escalation\nTOOL-006, approve, broader case, longer expiry, second delegation"]
+  ROOT --> CHECK --> CHILD
+  CHECK --> DENY

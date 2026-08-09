@@ -1,0 +1,13 @@
+{
+  "evaluation_ids": ["EVAL-062", "EVAL-063", "EVAL-064", "EVAL-065", "EVAL-066", "EVAL-067", "EVAL-068", "EVAL-069"],
+  "cases": [
+    "happy_path_contract_sandbox",
+    "authority_scope_escalation",
+    "message_or_artifact_tamper",
+    "replay_and_use_exhaustion",
+    "timeout_and_late_result",
+    "cancellation_propagation",
+    "private_state_and_memory_denial",
+    "one_active_agent_and_no_protocol_selection"
+  ]
+}
