@@ -1,0 +1,14 @@
+flowchart TB
+  U[NorthStar users] --> C1[CMP-001]
+  C1 --> C2[CMP-002]
+  C2 --> C3[CMP-003 Orchestration + deterministic recovery]
+  C3 --> A1[AGT-001 only active agent]
+  C3 --> C4[CMP-004 Retrieval]
+  C3 --> C5[CMP-005 Tool gateway + reconcile + compensation]
+  C3 --> C6[CMP-006 Human approval]
+  C3 --> C7[CMP-007 Identity authorization policy]
+  C3 --> C8[CMP-008 Evaluation chaos]
+  C3 --> C9[CMP-009 Observability audit incident evidence]
+  C3 --> C10[CMP-010 Runtime retry circuit bulkhead deployment]
+  C11[CMP-011 Governance release promotion DR boundaries] -.-> C3
+  C10 -. production route disabled .-> X[No production activation]

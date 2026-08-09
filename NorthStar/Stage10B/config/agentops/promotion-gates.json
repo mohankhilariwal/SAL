@@ -1,0 +1,6 @@
+{
+  "required_non_production_gates": ["unit", "integration", "security", "chaos", "schema", "compatibility"],
+  "production_gate": "denied",
+  "production_denial_reasons": ["S08D unresolved", "S09D unresolved", "production route disabled"],
+  "authority_effect": "none"
+}

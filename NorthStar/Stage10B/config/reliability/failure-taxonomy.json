@@ -1,0 +1,6 @@
+{
+  "model_id": "REL-001/1.0.0",
+  "classes": ["transient", "permanent", "ambiguous_outcome", "overload", "authentication", "authorization", "policy", "security", "data_integrity", "human_timeout", "audit", "configuration"],
+  "non_retryable": ["authorization", "policy", "security", "data_integrity", "audit", "configuration", "permanent"],
+  "authority_effect": "none"
+}

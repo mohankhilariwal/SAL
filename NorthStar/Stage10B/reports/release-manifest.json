@@ -1,0 +1,15 @@
+{
+  "release_id": "REL-1.16.0-stage10b",
+  "environment": "production",
+  "architecture_version": "1.16.0",
+  "repository_version": "1.16.0",
+  "graph_version": "GRAPH-001/1.12.0",
+  "agent_spec_version": "AGT-001/1.1.0",
+  "config_digest": "a5007d5ae20300eb2043723942a5b77aecafe43a45453133a58e5870ebb34274",
+  "source_digest": "6c596706ba8960039150cc60509c0bf93b3457436f4e2b04f1c43003546bb694",
+  "test_report_digest": "72bd192b33ac056c0c670474fbd06507bd69113dae5ee6ca6d3cc090882d966d",
+  "unresolved_stage_8d": true,
+  "unresolved_stage_9d": true,
+  "production_route_enabled": false,
+  "authority_effect": "none"
+}

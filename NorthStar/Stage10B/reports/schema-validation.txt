@@ -1,0 +1,1 @@
+validated 20 schemas and 5 configuration files

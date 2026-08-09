@@ -1,0 +1,10 @@
+{
+  "EVAL-253-retry-safety": true,
+  "EVAL-254-ambiguous-outcome-reconciliation": true,
+  "EVAL-255-audit-fail-closed": true,
+  "EVAL-256-authority-separation": true,
+  "EVAL-257-checkpoint-integrity": true,
+  "EVAL-258-dlq-redrive-control": true,
+  "EVAL-259-production-promotion-denial": true,
+  "EVAL-260-chaos-invariant": true
+}

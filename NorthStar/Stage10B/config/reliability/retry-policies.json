@@ -1,0 +1,5 @@
+{
+  "default_read": {"max_attempts": 3, "base_delay_seconds": 0.05, "max_delay_seconds": 1.0, "total_budget_seconds": 2.0, "jitter": "full"},
+  "protected_write": {"max_attempts": 1, "requires_idempotency": true, "ambiguous_outcome_action": "reconcile"},
+  "authority_effect": "none"
+}

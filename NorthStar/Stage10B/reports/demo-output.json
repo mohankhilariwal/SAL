@@ -1,0 +1,45 @@
+{
+  "protected_effect": {
+    "operation": "create_review_request",
+    "status": "applied",
+    "idempotency_key": "CASE-1001-review-v1",
+    "deduplicated": false
+  },
+  "duplicate_effect": {
+    "operation": "create_review_request",
+    "status": "applied",
+    "idempotency_key": "CASE-1001-review-v1",
+    "deduplicated": true
+  },
+  "audit_events": 2,
+  "checkpoint": "reports/checkpoints/RUN-1001-00000001.json",
+  "dead_letter": {
+    "schema_id": "DATA-243",
+    "message_id": "MSG-1001",
+    "reason": "permanent schema mismatch",
+    "payload_digest": "4597ac037ff1826e8c338b8ea5ac9090313301a9305c33adb5354e8ef9036bc4",
+    "idempotency_key": null,
+    "retry_count": 3,
+    "status": "quarantined",
+    "created_at": "2026-08-01T22:13:59.477253+00:00",
+    "authority_effect": "none"
+  },
+  "recovery_action": "reconcile",
+  "production_promotion_allowed": false,
+  "production_promotion_reasons": [
+    "Stage 8D promotion eligibility remains unresolved",
+    "Stage 9D enterprise control plane remains unresolved",
+    "production route is disabled"
+  ],
+  "deployment_plan": {
+    "environment": "pre-production",
+    "strategy": "rolling-reference",
+    "route_activation_allowed": false,
+    "rollback_required": true,
+    "notes": [
+      "reference plan only",
+      "route activation requires later accepted control-plane and evaluation gates"
+    ],
+    "authority_effect": "none"
+  }
+}

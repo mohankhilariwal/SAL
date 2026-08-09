@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: northstar-stage10b-reference
+  namespace: northstar-preprod-reference
+  labels:
+    app.kubernetes.io/name: northstar-stage10b
+    northstar.io/production-route: "disabled"
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: northstar-stage10b
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: northstar-stage10b
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: runtime
+          image: example.invalid/northstar/stage10b:1.16.0
+          args: ["python", "scripts/run_stage10b_demo.py"]
+          env:
+            - name: NORTHSTAR_ENV
+              value: pre-production
+            - name: NORTHSTAR_DEPLOYMENT_ROUTE_ENABLED
+              value: "false"
+          readinessProbe:
+            exec:
+              command: ["python", "scripts/healthcheck.py", "readiness"]
+            periodSeconds: 10
+          livenessProbe:
+            exec:
+              command: ["python", "scripts/healthcheck.py", "liveness"]
+            periodSeconds: 20
+          startupProbe:
+            exec:
+              command: ["python", "scripts/healthcheck.py", "startup"]
+            failureThreshold: 30
+            periodSeconds: 2
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            capabilities:
+              drop: ["ALL"]
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: northstar-stage10b-reference
+  namespace: northstar-preprod-reference
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: northstar-stage10b

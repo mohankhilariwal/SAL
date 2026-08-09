@@ -1,0 +1,6 @@
+{
+  "environments": ["local", "shared-dev", "test", "pre-production"],
+  "production": {"enabled": false},
+  "multi_region": {"enabled": false},
+  "authority_effect": "none"
+}

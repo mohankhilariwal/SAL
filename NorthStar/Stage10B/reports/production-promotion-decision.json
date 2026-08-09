@@ -1,0 +1,10 @@
+{
+  "environment": "production",
+  "allowed": false,
+  "reasons": [
+    "Stage 8D promotion eligibility remains unresolved",
+    "Stage 9D enterprise control plane remains unresolved",
+    "production route is disabled"
+  ],
+  "authority_effect": "none"
+}

@@ -1,0 +1,7 @@
+{
+  "read_only_cached_evidence": {"allowed": true, "requires_freshness_check": true, "must_label_partial": true},
+  "policy_or_authorization_outage": {"allowed": false, "action": "fail_closed"},
+  "audit_outage_for_protected_effect": {"allowed": false, "action": "block"},
+  "human_approval_timeout": {"allowed": false, "action": "remain_pending_and_escalate"},
+  "authority_effect": "none"
+}

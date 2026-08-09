@@ -1,0 +1,14 @@
+services:
+  northstar-stage10b:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile
+    environment:
+      NORTHSTAR_ENV: local
+      NORTHSTAR_DEPLOYMENT_ROUTE_ENABLED: "false"
+      NORTHSTAR_PRODUCTION_PROMOTION_ENABLED: "false"
+    read_only: true
+    tmpfs:
+      - /tmp
+    volumes:
+      - ../../reports:/app/reports

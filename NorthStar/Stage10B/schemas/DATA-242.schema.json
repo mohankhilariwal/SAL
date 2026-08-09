@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://northstar.example/schemas/DATA-242.schema.json",
+  "title": "BulkheadPolicy",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "authority_effect"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "DATA-242"
+    },
+    "authority_effect": {
+      "const": "none"
+    },
+    "version": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

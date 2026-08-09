@@ -1,0 +1,7 @@
+{
+  "experiment_id": "CHAOS-S10B-001",
+  "injected": true,
+  "invariant_passed": true,
+  "safe_summary": "local fault injection completed",
+  "authority_effect": "none"
+}
