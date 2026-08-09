@@ -1,0 +1,21 @@
+{
+  "$id": "urn:northstar:data:181:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "grant_id": {},
+    "key_thumbprint": {},
+    "proof_id": {},
+    "request_nonce": {},
+    "signature": {}
+  },
+  "required": [
+    "proof_id",
+    "grant_id",
+    "key_thumbprint",
+    "request_nonce",
+    "signature"
+  ],
+  "title": "ProofOfPossessionBinding",
+  "type": "object"
+}

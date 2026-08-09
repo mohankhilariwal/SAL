@@ -1,0 +1,32 @@
+flowchart LR
+classDef new fill:#e8f4ff,stroke:#135,stroke-width:2px;
+classDef existing fill:#f7f7f7,stroke:#555;
+classDef human fill:#fff4d6,stroke:#8a6200;
+classDef future fill:#eee,stroke:#999,stroke-dasharray: 5 5;
+
+MAYA[Maya Chen]:::human --> C1[CMP-001 Analyst Experience Portal]:::existing
+C1 --> C2[CMP-002 Regulatory Intake Boundary]:::existing
+C1 --> C3[CMP-003 Case and Workflow Orchestration Boundary]:::existing
+C3 --> AGT[AGT-001 Regulatory Impact Assessment Agent
+only active agent]:::existing
+C3 --> C4[CMP-004 Knowledge and Evidence Access Boundary
+receiver PEP for retrieval]:::new
+AGT --> C5[CMP-005 Enterprise Integration Boundary
+receiver PEP + blast-radius enforcement]:::new
+C7[CMP-007 Identity, Authorization and Policy Boundary
+sole issuer / token exchange / revocation]:::new --> C4
+C7 --> C5
+C7 --> C3
+C6[CMP-006 Human Review and Approval Boundary]:::existing --> C7
+C4 --> EVID[(Authorized evidence)]:::existing
+C5 --> T[TOOL-001..006]:::existing
+C3 --> C8[CMP-008 Evaluation and Assurance Boundary]:::existing
+C7 --> C9[CMP-009 Observability and Audit Boundary
+authorization evidence]:::new
+C5 --> C9
+C3 --> C10[CMP-010 Runtime and Deployment Boundary]:::existing
+C11[CMP-011 Source-of-Truth Governance Pack
+1.13.0]:::new --> C7
+F[WP-008 / MCP / A2A / additional agents
+inactive_future]:::future
+C7 -. no activation .-> F

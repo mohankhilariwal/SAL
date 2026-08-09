@@ -1,0 +1,19 @@
+{
+  "$id": "urn:northstar:data:190:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "architecture_version": {},
+    "authorization_model_version": {},
+    "digest": {},
+    "snapshot_id": {}
+  },
+  "required": [
+    "snapshot_id",
+    "architecture_version",
+    "authorization_model_version",
+    "digest"
+  ],
+  "title": "IdentityAuthorizationSnapshot",
+  "type": "object"
+}

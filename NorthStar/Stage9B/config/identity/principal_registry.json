@@ -1,0 +1,56 @@
+{
+  "principals": [
+    {
+      "id": "USR-MAYA-CHEN",
+      "kind": "human",
+      "status": "logical_reference"
+    },
+    {
+      "id": "spiffe://northstar.ca/workload/agt-001",
+      "kind": "workload",
+      "status": "production_design_only"
+    },
+    {
+      "id": "AGT-001",
+      "kind": "agent",
+      "spec_version": "1.1.0",
+      "status": "active"
+    },
+    {
+      "id": "CMP-005",
+      "kind": "service",
+      "status": "logical_boundary"
+    },
+    {
+      "id": "TOOL-001",
+      "kind": "tool",
+      "status": "active_contract"
+    },
+    {
+      "id": "TOOL-002",
+      "kind": "tool",
+      "status": "active_contract"
+    },
+    {
+      "id": "TOOL-003",
+      "kind": "tool",
+      "status": "active_contract"
+    },
+    {
+      "id": "TOOL-004",
+      "kind": "tool",
+      "status": "active_contract"
+    },
+    {
+      "id": "TOOL-005",
+      "kind": "tool",
+      "status": "active_contract"
+    },
+    {
+      "id": "TOOL-006",
+      "kind": "tool",
+      "status": "active_contract"
+    }
+  ],
+  "version": "1.0.0"
+}

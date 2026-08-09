@@ -1,0 +1,19 @@
+{
+  "$id": "urn:northstar:data:188:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "allowed": {},
+    "budget_id": {},
+    "decision_id": {},
+    "reason_codes": {}
+  },
+  "required": [
+    "decision_id",
+    "allowed",
+    "reason_codes",
+    "budget_id"
+  ],
+  "title": "BlastRadiusDecision",
+  "type": "object"
+}

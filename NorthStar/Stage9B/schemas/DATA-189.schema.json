@@ -1,0 +1,21 @@
+{
+  "$id": "urn:northstar:data:189:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_effect": {},
+    "context_digest": {},
+    "decision_id": {},
+    "event_id": {},
+    "grant_digest": {}
+  },
+  "required": [
+    "event_id",
+    "decision_id",
+    "grant_digest",
+    "context_digest",
+    "authority_effect"
+  ],
+  "title": "AuthorizationAuditEvidence",
+  "type": "object"
+}

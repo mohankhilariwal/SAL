@@ -1,0 +1,21 @@
+{
+  "$id": "urn:northstar:data:192:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "architecture_version": {},
+    "audit_result": {},
+    "evaluations": {},
+    "stage": {},
+    "tests": {}
+  },
+  "required": [
+    "stage",
+    "architecture_version",
+    "tests",
+    "evaluations",
+    "audit_result"
+  ],
+  "title": "Stage9BReport",
+  "type": "object"
+}

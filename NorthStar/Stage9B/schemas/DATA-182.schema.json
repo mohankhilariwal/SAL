@@ -1,0 +1,15 @@
+{
+  "$id": "urn:northstar:data:182:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "required_count": {},
+    "status": {}
+  },
+  "required": [
+    "status",
+    "required_count"
+  ],
+  "title": "ApprovalAuthorizationBinding",
+  "type": "object"
+}

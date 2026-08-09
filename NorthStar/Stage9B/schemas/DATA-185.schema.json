@@ -1,0 +1,19 @@
+{
+  "$id": "urn:northstar:data:185:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "allowed": {},
+    "decision_id": {},
+    "evaluated_at": {},
+    "reason_codes": {}
+  },
+  "required": [
+    "decision_id",
+    "allowed",
+    "reason_codes",
+    "evaluated_at"
+  ],
+  "title": "PolicyDecision",
+  "type": "object"
+}

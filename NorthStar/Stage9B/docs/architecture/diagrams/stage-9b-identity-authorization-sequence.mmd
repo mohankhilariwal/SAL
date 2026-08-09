@@ -1,0 +1,26 @@
+sequenceDiagram
+participant Maya as Maya / OIDC subject
+participant Portal as CMP-001
+participant Orchestrator as CMP-003
+participant IAM as CMP-007
+participant Agent as AGT-001 workload
+participant Gateway as CMP-005 PEP
+participant Tool as TOOL-004
+participant Audit as CMP-009
+Maya->>Portal: authenticated session (not forwarded)
+Portal->>Orchestrator: task + stable human subject
+Orchestrator->>IAM: token exchange request (human + workload + agent execution + case/run/task)
+IAM-->>Orchestrator: short-lived audience-bound attenuated grant
+Orchestrator->>Agent: grant reference + task context
+Agent->>Gateway: tool request + grant + proof-of-possession
+Gateway->>Gateway: signature, expiry, audience, operation, resource, data, tenant, nonce, use, revocation, approval checks
+Gateway->>Gateway: blast-radius budget reservation
+alt allowed
+Gateway->>Tool: typed authorized invocation
+Tool-->>Gateway: bounded result
+Gateway->>Audit: minimized authorization evidence
+Gateway-->>Agent: result
+else denied
+Gateway->>Audit: denial reason codes
+Gateway-->>Agent: typed denial
+end

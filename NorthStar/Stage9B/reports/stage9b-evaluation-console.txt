@@ -1,0 +1,14 @@
+{
+  "stage": "S09B",
+  "passed": true,
+  "checks": [
+    {
+      "id": "EVAL-185-204",
+      "name": "stage9b_test_suite",
+      "passed": true,
+      "stdout": "........................................................                 [100%]\n",
+      "stderr": ""
+    }
+  ],
+  "authority_effect": "none"
+}

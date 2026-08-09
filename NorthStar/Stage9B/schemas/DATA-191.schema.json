@@ -1,0 +1,19 @@
+{
+  "$id": "urn:northstar:data:191:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "delta_id": {},
+    "mitigated_risks": {},
+    "residual_risks": {},
+    "threat_model_version": {}
+  },
+  "required": [
+    "delta_id",
+    "threat_model_version",
+    "mitigated_risks",
+    "residual_risks"
+  ],
+  "title": "ThreatModelDelta",
+  "type": "object"
+}

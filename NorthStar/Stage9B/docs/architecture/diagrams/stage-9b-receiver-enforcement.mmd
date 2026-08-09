@@ -1,0 +1,16 @@
+flowchart TD
+R[Incoming tool request] --> S{Grant signature + issuer valid?}
+S -- no --> D[Deny + audit]
+S -- yes --> B{Human/workload/agent/case/run/task binding valid?}
+B -- no --> D
+B -- yes --> A{Audience/tool/operation/resource/data/region valid?}
+A -- no --> D
+A -- yes --> P{Proof-of-possession valid and fresh?}
+P -- no --> D
+P -- yes --> V{Not revoked; nonce unused; uses remain?}
+V -- no --> D
+V -- yes --> H{Approval requirement satisfied?}
+H -- no --> D
+H -- yes --> BR{Blast-radius budget available?}
+BR -- no --> D
+BR -- yes --> E[Reserve budget and invoke typed tool]

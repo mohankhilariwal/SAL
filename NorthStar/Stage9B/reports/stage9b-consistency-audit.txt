@@ -1,0 +1,1 @@
+Stage 9B consistency audit: PASSED WITH RECORDED EXCEPTIONS

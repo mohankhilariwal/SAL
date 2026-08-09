@@ -1,0 +1,27 @@
+{
+  "$id": "urn:northstar:data:186:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "authority_tier": {},
+    "case_id": {},
+    "operation": {},
+    "resource": {},
+    "run_id": {},
+    "task_id": {},
+    "tenant_id": {},
+    "tool_id": {}
+  },
+  "required": [
+    "tenant_id",
+    "case_id",
+    "run_id",
+    "task_id",
+    "tool_id",
+    "operation",
+    "resource",
+    "authority_tier"
+  ],
+  "title": "ToolInvocationAuthorizationContext",
+  "type": "object"
+}

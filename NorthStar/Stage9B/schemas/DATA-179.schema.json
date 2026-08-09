@@ -1,0 +1,23 @@
+{
+  "$id": "urn:northstar:data:179:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "audience": {},
+    "operation": {},
+    "request_id": {},
+    "resource_scope": {},
+    "subject_execution_id": {},
+    "tool": {}
+  },
+  "required": [
+    "request_id",
+    "subject_execution_id",
+    "audience",
+    "tool",
+    "operation",
+    "resource_scope"
+  ],
+  "title": "DelegationRequest",
+  "type": "object"
+}

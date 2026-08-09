@@ -1,0 +1,19 @@
+{
+  "$id": "urn:northstar:data:184:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "grant_id": {},
+    "request_nonce": {},
+    "use_number": {},
+    "used_at": {}
+  },
+  "required": [
+    "grant_id",
+    "use_number",
+    "request_nonce",
+    "used_at"
+  ],
+  "title": "GrantUseRecord",
+  "type": "object"
+}

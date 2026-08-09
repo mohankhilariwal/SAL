@@ -1,0 +1,21 @@
+{
+  "$id": "urn:northstar:data:187:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "allowed_tools": {},
+    "authority_tier_ceiling": {},
+    "budget_id": {},
+    "max_total_calls": {},
+    "run_id": {}
+  },
+  "required": [
+    "budget_id",
+    "run_id",
+    "authority_tier_ceiling",
+    "allowed_tools",
+    "max_total_calls"
+  ],
+  "title": "BlastRadiusBudget",
+  "type": "object"
+}

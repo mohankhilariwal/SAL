@@ -1,0 +1,31 @@
+{
+  "$id": "urn:northstar:data:180:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "audience": {},
+    "expires_at": {},
+    "grant_id": {},
+    "human_actor_id": {},
+    "intended_tool": {},
+    "issuer": {},
+    "operations": {},
+    "proof_key_thumbprint": {},
+    "subject_execution_id": {},
+    "workload_principal_id": {}
+  },
+  "required": [
+    "grant_id",
+    "issuer",
+    "subject_execution_id",
+    "human_actor_id",
+    "workload_principal_id",
+    "audience",
+    "intended_tool",
+    "operations",
+    "expires_at",
+    "proof_key_thumbprint"
+  ],
+  "title": "AttenuatedAuthorizationGrant",
+  "type": "object"
+}

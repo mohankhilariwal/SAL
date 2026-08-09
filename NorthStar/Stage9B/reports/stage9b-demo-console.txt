@@ -1,0 +1,34 @@
+{
+  "consumption": {
+    "active_writes": 1,
+    "bytes": 12000,
+    "cost_cad": 0.01,
+    "external_messages": 0,
+    "per_tool_calls": {
+      "TOOL-004": 1
+    },
+    "records": 1,
+    "total_calls": 1
+  },
+  "first_decision": {
+    "allowed": true,
+    "authority_effect": "none",
+    "budget_id": "BRB-001",
+    "decision_id": "AUTHZ-A9723883026E4B96806BED55E6EFC9DB",
+    "evaluated_at": "2026-08-01T21:00:00Z",
+    "grant_id": "GRANT-FA52A374DC7945AB9D4737B09CA2AEA2",
+    "reason_codes": []
+  },
+  "grant_id": "GRANT-FA52A374DC7945AB9D4737B09CA2AEA2",
+  "replay_decision": {
+    "allowed": false,
+    "authority_effect": "none",
+    "budget_id": "BRB-001",
+    "decision_id": "AUTHZ-107B7DCD520C492790426BE11D451D8E",
+    "evaluated_at": "2026-08-01T21:00:00Z",
+    "grant_id": "GRANT-FA52A374DC7945AB9D4737B09CA2AEA2",
+    "reason_codes": [
+      "proof_replay"
+    ]
+  }
+}

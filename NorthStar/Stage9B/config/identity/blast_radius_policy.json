@@ -1,0 +1,55 @@
+{
+  "default": "deny",
+  "hard_invariants": [
+    "timeout_never_approves",
+    "humans_own_approval_and_finalization",
+    "no_DATA-106_mutation_by_authorization",
+    "no_unrestricted_user_token_passthrough",
+    "no_tier5_autonomous_action"
+  ],
+  "model_id": "BR-001",
+  "tiers": {
+    "0": {
+      "human_approval": "none",
+      "name": "informational_only",
+      "tools": []
+    },
+    "1": {
+      "human_approval": "not_required",
+      "name": "read_only",
+      "tools": [
+        "TOOL-001",
+        "TOOL-002",
+        "TOOL-003"
+      ]
+    },
+    "2": {
+      "human_approval": "workflow_policy",
+      "max_concurrent_writes": 1,
+      "name": "reversible_internal",
+      "tools": [
+        "TOOL-004",
+        "TOOL-005"
+      ]
+    },
+    "3": {
+      "external_message_budget": 1,
+      "human_approval": "purpose_and_recipient_policy",
+      "name": "controlled_external",
+      "tools": [
+        "TOOL-006"
+      ]
+    },
+    "4": {
+      "human_approval": "dual_control_required",
+      "name": "high_impact_regulated",
+      "tools": []
+    },
+    "5": {
+      "human_approval": "not_delegable",
+      "name": "prohibited_autonomous",
+      "tools": []
+    }
+  },
+  "version": "1.0.0"
+}

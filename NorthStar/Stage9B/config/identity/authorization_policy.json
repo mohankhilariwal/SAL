@@ -1,0 +1,27 @@
+{
+  "active_agent_ids": [
+    "AGT-001"
+  ],
+  "default": "deny",
+  "gateway": "CMP-005",
+  "inactive_future": [
+    "WP-008",
+    "MCP",
+    "A2A",
+    "multi-agent"
+  ],
+  "issuer": "CMP-007",
+  "max_grant_ttl_seconds": 300,
+  "model_id": "AUTH-001",
+  "proof_time_skew_seconds": 30,
+  "token_passthrough": "prohibited",
+  "tool_tiers": {
+    "TOOL-001": 1,
+    "TOOL-002": 1,
+    "TOOL-003": 1,
+    "TOOL-004": 2,
+    "TOOL-005": 2,
+    "TOOL-006": 3
+  },
+  "version": "1.0.0"
+}

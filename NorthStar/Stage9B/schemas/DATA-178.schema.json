@@ -1,0 +1,29 @@
+{
+  "$id": "urn:northstar:data:178:1.0.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "agent_id": {},
+    "agent_spec_version": {},
+    "case_id": {},
+    "execution_id": {},
+    "human_subject_id": {},
+    "run_id": {},
+    "task_id": {},
+    "tenant_id": {},
+    "workload_principal_id": {}
+  },
+  "required": [
+    "execution_id",
+    "agent_id",
+    "agent_spec_version",
+    "human_subject_id",
+    "workload_principal_id",
+    "tenant_id",
+    "case_id",
+    "run_id",
+    "task_id"
+  ],
+  "title": "AgentExecutionIdentity",
+  "type": "object"
+}

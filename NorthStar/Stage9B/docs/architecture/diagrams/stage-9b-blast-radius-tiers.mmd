@@ -1,0 +1,17 @@
+flowchart TB
+T0[Tier 0 Informational
+No tools]
+T1[Tier 1 Read-only
+TOOL-001..003]
+T2[Tier 2 Reversible internal
+TOOL-004..005
+1 concurrent protected write]
+T3[Tier 3 Controlled external
+TOOL-006
+recipient/purpose/message limits]
+T4[Tier 4 High-impact regulated
+No current tools
+Dual human control]
+T5[Tier 5 Prohibited autonomous
+Never delegable]
+T0 --> T1 --> T2 --> T3 --> T4 --> T5

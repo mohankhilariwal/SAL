@@ -1,0 +1,3 @@
+# 01 - Business and User Story Baseline (S09B overlay)
+
+NorthStar, the eight personas and `US-001`-`012` remain unchanged. S09B adds the business acceptance condition that Maya's authenticated identity may support a bounded agent action without transferring her unrestricted credential or accountability. Marcus requires every tool action to identify the human, workload, `AGT-001` execution, tool, operation, resource/data scope and limits. Sofia requires approval claims to reference an independent human decision. Liam requires valid grants to remain bounded by call, data, cost, message and concurrency budgets. The outcome is faster AI-assisted work with explicit least privilege and containment, not autonomous regulatory authority.
